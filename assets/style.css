@@ -1,0 +1,130 @@
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --muted: #6b6b6b;
+  --line: #d9d9d9;
+  --accent: #1a1a1a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #ececec;
+    --muted: #9a9a9a;
+    --line: #333333;
+    --accent: #ececec;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 48px;
+}
+
+/* ---------- Vertical timeline ---------- */
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* the vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 140px;
+  width: 1px;
+  background: var(--line);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  position: relative;
+  padding-bottom: 48px;
+}
+
+.timeline-item:last-child { padding-bottom: 0; }
+
+/* the dot */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 140px;
+  top: 7px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  transform: translateX(-50%);
+}
+
+.timeline-date {
+  padding-right: 28px;
+  text-align: right;
+  font-size: 0.875rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.timeline-content { padding-left: 32px; }
+
+.timeline-content h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.timeline-meta {
+  margin: 2px 0 8px;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.timeline-content p { margin-top: 0; }
+.timeline-content p:last-child { margin-bottom: 0; }
+
+/* ---------- Mobile: line on the left, date above content ---------- */
+
+@media (max-width: 600px) {
+  main { padding: 48px 16px; }
+
+  .timeline::before { left: 5px; }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    padding-left: 28px;
+  }
+
+  .timeline-item::before { left: 5px; }
+
+  .timeline-date {
+    text-align: left;
+    padding-right: 0;
+  }
+
+  .timeline-content { padding-left: 0; }
+}
