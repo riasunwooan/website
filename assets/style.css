@@ -2,7 +2,7 @@
   --bg: #ffffff;
   --text: #1a1a1a;
   --muted: #6b6b6b;
-  --line: #d9d9d9;
+  --line: #e2e2e2;
   --accent: #1a1a1a;
 }
 
@@ -11,7 +11,7 @@
     --bg: #121212;
     --text: #ececec;
     --muted: #9a9a9a;
-    --line: #333333;
+    --line: #2e2e2e;
     --accent: #ececec;
   }
 }
@@ -25,15 +25,63 @@ body {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-main {
+a { color: inherit; }
+
+/* ---------- Nav ---------- */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] { color: var(--text); }
+
+/* ---------- Sections ---------- */
+
+.section {
+  flex: 1;
+  padding: 48px 0 80px;
+}
+
+.container {
   max-width: 760px;
   margin: 0 auto;
-  padding: 80px 24px;
+  padding: 0 24px;
 }
 
-h2 {
+.section-title {
   font-size: 1.75rem;
   font-weight: 600;
   margin: 0 0 48px;
@@ -92,25 +140,41 @@ h2 {
 
 .timeline-content { padding-left: 32px; }
 
-.timeline-content h3 {
-  margin: 0;
+.card-meta {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.card-title {
+  margin: 2px 0 6px;
   font-size: 1.05rem;
   font-weight: 600;
 }
 
-.timeline-meta {
-  margin: 2px 0 8px;
+.card-desc { margin: 0; }
+
+/* ---------- Footer ---------- */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px;
+  border-top: 1px solid var(--line);
   font-size: 0.875rem;
   color: var(--muted);
 }
 
-.timeline-content p { margin-top: 0; }
-.timeline-content p:last-child { margin-bottom: 0; }
-
-/* ---------- Mobile: line on the left, date above content ---------- */
+/* ---------- Mobile ---------- */
 
 @media (max-width: 600px) {
-  main { padding: 48px 16px; }
+  nav, footer { padding: 16px; }
+  .container { padding: 0 16px; }
 
   .timeline::before { left: 5px; }
 

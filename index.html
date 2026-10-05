@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -9,43 +9,54 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.css?v=2">
 </head>
 <body>
-  <main>
-    <section id="research" aria-labelledby="research-title">
-      <h2 id="research-title">Research</h2>
+  <nav>
+    <a class="logo" href="/">Ria Sunwoo An</a>
+    <ul class="nav-links">
+      <li><a aria-current="page" href="#research">Research</a></li>
+    </ul>
+  </nav>
+
+  <section class="section" id="research">
+    <div class="container">
+      <h2 class="section-title">Research</h2>
 
       <ol class="timeline">
         <!-- Copy one <li class="timeline-item"> block per project. Newest first. -->
         <li class="timeline-item">
           <time class="timeline-date">2026 – Present</time>
           <div class="timeline-content">
-            <h3>Project title</h3>
-            <p class="timeline-meta">Lab / Institution · Advisor</p>
-            <p>Short description of the research question, what you did, and what you found.</p>
+            <div class="card-meta">Lab / Institution · Advisor</div>
+            <h3 class="card-title">Project title</h3>
+            <p class="card-desc">Short description of the research question, what you did, and what you found.</p>
           </div>
         </li>
 
         <li class="timeline-item">
           <time class="timeline-date">2025</time>
           <div class="timeline-content">
-            <h3>Project title</h3>
-            <p class="timeline-meta">Lab / Institution · Advisor</p>
-            <p>Short description of the research question, what you did, and what you found.</p>
+            <div class="card-meta">Lab / Institution · Advisor</div>
+            <h3 class="card-title">Project title</h3>
+            <p class="card-desc">Short description of the research question, what you did, and what you found.</p>
           </div>
         </li>
 
         <li class="timeline-item">
           <time class="timeline-date">2024</time>
           <div class="timeline-content">
-            <h3>Project title</h3>
-            <p class="timeline-meta">Lab / Institution · Advisor</p>
-            <p>Short description of the research question, what you did, and what you found.</p>
+            <div class="card-meta">Lab / Institution · Advisor</div>
+            <h3 class="card-title">Project title</h3>
+            <p class="card-desc">Short description of the research question, what you did, and what you found.</p>
           </div>
         </li>
       </ol>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Ria Sunwoo An</span>
+  </footer>
 </body>
 </html>
