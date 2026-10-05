@@ -3,57 +3,103 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ria Sunwoo An</title>
-  <meta name="description" content="Ria Sunwoo An — research.">
+  <title>Research — Ria Sunwoo An</title>
+  <meta name="description" content="Research by Ria Sunwoo An">
   <link rel="canonical" href="https://riasunwooan.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=2">
+  <link rel="stylesheet" href="assets/style.css?v=3">
 </head>
 <body>
   <nav>
     <a class="logo" href="/">Ria Sunwoo An</a>
     <ul class="nav-links">
-      <li><a aria-current="page" href="#research">Research</a></li>
+      <li><a aria-current="page" href="/">Research</a></li>
     </ul>
   </nav>
 
-  <section class="section" id="research">
+  <main class="page">
     <div class="container">
-      <h2 class="section-title">Research</h2>
+      <h1 class="page-title">Research</h1>
+      <!-- Optional epigraph:
+      <blockquote class="epigraph">“Quote goes here.”<cite>— Author</cite></blockquote>
+      -->
+      <p class="tl-hint">Projects are placed by the year they started, newest first.</p>
 
-      <ol class="timeline">
-        <!-- Copy one <li class="timeline-item"> block per project. Newest first. -->
-        <li class="timeline-item">
-          <time class="timeline-date">2026 – Present</time>
-          <div class="timeline-content">
-            <div class="card-meta">Lab / Institution · Advisor</div>
-            <h3 class="card-title">Project title</h3>
-            <p class="card-desc">Short description of the research question, what you did, and what you found.</p>
-          </div>
-        </li>
+      <!--
+        HOW TO EDIT
+        - One <section class="tl-era"> per stage (e.g. high school, college).
+        - Inside it, one <div class="tl-year"> per year. Add class "tl-empty" for a year with no projects.
+        - Inside a year, one <article class="card"> per project.
+          Make a card clickable by changing <article class="card"> … </article> to <a class="card" href="…"> … </a>.
+          Optional image: add <div class="card-img"><img src="assets/img/….jpg" alt=""></div> as the card's first child.
+          Mark an ongoing project with <span class="badge">Current</span> at the top of card-body.
+      -->
+      <div class="timeline" aria-label="Research timeline">
 
-        <li class="timeline-item">
-          <time class="timeline-date">2025</time>
-          <div class="timeline-content">
-            <div class="card-meta">Lab / Institution · Advisor</div>
-            <h3 class="card-title">Project title</h3>
-            <p class="card-desc">Short description of the research question, what you did, and what you found.</p>
-          </div>
-        </li>
+        <section class="tl-era">
+          <h2 class="tl-era-label">College · School name</h2>
 
-        <li class="timeline-item">
-          <time class="timeline-date">2024</time>
-          <div class="timeline-content">
-            <div class="card-meta">Lab / Institution · Advisor</div>
-            <h3 class="card-title">Project title</h3>
-            <p class="card-desc">Short description of the research question, what you did, and what you found.</p>
+          <div class="tl-year">
+            <div class="tl-yl">2026</div>
+            <div class="tl-cards">
+              <article class="card">
+                <div class="card-body">
+                  <span class="badge">Current</span>
+                  <div class="card-title">Project title</div>
+                  <div class="card-meta">2026 – present · Lab / Institution</div>
+                  <div class="card-desc">One-sentence summary of the project.</div>
+                </div>
+              </article>
+            </div>
           </div>
-        </li>
-      </ol>
+
+          <div class="tl-year tl-empty">
+            <div class="tl-yl">2025</div>
+          </div>
+        </section>
+
+        <section class="tl-era">
+          <h2 class="tl-era-label">High school · School name</h2>
+
+          <div class="tl-year">
+            <div class="tl-yl">2024</div>
+            <div class="tl-cards">
+              <article class="card">
+                <div class="card-body">
+                  <div class="card-title">Project title</div>
+                  <div class="card-meta">2024 – 2025 · Lab / Institution</div>
+                  <div class="card-desc">One-sentence summary of the project.</div>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-body">
+                  <div class="card-title">Project title</div>
+                  <div class="card-meta">2024 · Lab / Institution</div>
+                  <div class="card-desc">One-sentence summary of the project.</div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="tl-year">
+            <div class="tl-yl">2023</div>
+            <div class="tl-cards">
+              <article class="card">
+                <div class="card-body">
+                  <div class="card-title">Project title</div>
+                  <div class="card-meta">2023 – 2024 · Independent research</div>
+                  <div class="card-desc">One-sentence summary of the project.</div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+      </div>
     </div>
-  </section>
+  </main>
 
   <footer>
     <span>© 2026 Ria Sunwoo An</span>

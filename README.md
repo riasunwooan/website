@@ -2,7 +2,7 @@
 
 Static personal site. Currently contains only the Research section, shown as a vertical timeline.
 
-- `index.html` — page content. Add a research entry by copying a `<li class="timeline-item">` block.
+- `index.html` — the Research page. Editing instructions are in a comment at the top of the timeline (eras → years → project cards).
 - `assets/style.css` — styles.
 - `CNAME` — custom domain (`riasunwooan.com`) for GitHub Pages.
 
