@@ -239,7 +239,30 @@ a.card:hover {
   color: var(--muted);
 }
 
+.card-mentor {
+  margin: -4px 0 8px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
 .card-desc { font-size: 0.95rem; }
+
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-top: 10px;
+  font-size: 0.875rem;
+}
+
+.text-link {
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.text-link:hover { text-decoration-color: currentColor; }
 
 /* ---------- Footer ---------- */
 
