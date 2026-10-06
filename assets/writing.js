@@ -71,6 +71,8 @@
   chips.concat([award]).forEach(function (c) {
     c.onclick = function () {
       var turningOn = c.getAttribute('aria-pressed') !== 'true';
+      // one filter at a time: switching on one switches the others off
+      chips.concat([award]).forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
       c.setAttribute('aria-pressed', turningOn ? 'true' : 'false');
       apply();
       // jump to the newest piece that is now lit (the road runs newest → oldest)
