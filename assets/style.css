@@ -752,3 +752,41 @@ nav.nb-jump {
   font-size: 0.85rem;
   color: var(--muted);
 }
+
+/* ---------- Divided abstract ---------- */
+
+.abstract-part {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.abstract-part:last-child { border-bottom: none; padding-bottom: 0; }
+
+.abstract-part h3 {
+  margin: 2px 0 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.abstract-part p { margin: 0 0 12px; line-height: 1.7; }
+.abstract-part p:last-child { margin-bottom: 0; }
+
+.cite { font-size: 0.7em; line-height: 0; }
+.cite a { text-decoration: none; color: var(--muted); padding: 0 1px; }
+.cite a:hover { color: var(--text); text-decoration: underline; }
+
+.references ol { padding-left: 22px; margin: 0; }
+.references li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  scroll-margin-top: 16px;
+}
+.references li:target { color: var(--text); }
+
+@media (max-width: 600px) {
+  .abstract-part { grid-template-columns: 1fr; gap: 8px; }
+}
