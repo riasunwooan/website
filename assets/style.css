@@ -988,7 +988,7 @@ nav.nb-jump {
 .abstract-figs figure { margin: 0; grid-column: span 2; }
 .abstract-figs figure.half { grid-column: span 3; }
 .abstract-figs figure.wide { grid-column: 1 / -1; }
-.abstract-figs figure.half img, .abstract-figs figure.wide img { aspect-ratio: auto; object-fit: contain; background: #fff; }
+.abstract-figs figure.half img, .abstract-figs figure.wide img, .abstract-figs figure.third img { aspect-ratio: auto; object-fit: contain; background: #fff; }
 
 .abstract-figs img {
   display: block;
