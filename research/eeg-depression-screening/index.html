@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Depression Screening: Valence/Arousal from EEG & GSR via Unsupervised Representation Learning — Ria Sunwoo An</title>
-  <meta name="description" content="Published in Journal of Student Research, Aug 2025.">
+  <meta name="description" content="Published in Journal of Student Research, Aug 2025. Presented at the Loomis Chaffee Science Symposium, May 2025.">
   <link rel="canonical" href="https://riasunwooan.com/research/eeg-depression-screening/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css?v=28">
+  <link rel="stylesheet" href="/assets/style.css?v=30">
 </head>
 <body>
   <nav>
@@ -27,21 +27,64 @@
       <a class="back-link" href="/research/">← All research</a>
       <h1 class="page-title project-title">Depression Screening: Valence/Arousal from EEG &amp; GSR via Unsupervised Representation Learning</h1>
       <p class="project-meta">Apr 2024 – Jan 2025</p>
+      <p class="project-mentor project-authors"><span>Authors</span> <strong>Ria Sunwoo An</strong>; Kobi Osei-Mensah (The Loomis Chaffee School)</p>
+      <div class="btn-row">
+        <a class="btn btn-notebook" href="/research/eeg-depression-screening/logbook/"><svg class="btn-icon" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><rect x="5" y="1.5" width="15" height="23" rx="1.5" fill="#eef0f4"/><rect x="5" y="1.5" width="4" height="23" fill="#d9824b"/><g stroke="#111" stroke-width="1" stroke-linejoin="round"><rect x="20" y="3.5" width="2.6" height="3.6" fill="#ffc102"/><rect x="20" y="8.5" width="2.6" height="3.6" fill="#f2412f"/><rect x="20" y="13.5" width="2.6" height="3.6" fill="#a5d22a"/><rect x="20" y="18.5" width="2.6" height="3.6" fill="#22c4d8"/><path d="M13.4 5.5v3.8l-2.9 5h7.6l-2.9-5V5.5z" fill="#ffc102"/><rect x="11" y="16.5" width="6.6" height="4.4" rx=".6" fill="#d3d6dd"/></g><rect x="5" y="1.5" width="15" height="23" rx="1.5" fill="none" stroke="#111" stroke-width="1.5"/><path d="M9 1.5v23" stroke="#111" stroke-width="1.2"/><path d="M3 5.5h4M3 10h4M3 14.5h4M3 19h4" stroke="#111" stroke-width="1.5" stroke-linecap="round"/></svg><span>Research logbook</span> <span aria-hidden="true">→</span></a>
+        <a class="btn btn-notebook btn-doi" href="/assets/papers/eeg-depression-screening.pdf" target="_blank" rel="noopener"><span>DOI: 10.47611/jsrhs.v14i1.8834</span><span class="btn-sep" aria-hidden="true">|</span><span><em>Journal of Student Research (2025)</em></span> <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="btn-note">*JSR is under maintenance; link is to full paper</p>
 
       <!--
         Add more about this project here. Ideas: the question you asked, what you did, what you found.
         Images: <figure class="project-figure"><img src="/assets/img/research/eeg-depression-screening/figure1.jpg" alt="Describe the image"><figcaption>Caption</figcaption></figure>
       -->
+      <section class="project-section abstract">
+        <h2>Abstract</h2>
+        <div class="abstract-part">
+          <h3>Background</h3>
+          <div>
+            <p>Globally, 280 million are suffering from depressive disorders, one of the most common mental disorders referring to long periods of depressed mood that affect life negatively, often leading to suicide. Adolescents are especially vulnerable, with 35% of youth aged 12 to 17 in the United States having major or severe depression. The rate of depression in teenagers has doubled over the past decade, along with the youth suicide rate.</p>
+            <p>Currently, self-report questionnaires such as the Patient Health Questionnaire are utilized to diagnose depression. Self-report questionnaires may be accurate for other population groups that are fully aware of the state of their mental health, and are willing to seek support. However, adolescents do not have the same ability to recognize their symptoms nor answer honestly in school-wide screening tests.</p>
+          </div>
+        </div>
+        <div class="abstract-part">
+          <h3>Methods</h3>
+          <div>
+            <p>In order to solve the aforementioned problem, a method that captures the true emotion without self-reports based on electroencephalogram (EEG) and galvanic skin response (GSR) is proposed. The novel system is composed of representation and transfer learning steps for the extraction of emotion-related features from EEG signals, and a 1D convolutional neural network for extraction in GSR signals. The extracted features are merged and outputted as points on the arousal-valence graph, where emotions can be detected.</p>
+          </div>
+        </div>
+        <div class="abstract-part">
+          <h3>Results</h3>
+          <div>
+            <p>The proposed model demonstrated exceptional performance. The best MAE was 18.4 when without GSR; 18.8 when without representation learning; 17.2 when without the proposed equation, but improved to 16.4 in the proposed model.</p>
+            <div class="abstract-figs">
+              <figure class="wide">
+                <a href="/assets/img/research/eeg-depression-screening/logbook/architecture.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/architecture.jpg" alt="Overall architecture of the proposed model" loading="lazy"></a>
+                <figcaption><b>Fig. 1.</b> Overall architecture: EEG topographical maps go into TOP-N and GSR signals into GSR-N; their emotion-related features are combined in E-RN, which predicts arousal and valence (AV-Prob).</figcaption>
+              </figure>
+              <figure class="half">
+                <a href="/assets/img/research/eeg-depression-screening/logbook/exp2-gsr.png" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/exp2-gsr.png" alt="MAE with vs without GSR by network" loading="lazy"></a>
+                <figcaption><b>Fig. 2.</b> Mean absolute error with vs without GSR for four networks; adding GSR lowers error in every case.</figcaption>
+              </figure>
+              <figure class="half">
+                <a href="/assets/img/research/eeg-depression-screening/logbook/exp3-ablation.png" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/exp3-ablation.png" alt="Ablation study" loading="lazy"></a>
+                <figcaption><b>Fig. 3.</b> Ablation study: removing representation learning or the cosine-similarity loss raises error (best: 16.4 with both).</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="abstract-part">
+          <h3>Conclusion</h3>
+          <div>
+            <p>Brain anatomy evaluations proved the validity and feasibility of the model's application.</p>
+          </div>
+        </div>
+      </section>
       <section class="project-section">
         <h2>Highlights</h2>
         <ul>
           <li>Published in <em>Journal of Student Research</em>, Aug 2025</li>
-        </ul>
-      </section>
-      <section class="project-section">
-        <h2>Links</h2>
-        <ul class="project-links">
-          <li><a class="text-link" href="https://www.jsr.org/hs/index.php/path/article/view/8834" target="_blank" rel="noopener">DOI: 10.47611/jsrhs.v14i1.8834 ↗</a></li>
+          <li>Presented at The Loomis Chaffee Science Symposium, May 2025</li>
         </ul>
       </section>
 
