@@ -717,7 +717,7 @@ nav.nb-jump {
 }
 
 .nb-table {
-  margin: 12px 0 16px;
+  margin: 12px auto 16px;
   border-collapse: collapse;
   font-size: 0.95rem;
   font-variant-numeric: tabular-nums;
@@ -732,13 +732,18 @@ nav.nb-jump {
 .nb-table th { font-weight: 600; font-size: 0.85rem; color: var(--muted); }
 
 .nb-figs {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
   margin: 16px 0 4px;
 }
 
-.nb-figs figure { margin: 0; }
+.nb-figs figure { margin: 0; flex: 0 1 calc(50% - 8px); }
+
+@media (max-width: 560px) {
+  .nb-figs figure { flex-basis: 100%; }
+}
 
 .nb-figs img {
   display: block;
