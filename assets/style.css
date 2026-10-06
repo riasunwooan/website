@@ -413,3 +413,91 @@ footer {
   .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 0; }
   .hero-image img { max-width: 240px; }
 }
+
+/* ---------- About / story ---------- */
+
+.about { margin-top: 96px; }
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0 0 20px;
+}
+
+.about > p { font-size: 1.05rem; }
+
+.about-lead {
+  font-size: 1.25rem !important;
+  font-weight: 500;
+}
+
+.story {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.story-beat p {
+  margin: 0 0 16px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.story-beat:nth-child(odd) p { text-align: left; }
+.story-beat:nth-child(even) p { text-align: right; }
+
+.aside {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.story-photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.story-photos img {
+  display: block;
+  height: 200px;
+  width: auto;
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  background: var(--line);
+  transition: transform 0.2s;
+}
+
+.story-photos img:nth-child(odd)  { transform: rotate(-2deg); }
+.story-photos img:nth-child(even) { transform: rotate(1.5deg); }
+.story-photos img:hover { transform: rotate(0) scale(1.04); }
+
+.story-poem {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.about-closing {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+  font-size: 1.05rem;
+}
+
+.about-final {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 32px;
+}
+
+@media (max-width: 600px) {
+  .about { margin-top: 64px; }
+  .story-photos img { height: 140px; }
+  .story-beat:nth-child(n) p { text-align: left; }
+}
