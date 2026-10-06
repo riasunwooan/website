@@ -2,7 +2,7 @@
 
 Static personal site. Currently contains only the Research section, shown as a vertical timeline.
 
-- `index.html` — Home. `research/`, `art/`, `writing/` each hold an `index.html` for that page (served at /research, /art, /writing). Editing instructions are in comments inside each page.
+- `index.html` — Home. `research/`, `art/`, `writing/` each hold an `index.html` for that page. Each research project has its own page at `research/<project-name>/index.html`; the cards on `research/index.html` link to them.
 - `assets/style.css` — styles.
 - `CNAME` — custom domain (`riasunwooan.com`) for GitHub Pages.
 

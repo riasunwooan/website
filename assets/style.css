@@ -500,3 +500,112 @@ footer {
   .story-photos img { height: 140px; }
   .story-beat:nth-child(n) p { text-align: left; }
 }
+
+/* ---------- Project pages ---------- */
+
+.card-more {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+a.card:hover .card-more { color: var(--text); }
+
+.project { max-width: 720px; }
+
+.back-link {
+  display: block;
+  width: fit-content;
+  margin-bottom: 28px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.back-link:hover { color: var(--text); }
+
+.project .badge { margin-bottom: 12px; }
+
+.project-title {
+  font-size: 1.9rem;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.project-meta {
+  margin: 0 0 6px;
+  color: var(--muted);
+}
+
+.project-mentor {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.project-mentor span {
+  font-weight: 600;
+  color: var(--text);
+  margin-right: 4px;
+}
+
+.project-section {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.project-section h2 {
+  margin: 0 0 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.project-section ul { margin: 0; padding-left: 20px; }
+.project-section li { margin-bottom: 6px; }
+
+.project-links { list-style: none; padding-left: 0 !important; }
+
+.project-figure { margin: 24px 0; }
+.project-figure img { display: block; width: 100%; border-radius: 8px; }
+.project-figure figcaption { margin-top: 8px; font-size: 0.875rem; color: var(--muted); }
+
+.project-pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 64px;
+}
+
+.project-pager a {
+  display: block;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.project-pager a:hover { border-color: var(--muted); }
+
+.project-pager span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.pager-next { text-align: right; }
+
+@media (max-width: 600px) {
+  .project-title { font-size: 1.5rem; }
+  .project-pager { grid-template-columns: 1fr; }
+  .pager-next { text-align: left; }
+}
