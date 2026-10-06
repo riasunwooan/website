@@ -3,7 +3,7 @@ document.querySelectorAll('.deck').forEach(function (deck) {
   var n = +deck.dataset.count, base = deck.dataset.base, i = 0;
   var img = deck.querySelector('.deck-img'), count = deck.querySelector('.deck-count');
   var dots = deck.querySelectorAll('.deck-dot');
-  function src(k) { return base + String(k + 1).padStart(2, '0') + '.jpg'; }
+  function src(k) { return base + String(k + 1).padStart(2, '0') + '.jpg?v=2'; }
   function go(k) {
     i = (k + n) % n;
     img.src = src(i);
