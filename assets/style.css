@@ -214,7 +214,15 @@ a.card:hover {
   object-fit: cover;
 }
 
-.card-body { padding: 16px 20px; }
+.card-body { padding: 16px 20px; min-width: 0; }
+.card-icon { flex: none; padding: 18px 0 18px 18px; }
+.card-icon img { display: block; width: 72px; height: 72px; border-radius: 14px; }
+@media (max-width: 600px) {
+  .card-icon { padding: 16px 0 16px 14px; }
+  .card-icon img { width: 44px; height: 44px; border-radius: 10px; }
+  .card-icon { padding: 16px 0 16px 12px; }
+  .card-body { padding: 14px 16px; }
+}
 
 .badge {
   display: inline-block;
@@ -305,7 +313,7 @@ footer {
 
   .tl-cards { grid-column: 1; padding-left: 0; }
 
-  .card { flex-direction: column; }
+  .card { flex-direction: row; }
   .card-img { flex-basis: auto; aspect-ratio: 16 / 9; }
 }
 
