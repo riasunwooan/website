@@ -754,6 +754,7 @@ nav.nb-jump {
 
 .nb-figs figcaption {
   margin-top: 6px;
+  line-height: 1.45;
   font-size: 0.8rem;
   color: var(--muted);
   overflow-wrap: anywhere;
