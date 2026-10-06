@@ -1167,7 +1167,7 @@ nav.nb-jump {
 }
 .wp-title { margin: 8px 0 2px; font-size: 1.05rem; line-height: 1.35; }
 .wp-kind { margin: 0; font-size: 0.8rem; color: var(--muted); }
-.wp-note { margin: 8px 0 0; font-size: 0.8rem; color: var(--muted); }
+.wp-award.wp-note { margin: 8px 0 0; }
 .wp-award { margin: 6px 0 0; font-size: 0.8rem; font-weight: 600; line-height: 1.45; }
 .wp-blurb {
   margin-top: 8px;
