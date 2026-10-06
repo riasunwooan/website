@@ -54,25 +54,25 @@
 
   // Filters: medium chips combine with OR; "Awarded" narrows further.
   var chips = Array.prototype.slice.call(document.querySelectorAll('.wp-chip[data-medium]'));
-  var all = document.querySelector('.wp-all'), award = document.querySelector('.wp-award-chip');
+  var all = document.querySelector('.wp-all'), award = document.querySelector('.wp-award-chip'), rec = document.querySelector('.wp-rec-chip');
   function apply() {
     var on = chips.filter(function (c) { return c.getAttribute('aria-pressed') === 'true'; })
                   .map(function (c) { return c.dataset.medium; });
-    var aw = award.getAttribute('aria-pressed') === 'true';
-    all.setAttribute('aria-pressed', on.length || aw ? 'false' : 'true');
-    var any = on.length || aw;
+    var aw = award.getAttribute('aria-pressed') === 'true', rc = rec.getAttribute('aria-pressed') === 'true';
+    all.setAttribute('aria-pressed', on.length || aw || rc ? 'false' : 'true');
+    var any = on.length || aw || rc;
     road.classList.toggle('filtering', !!any);
     items.forEach(function (it) {
-      var ok = (!on.length || on.indexOf(it.dataset.medium) > -1) && (!aw || it.dataset.awarded === '1');
+      var ok = (!on.length || on.indexOf(it.dataset.medium) > -1) && (!aw || it.dataset.awarded === '1') && (!rc || it.dataset.rec === '1');
       it.classList.toggle('lit', !!any && ok);
       it.classList.toggle('dim', !!any && !ok);
     });
   }
-  chips.concat([award]).forEach(function (c) {
+  chips.concat([award, rec]).forEach(function (c) {
     c.onclick = function () {
       var turningOn = c.getAttribute('aria-pressed') !== 'true';
       // one filter at a time: switching on one switches the others off
-      chips.concat([award]).forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
+      chips.concat([award, rec]).forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
       c.setAttribute('aria-pressed', turningOn ? 'true' : 'false');
       apply();
       // jump to the newest piece that is now lit (the road runs newest → oldest)
@@ -84,7 +84,7 @@
       }
     };
   });
-  all.onclick = function () { chips.concat([award]).forEach(function (c) { c.setAttribute('aria-pressed', 'false'); }); apply(); };
+  all.onclick = function () { chips.concat([award, rec]).forEach(function (c) { c.setAttribute('aria-pressed', 'false'); }); apply(); };
 
   draw();
   window.addEventListener('resize', draw);

@@ -1128,6 +1128,7 @@ nav.nb-jump {
 .wp-all[aria-pressed="true"] { background: var(--text); border-color: var(--text); color: var(--bg); }
 .wp-all[aria-pressed="true"] .wp-count { color: var(--bg); opacity: 0.7; }
 .wp-award-chip { --c: #ffc102; }
+.wp-rec-chip { --c: #e0457b; }
 .wp-award-chip[aria-pressed="true"] { color: #1a1a1a; }
 .wp-award-chip[aria-pressed="true"] .wp-count { color: #1a1a1a; }
 .wp-hint { margin: 10px 0 0; font-size: 0.8rem; color: var(--muted); }

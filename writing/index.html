@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css?v=37">
+  <link rel="stylesheet" href="/assets/style.css?v=38">
 </head>
 <body>
   <nav>
@@ -39,6 +39,7 @@
         <button class="wp-chip" type="button" data-medium="memoir" aria-pressed="false" style="--c:#9b7be0"><span class="wp-dot"></span>Memoir <span class="wp-count">2</span></button>
         <button class="wp-chip" type="button" data-medium="mixed" aria-pressed="false" style="--c:#f0884a"><span class="wp-dot"></span>Mixed Media <span class="wp-count">1</span></button>
         <button class="wp-chip" type="button" data-medium="book" aria-pressed="false" style="--c:#1f2a8a"><span class="wp-dot"></span>Book <span class="wp-count">1</span></button>
+        <button class="wp-chip wp-rec-chip" type="button" aria-pressed="false">♥ Recommended by Ria <span class="wp-count">3</span></button>
         <button class="wp-chip wp-award-chip" type="button" aria-pressed="false">★ Awarded <span class="wp-count">11</span></button>
       </div>
       <p class="wp-hint">Tap a medium to light up only those pieces on the road.</p>
@@ -46,7 +47,7 @@
       <div class="wp-road">
         <svg class="wp-svg" aria-hidden="true"><path class="wp-track"/></svg>
         <ol class="wp-list">
-        <li class="wp-item" data-medium="memoir" data-awarded="0" style="--c:#9b7be0;grid-row:1;grid-column:1">
+        <li class="wp-item" data-medium="memoir" data-awarded="0" data-rec="0" style="--c:#9b7be0;grid-row:1;grid-column:1">
           <article class="wp-card">
             <span class="wp-tag">Memoir</span>
             <h2 class="wp-title">I Believe in the Last Spoonful</h2>
@@ -60,7 +61,7 @@
           <span class="wp-stalk" aria-hidden="true"></span>
           <span class="wp-stop"><span class="wp-mon">May</span><span class="wp-yr">2026</span></span>
         </li>
-        <li class="wp-item" data-medium="research" data-awarded="1" style="--c:#6fa31a;grid-row:1;grid-column:2">
+        <li class="wp-item" data-medium="research" data-awarded="1" data-rec="0" style="--c:#6fa31a;grid-row:1;grid-column:2">
           <article class="wp-card">
             <span class="wp-tag">Research Paper</span>
             <h2 class="wp-title">Promise of a Photograph: Korean Picture Brides in Hawaii</h2>
@@ -76,7 +77,7 @@
           <span class="wp-stalk" aria-hidden="true"></span>
           <span class="wp-stop"><span class="wp-mon">May</span><span class="wp-yr">2026</span></span>
         </li>
-        <li class="wp-item" data-medium="essay" data-awarded="1" style="--c:#e8a800;grid-row:1;grid-column:3">
+        <li class="wp-item" data-medium="essay" data-awarded="1" data-rec="0" style="--c:#e8a800;grid-row:1;grid-column:3">
           <article class="wp-card">
             <span class="wp-tag">Essay</span>
             <h2 class="wp-title">How to Become a Butterfly 101</h2>
@@ -92,7 +93,7 @@
           <span class="wp-stalk" aria-hidden="true"></span>
           <span class="wp-stop"><span class="wp-mon">Apr</span><span class="wp-yr">2026</span></span>
         </li>
-        <li class="wp-item" data-medium="mixed" data-awarded="0" style="--c:#f0884a;grid-row:2;grid-column:3">
+        <li class="wp-item" data-medium="mixed" data-awarded="0" data-rec="0" style="--c:#f0884a;grid-row:2;grid-column:3">
           <article class="wp-card">
             <span class="wp-tag">Mixed Media</span>
             <h2 class="wp-title">Bricolage: Between and Betwixt</h2>
@@ -106,7 +107,7 @@
           <span class="wp-stalk" aria-hidden="true"></span>
           <span class="wp-stop"><span class="wp-mon">Feb</span><span class="wp-yr">2026</span></span>
         </li>
-        <li class="wp-item" data-medium="memoir" data-awarded="1" style="--c:#9b7be0;grid-row:2;grid-column:2">
+        <li class="wp-item" data-medium="memoir" data-awarded="1" data-rec="1" style="--c:#9b7be0;grid-row:2;grid-column:2">
           <article class="wp-card">
             <span class="wp-tag">Memoir</span>
             <h2 class="wp-title">When Life Gives You Cabbages</h2>
@@ -121,7 +122,7 @@
           <span class="wp-stalk" aria-hidden="true"></span>
           <span class="wp-stop"><span class="wp-mon">Dec</span><span class="wp-yr">2025</span></span>
         </li>
-        <li class="wp-item" data-medium="book" data-awarded="0" style="--c:#1f2a8a;grid-row:2;grid-column:1">
+        <li class="wp-item" data-medium="book" data-awarded="0" data-rec="1" style="--c:#1f2a8a;grid-row:2;grid-column:1">
           <a class="wp-card wp-card-link" href="/writing/unspoken-valor/">
             <img class="wp-cover" src="/assets/img/writing/unspoken-valor-cover-sm.jpg" alt="Cover of Unspoken Valor" width="480" height="693">
             <span class="wp-tag">Book</span>
@@ -135,7 +136,7 @@
           <span class="wp-stalk" aria-hidden="true"></span>
           <span class="wp-stop"><span class="wp-mon">Nov</span><span class="wp-yr">2025</span></span>
         </li>
-        <li class="wp-item" data-medium="poetry" data-awarded="1" style="--c:#f2412f;grid-row:3;grid-column:1">
+        <li class="wp-item" data-medium="poetry" data-awarded="1" data-rec="0" style="--c:#f2412f;grid-row:3;grid-column:1">
           <article class="wp-card">
             <span class="wp-tag">Poetry</span>
             <h2 class="wp-title">Lost</h2>
@@ -150,7 +151,7 @@
           <span class="wp-stalk" aria-hidden="true"></span>
           <span class="wp-stop"><span class="wp-mon">Aug</span><span class="wp-yr">2025</span></span>
         </li>
-        <li class="wp-item" data-medium="poetry" data-awarded="1" style="--c:#f2412f;grid-row:3;grid-column:2">
+        <li class="wp-item" data-medium="poetry" data-awarded="1" data-rec="0" style="--c:#f2412f;grid-row:3;grid-column:2">
           <article class="wp-card">
             <span class="wp-tag">Poetry</span>
             <h2 class="wp-title">0°C</h2>
@@ -165,7 +166,7 @@
           <span class="wp-stalk" aria-hidden="true"></span>
           <span class="wp-stop"><span class="wp-mon">Jun</span><span class="wp-yr">2025</span></span>
         </li>
-        <li class="wp-item" data-medium="flash" data-awarded="1" style="--c:#22c4d8;grid-row:3;grid-column:3">
+        <li class="wp-item" data-medium="flash" data-awarded="1" data-rec="0" style="--c:#22c4d8;grid-row:3;grid-column:3">
           <article class="wp-card">
             <span class="wp-tag">Flash Fiction</span>
             <h2 class="wp-title">Different Shades of Blue</h2>
@@ -180,7 +181,7 @@
           <span class="wp-stalk" aria-hidden="true"></span>
           <span class="wp-stop"><span class="wp-mon">Mar</span><span class="wp-yr">2025</span></span>
         </li>
-        <li class="wp-item" data-medium="essay" data-awarded="1" style="--c:#e8a800;grid-row:4;grid-column:3">
+        <li class="wp-item" data-medium="essay" data-awarded="1" data-rec="0" style="--c:#e8a800;grid-row:4;grid-column:3">
           <article class="wp-card">
             <span class="wp-tag">Essay</span>
             <h2 class="wp-title">Giving To Be Full</h2>
@@ -195,7 +196,7 @@
           <span class="wp-stalk" aria-hidden="true"></span>
           <span class="wp-stop"><span class="wp-mon">Dec</span><span class="wp-yr">2024</span></span>
         </li>
-        <li class="wp-item" data-medium="poetry" data-awarded="1" style="--c:#f2412f;grid-row:4;grid-column:2">
+        <li class="wp-item" data-medium="poetry" data-awarded="1" data-rec="0" style="--c:#f2412f;grid-row:4;grid-column:2">
           <article class="wp-card">
             <span class="wp-tag">Poetry</span>
             <h2 class="wp-title">What the letter L said to the child</h2>
@@ -210,7 +211,7 @@
           <span class="wp-stalk" aria-hidden="true"></span>
           <span class="wp-stop"><span class="wp-mon">Apr</span><span class="wp-yr">2024</span></span>
         </li>
-        <li class="wp-item" data-medium="poetry" data-awarded="1" style="--c:#f2412f;grid-row:4;grid-column:1">
+        <li class="wp-item" data-medium="poetry" data-awarded="1" data-rec="0" style="--c:#f2412f;grid-row:4;grid-column:1">
           <article class="wp-card">
             <span class="wp-tag">Poetry</span>
             <h2 class="wp-title">Tetris</h2>
@@ -225,7 +226,7 @@
           <span class="wp-stalk" aria-hidden="true"></span>
           <span class="wp-stop"><span class="wp-mon">Feb</span><span class="wp-yr">2024</span></span>
         </li>
-        <li class="wp-item" data-medium="flash" data-awarded="1" style="--c:#22c4d8;grid-row:5;grid-column:1">
+        <li class="wp-item" data-medium="flash" data-awarded="1" data-rec="0" style="--c:#22c4d8;grid-row:5;grid-column:1">
           <article class="wp-card">
             <span class="wp-tag">Flash Fiction</span>
             <h2 class="wp-title">when the camellia blooms</h2>
@@ -240,7 +241,7 @@
           <span class="wp-stalk" aria-hidden="true"></span>
           <span class="wp-stop"><span class="wp-mon">Jan</span><span class="wp-yr">2024</span></span>
         </li>
-        <li class="wp-item" data-medium="poetry" data-awarded="1" style="--c:#f2412f;grid-row:5;grid-column:2">
+        <li class="wp-item" data-medium="poetry" data-awarded="1" data-rec="1" style="--c:#f2412f;grid-row:5;grid-column:2">
           <article class="wp-card">
             <span class="wp-tag">Poetry</span>
             <h2 class="wp-title">Golden Wings</h2>
@@ -263,6 +264,6 @@
   <footer>
     <span>© 2026 Ria Sunwoo An</span>
   </footer>
-  <script src="/assets/writing.js?v=5" defer></script>
+  <script src="/assets/writing.js?v=6" defer></script>
 </body>
 </html>
