@@ -701,6 +701,16 @@ a.card:hover .card-more { color: var(--text); }
 
 .btn-notebook .btn-icon { flex: none; }
 .btn-notebook span { white-space: nowrap; }
+.btn-doi { width: fit-content; max-width: 100%; flex-wrap: wrap; row-gap: 2px; }
+.btn-doi em { font-style: italic; }
+.btn-sep { opacity: 0.5; }
+@media (max-width: 600px) {
+  .btn-doi { width: 100%; text-align: center; font-size: 0.85rem; padding: 10px 20px; }
+  .btn-doi span { white-space: normal; }
+  .btn-doi { border-radius: 20px; }
+  .btn-doi > span:last-child { display: none; }
+  .btn-sep { display: none; }
+}
 
 /* ---------- Lab notebook ---------- */
 
