@@ -1172,10 +1172,6 @@ nav.nb-jump {
   margin-top: 8px;
   font-size: 0.88rem;
   line-height: 1.6;
-  max-height: calc(1.6em * 5);
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(#000 70%, transparent);
-  mask-image: linear-gradient(#000 70%, transparent);
 }
 .wp-blurb.open { max-height: none; -webkit-mask-image: none; mask-image: none; }
 .wp-blurb p { margin: 0 0 8px; }
