@@ -635,6 +635,18 @@ a.card:hover .card-more { color: var(--text); }
 
 .btn:hover { opacity: 0.85; }
 
+.btn-notebook {
+  gap: 12px;
+  min-width: 280px;
+  padding: 12px 32px 12px 24px;
+  background: #ffc102;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.btn-notebook .btn-icon { flex: none; }
+.btn-notebook > span:last-child { margin-left: auto; }
+
 /* ---------- Lab notebook ---------- */
 
 .nb-kicker {
