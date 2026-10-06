@@ -1101,7 +1101,7 @@ nav.nb-jump {
 
 /* ---------- Writing: winding road ---------- */
 
-.wp-intro { max-width: 760px; margin-bottom: 28px; line-height: 1.7; }
+.wp-intro { margin-bottom: 28px; line-height: 1.7; }
 .wp-intro p { margin: 0 0 10px; }
 
 .wp-filters { display: flex; flex-wrap: wrap; gap: 8px; }
