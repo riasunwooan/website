@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research Logbook — Continual Learning with EWC for HTP — Ria Sunwoo An</title>
+  <meta name="description" content="Day-by-day research logbook for continual learning with Elastic Weight Consolidation for House-Tree-Person test frameworks.">
+  <link rel="canonical" href="https://riasunwooan.com/research/continual-learning-htp/logbook/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css?v=28">
+</head>
+<body>
+  <nav>
+    <a class="logo" href="/">Ria Sunwoo An</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a aria-current="page" href="/research/">Research</a></li>
+      <li><a href="/art/">Art</a></li>
+      <li><a href="/writing/">Writing</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <article class="container project notebook">
+      <a class="back-link" href="/research/continual-learning-htp/">← Back to project</a>
+      <p class="nb-kicker">Research logbook</p>
+      <h1 class="page-title project-title">Continual Learning with Elastic Weight Consolidation for House-Tree-Person (HTP) Test Frameworks</h1>
+      <p class="project-meta">Yale University · May 6 – Sep 5, 2025</p>
+      <p class="nb-materials"><strong>Materials:</strong> GPU, computer, data</p>
+
+      <nav class="nb-jump" aria-label="Jump to day">
+        <span>Jump to day</span>
+        <ul>
+          <li><a href="#day-1">1</a></li>
+          <li><a href="#day-2">2</a></li>
+          <li><a href="#day-3">3</a></li>
+          <li><a href="#day-4">4</a></li>
+          <li><a href="#day-5">5</a></li>
+          <li><a href="#day-6">6</a></li>
+          <li><a href="#day-7">7</a></li>
+          <li><a href="#day-8">8</a></li>
+          <li><a href="#day-9">9</a></li>
+          <li><a href="#day-10">10</a></li>
+          <li><a href="#day-11">11</a></li>
+          <li><a href="#day-12">12</a></li>
+          <li><a href="#day-13">13</a></li>
+          <li><a href="#day-14">14</a></li>
+          <li><a href="#day-15">15</a></li>
+          <li><a href="#day-16">16</a></li>
+          <li><a href="#day-17">17</a></li>
+          <li><a href="#day-18">18</a></li>
+          <li><a href="#day-19">19</a></li>
+          <li><a href="#day-20">20</a></li>
+          <li><a href="#day-21">21</a></li>
+          <li><a href="#day-22">22</a></li>
+          <li><a href="#day-23">23</a></li>
+          <li><a href="#day-24">24</a></li>
+          <li><a href="#day-25">25</a></li>
+          <li><a href="#day-26">26</a></li>
+        </ul>
+      </nav>
+
+      <div class="nb-entries">
+        <section class="nb-entry" id="day-1">
+          <h2><span class="nb-day">Day 1</span> <span class="nb-date">Tue 5/6/25</span></h2>
+<ul>
+<li>Collected background data on youth mental health from last year’s research logbook and online sources</li>
+<li>Global picture
+<ul>
+<li>One in seven 10–19-year-olds experiences a mental disorder, accounting for 13% of the global burden of disease in this age group</li>
+<li>Depression, anxiety and behavioural disorders are among the leading causes of illness and disability among adolescents</li>
+<li>Suicide is the fourth leading cause of death among 15–29-year-olds</li>
+</ul>
+</li>
+<li>United States
+<ul>
+<li>About 1 in 5 adolescents report symptoms of anxiety or depression (KFF analysis of a federal survey of teen health); many say they don’t get therapy because of cost, stigma, or not knowing how to get help</li>
+<li>In 2021, 20% of 12–17-year-olds had at least one major depressive episode (MDE); prevalence among females (29%) was more than twice that of males (12%), and nearly 60% received no treatment</li>
+<li>Teens who recently experienced depression rose 59% between 2007 and 2017 (66% for girls, 44% for boys)</li>
+<li>Seven in ten U.S. teens call anxiety and depression a major problem among people their age (Pew Research Center, 2018)</li>
+<li>NIMH: 17% of 12–17-year-olds had a major depressive episode in 2020 (4.1 million teens); 12% had at least one episode with severe impairment</li>
+<li>CDC (2021): 42% of students felt persistently sad or hopeless, 29% experienced poor mental health, 22% considered suicide and 10% attempted suicide</li>
+<li>Adolescent depression rose from 8.1% in 2009 to 15.8% in 2019</li>
+<li>MDD is the leading cause of disability in the U.S. for ages 15–44, affects about 8.4% of adults, and almost half of adults with MDD are untreated</li>
+</ul>
+</li>
+<li>South Korea
+<ul>
+<li>Of about 50,000 middle and high school students surveyed in 2022, 14.3% had thought about suicide in the past 12 months (Korea Disease Control and Prevention Agency)</li>
+</ul>
+</li>
+</ul><div class="nb-callout">
+<p><strong>Key takeaway.</strong> Today, 1 in 6 children ages 6–17 experiences a mental health disorder each year, a 35% increase since 2016. Yet over 80% of these children never receive care from a mental health provider, and only about one-third of children with mental health challenges are identified in primary care settings.</p>
+<p>Doctors alone cannot catch most cases. If clinics cannot do it alone, schools must play a larger role: not as diagnostic centers, but as early-warning systems.</p>
+</div>
+        </section>
+
+        <section class="nb-entry" id="day-2">
+          <h2><span class="nb-day">Day 2</span> <span class="nb-date">Mon 5/12/25</span></h2>
+<ul>
+<li>Researched HTP logic: what each drawing and feature is thought to reflect</li>
+<li>Each drawing maps to a domain
+<ul>
+<li>House → home life, family dynamics, sense of safety</li>
+<li>Tree → sense of self, emotional stability, growth</li>
+<li>Person → self-image, identity, interpersonal relationships</li>
+</ul>
+</li>
+</ul><div class="nb-cards">
+<div class="nb-card">
+<h3>House</h3>
+<ul>
+<li><strong>Overall size</strong>
+<ul>
+<li>Very small → insecurity, withdrawal</li>
+<li>Very large → need for attention, compensation</li>
+</ul>
+</li>
+<li><strong>Door</strong>
+<ul>
+<li>Large/open → openness, accessibility</li>
+<li>Very small or no door → guardedness, isolation</li>
+</ul>
+</li>
+<li><strong>Windows</strong>
+<ul>
+<li>Many/open → social openness</li>
+<li>No windows → emotional withdrawal</li>
+</ul>
+</li>
+<li><strong>Chimney / smoke</strong>
+<ul>
+<li>Smoke present → warmth, family interaction</li>
+<li>Excessive or chaotic smoke → emotional tension</li>
+</ul>
+</li>
+<li><strong>Walls</strong>
+<ul>
+<li>Heavy/dark lines → defensiveness</li>
+<li>Weak/fragmented → fragile boundaries</li>
+</ul>
+</li>
+<li><strong>Ground line</strong>
+<ul>
+<li>Floating house → instability</li>
+<li>Firm grounding → stability</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="nb-card">
+<h3>Tree</h3>
+<ul>
+<li><strong>Trunk</strong>
+<ul>
+<li>Thick → strength, ego stability</li>
+<li>Thin → vulnerability</li>
+<li>Broken → trauma indicators</li>
+</ul>
+</li>
+<li><strong>Roots</strong>
+<ul>
+<li>Visible roots → need for security</li>
+<li>No roots → possible instability</li>
+</ul>
+</li>
+<li><strong>Crown</strong>
+<ul>
+<li>Large/full → imagination, emotional richness</li>
+<li>Very small → limited expression</li>
+</ul>
+</li>
+<li><strong>Branches</strong>
+<ul>
+<li>Upward → optimism</li>
+<li>Downward → sadness, fatigue</li>
+<li>Broken → emotional distress</li>
+</ul>
+</li>
+<li><strong>Fruit</strong>
+<ul>
+<li>Often linked to productivity or a need for validation</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="nb-card">
+<h3>Person</h3>
+<ul>
+<li><strong>Overall size</strong>
+<ul>
+<li>Very small → low self-esteem</li>
+<li>Very large → dominance, compensation</li>
+</ul>
+</li>
+<li><strong>Head</strong>
+<ul>
+<li>Very large → intellectual focus</li>
+<li>Very small → feelings of inadequacy</li>
+</ul>
+</li>
+<li><strong>Eyes</strong>
+<ul>
+<li>Large/detailed → hypervigilance</li>
+<li>Omitted → avoidance</li>
+</ul>
+</li>
+<li><strong>Arms</strong>
+<ul>
+<li>Open arms → social engagement</li>
+<li>No arms → helplessness</li>
+<li>Very long → need for control</li>
+</ul>
+</li>
+<li><strong>Legs</strong>
+<ul>
+<li>Strong/stable → confidence</li>
+<li>Weak/missing → insecurity</li>
+</ul>
+</li>
+<li><strong>Facial expression</strong>
+<ul>
+<li>Smiling → social conformity</li>
+<li>No face → emotional suppression</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<ul>
+<li>Structural patterns clinicians may examine
+<ul>
+<li>Proportions (e.g., head-to-body ratio)</li>
+<li>Symmetry</li>
+<li>Line pressure</li>
+<li>Feature omission</li>
+<li>Feature exaggeration</li>
+<li>Spatial placement</li>
+<li>Relative size comparisons</li>
+</ul>
+</li>
+<li>Takeaway: most of these cues are about which parts are present, how big they are and where they sit. That is exactly what an object detector measures, so detection is a natural first step toward automated HTP analysis</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-3">
+          <h2><span class="nb-day">Day 3</span> <span class="nb-date">Tue 5/27/25</span></h2>
+<ul>
+<li>Studied Elastic Weight Consolidation (EWC)</li>
+<li>The problem it solves: catastrophic forgetting
+<ul>
+<li>When a neural network is trained on a new task, the weights that mattered for the old task get overwritten, so performance on the old task collapses</li>
+<li>This matters for HTP drawings: a model that first learns big objects (house, tree, person) could forget them while learning small parts (windows, fruit, eyes)</li>
+</ul>
+</li>
+<li>The idea
+<ul>
+<li>After training on an earlier task, record the parameter values θ<sup>C</sup> and how important each parameter is to that task</li>
+<li>While training on the next task, add a penalty that pulls important parameters back toward θ<sup>C</sup>; unimportant parameters stay free to change</li>
+<li>Introduced by Kirkpatrick et al. (2017) for continual learning</li>
+</ul>
+</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-4">
+          <h2><span class="nb-day">Day 4</span> <span class="nb-date">Sat 5/31/25</span></h2>
+<ul>
+<li>Continued studying EWC</li>
+<li>Notes on applying it to object detection
+<ul>
+<li>Treat coarse detection (whole house / tree / person) as the earlier task and fine-grained parts as the later task</li>
+<li>The regularization strength (β) trades off remembering the coarse task against learning the new one: too small and the model forgets, too large and it can’t adapt</li>
+<li>Related reading (cited on the poster): Kutalev &amp; Lapina (2021), “Stabilizing Elastic Weight Consolidation method in practical ML tasks”</li>
+</ul>
+</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-5">
+          <h2><span class="nb-day">Day 5</span> <span class="nb-date">Mon 6/2/25</span></h2>
+<ul>
+<li>Began implementing the CNN detection model</li>
+<li>Architecture (final version shown on Day 12)
+<ul>
+<li>DarkNet-based convolutional feature extractor</li>
+<li>Regression head that predicts bounding boxes on a grid over the image, YOLO-style</li>
+<li>Output: a box and class label for every detected house, tree, person and part</li>
+</ul>
+</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-6">
+          <h2><span class="nb-day">Day 6</span> <span class="nb-date">Sun 6/8/25</span></h2>
+<ul>
+<li>Wrote down why an HTP-based system is specifically needed</li>
+<li>Multi-dimensional psychological insight (cognitive + emotional + environmental)
+<ul>
+<li>The HTP test gives structured access to three core domains: House (family relationships and emotional security), Tree (vitality, physical self-image, inner strength) and Person (self-concept, social roles, personal identity)</li>
+<li>By contrast, the “Person in the Rain” test focuses mainly on coping and vulnerability, a narrower window into psychological functioning</li>
+</ul>
+</li>
+<li>Well-validated interpretive framework
+<ul>
+<li>Decades of psychological research support HTP’s symbolic interpretations (e.g., missing limbs may suggest trauma, enclosed houses may suggest anxiety, rooted trees may reflect stability)</li>
+<li>This lets the AI model be mapped to known psychological indicators, giving it stronger theoretical grounding than more abstract drawings like rain scenes</li>
+</ul>
+</li>
+<li>AI compatibility with discrete visual features
+<ul>
+<li>HTP figures have well-defined, object-like parts (windows, branches, hands) that suit object-recognition models such as YOLO</li>
+<li>The system can quantify these cues, which is hard to do with more interpretive or dreamlike drawings</li>
+</ul>
+</li>
+<li>Cross-age applicability
+<ul>
+<li>Used with children, adolescents and adults, so the system is more age-flexible than verbal interviews or writing-based diagnostics</li>
+<li>Requires no advanced verbal skills, so it suits language-minimal populations, including children with ASD, trauma or selective mutism</li>
+</ul>
+</li>
+<li>Lower bias and more cultural neutrality
+<ul>
+<li>Open verbal interviews can be affected by language fluency, cultural norms or clinician bias; an AI-HTP tool can standardize interpretation with a consistent visual-symbolic framework</li>
+</ul>
+</li>
+<li>Supports longitudinal monitoring
+<ul>
+<li>Drawings collected at multiple time points can track emotional changes over time, which is rarely feasible with situational tests like “Person in the Rain”</li>
+</ul>
+</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-7">
+          <h2><span class="nb-day">Day 7</span> <span class="nb-date">Thu 6/12/25</span></h2>
+<ul>
+<li>Gathered background knowledge on available HTP drawing datasets</li>
+<li>Needed: a large, labeled set of children’s drawings with bounding boxes for both whole objects and their parts</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-8">
+          <h2><span class="nb-day">Day 8</span> <span class="nb-date">Tue 6/17/25</span></h2>
+<ul>
+<li>Chose the dataset: the publicly available AI-Hub Child Psychological Drawing Image Dataset from the Korean government’s AI-Hub platform (AweHub 2025)</li>
+<li>56,000 drawings from children ages 7–13 with varied backgrounds in South Korea, collected and labeled specifically for training and evaluation</li>
+<li>Annotations
+<ul>
+<li>Bounding boxes around meaningful visual components</li>
+<li>Coarse-grained classes: house, tree, person</li>
+<li>Fine-grained classes, e.g., trunk, fruit, crown for trees; window, smoke, door for houses</li>
+</ul>
+</li>
+<li>The dataset contains only legally compliant image data for object recognition (non-medical); it excludes any medical data involving psychological interpretation</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-9">
+          <h2><span class="nb-day">Day 9</span> <span class="nb-date">Fri 6/20/25</span></h2>
+<ul>
+<li>Identified three challenges for detecting objects in HTP drawings
+<ul>
+<li><strong>Grayscale input:</strong> pencil sketches have no color, so the model must rely on edges, shape and texture</li>
+<li><strong>High domain variance:</strong> drawings vary widely with age, motor skill, culture and emotional expression, which makes them visually inconsistent</li>
+<li><strong>Fine-grained parts:</strong> windows, doors and smoke trails are often abstract, small and incomplete, so they are hard to localize and classify</li>
+</ul>
+</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-10">
+          <h2><span class="nb-day">Day 10</span> <span class="nb-date">Fri 6/27/25</span></h2>
+<ul>
+<li>Plan to address these challenges
+<ul>
+<li>(1) Curriculum learning: organize training from simple to complex tasks</li>
+<li>(2) Continual learning with EWC, so earlier skills aren’t forgotten</li>
+<li>(3) Evaluate empirically to show gradual knowledge accumulation without forgetting</li>
+</ul>
+</li>
+<li>Curriculum stages (see Day 12 diagram)
+<ul>
+<li>Stage 1: big objects (easy samples)</li>
+<li>Stage 2: middle-size objects</li>
+<li>Stage 3: small objects (complex samples)</li>
+<li>Parameters are updated stage by stage, with EWC protecting what was learned before</li>
+</ul>
+</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-11">
+          <h2><span class="nb-day">Day 11</span> <span class="nb-date">Sat 6/28/25</span></h2>
+<ul>
+<li>Surveyed previous research approaches</li>
+<li>Key references (from the poster)
+<ul>
+<li>Blain et al. (1981): an objectively scorable House-Tree-Person, an early attempt to make HTP scoring less subjective</li>
+<li>Ouaknine (2018): review of deep learning algorithms for object detection</li>
+<li>Thuan (2021): evolution of the YOLO family of detectors, up to YOLOv5</li>
+<li>Kutalev &amp; Lapina (2021): stabilizing EWC in practical ML tasks</li>
+</ul>
+</li>
+<li>Where this project fits: it combines curriculum learning with EWC for coarse-to-fine detection of HTP drawing features</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-12">
+          <h2><span class="nb-day">Day 12</span> <span class="nb-date">Tue 7/1/25</span></h2>
+<ul>
+<li>Developed the system overview and drafted the method section</li>
+</ul><div class="nb-figs">
+<figure class="nb-fig-wide">
+<a href="/assets/img/research/continual-learning-htp/logbook/pipeline.png" target="_blank" rel="noopener"><img src="/assets/img/research/continual-learning-htp/logbook/pipeline.png" alt="Detection pipeline: an HTP drawing passes through a DarkNet-based feature extractor and a regression head that predicts bounding boxes on a grid, producing the detection result." loading="lazy"></a>
+<figcaption>Detection pipeline: an HTP drawing passes through a DarkNet-based feature extractor and a regression head that predicts bounding boxes on a grid, producing the detection result.</figcaption>
+</figure>
+</div><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/continual-learning-htp/logbook/curriculum.png" target="_blank" rel="noopener"><img src="/assets/img/research/continual-learning-htp/logbook/curriculum.png" alt="Proposed curriculum learning: training moves from big objects (easy samples) to middle-size and then small objects (complex samples), updating parameters at each stage." loading="lazy"></a>
+<figcaption>Proposed curriculum learning: training moves from big objects (easy samples) to middle-size and then small objects (complex samples), updating parameters at each stage.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="day-13">
+          <h2><span class="nb-day">Day 13</span> <span class="nb-date">Fri 7/4/25</span></h2>
+<ul>
+<li>Formulated and refined the loss function equations</li>
+</ul><div class="nb-eqs">
+<figure class="nb-eq">
+<img src="/assets/img/research/continual-learning-htp/logbook/eq-total.png" alt="L_k = L_reg + L_con + L_cls" style="width:280px" loading="lazy">
+<figcaption><strong>Eq. 1.</strong> Total loss L<sub>k</sub> for task k: the sum of regression, confidence and classification losses.</figcaption>
+</figure>
+<figure class="nb-eq">
+<img src="/assets/img/research/continual-learning-htp/logbook/eq-reg.png" alt="Regression loss equation" style="width:512px" loading="lazy">
+<figcaption><strong>Eq. 2.</strong> Regression loss L<sub>reg</sub>: how far the predicted box position and size are from the ground truth. The indicator is 1 only when an object is in grid cell i, so loss is counted only where needed. Square roots on width and height reduce the influence of large box errors, which matters for tall objects like trees.</figcaption>
+</figure>
+<figure class="nb-eq">
+<img src="/assets/img/research/continual-learning-htp/logbook/eq-con.png" alt="Confidence loss equation" style="width:545px" loading="lazy">
+<figcaption><strong>Eq. 3.</strong> Confidence loss L<sub>con</sub>: whether the model correctly predicts that an object exists in a cell. C is the ground truth (1 for object, 0 for background) and Ĉ the predicted confidence. The second term, scaled by α, penalizes false positives where no object is present.</figcaption>
+</figure>
+<figure class="nb-eq">
+<img src="/assets/img/research/continual-learning-htp/logbook/eq-cls.png" alt="Classification loss equation" style="width:377px" loading="lazy">
+<figcaption><strong>Eq. 4.</strong> Classification loss L<sub>cls</sub>: how accurately the model classifies the type of object in each cell.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="day-14">
+          <h2><span class="nb-day">Day 14</span> <span class="nb-date">Sun 7/13/25</span></h2>
+<ul>
+<li>Wrote the EWC equation for continual learning</li>
+</ul><div class="nb-eqs">
+<figure class="nb-eq">
+<img src="/assets/img/research/continual-learning-htp/logbook/eq-ewc.png" alt="L = L_F + beta/2 * sum_i (theta_i - theta_i^C)^2" style="width:279px" loading="lazy">
+<figcaption><strong>Eq. 5.</strong> Elastic Weight Consolidation. L<sub>F</sub> is the loss for the harder, finer future task; θ<sub>i</sub> is the current parameter and θ<sub>i</sub><sup>C</sup> its value after the coarse task; β is the regularization term that penalizes forgetting important parameters.</figcaption>
+</figure>
+</div>
+<ul>
+<li>Effect: EWC constrains the parameters learned during the coarse detection task L<sub>C</sub> while the model trains on the more complex future task L<sub>F</sub>, so it keeps coarse-level knowledge while learning finer symbolic elements</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-15">
+          <h2><span class="nb-day">Day 15</span> <span class="nb-date">Wed 7/16/25</span></h2>
+<ul>
+<li>Worked on the model</li>
+<li>Final training settings (from the poster)
+<ul>
+<li>Batch size 512</li>
+<li>Epochs 80</li>
+<li>Learning rate 0.0001</li>
+<li>Optimizer: Adam</li>
+</ul>
+</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-16">
+          <h2><span class="nb-day">Day 16</span> <span class="nb-date">Sun 7/20/25</span></h2>
+<ul>
+<li>Worked on the model</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-17">
+          <h2><span class="nb-day">Day 17</span> <span class="nb-date">Wed 7/23/25</span></h2>
+<ul>
+<li>Worked on the model</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-18">
+          <h2><span class="nb-day">Day 18</span> <span class="nb-date">Sat 7/26/25</span></h2>
+<ul>
+<li>Organized and cleaned the dataset for analysis</li>
+<li>Classes used in evaluation
+<ul>
+<li><strong>House:</strong> house, fence, window, door, chimney, smoke</li>
+<li><strong>Tree:</strong> tree, crown, fruit, trunk, root</li>
+<li><strong>Person:</strong> person, eye, leg, arm, head, upper body</li>
+</ul>
+</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-19">
+          <h2><span class="nb-day">Day 19</span> <span class="nb-date">Sat 8/2/25</span></h2>
+<ul>
+<li>Defined and refined evaluation metrics
+<ul>
+<li><strong>Classification accuracy:</strong> per-class confusion matrices for house, tree and person parts</li>
+<li><strong>Localization:</strong> Intersection over Union (IoU), the overlap between predicted and ground-truth boxes divided by their combined area</li>
+<li><strong>Qualitative:</strong> visual inspection of predicted boxes on test drawings</li>
+</ul>
+</li>
+<li>Data split: 80% sampled at random from 2 datasets for training, 20% held out for testing</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-20">
+          <h2><span class="nb-day">Day 20</span> <span class="nb-date">Thu 8/7/25</span></h2>
+<ul>
+<li>Trained the model using representation learning (8-hour session)</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-21">
+          <h2><span class="nb-day">Day 21</span> <span class="nb-date">Thu 8/14/25</span></h2>
+<ul>
+<li>Trained the model using transfer learning (1–2 hour session)</li>
+<li>Compared with the 8-hour representation-learning session on Day 20</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-22">
+          <h2><span class="nb-day">Day 22</span> <span class="nb-date">Fri 8/22/25</span></h2>
+<ul>
+<li>Experiment 1: confusion matrices (classification accuracy)</li>
+<li>Results
+<ul>
+<li><strong>House:</strong> 94.82% average accuracy; chimney (92.23%) and smoke (90.07%) were lowest</li>
+<li><strong>Tree:</strong> 98.67% average accuracy, the highest; fine-grained parts like crown (98.12%) and trunk (98.73%) were accurate, fruit (96.97%) lowest</li>
+<li><strong>Person:</strong> 98.34% average accuracy, strong across all components (97.64–98.94%)</li>
+</ul>
+</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/continual-learning-htp/logbook/cm-house.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/continual-learning-htp/logbook/cm-house.jpg" alt="Confusion matrix for House (accuracy 0.9482)." loading="lazy"></a>
+<figcaption>Confusion matrix for House (accuracy 0.9482).</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/continual-learning-htp/logbook/cm-tree.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/continual-learning-htp/logbook/cm-tree.jpg" alt="Confusion matrix for Tree (accuracy 0.9867)." loading="lazy"></a>
+<figcaption>Confusion matrix for Tree (accuracy 0.9867).</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/continual-learning-htp/logbook/cm-person.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/continual-learning-htp/logbook/cm-person.jpg" alt="Confusion matrix for Person (accuracy 0.9834)." loading="lazy"></a>
+<figcaption>Confusion matrix for Person (accuracy 0.9834).</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="day-23">
+          <h2><span class="nb-day">Day 23</span> <span class="nb-date">Wed 8/27/25</span></h2>
+<ul>
+<li>Experiment 2: Intersection over Union (IoU), comparing a baseline detector with our model</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/continual-learning-htp/logbook/det-tree.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/continual-learning-htp/logbook/det-tree.jpg" alt="Detection example, Tree: crown, fruit, pole (trunk) and root boxes." loading="lazy"></a>
+<figcaption>Detection example, Tree: crown, fruit, pole (trunk) and root boxes.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/continual-learning-htp/logbook/det-house.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/continual-learning-htp/logbook/det-house.jpg" alt="Detection example, House: roof, window, door, chimney and smoke boxes." loading="lazy"></a>
+<figcaption>Detection example, House: roof, window, door, chimney and smoke boxes.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/continual-learning-htp/logbook/det-person.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/continual-learning-htp/logbook/det-person.jpg" alt="Detection example, Person: head, arms, body and legs." loading="lazy"></a>
+<figcaption>Detection example, Person: head, arms, body and legs.</figcaption>
+</figure>
+</div><div class="nb-tables">
+<table class="nb-table">
+<caption>House</caption>
+<thead><tr><th>Category</th><th>Baseline</th><th>Our model</th><th>Change</th></tr></thead>
+<tbody>
+<tr><td>House</td><td>0.8525</td><td>0.8686</td><td class="nb-up">+0.0161</td></tr>
+<tr><td>Fence</td><td>0.8006</td><td>0.8458</td><td class="nb-up">+0.0452</td></tr>
+<tr><td>Window</td><td>0.8135</td><td>0.8345</td><td class="nb-up">+0.0210</td></tr>
+<tr><td>Door</td><td>0.7822</td><td>0.8558</td><td class="nb-up">+0.0736</td></tr>
+<tr><td>Chimney</td><td>0.6635</td><td>0.7957</td><td class="nb-up">+0.1322</td></tr>
+<tr><td>Smoke</td><td>0.5277</td><td>0.7844</td><td class="nb-up">+0.2567</td></tr>
+<tr class="nb-avg"><td>Average</td><td>0.74</td><td>0.83</td><td class="nb-up">+0.09</td></tr>
+</tbody>
+</table>
+<table class="nb-table">
+<caption>Tree</caption>
+<thead><tr><th>Category</th><th>Baseline</th><th>Our model</th><th>Change</th></tr></thead>
+<tbody>
+<tr><td>Tree</td><td>0.8509</td><td>0.8865</td><td class="nb-up">+0.0356</td></tr>
+<tr><td>Crown</td><td>0.8172</td><td>0.8696</td><td class="nb-up">+0.0524</td></tr>
+<tr><td>Fruit</td><td>0.5222</td><td>0.8074</td><td class="nb-up">+0.2852</td></tr>
+<tr><td>Trunk</td><td>0.7798</td><td>0.8397</td><td class="nb-up">+0.0599</td></tr>
+<tr><td>Root</td><td>0.7593</td><td>0.8214</td><td class="nb-up">+0.0621</td></tr>
+<tr class="nb-avg"><td>Average</td><td>0.75</td><td>0.84</td><td class="nb-up">+0.10</td></tr>
+</tbody>
+</table>
+<table class="nb-table">
+<caption>Person</caption>
+<thead><tr><th>Category</th><th>Baseline</th><th>Our model</th><th>Change</th></tr></thead>
+<tbody>
+<tr><td>Person</td><td>0.8278</td><td>0.8705</td><td class="nb-up">+0.0427</td></tr>
+<tr><td>Eye</td><td>0.4648</td><td>0.7654</td><td class="nb-up">+0.3006</td></tr>
+<tr><td>Leg</td><td>0.6078</td><td>0.7957</td><td class="nb-up">+0.1879</td></tr>
+<tr><td>Arm</td><td>0.6714</td><td>0.8181</td><td class="nb-up">+0.1467</td></tr>
+<tr><td>Head</td><td>0.8241</td><td>0.8552</td><td class="nb-up">+0.0311</td></tr>
+<tr><td>UpperBody</td><td>0.7705</td><td>0.8468</td><td class="nb-up">+0.0763</td></tr>
+<tr class="nb-avg"><td>Average</td><td>0.69</td><td>0.83</td><td class="nb-up">+0.13</td></tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Our model improved IoU for every category, with average IoU of 0.83 (house), 0.84 (tree) and 0.83 (person)</li>
+<li>Largest gains on small, fine-grained parts: eye (+0.30), fruit (+0.29), smoke (+0.26), leg (+0.19)</li>
+<li>Remaining outliers: unique smoke shapes, longer leaves and textures, and eyes and legs</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-24">
+          <h2><span class="nb-day">Day 24</span> <span class="nb-date">Sat 8/30/25</span></h2>
+<ul>
+<li>Experiment 3: ablation study, comparing IoU for the baseline and our model, category by category</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/continual-learning-htp/logbook/iou-house.png" target="_blank" rel="noopener"><img src="/assets/img/research/continual-learning-htp/logbook/iou-house.png" alt="IoU comparison for House: baseline (blue) vs model (red)." loading="lazy"></a>
+<figcaption>IoU comparison for House: baseline (blue) vs model (red).</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/continual-learning-htp/logbook/iou-tree.png" target="_blank" rel="noopener"><img src="/assets/img/research/continual-learning-htp/logbook/iou-tree.png" alt="IoU comparison for Tree: baseline (blue) vs model (red)." loading="lazy"></a>
+<figcaption>IoU comparison for Tree: baseline (blue) vs model (red).</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/continual-learning-htp/logbook/iou-person.png" target="_blank" rel="noopener"><img src="/assets/img/research/continual-learning-htp/logbook/iou-person.png" alt="IoU comparison for Person: baseline (blue) vs model (red)." loading="lazy"></a>
+<figcaption>IoU comparison for Person: baseline (blue) vs model (red).</figcaption>
+</figure>
+</div><ul>
+<li>Our model is higher in every category; the gap is widest for small parts such as smoke, fruit and eyes, where the baseline struggled most</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-25">
+          <h2><span class="nb-day">Day 25</span> <span class="nb-date">Tue 9/2/25</span></h2>
+<ul>
+<li>Experiment 4: statistical analysis, testing whether the model’s output can contribute meaningfully to psychological screening</li>
+<li>Method
+<ul>
+<li>Given a child’s age and gender, the model extracts bounding-box statistics from their drawing (e.g., leg height, trunk “pole”, house and head proportions)</li>
+<li>Each value is compared with the distribution built from a larger set of same-age, same-gender children</li>
+<li>The black bar marks where the sample drawing falls relative to its peers</li>
+</ul>
+</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/continual-learning-htp/logbook/hist-leg-height.png" target="_blank" rel="noopener"><img src="/assets/img/research/continual-learning-htp/logbook/hist-leg-height.png" alt="Leg height proportion: distribution for same-age, same-gender children; black bar = sample drawing." loading="lazy"></a>
+<figcaption>Leg height proportion: distribution for same-age, same-gender children; black bar = sample drawing.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/continual-learning-htp/logbook/hist-pole.png" target="_blank" rel="noopener"><img src="/assets/img/research/continual-learning-htp/logbook/hist-pole.png" alt="Tree trunk (“pole”) proportion." loading="lazy"></a>
+<figcaption>Tree trunk (“pole”) proportion.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/continual-learning-htp/logbook/hist-house.png" target="_blank" rel="noopener"><img src="/assets/img/research/continual-learning-htp/logbook/hist-house.png" alt="House proportion." loading="lazy"></a>
+<figcaption>House proportion.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/continual-learning-htp/logbook/hist-head.png" target="_blank" rel="noopener"><img src="/assets/img/research/continual-learning-htp/logbook/hist-head.png" alt="Head proportion." loading="lazy"></a>
+<figcaption>Head proportion.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="day-26">
+          <h2><span class="nb-day">Day 26</span> <span class="nb-date">Fri 9/5/25</span></h2>
+<ul>
+<li>Built a demonstration website: <a class="text-link" href="https://htp-sunwoo.onrender.com/" target="_blank" rel="noopener">htp-sunwoo.onrender.com ↗</a></li>
+<li>How it works
+<ul>
+<li>Enter the child’s age and sex and choose an HTP drawing</li>
+<li>The trained model detects the house, tree, person and their parts</li>
+<li>Their proportions are shown against the same-age, same-gender distributions from Day 25</li>
+</ul>
+</li>
+<li>Built only to demonstrate practical deployment of the trained detection model, not as a diagnostic tool</li>
+</ul>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <span>© 2026 Ria Sunwoo An</span>
+  </footer>
+</body>
+</html>

@@ -849,6 +849,69 @@ nav.nb-jump {
   border-radius: 10px;
 }
 
+.nb-materials { margin: 0 0 8px; font-size: 0.95rem; color: var(--muted); }
+.nb-materials strong { color: var(--text); font-weight: 600; }
+.nb-entry > p { margin: 12px 0; line-height: 1.7; }
+
+.nb-callout {
+  margin: 16px 0;
+  padding: 16px 20px;
+  border-left: 3px solid #ffc102;
+  background: color-mix(in srgb, #ffc102 10%, var(--bg));
+  border-radius: 0 8px 8px 0;
+}
+.nb-callout p { margin: 0 0 8px; line-height: 1.7; }
+.nb-callout p:last-child { margin-bottom: 0; }
+
+.nb-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 16px 0;
+}
+.nb-card {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+.nb-card h3 { margin: 0 0 8px; font-size: 1rem; }
+.nb-card > ul { margin: 0; padding-left: 0; list-style: none; }
+.nb-card > ul > li { margin-bottom: 8px; }
+.nb-card ul ul { margin: 2px 0 0; padding-left: 16px; color: var(--muted); }
+
+.nb-eqs { display: flex; flex-direction: column; gap: 16px; margin: 16px 0; }
+.nb-figs figure.nb-fig-wide { flex-basis: 100%; }
+.nb-figs figure.nb-fig-wide img { border: 1px solid var(--line); }
+.nb-eq { margin: 0; }
+.nb-eq img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 10px 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.nb-eq figcaption { margin-top: 6px; font-size: 0.85rem; line-height: 1.55; color: var(--muted); }
+
+.nb-tables {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 16px 0;
+}
+.nb-tables .nb-table { margin: 0; width: 100%; font-size: 0.85rem; }
+.nb-tables .nb-table th, .nb-tables .nb-table td { padding: 5px 6px; }
+.nb-table caption { text-align: left; font-weight: 600; padding-bottom: 6px; }
+.nb-up { color: #2e8b57; }
+.nb-avg td { font-weight: 600; }
+
+@media (max-width: 760px) {
+  .nb-cards, .nb-tables { grid-template-columns: 1fr; }
+}
+
 .project-poster { margin: 32px 0 0; }
 
 .project-poster img {
