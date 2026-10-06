@@ -65,7 +65,18 @@
     });
   }
   chips.concat([award]).forEach(function (c) {
-    c.onclick = function () { c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); apply(); };
+    c.onclick = function () {
+      var turningOn = c.getAttribute('aria-pressed') !== 'true';
+      c.setAttribute('aria-pressed', turningOn ? 'true' : 'false');
+      apply();
+      // jump to the newest piece that is now lit (the road runs newest → oldest)
+      var first = road.querySelector('.wp-item.lit');
+      if (turningOn && first) {
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var y = first.getBoundingClientRect().top + window.pageYOffset - 24;
+        window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
+      }
+    };
   });
   all.onclick = function () { chips.concat([award]).forEach(function (c) { c.setAttribute('aria-pressed', 'false'); }); apply(); };
 
