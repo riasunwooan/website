@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Finding Optimal Path for the Elderly Considering the Costs Based on Skyline — Ria Sunwoo An</title>
-  <meta name="description" content="Developed an ML-based navigation system optimizing for safety and user preferences. Awarded at KSEF.">
+  <meta name="description" content="A safety-first navigation system for the elderly using skyline queries. Bronze Medal at KSEF International; Top 10 Finalist, NFTE World Series of Innovation.">
   <link rel="canonical" href="https://riasunwooan.com/research/elderly-optimal-path/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css?v=33">
+  <link rel="stylesheet" href="/assets/style.css?v=34">
 </head>
 <body>
   <nav>
@@ -28,19 +28,83 @@
       <h1 class="page-title project-title">Finding Optimal Path for the Elderly Considering the Costs Based on Skyline</h1>
       <p class="project-meta">Mar 2022 – Dec 2022 · North London Collegiate School Jeju</p>
       <p class="project-mentor"><span>Mentor</span> Mr. Kiran Mandhare, Computer Science Faculty, North London Collegiate School Jeju</p>
+      <div class="btn-row">
+        <a class="btn btn-notebook" href="/assets/papers/grandmapath-business-plan.pdf" target="_blank" rel="noopener"><svg class="btn-icon" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><path d="M6 2h10l5 5v17H6z" fill="#eef0f4" stroke="#111" stroke-width="1.5" stroke-linejoin="round"/><path d="M16 2v5h5" fill="#ffc102" stroke="#111" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.5 12h8M9.5 15.5h8M9.5 19h5" stroke="#111" stroke-width="1.4" stroke-linecap="round"/></svg><span>Future Business Plan</span> <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-notebook" href="/assets/papers/elderly-optimal-path.pdf" target="_blank" rel="noopener"><svg class="btn-icon" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><path d="M6 2h10l5 5v17H6z" fill="#eef0f4" stroke="#111" stroke-width="1.5" stroke-linejoin="round"/><path d="M16 2v5h5" fill="#ffc102" stroke="#111" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.5 12h8M9.5 15.5h8M9.5 19h5" stroke="#111" stroke-width="1.4" stroke-linecap="round"/></svg><span>Paper PDF</span> <span aria-hidden="true">↗</span></a>
+      </div>
 
+      <figure class="project-poster project-logo">
+        <a href="/assets/img/research/elderly-optimal-path/grandmapath-logo.png" target="_blank" rel="noopener"><img src="/assets/img/research/elderly-optimal-path/grandmapath-logo.png" alt="GrandmaPath logo: The safest road for grandma &amp; grandpa"></a>
+        <figcaption>GrandmaPath, the app concept from my future business plan · “The safest road for grandma &amp; grandpa”</figcaption>
+      </figure>
       <!--
         Add more about this project here. Ideas: the question you asked, what you did, what you found.
         Images: <figure class="project-figure"><img src="/assets/img/research/elderly-optimal-path/figure1.jpg" alt="Describe the image"><figcaption>Caption</figcaption></figure>
       -->
+      <section class="project-section abstract">
+        <h2>Abstract</h2>
+        <div class="abstract-part">
+          <h3>Background</h3>
+          <div>
+            <p>In modern society, navigation systems enable human beings to find the optimal route quickly. Although it has been reported that Korea will be classified as a “super-aged” society by 2025 and it is the country with the highest elderly pedestrian death rate, there is no proper navigation system suited for the elderly. While the majority of navigation systems have decreasing time as their priority, the important thing for seniors is safety.</p>
+            <div class="abstract-figs">
+              <figure class="half">
+                <a href="/assets/img/research/elderly-optimal-path/fig-elderly-deaths.png" target="_blank" rel="noopener"><img src="/assets/img/research/elderly-optimal-path/fig-elderly-deaths.png" alt="Share of elderly in pedestrian deaths, 2012–2020" loading="lazy"></a>
+                <figcaption><b>Fig. 1.</b> People aged 65+ made up 57% of pedestrian deaths in South Korea in 2020.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="abstract-part">
+          <h3>Methods</h3>
+          <div>
+            <p>In this research, I studied the criteria and the factors that the navigation system should consider for the elderly when finding the safest path and defining score functions based on it. The brute force and greedy algorithms are introduced as solutions for this newly defined score function. By adopting the Skyline Query, the performance and utility of the algorithm are increased.</p>
+          </div>
+        </div>
+        <div class="abstract-part">
+          <h3>Results</h3>
+          <div>
+            <p>The efficiency of the proposed algorithm is proven by the evaluation conducted on the synthetic dataset compared to the other algorithms implementing the system. Varying several parameters, the proposed system in this paper is proven to be proper to adopt in the real world.</p>
+            <div class="abstract-figs">
+              <figure class="half">
+                <a href="/assets/img/research/elderly-optimal-path/fig-accuracy.png" target="_blank" rel="noopener"><img src="/assets/img/research/elderly-optimal-path/fig-accuracy.png" alt="Accuracy of brute force, greedy and skyline" loading="lazy"></a>
+                <figcaption><b>Fig. 2.</b> Accuracy: brute force is always correct, greedy often misses the optimal path, and skyline is almost as accurate as brute force.</figcaption>
+              </figure>
+              <figure class="half">
+                <a href="/assets/img/research/elderly-optimal-path/fig-time-skyline.png" target="_blank" rel="noopener"><img src="/assets/img/research/elderly-optimal-path/fig-time-skyline.png" alt="Time: top-10 brute force vs skyline" loading="lazy"></a>
+                <figcaption><b>Fig. 3.</b> Running time (log scale) as the number of nodes grows: the skyline method stays far faster than brute force.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="abstract-part">
+          <h3>Conclusion</h3>
+          <div>
+            <p>The paper suggests two platform systems as future works based on the pattern recognition and CCH algorithm in data-collecting for more optimal path recommendation.</p>
+          </div>
+        </div>
+      </section>
       <section class="project-section">
-        <h2>Overview</h2>
-        <p>Developed an ML-based navigation system optimizing for safety and user preferences.</p>
+        <h2>Presentation</h2>
+        <div class="deck" data-count="13" data-base="/assets/img/research/elderly-optimal-path/slides/slide-" tabindex="0" aria-roledescription="carousel" aria-label="Presentation slides">
+          <div class="deck-stage">
+            <img class="deck-img" src="/assets/img/research/elderly-optimal-path/slides/slide-01.jpg" alt="Slide 1 of 13" width="1600" height="900">
+            <button class="deck-nav deck-prev" type="button" aria-label="Previous slide">‹</button>
+            <button class="deck-nav deck-next" type="button" aria-label="Next slide">›</button>
+          </div>
+          <div class="deck-bar">
+            <span class="deck-count" aria-live="polite">1 / 13</span>
+            <div class="deck-dots" role="tablist"><button type="button" class="deck-dot" aria-label="Slide 1"></button><button type="button" class="deck-dot" aria-label="Slide 2"></button><button type="button" class="deck-dot" aria-label="Slide 3"></button><button type="button" class="deck-dot" aria-label="Slide 4"></button><button type="button" class="deck-dot" aria-label="Slide 5"></button><button type="button" class="deck-dot" aria-label="Slide 6"></button><button type="button" class="deck-dot" aria-label="Slide 7"></button><button type="button" class="deck-dot" aria-label="Slide 8"></button><button type="button" class="deck-dot" aria-label="Slide 9"></button><button type="button" class="deck-dot" aria-label="Slide 10"></button><button type="button" class="deck-dot" aria-label="Slide 11"></button><button type="button" class="deck-dot" aria-label="Slide 12"></button><button type="button" class="deck-dot" aria-label="Slide 13"></button></div>
+            <button class="deck-full" type="button" aria-label="Full screen">⛶ Full screen</button>
+          </div>
+        </div>
+        <script src="/assets/deck.js" defer></script>
       </section>
       <section class="project-section">
         <h2>Highlights</h2>
         <ul>
-          <li>Awarded at KSEF</li>
+          <li>Bronze Medal, Korean Science &amp; Engineering Fair International (KSEF) 2022–23, Jan 2023</li>
+          <li>Top 10 Finalist, MetLife Foundation Good Health and Wellbeing Challenge, NFTE World Series of Innovation (Network for Teaching Entrepreneurship) 2022–23, Oct 2022</li>
         </ul>
       </section>
 

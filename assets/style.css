@@ -1013,3 +1013,75 @@ nav.nb-jump {
 @media (max-width: 600px) {
   .abstract-part { grid-template-columns: 1fr; gap: 8px; }
 }
+
+/* ---------- Slide viewer ---------- */
+
+.project-logo img { border: none; border-radius: 12px; }
+.project-logo { max-width: 640px; margin-left: auto; margin-right: auto; }
+
+.deck { outline: none; }
+.deck-stage {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+.deck-img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; }
+.deck-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.deck-nav:hover, .deck-nav:focus-visible { opacity: 1; }
+.deck-prev { left: 10px; }
+.deck-next { right: 10px; }
+.deck-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.deck-count { min-width: 52px; font-variant-numeric: tabular-nums; }
+.deck-dots { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; justify-content: center; }
+.deck-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--line);
+  cursor: pointer;
+}
+.deck-dot[aria-current="true"] { background: #ffc102; }
+.deck-full {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: none;
+  color: var(--text);
+  padding: 4px 12px;
+  font: inherit;
+  cursor: pointer;
+}
+.deck:fullscreen { background: #000; display: flex; flex-direction: column; justify-content: center; padding: 16px; }
+.deck:fullscreen .deck-stage { border: none; border-radius: 0; }
+.deck:fullscreen .deck-img { max-height: calc(100vh - 80px); }
+.deck:fullscreen .deck-bar { color: #ccc; }
+.deck:fullscreen .deck-full { color: #fff; }
+@media (max-width: 600px) {
+  .deck-nav { width: 32px; height: 32px; font-size: 1.3rem; }
+  .deck-dots { display: none; }
+  .deck-bar { justify-content: space-between; }
+}
