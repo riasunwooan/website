@@ -4,6 +4,8 @@
   --muted: #6b6b6b;
   --line: #e2e2e2;
   --accent: #1a1a1a;
+  --page-max: 1440px;
+  --page-pad: clamp(16px, 5vw, 72px);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,10 +42,10 @@ nav {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px 24px;
-  max-width: 1100px;
+  max-width: var(--page-max);
   width: 100%;
   margin: 0 auto;
-  padding: 24px;
+  padding: 24px var(--page-pad);
 }
 
 .logo {
@@ -78,9 +80,9 @@ nav {
 }
 
 .container {
-  max-width: 820px;
+  max-width: var(--page-max);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 var(--page-pad);
 }
 
 .page-title {
@@ -272,10 +274,10 @@ footer {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  max-width: 1100px;
+  max-width: var(--page-max);
   width: 100%;
   margin: 0 auto;
-  padding: 24px;
+  padding: 24px var(--page-pad);
   border-top: 1px solid var(--line);
   font-size: 0.875rem;
   color: var(--muted);
@@ -286,8 +288,7 @@ footer {
 @media (max-width: 600px) {
   :root { --tl-gutter: 5px; }
 
-  nav, footer { padding: 16px; }
-  .container { padding: 0 16px; }
+  nav, footer { padding-top: 16px; padding-bottom: 16px; }
   .page-title { font-size: 1.6rem; }
 
   .tl-era-label { margin-left: 28px; }
@@ -512,7 +513,6 @@ footer {
 
 a.card:hover .card-more { color: var(--text); }
 
-.project { max-width: 720px; }
 
 .back-link {
   display: block;
@@ -757,7 +757,7 @@ nav.nb-jump {
   margin: 16px 0 4px;
 }
 
-.nb-figs figure { margin: 0; flex: 0 1 calc(50% - 8px); }
+.nb-figs figure { margin: 0; flex: 0 1 400px; }
 
 @media (max-width: 560px) {
   .nb-figs figure { flex-basis: 100%; }
