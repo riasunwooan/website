@@ -601,6 +601,9 @@ a.card:hover .card-more { color: var(--text); }
   vertical-align: top;
 }
 .measures th { width: 220px; padding-right: 24px; font-weight: 600; }
+.measures thead th { font-size: 0.8rem; color: var(--muted); padding-top: 0; }
+.measures thead th:last-child { width: auto; }
+.abstract-part .measures { margin-top: 4px; }
 .measures td { color: var(--muted); line-height: 1.6; }
 
 .poster-venue { margin: 0 0 4px; font-size: 0.9rem; color: var(--muted); }
@@ -617,6 +620,7 @@ a.card:hover .card-more { color: var(--text); }
 
 @media (max-width: 600px) {
   .keypoints > div { grid-template-columns: 1fr; gap: 4px; }
+  .measures thead { display: none; }
   .measures th { width: auto; display: block; padding-bottom: 0; border-bottom: none; }
   .measures td { display: block; padding-top: 2px; }
 }
@@ -696,6 +700,7 @@ a.card:hover .card-more { color: var(--text); }
 }
 
 .btn-notebook .btn-icon { flex: none; }
+.btn-notebook span { white-space: nowrap; }
 
 /* ---------- Lab notebook ---------- */
 
