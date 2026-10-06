@@ -1167,6 +1167,7 @@ nav.nb-jump {
 }
 .wp-title { margin: 8px 0 2px; font-size: 1.05rem; line-height: 1.35; }
 .wp-kind { margin: 0; font-size: 0.8rem; color: var(--muted); }
+.wp-note { margin: 8px 0 0; font-size: 0.8rem; color: var(--muted); }
 .wp-award { margin: 6px 0 0; font-size: 0.8rem; font-weight: 600; line-height: 1.45; }
 .wp-blurb {
   margin-top: 8px;
@@ -1226,3 +1227,24 @@ nav.nb-jump {
 .book-flip { margin-top: 36px; }
 .book-flip iframe { display: block; width: 100%; aspect-ratio: 4 / 3; border: 1px solid var(--line); border-radius: 10px; }
 @media (max-width: 760px) { .book-page { grid-template-columns: 1fr; } .book-cover { max-width: 320px; } }
+
+/* ---------- Photo gallery + lightbox ---------- */
+
+.lb-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin: 14px 0 0; padding: 0; list-style: none; }
+.lb-grid a { display: block; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--line); }
+.lb-grid img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; transition: transform 0.2s; }
+.lb-grid a:hover img { transform: scale(1.04); }
+.lb-grid .lb-wide { grid-column: span 2; }
+.lb-grid .lb-wide img { aspect-ratio: 3 / 2; }
+.lb-grid figcaption { padding: 6px 8px; font-size: 0.78rem; color: var(--muted); background: var(--bg); }
+.lb { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.88); }
+.lb[hidden] { display: none; }
+.lb figure { margin: 0; max-width: 92vw; text-align: center; }
+.lb img { display: block; max-width: 92vw; max-height: 84vh; margin: 0 auto; border-radius: 4px; }
+.lb figcaption { margin-top: 10px; color: #ddd; font-size: 0.85rem; }
+.lb-x, .lb-nav { position: absolute; border: none; background: rgba(255,255,255,0.14); color: #fff; cursor: pointer; border-radius: 50%; }
+.lb-x { top: 16px; right: 16px; width: 42px; height: 42px; font-size: 1.6rem; line-height: 1; }
+.lb-nav { top: 50%; transform: translateY(-50%); width: 46px; height: 46px; font-size: 1.8rem; line-height: 1; }
+.lb-prev { left: 14px; } .lb-next { right: 14px; }
+.process-intro { max-width: 760px; line-height: 1.7; }
+.lb-grid a { text-decoration: none; }
