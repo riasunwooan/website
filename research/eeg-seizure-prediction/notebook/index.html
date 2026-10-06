@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab Notebook — Epileptic Seizure Prediction using EEG — Ria Sunwoo An</title>
+  <meta name="description" content="Lab notebook for a deep semi-supervised domain generalization approach to epileptic seizure prediction using EEG.">
+  <link rel="canonical" href="https://riasunwooan.com/research/eeg-seizure-prediction/notebook/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css?v=33">
+</head>
+<body>
+  <nav>
+    <a class="logo" href="/">Ria Sunwoo An</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a aria-current="page" href="/research/">Research</a></li>
+      <li><a href="/art/">Art</a></li>
+      <li><a href="/writing/">Writing</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <article class="container project notebook">
+      <a class="back-link" href="/research/eeg-seizure-prediction/">← Back to project</a>
+      <p class="nb-kicker">Lab notebook</p>
+      <h1 class="page-title project-title">A Deep Semi-Supervised Domain Generalization Approach for Epileptic Seizure Prediction using Electroencephalography (EEG)</h1>
+      <p class="project-meta">2023 · Entries 1–6: deep learning study notes · Research notes · Stages 1–8: the project</p>
+      <p class="nb-materials">Deep learning notes were taken during the Coursera Deep Learning course: I took notes, asked my cousin about what I didn’t understand, and self-tested with summary questions.</p>
+
+      <nav class="nb-jump" aria-label="Jump to entry">
+        <span>Jump to entry</span>
+        <ul>
+          <li><a href="#entry-1">1</a></li>
+          <li><a href="#entry-2">2</a></li>
+          <li><a href="#entry-3">3</a></li>
+          <li><a href="#entry-4">4</a></li>
+          <li><a href="#entry-5">5</a></li>
+          <li><a href="#entry-6">6</a></li>
+          <li><a href="#research-1">R</a></li>
+          <li><a href="#stage-1">S1</a></li>
+          <li><a href="#stage-2">S2</a></li>
+          <li><a href="#stage-3">S3</a></li>
+          <li><a href="#stage-4">S4</a></li>
+          <li><a href="#stage-5">S5</a></li>
+          <li><a href="#stage-6">S6</a></li>
+          <li><a href="#stage-7">S7</a></li>
+          <li><a href="#stage-8">S8</a></li>
+        </ul>
+      </nav>
+
+      <div class="nb-entries">
+        <section class="nb-entry" id="entry-1">
+          <h2><span class="nb-day">Entry 1</span> <span class="nb-date">Fri 3/17/23 · Linear classifier</span></h2>
+<ul>
+<li>Started the Coursera deep learning course: took notes, asked my cousin about anything I didn’t understand, and self-tested with summary questions and quizzes</li>
+<li>Why image classification is hard
+<ul>
+<li><strong>Semantic gap:</strong> a computer sees an image only as a grid of numbers from 0 to 255</li>
+<li>Viewpoint variation, intraclass variation (white cat vs black cat), fine-grained categories (pomeranian vs maltese), background clutter, illumination changes, deformation (cat sitting vs jumping) and occlusion (cat under a blanket)</li>
+</ul>
+</li>
+<li>Linear classifier
+<ul>
+<li>Data-driven approach: collect images and labels → train → evaluate (datasets: MNIST, CIFAR-10, ImageNet)</li>
+<li>Flatten the image’s pixels into a column x, then score = f(x, W) = Wx + b, with one row of weights per class</li>
+</ul>
+</li>
+<li>Loss functions: how good is the classifier? (low loss = good)
+<ul>
+<li><strong>Multiclass SVM loss:</strong> worked example for three images gave losses 2.9, 0 and 12.9, so the dataset loss L = (2.9 + 0 + 12.9) / 3 = 5.27</li>
+<li><strong>Softmax:</strong> exponentiate the scores (so they’re positive without changing their order), then divide by their sum so they add to 1</li>
+<li><strong>Cross-entropy loss:</strong> L<sub>i</sub> = −log P(Y = y<sub>i</sub> | X = x<sub>i</sub>); it grows to infinity as the probability of the true class nears 0</li>
+</ul>
+</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/svm-loss.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/svm-loss.jpg" alt="Multiclass SVM loss on three example images." loading="lazy"></a>
+<figcaption>Multiclass SVM loss on three example images.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/softmax.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/softmax.jpg" alt="Softmax function." loading="lazy"></a>
+<figcaption>Softmax function.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/cross-entropy.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/cross-entropy.jpg" alt="Cross-entropy, intuitively." loading="lazy"></a>
+<figcaption>Cross-entropy, intuitively.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/classifier-pipeline.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/classifier-pipeline.jpg" alt="My worked example: flatten → weights and bias → scores → softmax → cross-entropy loss." loading="lazy"></a>
+<figcaption>My worked example: flatten → weights and bias → scores → softmax → cross-entropy loss.</figcaption>
+</figure>
+</div><ul>
+<li>Coding: loaded an image in Colab with OpenCV and changed blocks of pixels to see how an image is just an array</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="entry-2">
+          <h2><span class="nb-day">Entry 2</span> <span class="nb-date">Mon 3/20/23 · Optimization</span></h2>
+<ul>
+<li>Optimization: finding the weights and bias that make the loss as small as possible</li>
+<li>Analogy: a blind person trying to reach the lowest point of a valley by following the slope</li>
+<li>Gradient descent
+<ul>
+<li>1) Initialize the parameters, 2) compute the loss, 3) compute its gradient, 4) update: w<sub>t+1</sub> = w<sub>t</sub> − learning rate × dw, 5) repeat</li>
+<li>Hyperparameters chosen by the user: weight initialization, number of steps, learning rate (usually 1/1000 or 1/10000)</li>
+</ul>
+</li>
+<li>Problem: zero gradient
+<ul>
+<li>At a local minimum or saddle point the gradient is 0, so w = w − 0 never changes and training gets stuck</li>
+</ul>
+</li>
+<li>Fix: momentum
+<ul>
+<li>Idea of inertia (Newton’s first law): keep a running “velocity” v = ρ·v + dw and update w = w − v</li>
+<li>ρ adds “friction”, typically 0.9 or 0.99, so the update keeps moving even when the gradient is 0</li>
+</ul>
+</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/gd-step.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/gd-step.jpg" alt="One gradient descent step along the loss curve." loading="lazy"></a>
+<figcaption>One gradient descent step along the loss curve.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/local-min-saddle.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/local-min-saddle.jpg" alt="Local minimum and saddle point: where plain gradient descent gets stuck." loading="lazy"></a>
+<figcaption>Local minimum and saddle point: where plain gradient descent gets stuck.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/momentum.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/momentum.jpg" alt="Gradient descent with momentum." loading="lazy"></a>
+<figcaption>Gradient descent with momentum.</figcaption>
+</figure>
+</div><ul>
+<li>Coding: Python classes (a TV-remote example with power, volume and Netflix attributes)</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="entry-3">
+          <h2><span class="nb-day">Entry 3</span> <span class="nb-date">Mon 3/27/23 · Neural networks</span></h2>
+<ul>
+<li>From a linear classifier to a 2-layer neural network
+<ul>
+<li>f = W<sub>2</sub> · max(0, W<sub>1</sub>x + b<sub>1</sub>) + b<sub>2</sub>: one more weight and bias, with a hidden layer h in between</li>
+<li>Also called a fully-connected network or multi-layer perceptron</li>
+</ul>
+</li>
+<li>ReLU: Rectified Linear Unit, ReLU(z) = max(0, z)
+<ul>
+<li>An activation function: passes positive inputs and outputs 0 for negative ones</li>
+<li>Without activations, the whole network is just a linear function and can only learn linear patterns; ReLU adds non-linearity so it can learn complex patterns, and helps keep gradients from vanishing</li>
+</ul>
+</li>
+<li>Practice: counting learnable parameters
+<ul>
+<li>4×4 RGB images (48 features), hidden size 20, 4 classes</li>
+<li>Layer 1: 20 × 48 + 20 = 980; layer 2: 4 × 20 + 4 = 84; total = <strong>1,064</strong> parameters</li>
+</ul>
+</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/two-layer-nn.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/two-layer-nn.jpg" alt="2-layer neural network worked example." loading="lazy"></a>
+<figcaption>2-layer neural network worked example.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/deep-nn.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/deep-nn.jpg" alt="Deeper network: more layers, each with its own weights." loading="lazy"></a>
+<figcaption>Deeper network: more layers, each with its own weights.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/activations.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/activations.jpg" alt="Activation functions; ReLU is a good default." loading="lazy"></a>
+<figcaption>Activation functions; ReLU is a good default.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="entry-4">
+          <h2><span class="nb-day">Entry 4</span> <span class="nb-date">Mon 4/3/23 · NumPy</span></h2>
+<ul>
+<li>Coding: building NumPy arrays (zeros, ones, full, identity, random) and doing element-wise operations, sums, logs and matrix multiplication (@)</li>
+<li>Wrote my own linear_classifier(weight, bias, x) and softmax(score) functions with NumPy</li>
+<li>Self-quiz
+<ul>
+<li>2×2 RGB images, hidden size 10, 10 classes: layer 1 = 10 × 12 + 10 = 130, layer 2 = 10 × 10 + 10 = 110, total = <strong>240</strong>; W<sub>1</sub> is 10×12 and W<sub>2</sub> is 10×10</li>
+<li>Reviewed ReLU, optimization, gradient descent, the zero-gradient problem and softmax</li>
+</ul>
+</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="entry-5">
+          <h2><span class="nb-day">Entry 5</span> <span class="nb-date">Fri 4/7/23 · Training a network from scratch</span></h2>
+<ul>
+<li>Built and trained a 2-layer network on MNIST (handwritten digits) using only NumPy
+<ul>
+<li>Flattened each 28×28 image to 784 values and scaled pixels from 0–255 to 0–1; one-hot encoded the labels</li>
+<li>Initialized small random weights; forward pass with ReLU and softmax</li>
+<li>Cross-entropy loss and accuracy functions; wrote the gradients by hand (backpropagation) and updated W<sub>1</sub>, b<sub>1</sub>, W<sub>2</sub>, b<sub>2</sub> in mini-batches</li>
+</ul>
+</li>
+<li>Debugging
+<ul>
+<li>Loss went down steadily, but the accuracy plot stayed flat at 0</li>
+<li>Cause: <code>avg_acc+acc</code> instead of <code>avg_acc += acc</code>, so accuracy was never added up</li>
+<li>A later run’s log shows accuracy climbing past 97%</li>
+</ul>
+</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/mnist-loss.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/mnist-loss.jpg" alt="Training loss falling over 20 epochs." loading="lazy"></a>
+<figcaption>Training loss falling over 20 epochs.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/mnist-acc-bug.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/mnist-acc-bug.jpg" alt="Accuracy stuck at 0: the bug in the accuracy sum." loading="lazy"></a>
+<figcaption>Accuracy stuck at 0: the bug in the accuracy sum.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="entry-6">
+          <h2><span class="nb-day">Entry 6</span> <span class="nb-date">Fri 4/28/23 · Convolutional neural networks</span></h2>
+<ul>
+<li>Problem → solution
+<ul>
+<li>Fully-connected classifiers ignore the spatial structure of images → convolutional layers that operate on the image directly</li>
+</ul>
+</li>
+<li>Convolution
+<ul>
+<li>A small filter (e.g., 3×5×5 for a 3×32×32 RGB image; its depth must match) slides over the image; at each spot, multiply element-wise and sum to get one value</li>
+<li>Each filter produces an activation (feature) map; 6 filters → 6 maps of 28×28 = one convolutional layer</li>
+<li>To get scores, flatten the last activation map and add a linear layer</li>
+</ul>
+</li>
+<li>Feature maps shrink with each layer → padding
+<ul>
+<li>Output size = (W − K + 2P) / S + 1 (input W, filter K, padding P, stride S)</li>
+<li>Quiz: 224×224×3 input, 32 filters of 3×3, padding 1 → <strong>32 × 224 × 224</strong></li>
+</ul>
+</li>
+<li>Downsampling
+<ul>
+<li>Max pooling keeps the largest value (the most important feature); average pooling reduces the effect of noise and outliers</li>
+<li>Example: 224×224×64 → 112×112×64</li>
+</ul>
+</li>
+<li>Linear classifier vs neural network vs CNN
+<ul>
+<li>Linear classifier: 1 layer, linear patterns only</li>
+<li>Neural network: multiple layers with ReLU between weight matrices, global information (W @ x)</li>
+<li>CNN: multiple layers of filters and pooling, local information; built for images</li>
+</ul>
+</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/conv-layer.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/conv-layer.jpg" alt="A convolutional layer: 6 filters → 6 activation maps." loading="lazy"></a>
+<figcaption>A convolutional layer: 6 filters → 6 activation maps.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/stacking-conv.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/stacking-conv.jpg" alt="Stacking convolutions." loading="lazy"></a>
+<figcaption>Stacking convolutions.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/lenet5.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/lenet5.jpg" alt="Example: LeNet-5." loading="lazy"></a>
+<figcaption>Example: LeNet-5.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/max-pool-q.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/max-pool-q.jpg" alt="Quiz activation map for max pooling (answer: 14, 11 / 14, 9)." loading="lazy"></a>
+<figcaption>Quiz activation map for max pooling (answer: 14, 11 / 14, 9).</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="research-1">
+          <h2><span class="nb-day">Research notes</span> <span class="nb-date">Brainstorming the method</span></h2>
+<ul>
+<li>Previous methods
+<ul>
+<li>1D EEG recording → CNN feature extractor → feature map → linear layer → probability of seizure</li>
+<li>Problem 1: trained networks are biased to the specific datasets (and devices) they learned from, so they can’t be used in practice</li>
+<li>Problem 2: very sensitive to noise, which is why earlier work needed a wavelet transform</li>
+</ul>
+</li>
+<li>My idea
+<ul>
+<li>The features a CNN extracts from EEG are <strong>entangled</strong>: frequency, amplitude, noise, seizure-related and device-related information all mixed together</li>
+<li>Previous methods learn from all of it at once; I want to pull out <strong>only the seizure-related features</strong> (assuming such a latent code exists)</li>
+</ul>
+</li>
+<li>Step 1: representation learning
+<ul>
+<li>Goal: disentangle the seizure-related features</li>
+<li>Autoencoder: the encoder compresses the 1D signal into a latent code; the decoder reconstructs the signal to check that the features were extracted well</li>
+<li>L1 loss compares the original and reconstructed signal point by point</li>
+</ul>
+</li>
+<li>Step 2: transfer learning
+<ul>
+<li>Goal: an accurate seizure classifier</li>
+<li>1D signal → pre-trained encoder from step 1 → seizure-related features → neural network → probability of seizure vs normal</li>
+<li>Trained with cross-entropy loss</li>
+</ul>
+</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/sketch-overview.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/sketch-overview.jpg" alt="Sketch: previous methods and their two problems." loading="lazy"></a>
+<figcaption>Sketch: previous methods and their two problems.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/sketch-representation.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/sketch-representation.jpg" alt="Sketch: entangled features → representation learning → transfer learning." loading="lazy"></a>
+<figcaption>Sketch: entangled features → representation learning → transfer learning.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/sketch-autoencoder.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/sketch-autoencoder.jpg" alt="Sketch: autoencoder and L1 reconstruction loss." loading="lazy"></a>
+<figcaption>Sketch: autoencoder and L1 reconstruction loss.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/sketch-feature-swap.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/sketch-feature-swap.jpg" alt="Sketch: the feature swapping mechanism (noise, device and seizure features)." loading="lazy"></a>
+<figcaption>Sketch: the feature swapping mechanism (noise, device and seizure features).</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/sketch-transfer.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/sketch-transfer.jpg" alt="Sketch: step 2, transfer learning with the pre-trained encoder." loading="lazy"></a>
+<figcaption>Sketch: step 2, transfer learning with the pre-trained encoder.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/sketch-noise.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/sketch-noise.jpg" alt="Sketch: separating noise from the original signal." loading="lazy"></a>
+<figcaption>Sketch: separating noise from the original signal.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="stage-1">
+          <h2><span class="nb-day">Stage 1</span> <span class="nb-date">Background</span></h2>
+<ul>
+<li>Why seizure prediction
+<ul>
+<li>1 in 26 people in the US has epilepsy, 50 million worldwide, and the death rate with epilepsy as the underlying cause has doubled over the past decade</li>
+<li>1 in 3 patients have drug-resistant epilepsy, where medication can’t control seizures, so prediction is the best solution</li>
+<li>Motivation: meeting epilepsy patients while volunteering at a hospital, who couldn’t lead a normal life in constant fear of seizures</li>
+</ul>
+</li>
+<li>EEG
+<ul>
+<li>Electrodes on the scalp record the brain’s electrical activity; during a seizure, the EEG shows rapid spiking waves</li>
+</ul>
+</li>
+<li>Engineering goal
+<ul>
+<li>A seizure prediction model, using semi-supervised deep learning, that is (1) not biased to particular datasets or devices and (2) robust to noise such as blinking, coughing and movement</li>
+</ul>
+</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/fig4-eeg.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/fig4-eeg.jpg" alt="Normal vs seizure EEG signal (Espinosa, 2020)." loading="lazy"></a>
+<figcaption>Normal vs seizure EEG signal (Espinosa, 2020).</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="stage-2">
+          <h2><span class="nb-day">Stage 2</span> <span class="nb-date">Datasets</span></h2>
+<div class="nb-cards nb-cards-2">
+<div class="nb-card">
+<h3>NICU dataset</h3>
+<ul>
+<li>Neonatal EEG recordings with seizure annotations</li>
+<li>46,640 samples from 79 individuals</li>
+<li>17,940 seizure (positive), 28,700 normal (negative)</li>
+</ul>
+</div>
+<div class="nb-card">
+<h3>Epileptic Seizure Recognition dataset (UC Irvine)</h3>
+<ul>
+<li>11,500 samples from 500 individuals</li>
+<li>2,300 seizure (positive), 9,200 normal (negative)</li>
+</ul>
+</div>
+</div>
+<ul>
+<li>Two different sources, so a model trained on one and tested on the other shows whether it is biased to a dataset or device</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="stage-3">
+          <h2><span class="nb-day">Stage 3</span> <span class="nb-date">Representation learning: the feature swapping mechanism</span></h2>
+<ul>
+<li>The encoder splits each EEG signal’s features into four parts: z<sub>s</sub> (seizure), z<sub>d</sub> (device), z<sub>n</sub> (noise) and z<sub>c</sub> (common)</li>
+<li>Input: two EEG signals from the same seizure category but different devices, so their seizure-related features should be identical</li>
+<li>Swap only the seizure features: Z<sup>1</sup><sub>swap</sub> = {z<sup>2</sup><sub>s</sub>, z<sup>1</sup><sub>d</sub>, z<sup>1</sup><sub>n</sub>, z<sup>1</sup><sub>c</sub>} and Z<sup>2</sup><sub>swap</sub> = {z<sup>1</sup><sub>s</sub>, z<sup>2</sup><sub>d</sub>, z<sup>2</sup><sub>n</sub>, z<sup>2</sup><sub>c</sub>}</li>
+<li>The decoder rebuilds each signal from the swapped features; if z<sub>s</sub> really holds only seizure information, the rebuilt signal should match the original</li>
+<li>Loss: L<sub>seizure</sub> = Σ<sub>t</sub> |E<sub>t</sub> − Ê<sub>t</sub>|, the element-wise difference between the input and reconstructed signal over T samples</li>
+</ul><div class="nb-figs">
+<figure class="nb-fig-wide">
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/fig7-feature-swap.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/fig7-feature-swap.jpg" alt="Architecture of the feature swapping mechanism." loading="lazy"></a>
+<figcaption>Architecture of the feature swapping mechanism.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="stage-4">
+          <h2><span class="nb-day">Stage 4</span> <span class="nb-date">Transfer learning: the seizure classifier</span></h2>
+<ul>
+<li>The pre-trained encoder from Stage 3 extracts z<sub>s</sub>, the seizure-related features (ENC: E → Z)</li>
+<li>The Seizure Classifier (SCL), a neural network, turns z<sub>s</sub> into P<sub>seizure</sub>, the probability that a seizure will occur</li>
+<li>Softmax turns the scores into probabilities; cross-entropy loss L<sub>CE</sub> = −Σ y<sub>i</sub> log ŷ<sub>i</sub> is large when the prediction is far from the truth</li>
+</ul><div class="nb-figs">
+<figure class="nb-fig-wide">
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/fig8-transfer.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/fig8-transfer.jpg" alt="Architecture of the transfer learning phase." loading="lazy"></a>
+<figcaption>Architecture of the transfer learning phase.</figcaption>
+</figure>
+<figure class="nb-fig-wide">
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/fig6-architecture.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/fig6-architecture.jpg" alt="Overall architecture: EEG signal → encoder (phase 1) → seizure features → neural network (phase 2) → probability of a seizure." loading="lazy"></a>
+<figcaption>Overall architecture: EEG signal → encoder (phase 1) → seizure features → neural network (phase 2) → probability of a seizure.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="stage-5">
+          <h2><span class="nb-day">Stage 5</span> <span class="nb-date">Experiment 1: t-SNE feature map visualization</span></h2>
+<ul>
+<li>Goal: check that the encoder really extracts the right features</li>
+<li>Each person’s EEG data is plotted in its own color</li>
+<li>Original NICU data: the colors are tangled together; after disentanglement by the autoencoder, same-colored points form clear groups</li>
+<li>Shows the feature swapping mechanism works and that seizure-related features can be extracted</li>
+</ul><div class="nb-figs">
+<figure class="nb-fig-wide">
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/fig9-tsne.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/fig9-tsne.jpg" alt="t-SNE of NICU data: (a) original data, (b) after the features are disentangled." loading="lazy"></a>
+<figcaption>t-SNE of NICU data: (a) original data, (b) after the features are disentangled.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="stage-6">
+          <h2><span class="nb-day">Stage 6</span> <span class="nb-date">Experiment 2: within-dataset evaluation (≈5% improvement)</span></h2>
+<ul>
+<li>Data split into 5 folds: train on 4, test on 1</li>
+<li>Compared against VGG19, MobileNetV2, DenseNet121 and HRNet32 on accuracy, recall, precision and F1-score</li>
+<li>The proposed model reached <strong>92.70%</strong> accuracy, about 5% better than previous methods</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/fig10-within.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/fig10-within.jpg" alt="Within-dataset results on NICU: (a) accuracy comparison, (b) ROC curve." loading="lazy"></a>
+<figcaption>Within-dataset results on NICU: (a) accuracy comparison, (b) ROC curve.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="stage-7">
+          <h2><span class="nb-day">Stage 7</span> <span class="nb-date">Experiment 3: cross-dataset evaluation (≈20% improvement)</span></h2>
+<ul>
+<li>Train on 4 folds of one dataset, test on 1 fold of the <em>other</em> dataset, to test for bias to datasets and devices (overfitting)</li>
+<li>Previous models dropped sharply when tested on a new dataset; the proposed model held up much better</li>
+<li>Outperformed previous methods by <strong>19.35%</strong> in the cross-dataset evaluation</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/fig12-cross.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/fig12-cross.jpg" alt="Within vs cross-dataset accuracy (train: NICU, test: Epileptic Seizure Recognition)." loading="lazy"></a>
+<figcaption>Within vs cross-dataset accuracy (train: NICU, test: Epileptic Seizure Recognition).</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="stage-8">
+          <h2><span class="nb-day">Stage 8</span> <span class="nb-date">Application: wearable prototype</span></h2>
+<ul>
+<li>Goal: a device patients can wear in daily life that warns them before a seizure</li>
+<li>Prototype: a baseball cap with the OpenBCI “EEG Electrode Cap Bundle”</li>
+<li>Design
+<ul>
+<li><strong>Affordable (~$71):</strong> uses only the center electrodes (C3, C2, C4)</li>
+<li><strong>Lightweight and portable:</strong> still light with a wig or cap added</li>
+<li><strong>Fast:</strong> the model works on 1D seizure features rather than the full 2D EEG, so it can predict quickly</li>
+</ul>
+</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-seizure-prediction/notebook/fig14-prototype.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-seizure-prediction/notebook/fig14-prototype.jpg" alt="Seizure prediction device prototype: baseball cap + EEG." loading="lazy"></a>
+<figcaption>Seizure prediction device prototype: baseball cap + EEG.</figcaption>
+</figure>
+</div>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <span>© 2026 Ria Sunwoo An</span>
+  </footer>
+</body>
+</html>
