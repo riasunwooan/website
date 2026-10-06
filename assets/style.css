@@ -1194,13 +1194,13 @@ nav.nb-jump {
   background: var(--bg);
   line-height: 1.05;
 }
-.wp-num { font-size: 0.95rem; font-weight: 700; }
-.wp-date { font-size: 0.6rem; color: var(--muted); white-space: nowrap; }
+.wp-mon { font-size: 0.85rem; font-weight: 700; }
+.wp-yr { font-size: 0.7rem; color: var(--muted); }
 
 .wp-road.filtering .wp-item.dim { opacity: 0.18; filter: grayscale(1); }
 .wp-road.filtering .wp-item.lit .wp-card { box-shadow: 0 0 0 2px var(--c), 0 6px 18px rgba(0, 0, 0, 0.12); }
 .wp-road.filtering .wp-item.lit .wp-stop { background: var(--c); }
-.wp-road.filtering .wp-item.lit .wp-stop .wp-num, .wp-road.filtering .wp-item.lit .wp-stop .wp-date { color: #fff; }
+.wp-road.filtering .wp-item.lit .wp-stop .wp-mon, .wp-road.filtering .wp-item.lit .wp-stop .wp-yr { color: #fff; }
 
 @media (max-width: 760px) {
   .wp-list { grid-template-columns: 1fr; row-gap: 22px; padding: 0; }
