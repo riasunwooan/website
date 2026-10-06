@@ -1249,3 +1249,5 @@ nav.nb-jump {
 .lb-prev { left: 14px; } .lb-next { right: 14px; }
 .process-intro { max-width: 760px; line-height: 1.7; }
 .lb-grid a { text-decoration: none; }
+
+.intern-list { display: flex; flex-direction: column; gap: 16px; }
