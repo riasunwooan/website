@@ -1220,7 +1220,9 @@ nav.nb-jump {
 
 .wp-card-link { display: block; color: inherit; text-decoration: none; transition: transform 0.15s, border-color 0.15s; }
 .wp-card-link:hover { transform: translateY(-2px); border-color: var(--muted); border-top-color: var(--c); }
-.wp-cover { display: block; width: 100%; height: auto; margin-bottom: 10px; border-radius: 6px; }
+.wp-head { display: flex; gap: 12px; align-items: flex-start; }
+.wp-cover { flex: none; display: block; width: 76px; height: auto; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+.wp-head .wp-title { margin-top: 6px; }
 
 .book-page { display: grid; grid-template-columns: minmax(0, 340px) 1fr; gap: 36px; align-items: start; margin-top: 8px; }
 .book-cover img { display: block; width: 100%; height: auto; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,.18); }
