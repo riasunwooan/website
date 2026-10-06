@@ -544,6 +544,12 @@ a.card:hover .card-more { color: var(--text); }
   color: var(--muted);
 }
 
+.project-intro {
+  margin: 24px 0 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
 .project-mentor span {
   font-weight: 600;
   color: var(--text);
