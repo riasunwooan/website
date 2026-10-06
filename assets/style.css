@@ -1175,6 +1175,7 @@ nav.nb-jump {
 }
 .wp-blurb.open { max-height: none; -webkit-mask-image: none; mask-image: none; }
 .wp-blurb p { margin: 0 0 8px; }
+.wp-quote { display: block; padding-left: 10px; border-left: 3px solid var(--c); font-style: italic; color: var(--muted); }
 .wp-more { margin-top: 2px; padding: 0; border: none; background: none; color: var(--muted); font: inherit; font-size: 0.8rem; cursor: pointer; text-decoration: underline; }
 .wp-links { margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.85rem; font-weight: 600; }
 .wp-link { color: var(--text); text-decoration: none; border-bottom: 2px solid var(--c); }
