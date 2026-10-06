@@ -38,7 +38,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 8px 24px;
   max-width: 1100px;
   width: 100%;
   margin: 0 auto;
@@ -46,6 +47,7 @@ nav {
 }
 
 .logo {
+  white-space: nowrap;
   font-weight: 600;
   font-size: 1.1rem;
   text-decoration: none;
@@ -305,4 +307,104 @@ footer {
 
   .card { flex-direction: column; }
   .card-img { flex-basis: auto; aspect-ratio: 16 / 9; }
+}
+
+/* ---------- Home ---------- */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 48px;
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+}
+
+.hero-text p { margin: 0 0 12px; font-size: 1.1rem; }
+
+.hero-hello {
+  font-size: 2.25rem !important;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.home-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.home-links a {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.home-links .arrow { color: var(--muted); transition: transform 0.15s; }
+.home-links a:hover .arrow { color: var(--text); transform: translateX(4px); }
+
+/* ---------- Art ---------- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.gallery:empty, .writing-list:empty { display: none; }
+
+.art-item { margin: 0; }
+
+.art-item img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  background: var(--line);
+}
+
+.art-item figcaption {
+  margin-top: 8px;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+/* ---------- Writing ---------- */
+
+.writing-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.writing-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.writing-item:first-child { padding-top: 0; }
+
+.writing-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.empty-note { color: var(--muted); }
+/* hide "Coming soon" once something is added */
+.gallery:not(:empty) + .empty-note,
+.writing-list:not(:empty) + .empty-note { display: none; }
+
+@media (max-width: 600px) {
+  .nav-links { gap: 14px; }
+  .nav-links a { font-size: 0.9rem; }
+  .logo { font-size: 1rem; }
+  .hero-hello { font-size: 1.8rem !important; }
 }
