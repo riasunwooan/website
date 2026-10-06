@@ -731,6 +731,29 @@ nav.nb-jump {
 
 .nb-table th { font-weight: 600; font-size: 0.85rem; color: var(--muted); }
 
+.nb-figs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+  margin: 16px 0 4px;
+}
+
+.nb-figs figure { margin: 0; }
+
+.nb-figs img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+}
+
+.nb-figs figcaption {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
 .nb-current {
   padding: 20px;
   border: 1px solid var(--line);
