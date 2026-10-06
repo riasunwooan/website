@@ -1172,11 +1172,16 @@ nav.nb-jump {
   margin-top: 8px;
   font-size: 0.88rem;
   line-height: 1.6;
+  max-height: calc(1.6em * 4 + 8px);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(#000 65%, transparent);
+  mask-image: linear-gradient(#000 65%, transparent);
 }
+.wp-blurb.fits { max-height: none; -webkit-mask-image: none; mask-image: none; }
 .wp-blurb.open { max-height: none; -webkit-mask-image: none; mask-image: none; }
 .wp-blurb p { margin: 0 0 8px; }
 .wp-quote { display: block; padding-left: 10px; border-left: 3px solid var(--c); font-style: italic; color: var(--muted); }
-.wp-more { margin-top: 2px; padding: 0; border: none; background: none; color: var(--muted); font: inherit; font-size: 0.8rem; cursor: pointer; text-decoration: underline; }
+.wp-more { margin-top: 2px; padding: 0; border: none; background: none; color: var(--c); font: inherit; font-size: 0.82rem; font-weight: 600; cursor: pointer; }
 .wp-links { margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.85rem; font-weight: 600; }
 .wp-link { color: var(--text); text-decoration: none; border-bottom: 2px solid var(--c); }
 .wp-stalk { flex: 1 0 22px; width: 0; border-left: 2px dashed var(--c); opacity: 0.6; }

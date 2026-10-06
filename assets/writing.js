@@ -38,13 +38,17 @@
   // "More" on long blurbs
   items.forEach(function (it) {
     var b = it.querySelector('.wp-blurb'), btn = it.querySelector('.wp-more');
+    if (!btn) return;
     if (b.scrollHeight > b.clientHeight + 4) {
       btn.hidden = false;
+      btn.textContent = 'Read more ↓';
       btn.onclick = function () {
         var open = b.classList.toggle('open');
-        btn.textContent = open ? 'Less' : 'More';
+        btn.textContent = open ? 'Show less ↑' : 'Read more ↓';
         draw();
       };
+    } else {
+      b.classList.add('fits');
     }
   });
 
