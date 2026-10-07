@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css?v=52">
+  <link rel="stylesheet" href="/assets/style.css?v=55">
 </head>
-<body>
+<body class="art-body">
   <nav>
     <a class="logo" href="/">Ria Sunwoo An</a>
     <ul class="nav-links">
@@ -24,23 +24,40 @@
     </ul>
   </nav>
 
-  <main class="page">
-    <div class="container">
-      <h1 class="page-title">Art</h1>
-      <!--
-        Add a piece by copying this inside the gallery div:
-        <figure class="art-item">
-          <img src="/assets/img/art/filename.jpg" alt="Short description" loading="lazy">
-          <figcaption><strong>Title</strong>, 2026 · Medium</figcaption>
-        </figure>
-      -->
-      <div class="gallery"></div>
-      <p class="empty-note">Coming soon.</p>
-    </div>
+  <main class="art-page">
+    <section class="ap-stage" aria-label="Art portfolio">
+      <img class="ap-bg" src="/assets/img/art/boxer-2000.jpg" srcset="/assets/img/art/boxer-1100.jpg 1100w, /assets/img/art/boxer-2000.jpg 2000w" sizes="100vw" alt="White chalk drawing of a girl in a boxing stance throwing a punch, motion lines trailing from her fist." width="2000" height="1382">
+      <div class="ap-head">
+        <h1 class="ap-h1">Art</h1>
+        <p class="ap-sub">A creative portfolio. Pick a folder, then open a piece.</p>
+        <div class="ap-tabs" role="group" aria-label="Category">
+          <button class="ap-tab" type="button" data-cat="community" aria-pressed="true">Community Service <span>4</span></button>
+          <button class="ap-tab" type="button" data-cat="other" aria-pressed="false">Personal Works <span>3</span></button>
+        </div>
+      </div>
+      <div class="ap-cards">
+        <button class="ap-card" type="button" data-i="0" data-cat="community" style="--x:58%;--y:71%;--r:-7deg;--d:0ms"><svg class="ap-doodle" viewBox="0 0 64 64" aria-hidden="true"><path d="M14 40c0-10 8-18 18-18 6 0 10 3 12 7l12 3-12 4c-1 9-8 16-18 16-7 0-12-5-12-12z"/><path d="M44 29l14 4-14 3"/><circle cx="36" cy="27" r="1.5" fill="#fff"/><path d="M22 52l-2 6M30 54l0 5"/></svg><span class="ap-title">Pelican Pocket</span><span class="ap-meta">Community service</span><span class="ap-soon">soon</span></button>
+        <button class="ap-card" type="button" data-i="1" data-cat="community" style="--x:75%;--y:63%;--r:5deg;--d:70ms"><svg class="ap-doodle" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6l16 20-16 22-16-22z"/><path d="M32 6v42M16 26h32"/><path d="M32 48c-4 4 4 6 0 10s4 4 2 6"/></svg><span class="ap-title">Kite Project</span><span class="ap-meta">Community service</span><span class="ap-soon">soon</span></button>
+        <button class="ap-card" type="button" data-i="2" data-cat="community" style="--x:90%;--y:74%;--r:-4deg;--d:140ms"><svg class="ap-doodle" viewBox="0 0 64 64" aria-hidden="true"><path d="M20 40c-6-6-8-14-2-18 4-3 9 0 14 6 5-6 10-9 14-6 6 4 4 12-2 18l-12 12z"/></svg><span class="ap-title">Project 3</span><span class="ap-meta">Community service</span><span class="ap-soon">soon</span></button>
+        <button class="ap-card" type="button" data-i="3" data-cat="community" style="--x:74%;--y:87%;--r:3deg;--d:210ms"><svg class="ap-doodle" viewBox="0 0 64 64" aria-hidden="true"><path d="M44 8l12 12-22 22-12-12z"/><path d="M22 30c-8 2-10 8-10 14 0 4-3 7-6 8 10 2 20-2 24-10"/></svg><span class="ap-title">Project 4</span><span class="ap-meta">Community service</span><span class="ap-soon">soon</span></button>
+        <button class="ap-card" type="button" data-i="4" data-cat="other" style="--x:61%;--y:70%;--r:-6deg;--d:0ms"><svg class="ap-doodle" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8l6 16h17l-14 10 5 17-14-10-14 10 5-17-14-10h17z"/></svg><span class="ap-title">Piece 1</span><span class="ap-meta">Personal work</span><span class="ap-soon">soon</span></button>
+        <button class="ap-card" type="button" data-i="5" data-cat="other" style="--x:79%;--y:64%;--r:5deg;--d:70ms"><svg class="ap-doodle" viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="12" width="44" height="40" rx="2"/><path d="M14 46l12-14 8 9 6-6 10 11"/><circle cx="42" cy="24" r="4"/></svg><span class="ap-title">Piece 2</span><span class="ap-meta">Personal work</span><span class="ap-soon">soon</span></button>
+        <button class="ap-card" type="button" data-i="6" data-cat="other" style="--x:73%;--y:86%;--r:-3deg;--d:140ms"><svg class="ap-doodle" viewBox="0 0 64 64" aria-hidden="true"><path d="M12 52l4-12 28-28 8 8-28 28z"/><path d="M40 16l8 8M12 52l10-2"/></svg><span class="ap-title">Piece 3</span><span class="ap-meta">Personal work</span><span class="ap-soon">soon</span></button>
+      </div>
+    </section>
+    <dialog class="ap-dialog" aria-labelledby="ap-d-title">
+      <button class="ap-x" type="button" aria-label="Close">×</button>
+      <svg class="ap-d-doodle" viewBox="0 0 64 64" aria-hidden="true"></svg>
+      <p class="ap-d-meta"></p>
+      <h2 id="ap-d-title" class="ap-d-title"></h2>
+      <p class="ap-d-desc"></p>
+    </dialog>
+    <script type="application/json" id="ap-data">[{"title": "Pelican Pocket", "meta": "Community service", "desc": "Part of my mental health initiatives with the Cha Lab. Full project coming soon.", "soon": true, "doodle": "<path d=\"M14 40c0-10 8-18 18-18 6 0 10 3 12 7l12 3-12 4c-1 9-8 16-18 16-7 0-12-5-12-12z\"/><path d=\"M44 29l14 4-14 3\"/><circle cx=\"36\" cy=\"27\" r=\"1.5\" fill=\"#fff\"/><path d=\"M22 52l-2 6M30 54l0 5\"/>"}, {"title": "Kite Project", "meta": "Community service", "desc": "An art project connected to my mental health work. Full project coming soon.", "soon": true, "doodle": "<path d=\"M32 6l16 20-16 22-16-22z\"/><path d=\"M32 6v42M16 26h32\"/><path d=\"M32 48c-4 4 4 6 0 10s4 4 2 6\"/>"}, {"title": "Project 3", "meta": "Community service", "desc": "Coming soon.", "soon": true, "doodle": "<path d=\"M20 40c-6-6-8-14-2-18 4-3 9 0 14 6 5-6 10-9 14-6 6 4 4 12-2 18l-12 12z\"/>"}, {"title": "Project 4", "meta": "Community service", "desc": "Coming soon.", "soon": true, "doodle": "<path d=\"M44 8l12 12-22 22-12-12z\"/><path d=\"M22 30c-8 2-10 8-10 14 0 4-3 7-6 8 10 2 20-2 24-10\"/>"}, {"title": "Piece 1", "meta": "Personal work", "desc": "Coming soon.", "soon": true, "doodle": "<path d=\"M32 8l6 16h17l-14 10 5 17-14-10-14 10 5-17-14-10h17z\"/>"}, {"title": "Piece 2", "meta": "Personal work", "desc": "Coming soon.", "soon": true, "doodle": "<rect x=\"10\" y=\"12\" width=\"44\" height=\"40\" rx=\"2\"/><path d=\"M14 46l12-14 8 9 6-6 10 11\"/><circle cx=\"42\" cy=\"24\" r=\"4\"/>"}, {"title": "Piece 3", "meta": "Personal work", "desc": "Coming soon.", "soon": true, "doodle": "<path d=\"M12 52l4-12 28-28 8 8-28 28z\"/><path d=\"M40 16l8 8M12 52l10-2\"/>"}]</script>
   </main>
 
   <footer>
     <span>© 2026 Ria Sunwoo An</span>
   </footer>
+  <script src="/assets/art.js?v=1" defer></script>
 </body>
 </html>
