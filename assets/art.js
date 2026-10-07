@@ -97,15 +97,29 @@
   stage.querySelector('.ap-boom-hit').addEventListener('click', function () { again(); });
 
   var dlg = document.querySelector('.ap-dialog'), body = dlg.querySelector('.ap-d-body');
-  cards.forEach(function (c) {
-    c.addEventListener('click', function () {
-      body.innerHTML = '';
-      body.appendChild(document.getElementById('ap-t-' + c.dataset.i).content.cloneNode(true));
-      dlg.showModal();
-      setupCarousels(body);
-      dlg.scrollTop = 0;
-    });
+  function openCard(c) {
+    body.innerHTML = '';
+    body.appendChild(document.getElementById('ap-t-' + c.dataset.i).content.cloneNode(true));
+    dlg.showModal();
+    setupCarousels(body);
+    dlg.scrollTop = 0;
+  }
+  cards.forEach(function (c) { c.addEventListener('click', function () { openCard(c); }); });
+  // Instagram post tabs
+  body.addEventListener('click', function (e) {
+    var t = e.target.closest('.apd-ptab');
+    if (!t) return;
+    body.querySelectorAll('.apd-ptab').forEach(function (b) { b.setAttribute('aria-pressed', String(b === t)); });
+    body.querySelectorAll('.apd-embed').forEach(function (pn) { pn.hidden = pn.dataset.k !== t.dataset.k; });
   });
+  // /art/#slug opens that project (used by links from other pages)
+  function fromHash() {
+    var c = cards.filter(function (x) { return '#' + x.dataset.slug === location.hash; })[0];
+    if (!c) return;
+    var go = function () { if (!dlg.open) openCard(c); };
+    if (c.dataset.cat !== cat) { again(c.dataset.cat); setTimeout(go, 1500); } else setTimeout(go, 900);
+  }
+  window.addEventListener('hashchange', fromHash);
   body.addEventListener('click', function (e) {
     var j = e.target.closest('.apd-jump button');
     if (j) body.querySelectorAll('.apd-sec')[+j.dataset.k].scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'start' });
@@ -140,6 +154,10 @@
 
   var t;
   window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(layout, 120); });
-  function start() { busy = true; setTimeout(punch, 350); }
+  function start() {
+    var h = cards.filter(function (x) { return '#' + x.dataset.slug === location.hash; })[0];
+    if (h) cat = h.dataset.cat;
+    busy = true; setTimeout(punch, 350); setTimeout(fromHash, 400);
+  }
   if (img.complete && img.naturalWidth) start(); else img.addEventListener('load', start);
 })();
