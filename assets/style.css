@@ -1293,3 +1293,20 @@ nav.nb-jump {
 .ig-embed { margin: 4px 0 10px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fafafa; }
 .ig-embed iframe { display: block; width: 100%; height: 480px; border: 0; }
 @media (max-width: 760px) { .init-grid { grid-template-columns: 1fr; } }
+
+/* Cha Lab: presentations + photo grids */
+.sub-h { margin: 18px 0 8px; font-size: 1rem; }
+.pres-list { margin: 0; padding-left: 1.1em; }
+.pres-list li { margin-bottom: 8px; }
+.pres-list span { display: block; font-size: 0.9rem; color: var(--muted); }
+.init-wide { margin-top: 14px; }
+.lb-photos { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.lb-photos img { aspect-ratio: 4 / 3; }
+.lb-photos.lb-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.lb-photos.lb-two img { aspect-ratio: 2.1 / 1; }
+.lb-photos.lb-one { grid-template-columns: 1fr; margin-top: 10px; }
+.photo-note { margin: 6px 0 0; font-size: 0.78rem; color: var(--muted); }
+@media (max-width: 560px) { .lb-photos.lb-two { grid-template-columns: 1fr; } }
+.project ul.lb-grid { padding-left: 0; }
+.lb-photos.lb-three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 560px) { .lb-photos.lb-three { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
