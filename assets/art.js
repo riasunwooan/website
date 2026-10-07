@@ -102,19 +102,35 @@
       body.innerHTML = '';
       body.appendChild(document.getElementById('ap-t-' + c.dataset.i).content.cloneNode(true));
       dlg.showModal();
+      setupCarousels(body);
       dlg.scrollTop = 0;
     });
   });
-  // gallery: thumbnails swap the main photo
   body.addEventListener('click', function (e) {
-    var th = e.target.closest('.apd-th');
-    if (!th) return;
-    var fig = body.querySelector('.apd-main');
-    fig.querySelector('img').src = th.dataset.src;
-    fig.querySelector('img').alt = th.dataset.cap;
-    fig.querySelector('figcaption').textContent = th.dataset.cap;
-    body.querySelectorAll('.apd-th').forEach(function (t) { t.classList.toggle('on', t === th); });
+    var j = e.target.closest('.apd-jump button');
+    if (j) body.querySelectorAll('.apd-sec')[+j.dataset.k].scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'start' });
   });
+  // carousels: arrows, swipe (native scroll-snap), keyboard, counter
+  function setupCarousels(root) {
+    root.querySelectorAll('.apc').forEach(function (c) {
+      var track = c.querySelector('.apc-track'), n = track.children.length, count = c.querySelector('.apc-count');
+      if (n < 2) return;
+      function idx() { return Math.round(track.scrollLeft / track.clientWidth); }
+      function go(k) { k = (k + n) % n; track.scrollTo({ left: k * track.clientWidth, behavior: calm ? 'auto' : 'smooth' }); }
+      c.querySelector('.apc-prev').addEventListener('click', function () { go(idx() - 1); });
+      c.querySelector('.apc-next').addEventListener('click', function () { go(idx() + 1); });
+      track.addEventListener('click', function (e) {
+        if (e.target.tagName !== 'IMG') return;
+        var r = track.getBoundingClientRect();
+        go(idx() + (e.clientX - r.left < r.width / 3 ? -1 : 1));
+      });
+      c.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { e.preventDefault(); go(idx() + 1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); go(idx() - 1); }
+      });
+      track.addEventListener('scroll', function () { count.textContent = (idx() + 1) + ' / ' + n; }, { passive: true });
+    });
+  }
   dlg.querySelector('.ap-x').addEventListener('click', function () { dlg.close(); });
   dlg.addEventListener('close', function () { body.innerHTML = ''; });
   dlg.addEventListener('click', function (e) {
