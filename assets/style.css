@@ -1277,3 +1277,19 @@ nav.nb-jump {
 
 .card-icon-img img { width: 112px; height: 112px; object-fit: contain; }
 @media (max-width: 600px) { .card-icon-img img { width: 64px; height: 64px; } }
+
+.did-center { display: flex; flex-wrap: wrap; justify-content: center; }
+.did-center .did { flex: 1 1 230px; max-width: 320px; }
+.link-cards { display: flex; flex-direction: column; gap: 12px; }
+.card-soon { opacity: 0.6; border-style: dashed; }
+.card-icon-soon { flex: 0 0 150px; display: flex; align-items: center; justify-content: center; background: var(--line); color: var(--muted); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+@media (max-width: 600px) { .card-icon-soon { flex-basis: 76px; } }
+.init-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+.init-col { display: flex; flex-direction: column; gap: 14px; }
+.init { padding: 14px 16px; border: 1px solid var(--line); border-radius: 10px; }
+.init h3 { margin: 0; font-size: 1rem; }
+.init-role { margin: 2px 0 8px; font-size: 0.85rem; color: var(--muted); }
+.init p { margin-top: 0; }
+.ig-embed { margin: 4px 0 10px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fafafa; }
+.ig-embed iframe { display: block; width: 100%; height: 480px; border: 0; }
+@media (max-width: 760px) { .init-grid { grid-template-columns: 1fr; } }
