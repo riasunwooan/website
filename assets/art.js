@@ -1,4 +1,4 @@
-// Art portfolio: the boom in the drawing explodes (shake, flash, rings, sparks, POW) and project
+// Art portfolio: the boom in the drawing explodes (shake, flash, rings, sparks) and project
 // cards fly out of it to land on the tips of the starburst. Tabs swap folders; tap the boom to punch again.
 (function () {
   var stage = document.querySelector('.ap-stage');
@@ -7,8 +7,7 @@
   var fx = stage.querySelector('.ap-fx');
   var cards = Array.prototype.slice.call(stage.querySelectorAll('.ap-card'));
   var tabs = Array.prototype.slice.call(stage.querySelectorAll('.ap-tab'));
-  var data = JSON.parse(document.getElementById('ap-data').textContent);
-  var BOOM = stage.dataset.boom.split(',').map(Number);
+    var BOOM = stage.dataset.boom.split(',').map(Number);
   var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var mobile = window.matchMedia('(max-width: 720px)');
   var cat = tabs[0].dataset.cat, busy = false;
@@ -97,18 +96,27 @@
   });
   stage.querySelector('.ap-boom-hit').addEventListener('click', function () { again(); });
 
-  var dlg = document.querySelector('.ap-dialog');
+  var dlg = document.querySelector('.ap-dialog'), body = dlg.querySelector('.ap-d-body');
   cards.forEach(function (c) {
     c.addEventListener('click', function () {
-      var d = data[+c.dataset.i];
-      dlg.querySelector('.ap-d-doodle').innerHTML = d.doodle;
-      dlg.querySelector('.ap-d-meta').textContent = d.meta + (d.soon ? ' · coming soon' : '');
-      dlg.querySelector('.ap-d-title').textContent = d.title;
-      dlg.querySelector('.ap-d-desc').textContent = d.desc;
+      body.innerHTML = '';
+      body.appendChild(document.getElementById('ap-t-' + c.dataset.i).content.cloneNode(true));
       dlg.showModal();
+      dlg.scrollTop = 0;
     });
   });
+  // gallery: thumbnails swap the main photo
+  body.addEventListener('click', function (e) {
+    var th = e.target.closest('.apd-th');
+    if (!th) return;
+    var fig = body.querySelector('.apd-main');
+    fig.querySelector('img').src = th.dataset.src;
+    fig.querySelector('img').alt = th.dataset.cap;
+    fig.querySelector('figcaption').textContent = th.dataset.cap;
+    body.querySelectorAll('.apd-th').forEach(function (t) { t.classList.toggle('on', t === th); });
+  });
   dlg.querySelector('.ap-x').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('close', function () { body.innerHTML = ''; });
   dlg.addEventListener('click', function (e) {
     var r = dlg.getBoundingClientRect();
     if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dlg.close();

@@ -1342,14 +1342,11 @@ body.art-body { --bg: #08090b; --text: #f2f2f2; --muted: #a3a3a3; --line: #2a2a2
 @keyframes ap-breathe { 50% { opacity: 0.35; transform: translate(-50%, -50%) scale(0.85); } }
 .ap-flash { width: 80vmin; height: 80vmin; border-radius: 50%; background: radial-gradient(circle, #fff 0, rgba(255,255,255,0.85) 18%, rgba(255,255,255,0) 62%); opacity: 0; mix-blend-mode: screen; }
 .ap-ring { width: 60px; height: 60px; border: 4px solid #fff; border-radius: 50%; opacity: 0; filter: drop-shadow(0 0 6px #fff); }
-.ap-pow { font: 700 clamp(3rem, 8vw, 6.5rem)/1 "Caveat", cursive; color: #fff; opacity: 0; text-shadow: 0 0 24px #000, 0 0 2px #000; letter-spacing: 0.02em; }
 .ap-stage.boom .ap-flash { animation: ap-flash 0.55s ease-out; }
 .ap-stage.boom .ap-ring { animation: ap-ring 0.75s ease-out; }
 .ap-stage.boom .ap-ring2 { animation: ap-ring 0.9s 0.12s ease-out; }
-.ap-stage.boom .ap-pow { animation: ap-pow 0.9s 0.05s cubic-bezier(.2,.9,.25,1.3); }
-@keyframes ap-flash { 0% { opacity: 0; transform: translate(-50%,-50%) scale(0.2); } 15% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%,-50%) scale(1.1); } }
+.ap-stage.boom @keyframes ap-flash { 0% { opacity: 0; transform: translate(-50%,-50%) scale(0.2); } 15% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%,-50%) scale(1.1); } }
 @keyframes ap-ring { 0% { opacity: 1; transform: translate(-50%,-50%) scale(0.3); } 100% { opacity: 0; transform: translate(-50%,-50%) scale(9); border-width: 1px; } }
-@keyframes ap-pow { 0% { opacity: 0; transform: translate(-50%,-50%) scale(0.2) rotate(-18deg); } 25% { opacity: 1; transform: translate(-50%,-50%) scale(1.15) rotate(-8deg); } 70% { opacity: 1; transform: translate(-50%,-50%) scale(1) rotate(-6deg); } 100% { opacity: 0; transform: translate(-50%,-50%) scale(1.3) rotate(-4deg); } }
 .ap-spark { position: absolute; left: var(--bx); top: var(--by); width: var(--len); height: 3px; margin-top: -1.5px; border-radius: 3px; background: linear-gradient(90deg, rgba(255,255,255,0), #fff); transform-origin: 0 50%; transform: rotate(var(--a)) translateX(0) scaleX(0.2); opacity: 0; animation: ap-spark 0.7s var(--sd) cubic-bezier(.1,.8,.3,1) forwards; }
 @keyframes ap-spark { 0% { opacity: 1; transform: rotate(var(--a)) translateX(10px) scaleX(0.3); } 100% { opacity: 0; transform: rotate(var(--a)) translateX(var(--dist)) scaleX(1); } }
 .ap-boom-hit { position: absolute; z-index: 2; left: var(--bx); top: var(--by); width: 22vmin; height: 22vmin; transform: translate(-50%, -50%); border: 0; border-radius: 50%; background: none; cursor: pointer; }
@@ -1380,7 +1377,7 @@ body.art-body { --bg: #08090b; --text: #f2f2f2; --muted: #a3a3a3; --line: #2a2a2
 .ap-title { font: 700 2rem/1.05 "Caveat", cursive; text-align: center; }
 .ap-meta { font-size: 0.76rem; letter-spacing: 0.06em; text-transform: uppercase; color: #bdbdbd; }
 .ap-soon { position: absolute; top: -10px; right: -8px; padding: 0 8px; border-radius: 999px; background: #ffc102; color: #1a1a1a; font: 700 1.05rem/1.45 "Caveat", cursive; transform: rotate(8deg); }
-.ap-dialog { width: min(560px, calc(100vw - 32px)); padding: 30px 28px 26px; border: 2px solid rgba(255,255,255,0.85); border-radius: 255px 20px 225px 20px / 20px 225px 20px 255px; background: #131418; color: #f2f2f2; text-align: center; }
+.ap-dialog { width: min(980px, calc(100vw - 32px)); max-height: calc(100vh - 48px); overflow: auto; padding: 28px; border: 2px solid rgba(255,255,255,0.85); border-radius: 255px 20px 225px 20px / 20px 225px 20px 255px; background: #131418; color: #f2f2f2; }
 .ap-dialog[open] { animation: ap-pop 0.4s cubic-bezier(.2,.9,.25,1.3); }
 @keyframes ap-pop { from { transform: scale(0.4) rotate(-10deg); opacity: 0; } to { transform: none; opacity: 1; } }
 .ap-dialog::backdrop { background: rgba(0,0,0,0.75); }
@@ -1404,8 +1401,30 @@ body.art-body { --bg: #08090b; --text: #f2f2f2; --muted: #a3a3a3; --line: #2a2a2
 }
 @media (prefers-reduced-motion: reduce) {
   .ap-card, .ap-stage:not(.out) .ap-card { transition: opacity 0.3s; }
-  .ap-stage.shake .ap-bg, .ap-stage.shake .ap-fx, .ap-glow, .ap-stage.boom .ap-ring, .ap-stage.boom .ap-pow, .ap-spark, .ap-dialog[open] { animation: none; }
+  .ap-stage.shake .ap-bg, .ap-stage.shake .ap-fx, .ap-glow, .ap-stage.boom .ap-ring, .ap-spark, .ap-dialog[open] { animation: none; }
 }
+
+/* Art: photo cards + project sheet */
+.ap-card.has-photo { padding: 10px 10px 12px; }
+.ap-photo { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 120px 10px 110px 10px / 10px 110px 10px 120px; border: 2px solid rgba(255,255,255,0.85); margin-bottom: 6px; filter: saturate(0.95); }
+.apd { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 26px; align-items: start; }
+.apd-main { margin: 0; }
+.apd-main img { display: block; width: 100%; max-height: 62vh; object-fit: contain; background: #0b0b0d; border: 2px solid rgba(255,255,255,0.8); border-radius: 8px; }
+.apd-main figcaption { margin-top: 6px; font-size: 0.8rem; color: #bdbdbd; }
+.apd-thumbs { display: flex; gap: 8px; margin-top: 10px; overflow-x: auto; padding-bottom: 4px; }
+.apd-th { flex: 0 0 auto; width: 64px; height: 64px; padding: 0; border: 2px solid transparent; border-radius: 6px; background: none; cursor: pointer; opacity: 0.6; }
+.apd-th img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; display: block; }
+.apd-th.on, .apd-th:hover { opacity: 1; border-color: #fff; }
+.apd-embed { margin-top: 14px; border-radius: 8px; overflow: hidden; background: #fff; }
+.apd-embed iframe { display: block; width: 100%; height: 520px; border: 0; }
+.apd-doodle svg { width: 120px; height: 120px; margin: 20px auto; display: block; fill: none; stroke: #fff; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.apd-meta { margin: 0; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: #bdbdbd; }
+.apd-title { margin: 2px 0 12px; font: 700 2.6rem/1.05 "Caveat", cursive; }
+.apd-text p { color: #e2e2e2; line-height: 1.65; }
+.apd-links { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.apd-links a { display: inline-block; padding: 4px 14px 2px; border: 2px solid rgba(255,255,255,0.8); border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; color: #fff; text-decoration: none; font: 700 1.25rem/1.3 "Caveat", cursive; }
+.apd-links a:hover { background: #fff; color: #131418; }
+@media (max-width: 760px) { .apd { grid-template-columns: 1fr; } .ap-dialog { padding: 22px 16px; } .apd-embed iframe { height: 460px; } }
 
 /* Home: quote, mystery word, closing lines */
 .about-quote { margin: 0 0 22px; padding: 0 0 0 16px; border-left: 3px solid var(--text); font-size: 1.35rem; font-style: italic; }
@@ -1422,3 +1441,5 @@ body.art-body { --bg: #08090b; --text: #f2f2f2; --muted: #a3a3a3; --line: #2a2a2
   .ap-doodle { width: 54px; height: 54px; }
   .ap-head { left: 20%; }
 }
+.story-photos .row-break { flex-basis: 100%; height: 0; }
+.story .story-beat.beat-center p, .story .story-beat p.center { text-align: center; }
