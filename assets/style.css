@@ -1313,3 +1313,13 @@ nav.nb-jump {
 .card-tag { display: inline-block; align-self: flex-start; padding: 2px 8px; border-radius: 999px; background: #fff4cc; color: #6b5200; font-size: 0.78rem; }
 .card-quote { display: block; margin-top: 8px; font-style: italic; }
 .pres-list a { font-weight: 400; }
+
+/* Research tags */
+.tag-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 8px; }
+.tag-row .badge { margin-bottom: 0; }
+.tag { display: inline-flex; align-items: center; gap: 5px; padding: 1px 8px; border: 1px solid var(--line); border-radius: 999px; font-size: 0.7rem; font-weight: 600; color: var(--text); }
+.tag::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--c); }
+.card-achv { margin-top: 6px; font-size: 0.85rem; color: var(--muted); }
+.rs-filters { margin-bottom: 4px; }
+.timeline .card[hidden], .timeline .tl-year[hidden], .timeline .tl-era[hidden] { display: none; }
+.rs-hint { margin-bottom: 28px; }

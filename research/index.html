@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css?v=50">
+  <link rel="stylesheet" href="/assets/style.css?v=51">
 </head>
 <body>
   <nav>
@@ -41,6 +41,16 @@
           Optional image: add <div class="card-img"><img src="assets/img/….jpg" alt=""></div> as the card's first child.
           Mark an ongoing project with <span class="badge">Current</span> at the top of card-body.
       -->
+      <div class="wp-filters rs-filters" role="group" aria-label="Filter by tag">
+        <button class="wp-chip wp-all" type="button" aria-pressed="true">All <span class="wp-count">6</span></button>
+        <button class="wp-chip" type="button" data-tag="Bioengineering" aria-pressed="false" style="--c:#22c4d8"><span class="wp-dot"></span>Bioengineering <span class="wp-count">3</span></button>
+        <button class="wp-chip" type="button" data-tag="Materials Science Engineering" aria-pressed="false" style="--c:#e8a800"><span class="wp-dot"></span>Materials Science Engineering <span class="wp-count">1</span></button>
+        <button class="wp-chip" type="button" data-tag="Mental Health" aria-pressed="false" style="--c:#9b7be0"><span class="wp-dot"></span>Mental Health <span class="wp-count">2</span></button>
+        <button class="wp-chip" type="button" data-tag="Public Health" aria-pressed="false" style="--c:#6fa31a"><span class="wp-dot"></span>Public Health <span class="wp-count">2</span></button>
+        <button class="wp-chip" type="button" data-tag="Machine Learning" aria-pressed="false" style="--c:#f2412f"><span class="wp-dot"></span>Machine Learning <span class="wp-count">3</span></button>
+      </div>
+      <p class="wp-hint rs-hint">Tap a tag to see only those projects.</p>
+
       <div class="timeline" aria-label="Research timeline">
 
         <section class="tl-era">
@@ -49,14 +59,15 @@
           <div class="tl-year">
             <div class="tl-yl">2026</div>
             <div class="tl-cards">
-              <a class="card" href="/research/fibrin-fibrillogenesis/">
+              <a class="card" href="/research/fibrin-fibrillogenesis/" data-tags="Bioengineering|Materials Science Engineering">
                 <div class="card-icon" style="background:#fff4cc"><img src="/assets/img/research/icons/fibrin-fibrillogenesis.svg?v=3" alt="" width="96" height="96"></div>
                 <div class="card-body">
-                  <span class="badge">Current</span>
+                  <div class="tag-row"><span class="badge">Current</span><span class="tag" style="--c:#22c4d8">Bioengineering</span><span class="tag" style="--c:#e8a800">Materials Science Engineering</span></div>
                   <div class="card-title">Investigating Collagen-Induced Fibrin Fibrillogenesis in the Absence of Thrombin</div>
                   <div class="card-meta">Jul 2026 – present · Garcia Center for Polymers at Engineered Interfaces, Stony Brook University</div>
                   <div class="card-mentor">Mentors: Dr. Miriam Rafailovich, Distinguished Professor, Stony Brook University &amp; Dr. Adam Hansen, Stony Brook University</div>
-                  <div class="card-desc">Investigating novel fibrin–collagen interactions. Presenting at the Materials Research Society conference, 2026.</div>
+                  <div class="card-desc">Exploring how collagen can trigger fibrin formation without thrombin, challenging the conventional pathway of blood clot formation. Understanding this interaction opens new ways to study pathological clotting and design blood-contacting biomaterials.</div>
+                  <div class="card-achv">Presenting at the Materials Research Society conference, Dec ’26.</div>
                   <div class="card-more">Read more →</div>
                 </div>
               </a>
@@ -66,23 +77,27 @@
           <div class="tl-year">
             <div class="tl-yl">2025</div>
             <div class="tl-cards">
-              <a class="card" href="/research/veterans-mental-health/">
+              <a class="card" href="/research/veterans-mental-health/" data-tags="Mental Health|Public Health">
                 <div class="card-icon" style="background:#e3f4f7"><img src="/assets/img/research/icons/veterans-mental-health.svg?v=3" alt="" width="96" height="96"></div>
                 <div class="card-body">
+                  <div class="tag-row"><span class="tag" style="--c:#9b7be0">Mental Health</span><span class="tag" style="--c:#6fa31a">Public Health</span></div>
                   <div class="card-title">Association of Social Determinants of Health with Incident Mental Health Outcomes in US Veterans</div>
                   <div class="card-meta">Jul 2025 – May 2026 · Yale University</div>
                   <div class="card-mentor">Mentor: Dr. Peter Na, Assistant Professor of Psychiatry, Yale University</div>
-                  <div class="card-desc">Published in <em>International Journal of Social Psychiatry</em>, May 2026. Poster presented at Medical Education Day at Yale, 2026.</div>
+                  <div class="card-desc">Examined how factors beyond the clinic, from social connection to financial stability, shape veterans’ risk of developing mental health conditions. The findings highlight where earlier and more targeted intervention may matter most.</div>
+                  <div class="card-achv">Published in <em>International Journal of Social Psychiatry</em>, May 2026. Poster presented at Medical Education Day at Yale, 2026.</div>
                   <div class="card-more">Read more →</div>
                 </div>
               </a>
-              <a class="card" href="/research/continual-learning-htp/">
+              <a class="card" href="/research/continual-learning-htp/" data-tags="Mental Health|Machine Learning">
                 <div class="card-icon" style="background:#efe9fb"><img src="/assets/img/research/icons/continual-learning-htp.svg?v=3" alt="" width="96" height="96"></div>
                 <div class="card-body">
+                  <div class="tag-row"><span class="tag" style="--c:#9b7be0">Mental Health</span><span class="tag" style="--c:#f2412f">Machine Learning</span></div>
                   <div class="card-title">Continual Learning with Elastic Weight Consolidation for House Tree Person Test</div>
                   <div class="card-meta">May 2025 – Mar 2026 · Yale University</div>
                   <div class="card-mentor">Mentors: Dr. Christine Cha, Associate Professor in the Child Study Center, Yale University &amp; Dr. Ellen Lee, Postdoctoral Associate in the Child Study Center, Yale University</div>
-                  <div class="card-desc">Pending publication. 2nd Place, Infosys Foundation USA Computer Science Award at CSEF 2026; presented at CSEF and YSRC 2026.</div>
+                  <div class="card-desc">Developed a machine learning framework to recognize psychologically meaningful features in House-Tree-Person drawings while continually learning new ones without forgetting old ones. The model brings a traditionally subjective psychological assessment closer to scalable, consistent analysis, and expands accessibility.</div>
+                  <div class="card-achv">Pending publication. 2nd Place, Infosys Foundation USA Computer Science Award at CSEF 2026; presented at CSEF and YSRC 2026.</div>
                   <div class="card-more">Read more →</div>
                 </div>
               </a>
@@ -92,13 +107,15 @@
           <div class="tl-year">
             <div class="tl-yl">2024</div>
             <div class="tl-cards">
-              <a class="card" href="/research/eeg-depression-screening/">
+              <a class="card" href="/research/eeg-depression-screening/" data-tags="Bioengineering|Machine Learning">
                 <div class="card-icon" style="background:#e6f0ff"><img src="/assets/img/research/icons/eeg-depression-screening.svg?v=3" alt="" width="96" height="96"></div>
                 <div class="card-body">
+                  <div class="tag-row"><span class="tag" style="--c:#22c4d8">Bioengineering</span><span class="tag" style="--c:#f2412f">Machine Learning</span></div>
                   <div class="card-title">Depression Screening: Valence/Arousal from EEG &amp; GSR via Unsupervised Representation Learning</div>
                   <div class="card-meta">Apr 2024 – Jan 2025</div>
                   <div class="card-mentor">Mentors: Kobi Osei-Mensah, Science Faculty, The Loomis Chaffee School &amp; Dr. Peter Na, Assistant Professor of Psychiatry, Yale University</div>
-                  <div class="card-desc">Published in <em>Journal of Student Research</em>, Aug 2025. Presented at the Loomis Chaffee Science Symposium, May 2025.</div>
+                  <div class="card-desc">Developed a machine learning framework for EEG and skin-conductance signals (GSR) to recognize emotional patterns linked to depression without relying solely on traditional self-questionnaires. The work explores physiological signals as another window into mental health screening, increasing accuracy and accessibility.</div>
+                  <div class="card-achv">Published in <em>Journal of Student Research</em>, Aug 2025. Presented at the Loomis Chaffee Science Symposium, May 2025.</div>
                   <div class="card-more">Read more →</div>
                 </div>
               </a>
@@ -108,13 +125,15 @@
           <div class="tl-year">
             <div class="tl-yl">2023</div>
             <div class="tl-cards">
-              <a class="card" href="/research/eeg-seizure-prediction/">
+              <a class="card" href="/research/eeg-seizure-prediction/" data-tags="Bioengineering|Machine Learning">
                 <div class="card-icon" style="background:#efe9fb"><img src="/assets/img/research/icons/eeg-seizure-prediction.svg?v=3" alt="" width="96" height="96"></div>
                 <div class="card-body">
+                  <div class="tag-row"><span class="tag" style="--c:#22c4d8">Bioengineering</span><span class="tag" style="--c:#f2412f">Machine Learning</span></div>
                   <div class="card-title">A Deep Semi-Supervised Domain Generalization Approach for Epileptic Seizure Prediction using EEG</div>
                   <div class="card-meta">Jan 2023 – Jan 2024</div>
                   <div class="card-mentor">Mentor: Kobi Osei-Mensah, Science Faculty, The Loomis Chaffee School</div>
-                  <div class="card-desc">AAAI Special Award at Regeneron ISEF 2024; 1st and 2nd places at CSEF 2024. Patent pending. Published in <em>Journal of Student Research</em>, 2024.</div>
+                  <div class="card-desc">Designed a machine learning framework to separate seizure-related patterns in EEG from patient, device, and noise differences that often make prediction unreliable.</div>
+                  <div class="card-achv">AAAI Special Award at Regeneron ISEF 2024; 1st/2nd place at CSEF 2024. Patent pending. Published in <em>Journal of Student Research</em>, 2024.</div>
                   <div class="card-more">Read more →</div>
                 </div>
               </a>
@@ -128,13 +147,15 @@
           <div class="tl-year">
             <div class="tl-yl">2022</div>
             <div class="tl-cards">
-              <a class="card" href="/research/elderly-optimal-path/">
+              <a class="card" href="/research/elderly-optimal-path/" data-tags="Public Health">
                 <div class="card-icon" style="background:#1f2a8a"><img src="/assets/img/research/icons/elderly-optimal-path.svg?v=3" alt="" width="96" height="96"></div>
                 <div class="card-body">
+                  <div class="tag-row"><span class="tag" style="--c:#6fa31a">Public Health</span></div>
                   <div class="card-title">Finding Optimal Path for the Elderly Considering the Costs Based on Skyline</div>
                   <div class="card-meta">Mar 2022 – Dec 2022 · North London Collegiate School Jeju</div>
                   <div class="card-mentor">Mentor: Mr. Kiran Mandhare, Computer Science Faculty, North London Collegiate School Jeju</div>
-                  <div class="card-desc">A safety-first navigation system for the elderly using skyline queries. Bronze Medal at KSEF International; Top 10 Finalist, NFTE World Series of Innovation.</div>
+                  <div class="card-desc">A safety-first navigation system for the elderly using skyline queries, inspired by my own grandmother’s experience.</div>
+                  <div class="card-achv">Bronze Medal at KSEF International; Top 10 Finalist, NFTE World Series of Innovation.</div>
                   <div class="card-more">Read more →</div>
                 </div>
               </a>
@@ -149,5 +170,6 @@
   <footer>
     <span>© 2026 Ria Sunwoo An</span>
   </footer>
+  <script src="/assets/research.js?v=1" defer></script>
 </body>
 </html>
