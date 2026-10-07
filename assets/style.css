@@ -1456,3 +1456,6 @@ body.art-body { --bg: #08090b; --text: #f2f2f2; --muted: #a3a3a3; --line: #2a2a2
 }
 .story-photos .row-break { flex-basis: 100%; height: 0; }
 .story .story-beat.beat-center p, .story .story-beat p.center { text-align: center; }
+.apd-embed { max-width: 540px; margin: 0 auto; border-radius: 10px; overflow: hidden; background: #fff; }
+.apd-embed iframe { display: block; width: 100%; height: 640px; border: 0; }
+@media (max-width: 760px) { .apd-embed iframe { height: 520px; } }
