@@ -1323,3 +1323,6 @@ nav.nb-jump {
 .rs-filters { margin-bottom: 4px; }
 .timeline .card[hidden], .timeline .tl-year[hidden], .timeline .tl-era[hidden] { display: none; }
 .rs-hint { margin-bottom: 28px; }
+.callout { padding: 16px 18px; border: 1px solid var(--line); border-left: 4px solid #4a5bd6; border-radius: 10px; background: var(--bg); }
+.callout p { margin: 0 0 8px; }
+.callout-k { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
