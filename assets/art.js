@@ -97,11 +97,22 @@
   stage.querySelector('.ap-boom-hit').addEventListener('click', function () { again(); });
 
   var dlg = document.querySelector('.ap-dialog'), body = dlg.querySelector('.ap-d-body');
+  // Instagram's official embed script turns .instagram-media blockquotes into posts
+  function igEmbeds() {
+    if (!body.querySelector('.instagram-media')) return;
+    if (window.instgrm) { window.instgrm.Embeds.process(); return; }
+    if (document.getElementById('ig-embed-js')) return;
+    var sc = document.createElement('script');
+    sc.id = 'ig-embed-js'; sc.async = true; sc.src = 'https://www.instagram.com/embed.js';
+    sc.onload = function () { if (window.instgrm) window.instgrm.Embeds.process(); };
+    document.body.appendChild(sc);
+  }
   function openCard(c) {
     body.innerHTML = '';
     body.appendChild(document.getElementById('ap-t-' + c.dataset.i).content.cloneNode(true));
     dlg.showModal();
     setupCarousels(body);
+    igEmbeds();
     dlg.scrollTop = 0;
   }
   cards.forEach(function (c) { c.addEventListener('click', function () { openCard(c); }); });
@@ -111,6 +122,7 @@
     if (!t) return;
     body.querySelectorAll('.apd-ptab').forEach(function (b) { b.setAttribute('aria-pressed', String(b === t)); });
     body.querySelectorAll('.apd-embed').forEach(function (pn) { pn.hidden = pn.dataset.k !== t.dataset.k; });
+    igEmbeds();
   });
   // /art/#slug opens that project (used by links from other pages)
   function fromHash() {
