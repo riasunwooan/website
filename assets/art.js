@@ -38,8 +38,22 @@
         cx = Math.min(Math.max(p[0], hw), W - hw); cy = Math.min(Math.max(p[1], hh), H - hh);
         c.style.setProperty('--x', cx + 'px'); c.style.setProperty('--y', cy + 'px');
       }
-      c.style.setProperty('--ox', (b[0] - cx) + 'px');
-      c.style.setProperty('--oy', (b[1] - cy) + 'px');
+      c._c = [cx, cy];
+    });
+    if (!mobile.matches) {
+      // nudge apart cards that were clamped into each other at the right edge
+      var vis = cards.filter(function (c) { return !c.hidden; }).sort(function (a, z) { return z._c[0] - a._c[0]; });
+      for (var i = 0; i < vis.length; i++) for (var j = i + 1; j < vis.length; j++) {
+        var A = vis[i], B = vis[j];
+        if (Math.abs(A._c[1] - B._c[1]) > (A.offsetHeight + B.offsetHeight) / 2 + 10) continue;
+        var need = (A.offsetWidth + B.offsetWidth) / 2 + 18 - (A._c[0] - B._c[0]);
+        if (need > 0) { B._c[0] -= need; B.style.setProperty('--x', B._c[0] + 'px'); }
+      }
+    }
+    cards.forEach(function (c) {
+      if (c.hidden) return;
+      c.style.setProperty('--ox', (b[0] - c._c[0]) + 'px');
+      c.style.setProperty('--oy', (b[1] - c._c[1]) + 'px');
     });
   }
 
