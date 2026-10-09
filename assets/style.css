@@ -1557,3 +1557,7 @@ body.art-body { --bg: #08090b; --text: #f2f2f2; --muted: #a3a3a3; --line: #2a2a2
 .news-src time { font-weight: 600; }
 .news-list { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
 .news-img { flex-basis: 130px; width: 130px; }
+.news-card { flex-direction: column; }
+.news-img { flex: none; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: center 30%; }
+.news-body { flex: 1; }
+.news-list { align-items: start; }
