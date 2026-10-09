@@ -1609,3 +1609,4 @@ body.art-body { --bg: #08090b; --text: #f2f2f2; --muted: #a3a3a3; --line: #2a2a2
 .uv-group .lb-grid.uv-grid { margin: 0; padding: 10px; gap: 10px; }
 .uv-group .lb-grid a { border: 0; border-radius: 6px; }
 .uv-group > figcaption { padding: 6px 8px; font-size: 0.78rem; color: var(--muted); border-top: 1px solid var(--line); }
+.lb-grid.uv-grid.uv-many { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
