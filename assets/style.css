@@ -1599,3 +1599,13 @@ body.art-body { --bg: #08090b; --text: #f2f2f2; --muted: #a3a3a3; --line: #2a2a2
 .uv-news-cards .news-src { font-size: 0.66rem; }
 @media (max-width: 760px) { .project ul.uv-news-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .uvt-body p.uv-after { margin-top: 14px; }
+.lb-grid.uv-grid { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; }
+.lb-grid.uv-grid.uv-big { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.lb-grid.uv-grid.uv-big img { aspect-ratio: 4 / 3; }
+.lb-grid.uv-grid.uv-one { grid-template-columns: minmax(0, 420px); }
+.lb-grid.uv-grid.uv-one img { max-height: 460px; }
+.lb-grid.uv-grid.uv-many { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); }
+.uv-group { margin: 12px 0 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--bg); }
+.uv-group .lb-grid.uv-grid { margin: 0; padding: 10px; gap: 10px; }
+.uv-group .lb-grid a { border: 0; border-radius: 6px; }
+.uv-group > figcaption { padding: 6px 8px; font-size: 0.78rem; color: var(--muted); border-top: 1px solid var(--line); }
