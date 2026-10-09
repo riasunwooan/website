@@ -91,3 +91,14 @@
   if (window.ResizeObserver) new ResizeObserver(draw).observe(road);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
 })();
+// Arriving via /writing/#piece: scroll to it and flash it
+(function () {
+  if (!location.hash) return;
+  var el = document.getElementById(location.hash.slice(1));
+  if (!el || !el.classList.contains('wp-item')) return;
+  setTimeout(function () {
+    el.scrollIntoView({ block: 'center' });
+    el.classList.add('wp-flash');
+    setTimeout(function () { el.classList.remove('wp-flash'); }, 2400);
+  }, 300);
+})();
