@@ -1549,3 +1549,4 @@ body.art-body { --bg: #08090b; --text: #f2f2f2; --muted: #a3a3a3; --line: #2a2a2
 .bk-face img.bk-real { z-index: 1; }
 .wp-item.wp-flash .wp-card { animation: wp-flash 1.2s ease-in-out 2; }
 @keyframes wp-flash { 50% { box-shadow: 0 0 0 4px var(--c), 0 10px 30px rgba(0,0,0,0.15); } }
+.pub-quote { margin-top: -4px; }
