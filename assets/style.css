@@ -1714,3 +1714,9 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 .lb-grid.strip p { max-width: 240px; }
 .strip-btn { top: 120px; }
 @media (max-width: 600px) { .lb-grid.strip li { flex-basis: auto; } .lb-grid.strip img { height: 200px; } }
+/* Art: horizontal news cards (photo left, text right) */
+.project ul.art-news { grid-template-columns: minmax(0, 620px); }
+.art-news .news-card { flex-direction: row; }
+.art-news .news-img { flex: 0 0 220px; width: 220px; height: auto; aspect-ratio: auto; object-fit: cover; }
+.art-news .news-body { justify-content: center; padding: 16px 20px; }
+@media (max-width: 520px) { .art-news .news-img { flex-basis: 120px; width: 120px; } }
