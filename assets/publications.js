@@ -25,5 +25,6 @@
     if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dlg.close();
   });
   dlg.addEventListener('close', function () { body.innerHTML = ''; history.replaceState(null, '', location.pathname); });
-  if (location.hash) open(location.hash.slice(1));
+  var OLD = { 'loom-spring-2026': 'loom26s', 'loom-fall-2026': 'loom26f' };  // keep old links working
+  if (location.hash) { var h = location.hash.slice(1); open(OLD[h] || h); }
 })();
