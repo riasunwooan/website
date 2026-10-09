@@ -1681,3 +1681,20 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 @media (max-width: 860px) { .wtiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 520px) { .wtiles { grid-template-columns: 1fr; } }
 .wt-img { position: relative; overflow: hidden; } .wt-photo img { position: absolute; inset: 0; }
+.wt-img { aspect-ratio: 2 / 1; }
+.wt-img img { width: auto; height: 62%; max-height: none; }
+.wt-photo img { width: 100%; height: 100%; }
+.wtile .tile-body { flex: 1; }
+/* Work: tiles stretch to fill each row */
+.tiles.wtiles { display: flex; gap: 18px; }
+.wtiles .wtile { flex: 1 1 0; min-width: 0; }
+.wtiles .wtile:only-child { flex-direction: row; }
+.wtiles .wtile:only-child .wt-img { flex: 0 0 38%; aspect-ratio: auto; border-bottom: 0; border-right: 1px solid var(--line); min-height: 170px; }
+.wtiles .wtile:only-child .wt-img img { height: 50%; }
+.wtiles .wtile:only-child .tile-body { padding: 18px 22px; align-self: center; }
+@media (max-width: 760px) {
+  .tiles.wtiles { flex-direction: column; }
+  .wtiles .wtile:only-child { flex-direction: column; }
+  .wtiles .wtile:only-child .wt-img { flex-basis: auto; aspect-ratio: 2 / 1; border-right: 0; border-bottom: 1px solid var(--line); }
+}
+.wtiles .wt-img { aspect-ratio: auto; height: 160px; } .wtiles .wtile:only-child .wt-img { height: auto; }
