@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research Logbook — EEG &amp; GSR Depression Screening — Ria Sunwoo An</title>
+  <meta name="description" content="Day-by-day research logbook for instant depression screening via valence and arousal prediction from EEG and GSR data.">
+  <link rel="canonical" href="https://riasunwooan.com/research/depression/logbook/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css?v=86">
+</head>
+<body>
+  <nav>
+    <a class="logo" href="/">Ria Sunwoo An</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a aria-current="page" href="/research/">Research</a></li>
+      <li><a href="/internships/">Internships</a></li>
+      <li><a href="/art/">Art</a></li>
+      <li><a href="/writing/">Writing</a></li>
+      <li><a href="/publications/">Publications</a></li>
+      <li><a href="/cv/">CV</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <article class="container project notebook">
+      <a class="back-link" href="/research/depression/">← Back to project</a>
+      <p class="nb-kicker">Research logbook</p>
+      <h1 class="page-title project-title">An Instant Depression Screening Method via Valence and Arousal Prediction from Electroencephalogram and Galvanic Skin Response Data via Unsupervised Representation Learning</h1>
+      <p class="project-meta">May 5 – Sep 14, 2024</p>
+      <p class="nb-materials"><strong>Materials:</strong> GSR device, EEG device, GPU, computer, data</p>
+      <p class="nb-materials"><a class="text-link" href="/assets/papers/eeg-depression-screening-logbook.pdf" target="_blank" rel="noopener">Original logbook (PDF) ↗</a></p>
+
+      <nav class="nb-jump" aria-label="Jump to day">
+        <span>Jump to day</span>
+        <ul>
+          <li><a href="#day-1">1</a></li>
+          <li><a href="#day-2">2</a></li>
+          <li><a href="#day-3">3</a></li>
+          <li><a href="#day-4">4</a></li>
+          <li><a href="#day-5">5</a></li>
+          <li><a href="#day-6">6</a></li>
+          <li><a href="#day-7">7</a></li>
+          <li><a href="#day-8">8</a></li>
+          <li><a href="#day-9">9</a></li>
+          <li><a href="#day-10">10</a></li>
+          <li><a href="#day-11">11</a></li>
+          <li><a href="#day-12">12</a></li>
+          <li><a href="#day-13">13</a></li>
+          <li><a href="#day-14">14</a></li>
+          <li><a href="#day-15">15</a></li>
+          <li><a href="#day-16">16</a></li>
+          <li><a href="#day-17">17</a></li>
+          <li><a href="#day-18">18</a></li>
+          <li><a href="#day-19">19</a></li>
+          <li><a href="#day-20">20</a></li>
+          <li><a href="#day-21">21</a></li>
+          <li><a href="#day-22">22</a></li>
+          <li><a href="#day-23">23</a></li>
+          <li><a href="#day-24">24</a></li>
+          <li><a href="#day-25">25</a></li>
+          <li><a href="#day-26">26</a></li>
+          <li><a href="#day-27">27</a></li>
+        </ul>
+      </nav>
+
+      <div class="nb-entries">
+        <section class="nb-entry" id="day-1">
+          <h2><span class="nb-day">Day 1</span> <span class="nb-date">Sun 5/5/24</span></h2>
+<ul>
+<li>Researched current depression screening methods and their limitations</li>
+<li>Collected data on the depression status quo</li>
+<li>Global
+<ul>
+<li>One in seven 10–19-year-olds experiences a mental disorder, 13% of the global burden of disease in this age group</li>
+<li>Depression, anxiety and behavioural disorders are among the leading causes of illness and disability among adolescents</li>
+<li>Suicide is the fourth leading cause of death among 15–29-year-olds</li>
+</ul>
+</li>
+<li>United States
+<ul>
+<li>About 1 in 5 adolescents report symptoms of anxiety or depression (KFF); many don’t get therapy because of cost, fear of what others will think, or not knowing how to get help</li>
+<li>In 2021, 20% of 12–17-year-olds had at least one major depressive episode (MDE): 29% of females vs 12% of males; nearly 60% received no treatment</li>
+<li>Teens who recently experienced depression rose 59% between 2007 and 2017 (66% for girls, 44% for boys)</li>
+<li>Seven in ten teens call anxiety and depression a major problem among people their age (Pew Research Center, 2018); another 26% call it a minor problem</li>
+<li>NIMH: 17% of 12–17-year-olds had a major depressive episode in 2020 (4.1 million teens); 12% had one with severe impairment</li>
+<li>CDC (2021): 42% of students felt persistently sad or hopeless, 29% had poor mental health, 22% considered suicide, 10% attempted suicide</li>
+<li>4.8 million youth (19.5%) have major depression and 3.6 million (14.6%) severe depression; 59.8% of youth with depression received no mental health treatment</li>
+<li>Adolescent depression rose from 8.1% in 2009 to 15.8% in 2019</li>
+<li>MDD is the leading cause of disability for ages 15–44, affects about 8.4% of U.S. adults, and almost 49% of adults with MDD are untreated</li>
+<li>80–90% of people with depression who seek treatment eventually respond well to it</li>
+</ul>
+</li>
+<li>South Korea
+<ul>
+<li>In 2021, South Korea’s suicide rate was 26 per 100,000, the highest in the OECD; suicide was the main cause of death for ages 10–39 (44% of teenage deaths, 56.8% of deaths in people in their 20s), with mental illness the leading cause</li>
+<li>Of about 50,000 middle and high school students surveyed in 2022, 14.3% had thought about suicide in the past 12 months</li>
+<li>Suicide has been the number one cause of death for young people since 2007</li>
+</ul>
+</li>
+</ul><div class="nb-callout">
+<p><strong>How depression is diagnosed today.</strong> A doctor has to hear about specific symptoms, usually through standard screening questions. To be diagnosed, a person must have symptoms most of the day, nearly every day, for at least 2 weeks, including a depressed mood or loss of interest. Children and adolescents may be irritable rather than sad, and depression can look very different from person to person (withdrawal, irritability, changes in eating and sleep), which makes diagnosis hard.</p>
+</div>
+<div class="nb-cards">
+<div class="nb-card">
+<h3>Children’s Depression Inventory (CDI)</h3>
+<ul>
+<li>Modified from the adult Beck Depression Inventory</li>
+<li>Ages 7–17; two scales: emotional and functional problems</li>
+<li>Forms for parents (17 items), teachers (12) and a self-report (28)</li>
+<li>5–15 minutes</li>
+</ul>
+</div>
+<div class="nb-card">
+<h3>Children’s Depression Rating Scale (CDRS)</h3>
+<ul>
+<li>Designed for ages 6–12, validated up to 18</li>
+<li>17 symptom areas, adapted from the Hamilton Depression Rating Scale</li>
+<li>Semi-structured interview</li>
+<li>10–15 minutes to give and score</li>
+</ul>
+</div>
+<div class="nb-card">
+<h3>Patient Health Questionnaire (PHQ-9)</h3>
+<ul>
+<li>Self-report screen for depressive symptoms</li>
+<li>1–5 minutes to complete, about the same to review</li>
+<li>Available in many languages</li>
+<li>61% sensitivity / 94% specificity in adults; 89.5% / 77.5% in adolescents</li>
+</ul>
+</div>
+</div>
+<div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-depression-screening/logbook/phq9.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/phq9.jpg" alt="The PHQ-9 questionnaire (Pfizer PHQ screeners)." loading="lazy"></a>
+<figcaption>The PHQ-9 questionnaire (Pfizer PHQ screeners).</figcaption>
+</figure>
+</div><ul>
+<li>Common thread: every existing method is a self-report questionnaire, which only works if the person recognizes their symptoms and answers honestly</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-2">
+          <h2><span class="nb-day">Day 2</span> <span class="nb-date">Sun 5/12/24</span></h2>
+<ul>
+<li>Developed and sent out a survey to gather depression-screening data</li>
+<li>Survey design
+<ul>
+<li>Online survey of 50 high school students attending school in the United States or South Korea</li>
+<li>Questions: types of screening taken, honesty during screening (1–5), reasons for dishonesty, whether screening is useful, negative connotation of depression, and whether technology would make results more trustworthy</li>
+</ul>
+</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-depression-screening/logbook/survey-q1.png" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/survey-q1.png" alt="Survey questions 1–3." loading="lazy"></a>
+<figcaption>Survey questions 1–3.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-depression-screening/logbook/survey-q2.png" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/survey-q2.png" alt="Survey questions 4–6." loading="lazy"></a>
+<figcaption>Survey questions 4–6.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="day-3">
+          <h2><span class="nb-day">Day 3</span> <span class="nb-date">Sun 5/26/24</span></h2>
+<ul>
+<li>Reviewed and analyzed the survey results</li>
+<li>Findings
+<ul>
+<li>76% had taken online, school-based screening; 14% online on their own; 6% at a depression center or clinic; 4% never</li>
+<li>36 of the 38 students who took school-based tests rated their honesty 1 or 2 (dishonest)</li>
+<li>Top reason for dishonesty (33 students): nobody else answered honestly, so they didn’t either; others: questions and answers were too obvious, the test was too long and annoying</li>
+<li>84% said screening questionnaires are not useful or accurate</li>
+</ul>
+</li>
+<li>Takeaway: school-wide self-report screening isn’t taken seriously, so a non-survey, emotion-based test is needed</li>
+<li>Reviewed convolutional neural networks (CNNs) through research notes, printed separately</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-depression-screening/logbook/survey-screening-type.png" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/survey-screening-type.png" alt="Types of depression screening taken." loading="lazy"></a>
+<figcaption>Types of depression screening taken.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-depression-screening/logbook/survey-honesty.png" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/survey-honesty.png" alt="Honesty during screening, 1 (dishonest) to 5 (honest)." loading="lazy"></a>
+<figcaption>Honesty during screening, 1 (dishonest) to 5 (honest).</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-depression-screening/logbook/survey-reasons.png" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/survey-reasons.png" alt="Reasons for dishonesty." loading="lazy"></a>
+<figcaption>Reasons for dishonesty.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-depression-screening/logbook/survey-useful.png" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/survey-useful.png" alt="Are screening questionnaires useful/accurate?" loading="lazy"></a>
+<figcaption>Are screening questionnaires useful/accurate?</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-depression-screening/logbook/survey-connotation.png" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/survey-connotation.png" alt="Is there a negative connotation to depression?" loading="lazy"></a>
+<figcaption>Is there a negative connotation to depression?</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-depression-screening/logbook/survey-trust-tech.png" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/survey-trust-tech.png" alt="Would you trust results more if technology were incorporated?" loading="lazy"></a>
+<figcaption>Would you trust results more if technology were incorporated?</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="day-4">
+          <h2><span class="nb-day">Day 4</span> <span class="nb-date">Fri 5/31/24</span></h2>
+<ul>
+<li>Studied optimization techniques (Ch. 3, gradient descent algorithm)</li>
+<li>Notes
+<ul>
+<li>Training a network means minimizing a loss function</li>
+<li>Gradient descent updates each weight a small step in the direction that lowers the loss; the learning rate sets the step size</li>
+<li>This is how the loss functions on Day 13 actually train the TOP-N, GSR-N and E-RN networks</li>
+</ul>
+</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-5">
+          <h2><span class="nb-day">Day 5</span> <span class="nb-date">Tue 6/4/24</span></h2>
+<ul>
+<li>Began implementing the CNN model</li>
+<li>Planned architecture (finalized on Day 14)
+<ul>
+<li><strong>TOP-N</strong> (Topographical Map Network): a 2D CNN that turns EEG topographical maps into emotion-related feature vectors</li>
+<li><strong>GSR-N</strong> (Galvanic Skin Response Network): a 1D CNN that extracts emotion-related features from GSR signals</li>
+<li><strong>E-RN</strong> (Emotion Regression Network): combines both feature vectors and outputs the predicted arousal and valence values (AV-Prob)</li>
+</ul>
+</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-6">
+          <h2><span class="nb-day">Day 6</span> <span class="nb-date">Sun 6/9/24</span></h2>
+<ul>
+<li>Background study on GSR and EEG</li>
+</ul><div class="nb-cards nb-cards-2">
+<div class="nb-card">
+<h3>Galvanic Skin Response (GSR)</h3>
+<ul>
+<li><strong>What it is:</strong> the electrical conductivity of the skin in response to stimuli; emotional triggers, positive or negative, activate sweat glands and raise conductivity</li>
+<li><strong>Why it’s useful:</strong> these changes are involuntary (autonomic nervous system), so GSR detects emotional intensity even when someone tries to hide it</li>
+<li><strong>Measurement:</strong> conductance between two points on the skin, in microsiemens (µS); higher conductance = more sweat-gland activity = higher arousal</li>
+<li><strong>Device:</strong> sensors on the index and middle fingers with Velcro, connected by Bluetooth; participants sit still, breathe normally and don’t talk</li>
+<li><strong>Signal:</strong> a slow-varying tonic level (baseline) plus fast phasic responses (peaks) 1–5 seconds after an emotional trigger</li>
+<li><strong>Analysis:</strong> count the peaks over time; more peaks = higher arousal</li>
+</ul>
+</div>
+<div class="nb-card">
+<h3>Electroencephalography (EEG)</h3>
+<ul>
+<li><strong>What it is:</strong> a non-invasive way to record the brain’s electrical activity with electrodes on the scalp</li>
+<li><strong>Mechanism:</strong> neurons exchange ions across their membranes; the charge spreads by volume conduction, and electrodes pick up the voltage differences, which are amplified and graphed</li>
+<li><strong>Clinical use:</strong> spotting abnormal brain waves, e.g., seizures appear as rapid spiking waves</li>
+<li><strong>International 10-20 system:</strong> standard electrode placement; letters mark the lobe (Fp, F, T, P, O, C, A), even numbers = right side, odd = left, “z” = midline</li>
+</ul>
+</div>
+</div>
+<ul>
+<li>Why combine them: EEG is very sensitive to noise, and GSR shows the strength of emotion the person feels unconsciously, so it can compensate</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-7">
+          <h2><span class="nb-day">Day 7</span> <span class="nb-date">Thu 6/13/24</span></h2>
+<ul>
+<li>Gathered background knowledge on EEG datasets</li>
+<li>Read: Liu, Qiu, Zheng &amp; Lu (2021), comparing recognition performance and robustness of multimodal deep learning models for emotion recognition (IEEE Transactions on Cognitive and Developmental Systems)</li>
+<li>Chosen: SEED-IV (BCMI lab)
+<ul>
+<li>72 film clips, chosen in a preliminary study to tend to induce happiness, sadness, fear or neutral emotions</li>
+<li>15 subjects, 3 sessions each on different days, 24 trials per session</li>
+<li>EEG recorded with the 62-channel ESI NeuroScan System</li>
+<li>Each session is cut into 4-second non-overlapping segments; one segment = one training sample</li>
+</ul>
+</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-8">
+          <h2><span class="nb-day">Day 8</span> <span class="nb-date">Mon 6/17/24</span></h2>
+<ul>
+<li>Gathered background knowledge on GSR + EEG datasets</li>
+<li>Read: Koelstra et al. (2011), DEAP: a database for emotion analysis using physiological signals (IEEE Transactions on Affective Computing)</li>
+<li>Chosen: DEAP
+<ul>
+<li>Multimodal dataset for analyzing human affective states</li>
+<li>EEG and GSR from 32 participants, each watching 40 one-minute music-video excerpts</li>
+<li>Participants rated each video for arousal, valence, like/dislike, dominance and familiarity, which gives the arousal-valence labels the model learns to predict</li>
+</ul>
+</li>
+<li>Statistical analysis of the collected data</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-9">
+          <h2><span class="nb-day">Day 9</span> <span class="nb-date">Sat 6/22/24</span></h2>
+<ul>
+<li>Researched the arousal-valence (A-V) model</li>
+<li>Two dimensions
+<ul>
+<li><strong>Arousal:</strong> physiological and psychological activation, from low (calm, relaxed) to high (excitement, agitation)</li>
+<li><strong>Valence:</strong> how positive or negative the emotion is, from negative (sadness, anger) to positive (happiness, delight)</li>
+</ul>
+</li>
+<li>Four quadrants
+<ul>
+<li>High arousal, positive valence: excitement, surprise</li>
+<li>High arousal, negative valence: anger, fear, anxiety</li>
+<li>Low arousal, positive valence: calmness, relaxation</li>
+<li>Low arousal, negative valence: sadness, depression, boredom</li>
+</ul>
+</li>
+<li>Why it matters: depression sits in the low-arousal, negative-valence quadrant, so predicting a point on this graph is a way to screen for it without asking any questions</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-depression-screening/logbook/arousal-valence.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/arousal-valence.jpg" alt="Arousal-valence model with example emotions (Foucher et al.)." loading="lazy"></a>
+<figcaption>Arousal-valence model with example emotions (Foucher et al.).</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="day-10">
+          <h2><span class="nb-day">Day 10</span> <span class="nb-date">Wed 6/26/24</span></h2>
+<ul>
+<li>Reviewed traditional approaches to EEG- and GSR-based emotion recognition</li>
+<li>From the paper’s related work
+<ul>
+<li>Plass-Oude Bos (2006): EEG-based emotion recognition and the influence of visual and auditory stimuli</li>
+<li>Acharya et al. (2018): automated EEG-based depression screening using a deep CNN</li>
+</ul>
+</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-11">
+          <h2><span class="nb-day">Day 11</span> <span class="nb-date">Sat 6/29/24</span></h2>
+<ul>
+<li>Surveyed previous research approaches</li>
+<li>Existing depression screening (all self-report)
+<ul>
+<li>PHQ-9: 2–5 minutes; its accuracy depends on people being willing to take the test and answer honestly</li>
+<li>CDI and CDRS for children and adolescents (see Day 1)</li>
+</ul>
+</li>
+<li>Where this project fits: predicting emotion directly from EEG and GSR, so screening doesn’t depend on honest self-report</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-12">
+          <h2><span class="nb-day">Day 12</span> <span class="nb-date">Wed 7/3/24</span></h2>
+<ul>
+<li>Developed the system overview and drafted the overview section</li>
+</ul><div class="nb-figs">
+<figure class="nb-fig-wide">
+<a href="/assets/img/research/eeg-depression-screening/logbook/system-overview.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/system-overview.jpg" alt="First system overview: EEG → topographical map → TOP-N and GSR signal → GSR-N, merged in E-RN to output the predicted arousal-valence value." loading="lazy"></a>
+<figcaption>First system overview: EEG → topographical map → TOP-N and GSR signal → GSR-N, merged in E-RN to output the predicted arousal-valence value.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="day-13">
+          <h2><span class="nb-day">Day 13</span> <span class="nb-date">Sun 7/7/24</span></h2>
+<ul>
+<li>Formulated and refined the loss function equations</li>
+</ul><div class="nb-eqs">
+<figure class="nb-eq">
+<img src="/assets/img/research/eeg-depression-screening/logbook/eq-cross-entropy.png" alt="L(i,j) = -log( e^similarity(zi,zj) / sum_k e^similarity(zi,zk) )" style="width:360px" loading="lazy">
+<figcaption><strong>Eq. 1. Cross-entropy loss (with cosine similarity).</strong> Pulls feature vectors from similar emotions (z<sub>i</sub>, z<sub>j</sub>) together and pushes all other pairs (z<sub>k</sub>) apart. Cosine similarity ranges from −1 (opposite) to 1 (same direction). 0 = ideal, lowest loss.</figcaption>
+</figure>
+<figure class="nb-eq">
+<img src="/assets/img/research/eeg-depression-screening/logbook/eq-mse.png" alt="L_av-prob = 1/N sum (arousal - predicted arousal)^2 + 1/N sum (valence - predicted valence)^2" style="width:760px" loading="lazy">
+<figcaption><strong>Eq. 2. Mean squared error (MSE).</strong> Trains E-RN: the average squared difference between predicted and actual arousal and valence, over N feature vectors. 0 = ideal.</figcaption>
+</figure>
+<figure class="nb-eq">
+<img src="/assets/img/research/eeg-depression-screening/logbook/eq-mae.png" alt="MAE = 1/N sum |t_i - predicted t_i|" style="width:200px" loading="lazy">
+<figcaption><strong>Eq. 3. Mean absolute error (MAE).</strong> The evaluation metric: the average size of the errors, ignoring their direction. 0 = perfect.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="day-14">
+          <h2><span class="nb-day">Day 14</span> <span class="nb-date">Fri 7/12/24</span></h2>
+<ul>
+<li>Refined the proposed system diagram</li>
+</ul><div class="nb-figs">
+<figure class="nb-fig-wide">
+<a href="/assets/img/research/eeg-depression-screening/logbook/architecture.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/architecture.jpg" alt="Overall architecture: topographical maps go into TOP-N (pre-trained feature extractor) and GSR signals into GSR-N (1D CNN); their emotion-related feature vectors are combined in E-RN (regression network), which outputs AV-Prob, the arousal/valence prediction." loading="lazy"></a>
+<figcaption>Overall architecture: topographical maps go into TOP-N (pre-trained feature extractor) and GSR signals into GSR-N (1D CNN); their emotion-related feature vectors are combined in E-RN (regression network), which outputs AV-Prob, the arousal/valence prediction.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="day-15">
+          <h2><span class="nb-day">Day 15</span> <span class="nb-date">Tue 7/16/24</span></h2>
+<ul>
+<li>Built the TOP-N model component</li>
+<li>Phase 1: representation learning
+<ul>
+<li>EEG signals are converted into topographical maps, one map per epoch</li>
+<li>An unsupervised CNN learns emotion-related feature vectors without labels</li>
+<li>Assumption: feature vectors from similar emotions should be mathematically similar, enforced with the cosine-similarity loss (Eq. 1)</li>
+</ul>
+</li>
+<li>Phase 2: transfer learning
+<ul>
+<li>The pre-trained TOP-N becomes the feature extractor</li>
+<li>E-RN is trained on top to predict arousal and valence, using MSE (Eq. 2)</li>
+</ul>
+</li>
+</ul><div class="nb-figs">
+<figure class="nb-fig-wide">
+<a href="/assets/img/research/eeg-depression-screening/logbook/top-n-representation.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/top-n-representation.jpg" alt="TOP-N representation learning: EEG signals → topographical maps → CNN → emotion-related feature vectors." loading="lazy"></a>
+<figcaption>TOP-N representation learning: EEG signals → topographical maps → CNN → emotion-related feature vectors.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-depression-screening/logbook/top-n-transfer.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/top-n-transfer.jpg" alt="Network variants: TOP-N + E-RN (EEG only) and the full model with GSR-N." loading="lazy"></a>
+<figcaption>Network variants: TOP-N + E-RN (EEG only) and the full model with GSR-N.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="day-16">
+          <h2><span class="nb-day">Day 16</span> <span class="nb-date">Sun 7/21/24</span></h2>
+<ul>
+<li>Built the GSR-N model component</li>
+<li>A one-dimensional CNN that extracts emotion-related feature vectors from GSR signals, to be combined with TOP-N’s</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-17">
+          <h2><span class="nb-day">Day 17</span> <span class="nb-date">Thu 7/25/24</span></h2>
+<ul>
+<li>Built the E-RN model component</li>
+<li>Regression network that takes the combined TOP-N and GSR-N feature vectors and outputs AV-Prob, the predicted arousal and valence values</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-18">
+          <h2><span class="nb-day">Day 18</span> <span class="nb-date">Mon 7/29/24</span></h2>
+<ul>
+<li>Organized and cleaned the dataset for analysis</li>
+<li>SEED-IV: EEG in 4-second non-overlapping segments; DEAP: EEG + GSR with arousal and valence ratings</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-19">
+          <h2><span class="nb-day">Day 19</span> <span class="nb-date">Sat 8/3/24</span></h2>
+<ul>
+<li>Defined and refined evaluation metrics: mean absolute error (MAE, Eq. 3) for arousal, valence and their average (total); lower is better</li>
+<li>Data split: 80% sampled at random from the 2 datasets for training, 20% for testing</li>
+<li>Networks compared as feature extractors (from the paper)
+<ul>
+<li>VGG19: 16 convolutional + 3 fully connected layers (19 weight layers)</li>
+<li>HRNet-W30-C: 82 layers</li>
+<li>ResNet-101: 101 layers (33 bottleneck blocks of 3 layers)</li>
+<li>DenseNet-264: 264 layers</li>
+</ul>
+</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-20">
+          <h2><span class="nb-day">Day 20</span> <span class="nb-date">Thu 8/8/24</span></h2>
+<ul>
+<li>Trained the model using representation learning (8-hour session)</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-21">
+          <h2><span class="nb-day">Day 21</span> <span class="nb-date">Wed 8/14/24</span></h2>
+<ul>
+<li>Trained the model using transfer learning (1–2 hour session)</li>
+<li>Compared with the 8-hour representation-learning session on Day 20</li>
+</ul>
+        </section>
+
+        <section class="nb-entry" id="day-22">
+          <h2><span class="nb-day">Day 22</span> <span class="nb-date">Tue 8/20/24</span></h2>
+<ul>
+<li>Experiment 1: MAE by network architecture</li>
+</ul><div class="nb-tables nb-tables-2">
+<div class="nb-scroll"><table class="nb-table nb-table-wide">
+<caption>Without GSR</caption>
+<thead><tr><th>Network</th><th>Arousal</th><th>Valence</th><th>Total</th></tr></thead>
+<tbody>
+<tr><td>VGG19</td><td>30.9</td><td>22.5</td><td>26.7</td></tr>
+<tr><td>HRNet-W30-C</td><td>27.4</td><td>19.0</td><td>23.2</td></tr>
+<tr><td>ResNet-101</td><td>22.3</td><td>17.2</td><td>19.8</td></tr>
+<tr class="nb-avg"><td>DenseNet-264</td><td>21.3</td><td>15.5</td><td>18.4</td></tr>
+</tbody>
+</table></div>
+<div class="nb-scroll"><table class="nb-table nb-table-wide">
+<caption>With GSR</caption>
+<thead><tr><th>Network</th><th>Arousal</th><th>Valence</th><th>Total</th></tr></thead>
+<tbody>
+<tr><td>VGG19</td><td>27.5</td><td>20.7</td><td>24.1</td></tr>
+<tr><td>HRNet-W30-C</td><td>23.7</td><td>17.5</td><td>20.6</td></tr>
+<tr><td>ResNet-101</td><td>19.7</td><td>15.1</td><td>17.4</td></tr>
+<tr class="nb-avg"><td>DenseNet-264</td><td>18.9</td><td>13.9</td><td>16.4</td></tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>DenseNet-264 performed best and VGG19 worst; error falls as the network gets deeper, as expected for a baseline comparison</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-depression-screening/logbook/exp1-networks.png" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/exp1-networks.png" alt="MAE (arousal, valence, total) for each network, with GSR." loading="lazy"></a>
+<figcaption>MAE (arousal, valence, total) for each network, with GSR.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="day-23">
+          <h2><span class="nb-day">Day 23</span> <span class="nb-date">Sun 8/25/24</span></h2>
+<ul>
+<li>Experiment 2: MAE with vs without GSR</li>
+<li>Adding GSR lowered MAE for every network and every measure; best total MAE went from 18.4 to 16.4 (DenseNet-264)</li>
+<li>Multimodal data makes training more consistent, which improves accuracy</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-depression-screening/logbook/exp2-gsr.png" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/exp2-gsr.png" alt="MAE for arousal, valence and total, with vs without GSR, by network." loading="lazy"></a>
+<figcaption>MAE for arousal, valence and total, with vs without GSR, by network.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="day-24">
+          <h2><span class="nb-day">Day 24</span> <span class="nb-date">Thu 8/29/24</span></h2>
+<ul>
+<li>Experiment 3: ablation study, removing parts of the model to see what each contributes</li>
+</ul><div class="nb-scroll"><table class="nb-table nb-table-wide">
+<caption>Total MAE</caption>
+<thead><tr><th>Network</th><th>No rep. learning</th><th>With rep. learning</th><th>L1-squared loss</th><th>Cosine loss (proposed)</th></tr></thead>
+<tbody>
+<tr><td>VGG19</td><td>26.9</td><td>24.1</td><td>25.3</td><td>24.1</td></tr>
+<tr><td>HRNet-W30-C</td><td>23.4</td><td>20.6</td><td>22.1</td><td>20.6</td></tr>
+<tr><td>ResNet-101</td><td>20.1</td><td>17.4</td><td>17.9</td><td>17.4</td></tr>
+<tr class="nb-avg"><td>DenseNet-264</td><td>18.8</td><td>16.4</td><td>17.2</td><td>16.4</td></tr>
+</tbody>
+</table></div><ul>
+<li>Representation learning lowers MAE for every network (e.g., 18.8 → 16.4 for DenseNet-264)</li>
+<li>The cosine-similarity loss beats an L1-squared comparison of feature vectors (17.2 → 16.4)</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-depression-screening/logbook/exp3-ablation.png" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/exp3-ablation.png" alt="Ablation study: baseline, L1-squared function and cosine similarity function, with the differences." loading="lazy"></a>
+<figcaption>Ablation study: baseline, L1-squared function and cosine similarity function, with the differences.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="day-25">
+          <h2><span class="nb-day">Day 25</span> <span class="nb-date">Wed 9/4/24</span></h2>
+<ul>
+<li>Experiment 4: t-SNE visualization of the learned feature vectors</li>
+<li>Trained two models, the baseline and the proposed approach; each dot is one input sample’s feature vector, colored by emotion (sad, happy, fear, neutral)</li>
+<li>The proposed model’s features form more distinct clusters (better disentanglement); the baseline’s are more mixed together</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-depression-screening/logbook/tsne-baseline.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/tsne-baseline.jpg" alt="t-SNE of feature vectors, baseline." loading="lazy"></a>
+<figcaption>t-SNE of feature vectors, baseline.</figcaption>
+</figure>
+<figure>
+<a href="/assets/img/research/eeg-depression-screening/logbook/tsne-proposed.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/tsne-proposed.jpg" alt="t-SNE of feature vectors, proposed method." loading="lazy"></a>
+<figcaption>t-SNE of feature vectors, proposed method.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="day-26">
+          <h2><span class="nb-day">Day 26</span> <span class="nb-date">Mon 9/9/24</span></h2>
+<ul>
+<li>Researched brain anatomy related to depression indicators</li>
+<li>Electrode groups by brain region for Experiment 5, using the 10-20 system from Day 6</li>
+</ul><div class="nb-figs">
+<figure class="nb-fig-wide">
+<a href="/assets/img/research/eeg-depression-screening/logbook/electrode-regions.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/electrode-regions.jpg" alt="Electrode groups tested: (a) occipital + parietal, (b) frontal, (c) frontal + temporal, (d) baseline." loading="lazy"></a>
+<figcaption>Electrode groups tested: (a) occipital + parietal, (b) frontal, (c) frontal + temporal, (d) baseline.</figcaption>
+</figure>
+</div>
+        </section>
+
+        <section class="nb-entry" id="day-27">
+          <h2><span class="nb-day">Day 27</span> <span class="nb-date">Sat 9/14/24</span></h2>
+<ul>
+<li>Experiment 5: brain anatomy correlation, comparing error when the model uses each electrode group</li>
+<li>Occipital + parietal had by far the highest error (about 32); frontal + temporal came closest to the baseline</li>
+<li>Final data analysis and interpretation</li>
+</ul><div class="nb-figs">
+<figure>
+<a href="/assets/img/research/eeg-depression-screening/logbook/exp5-brain-regions.png" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/exp5-brain-regions.png" alt="Brain anatomy-driven results: error for arousal, valence and total by electrode group." loading="lazy"></a>
+<figcaption>Brain anatomy-driven results: error for arousal, valence and total by electrode group.</figcaption>
+</figure>
+</div>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <span>© 2026 Ria Sunwoo An</span>
+  </footer>
+</body>
+</html>

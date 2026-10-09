@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Depression Screening: Valence/Arousal from EEG & GSR via Unsupervised Representation Learning — Ria Sunwoo An</title>
+  <meta name="description" content="Developed a machine learning framework for EEG and skin-conductance signals (GSR) to recognize emotional patterns linked to depression without relying solely on traditional self-questionnaires. The work explores physiological signals as another window into mental health screening, increasing accuracy and accessibility.">
+  <link rel="canonical" href="https://riasunwooan.com/research/depression/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css?v=86">
+</head>
+<body>
+  <nav>
+    <a class="logo" href="/">Ria Sunwoo An</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a aria-current="page" href="/research/">Research</a></li>
+      <li><a href="/internships/">Internships</a></li>
+      <li><a href="/art/">Art</a></li>
+      <li><a href="/writing/">Writing</a></li>
+      <li><a href="/publications/">Publications</a></li>
+      <li><a href="/cv/">CV</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <article class="container project">
+      <a class="back-link" href="/research/">← All research</a>
+      <div class="tag-row"><span class="tag" style="--c:#22c4d8">Bioengineering</span><span class="tag" style="--c:#f2412f">Machine Learning</span></div>
+      <h1 class="page-title project-title">Depression Screening: Valence/Arousal from EEG &amp; GSR via Unsupervised Representation Learning</h1>
+      <p class="project-meta">Apr 2024 – Jan 2025</p>
+      <p class="project-mentor"><span>Mentors</span> Kobi Osei-Mensah, Science Faculty, The Loomis Chaffee School &amp; Dr. Peter Na, Assistant Professor of Psychiatry, Yale University</p>
+      <p class="project-intro">After watching peers in both Korea and the U.S. struggle to answer school-wide mental health questionnaires honestly, I began wondering what gets missed when our measurements depend on someone being able to put their emotions into words. I started by surveying students about their experiences with self-report screening, then explored whether physiological signals could offer another window into what they were feeling. Working with Mr. Kobi Osei-Mensah and Dr. Peter Na, I combined EEG and galvanic skin response signals with unsupervised representation learning to predict emotional valence and arousal, physiological dimensions closely tied to affect. This approach reduced prediction error compared with the baseline model, exploring a path toward depression screening that does not depend solely on questionnaires or self-report. Computation and physiology met to make invisible dimensions of mental health more measurable. <strong>It made me interested not only in what data can reveal about people, but in what our usual ways of collecting it leave unseen.</strong></p>
+      <div class="btn-row">
+        <a class="btn btn-notebook" href="/research/depression/logbook/"><svg class="btn-icon" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><rect x="5" y="1.5" width="15" height="23" rx="1.5" fill="#eef0f4"/><rect x="5" y="1.5" width="4" height="23" fill="#d9824b"/><g stroke="#111" stroke-width="1" stroke-linejoin="round"><rect x="20" y="3.5" width="2.6" height="3.6" fill="#ffc102"/><rect x="20" y="8.5" width="2.6" height="3.6" fill="#f2412f"/><rect x="20" y="13.5" width="2.6" height="3.6" fill="#a5d22a"/><rect x="20" y="18.5" width="2.6" height="3.6" fill="#22c4d8"/><path d="M13.4 5.5v3.8l-2.9 5h7.6l-2.9-5V5.5z" fill="#ffc102"/><rect x="11" y="16.5" width="6.6" height="4.4" rx=".6" fill="#d3d6dd"/></g><rect x="5" y="1.5" width="15" height="23" rx="1.5" fill="none" stroke="#111" stroke-width="1.5"/><path d="M9 1.5v23" stroke="#111" stroke-width="1.2"/><path d="M3 5.5h4M3 10h4M3 14.5h4M3 19h4" stroke="#111" stroke-width="1.5" stroke-linecap="round"/></svg><span>Research logbook</span> <span aria-hidden="true">→</span></a>
+        <a class="btn btn-notebook btn-sample" href="https://colab.research.google.com/drive/1YYe0dVMamOKSuRpKPXGU0PNKvbp0q_Bb?usp=sharing" target="_blank" rel="noopener"><svg class="btn-icon" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><rect x="2" y="4" width="22" height="18" rx="2.5" fill="#eef0f4" stroke="#111" stroke-width="1.5"/><path d="M2 8.5h22" stroke="#111" stroke-width="1.5"/><circle cx="5" cy="6.3" r=".9" fill="#f2412f"/><circle cx="7.8" cy="6.3" r=".9" fill="#ffc102"/><circle cx="10.6" cy="6.3" r=".9" fill="#a5d22a"/><path d="M10 12.5l5 3-5 3z" fill="#22c4d8" stroke="#111" stroke-width="1.1" stroke-linejoin="round"/></svg><span>Experiment Sample</span> <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-notebook btn-doi" href="/assets/papers/eeg-depression-screening.pdf" target="_blank" rel="noopener"><svg class="btn-icon" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><path d="M6 2h10l5 5v17H6z" fill="#eef0f4" stroke="#111" stroke-width="1.5" stroke-linejoin="round"/><path d="M16 2v5h5" fill="#ffc102" stroke="#111" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.5 12h8M9.5 15.5h8M9.5 19h5" stroke="#111" stroke-width="1.4" stroke-linecap="round"/></svg><span>DOI: 10.47611/jsrhs.v14i1.8834</span><span class="btn-sep" aria-hidden="true">|</span><span><em>Journal of Student Research (2025)</em></span> <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="btn-note">*JSR is under maintenance; link is to full paper</p>
+
+      <!--
+        Add more about this project here. Ideas: the question you asked, what you did, what you found.
+        Images: <figure class="project-figure"><img src="/assets/img/research/eeg-depression-screening/figure1.jpg" alt="Describe the image"><figcaption>Caption</figcaption></figure>
+      -->
+      <section class="project-section abstract">
+        <h2>Abstract</h2>
+        <div class="abstract-part">
+          <h3>Background</h3>
+          <div>
+            <p>Globally, 280 million are suffering from depressive disorders, one of the most common mental disorders referring to long periods of depressed mood that affect life negatively, often leading to suicide. Adolescents are especially vulnerable, with 35% of youth aged 12 to 17 in the United States having major or severe depression. The rate of depression in teenagers has doubled over the past decade, along with the youth suicide rate.</p>
+            <p>Currently, self-report questionnaires such as the Patient Health Questionnaire are utilized to diagnose depression. Self-report questionnaires may be accurate for other population groups that are fully aware of the state of their mental health, and are willing to seek support. However, adolescents do not have the same ability to recognize their symptoms nor answer honestly in school-wide screening tests.</p>
+          </div>
+        </div>
+        <div class="abstract-part">
+          <h3>Methods</h3>
+          <div>
+            <p>In order to solve the aforementioned problem, a method that captures the true emotion without self-reports based on electroencephalogram (EEG) and galvanic skin response (GSR) is proposed. The novel system is composed of representation and transfer learning steps for the extraction of emotion-related features from EEG signals, and a 1D convolutional neural network for extraction in GSR signals. The extracted features are merged and outputted as points on the arousal-valence graph, where emotions can be detected.</p>
+          </div>
+        </div>
+        <div class="abstract-part">
+          <h3>Results</h3>
+          <div>
+            <p>Through extensive experiments, the proposed model demonstrated exceptional performance. The best MAE was 18.4 when without GSR, 18.8 when without representation learning, and 17.2 when without the proposed equation, but improved to 16.4 in the proposed model.</p>
+            <div class="abstract-figs">
+              <figure class="wide">
+                <a href="/assets/img/research/eeg-depression-screening/logbook/architecture.jpg" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/architecture.jpg" alt="Overall architecture of the proposed model" loading="lazy"></a>
+                <figcaption><b>Fig. 1.</b> Overall architecture: EEG topographical maps go into TOP-N and GSR signals into GSR-N; their emotion-related features are combined in E-RN, which predicts arousal and valence (AV-Prob).</figcaption>
+              </figure>
+              <figure class="half">
+                <a href="/assets/img/research/eeg-depression-screening/logbook/exp2-gsr.png" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/exp2-gsr.png" alt="MAE with vs without GSR by network" loading="lazy"></a>
+                <figcaption><b>Fig. 2.</b> Mean absolute error with vs without GSR for four networks; adding GSR lowers error in every case.</figcaption>
+              </figure>
+              <figure class="half">
+                <a href="/assets/img/research/eeg-depression-screening/logbook/exp3-ablation.png" target="_blank" rel="noopener"><img src="/assets/img/research/eeg-depression-screening/logbook/exp3-ablation.png" alt="Ablation study" loading="lazy"></a>
+                <figcaption><b>Fig. 3.</b> Ablation study: removing representation learning or the cosine-similarity loss raises error (best: 16.4 with both).</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="project-section">
+        <h2>Highlights</h2>
+        <ul>
+          <li>Published in <em>Journal of Student Research</em>, Aug 2025</li>
+          <li>Presented at The Loomis Chaffee Science Symposium, May 2025</li>
+        </ul>
+      </section>
+
+      <div class="project-pager" role="navigation" aria-label="More research">
+        <a class="pager-prev" href="/research/seizure/"><span>← Earlier</span>A Deep Semi-Supervised Domain Generalization Approach for Epileptic Seizure Prediction using EEG</a>
+        <a class="pager-next" href="/research/htp/"><span>Later →</span>Continual Learning with Elastic Weight Consolidation for House Tree Person Test</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <span>© 2026 Ria Sunwoo An</span>
+  </footer>
+</body>
+</html>
