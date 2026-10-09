@@ -1598,3 +1598,4 @@ body.art-body { --bg: #08090b; --text: #f2f2f2; --muted: #a3a3a3; --line: #2a2a2
 .uv-news-cards .news-title { font-size: 0.95rem; }
 .uv-news-cards .news-src { font-size: 0.66rem; }
 @media (max-width: 760px) { .project ul.uv-news-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.uvt-body p.uv-after { margin-top: 14px; }
