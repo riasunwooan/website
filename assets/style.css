@@ -1698,3 +1698,13 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
   .wtiles .wtile:only-child .wt-img { flex-basis: auto; aspect-ratio: 2 / 1; border-right: 0; border-bottom: 1px solid var(--line); }
 }
 .wtiles .wt-img { aspect-ratio: auto; height: 160px; } .wtiles .wtile:only-child .wt-img { height: auto; }
+/* Work: compact horizontal tiles (logo/photo on the side) */
+.wtiles .wtile, .wtiles .wtile:only-child { flex-direction: row; align-items: stretch; }
+.wtiles .wt-img, .wtiles .wtile:only-child .wt-img { flex: 0 0 110px; width: 110px; height: auto; min-height: 0; aspect-ratio: auto; border-bottom: 0; border-right: 1px solid var(--line); }
+.wtiles .wt-img img, .wtiles .wtile:only-child .wt-img img { width: 64px; height: 64px; object-fit: contain; }
+.wtiles .wt-photo img, .wtiles .wtile:only-child .wt-photo img { width: 100%; height: 100%; object-fit: cover; }
+.wtiles .tile-body, .wtiles .wtile:only-child .tile-body { padding: 14px 16px; align-self: auto; }
+.wtiles .tile-title { font-size: 0.98rem; line-height: 1.3; }
+.wtiles .tile-desc { font-size: 0.86rem; }
+@media (max-width: 760px) { .wtiles .wtile:only-child { flex-direction: row; } .wtiles .wtile:only-child .wt-img { flex-basis: 110px; aspect-ratio: auto; border-right: 1px solid var(--line); border-bottom: 0; } }
+@media (max-width: 760px) { .wtiles .wtile { flex: none; } .wtiles .wt-img { flex-basis: 96px; width: 96px; } }
