@@ -125,8 +125,10 @@
     igEmbeds();
   });
   // /art/#slug opens that project (used by links from other pages)
+  var OLD = { 'pelican-pocket': 'pelican', 'mercy-gallery': 'mercy', 'kite-project': 'kite' };  // old links
+  function hashSlug() { var h = location.hash.slice(1); return OLD[h] || h; }
   function fromHash() {
-    var c = cards.filter(function (x) { return '#' + x.dataset.slug === location.hash; })[0];
+    var c = cards.filter(function (x) { return x.dataset.slug === hashSlug(); })[0];
     if (!c) return;
     var go = function () { if (!dlg.open) openCard(c); };
     if (c.dataset.cat !== cat) { again(c.dataset.cat); setTimeout(go, 1500); } else setTimeout(go, 900);
@@ -167,7 +169,7 @@
   var t;
   window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(layout, 120); });
   function start() {
-    var h = cards.filter(function (x) { return '#' + x.dataset.slug === location.hash; })[0];
+    var h = cards.filter(function (x) { return x.dataset.slug === hashSlug(); })[0];
     if (h) cat = h.dataset.cat;
     busy = true; setTimeout(punch, 350); setTimeout(fromHash, 400);
   }
