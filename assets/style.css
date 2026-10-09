@@ -1624,3 +1624,4 @@ html { scroll-behavior: smooth; }
 .rs-filters .wp-count { font-size: 0.82rem; }
 .chip-break { flex-basis: 100%; height: 0; }
 @media (max-width: 760px) { .chip-break { display: none; } }
+.wp-filters { justify-content: center; } .wp-hint { text-align: center; }
