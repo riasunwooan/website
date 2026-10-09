@@ -1546,3 +1546,4 @@ body.art-body { --bg: #08090b; --text: #f2f2f2; --muted: #a3a3a3; --line: #2a2a2
 .news-more { margin-top: auto; font-size: 0.85rem; color: var(--muted); }
 .bk-ribbon { top: -10px; bottom: auto; right: -8px; max-width: none; white-space: nowrap; border-radius: 999px; transform: rotate(6deg); z-index: 2; }
 .c-unwired .bk-sub { padding-right: 0; }
+.bk-face img.bk-real { z-index: 1; }
