@@ -1610,3 +1610,11 @@ body.art-body { --bg: #08090b; --text: #f2f2f2; --muted: #a3a3a3; --line: #2a2a2
 .uv-group .lb-grid a { border: 0; border-radius: 6px; }
 .uv-group > figcaption { padding: 6px 8px; font-size: 0.78rem; color: var(--muted); border-top: 1px solid var(--line); }
 .lb-grid.uv-grid.uv-many { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.uv-summary { margin-top: 18px; }
+.uv-stat { margin: 0 0 12px; line-height: 1.6; }
+.uv-jump { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 0.85rem; }
+.uv-jump span { color: var(--muted); }
+.uv-jump a { padding: 4px 12px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; transition: background 0.15s, border-color 0.15s; }
+.uv-jump a:hover { background: #1f2a8a; border-color: #1f2a8a; color: #fff; }
+html { scroll-behavior: smooth; }
+#timeline, #news, #buy { scroll-margin-top: 16px; }
