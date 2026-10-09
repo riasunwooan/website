@@ -12,3 +12,11 @@
     });
   });
 })();
+// Photo strips: arrow buttons scroll one photo at a time
+document.querySelectorAll('.strip-wrap').forEach(function (w) {
+  var s = w.querySelector('.strip'); if (!s) return;
+  function step(d) { var li = s.querySelector('li'); s.scrollBy({ left: d * (li ? li.offsetWidth + 14 : 240), behavior: 'smooth' }); }
+  var p = w.querySelector('.strip-prev'), n = w.querySelector('.strip-next');
+  if (p) p.addEventListener('click', function () { step(-1); });
+  if (n) n.addEventListener('click', function () { step(1); });
+});
