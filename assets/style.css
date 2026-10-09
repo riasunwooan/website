@@ -1728,3 +1728,53 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 .hl-box { padding: 16px 20px; }
 .hl-box h2 { font-size: 0.8rem; margin-bottom: 8px; }
 .hl-box li { font-size: 0.97rem; line-height: 1.55; margin: 4px 0; }
+/* Art: Fit to Serve project page */
+.fts .project-title { margin-bottom: 6px; }
+.fts-lede { margin: 0; font-size: 1.15rem; color: var(--muted); }
+.fts-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 0; padding: 0; list-style: none; }
+.fts-chips li { padding: 3px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: 0.78rem; font-weight: 500; }
+.project ul.fts-hero { grid-template-columns: 1.15fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; height: 460px; margin-top: 28px; }
+.fts-hero li { min-height: 0; }
+.fts-hero-main { grid-row: span 2; }
+.fts-hero a, .fts-hero img { height: 100%; }
+.fts-hero img { aspect-ratio: auto; }
+.fts-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 24px 0 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.fts-facts div { padding: 14px 16px 14px 0; }
+.fts-facts div + div { padding-left: 16px; border-left: 1px solid var(--line); }
+.fts-facts dt { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.fts-facts dd { margin: 4px 0 0; font-weight: 500; }
+.fts .project-section { margin-top: 56px; }
+.project-section h2.fts-h { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; font-size: 1.35rem; font-weight: 600; text-transform: none; letter-spacing: 0; color: var(--text); }
+.fts-h span { font-size: 0.8rem; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
+.fts h3 { margin: 0 0 6px; font-size: 1rem; font-weight: 600; }
+.fts-split { display: grid; grid-template-columns: 1.5fr 1fr; gap: 32px; align-items: start; }
+.fts-split p { margin: 0 0 20px; line-height: 1.7; }
+.project ul.fts-pair { grid-template-columns: 1fr 1fr; gap: 10px; margin: 0; }
+.fts-quote { margin: 28px 0 0; padding: 4px 0 4px 20px; border-left: 3px solid var(--text); font-size: 1.2rem; line-height: 1.55; font-weight: 500; }
+.fts-sub { margin: -8px 0 20px; color: var(--muted); }
+.project ul.fts-mods { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin: 0; }
+.project-section li.fts-mod { margin: 0; } .fts-mod { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.fts-mod a { border: 0; border-radius: 0; }
+.fts-mod img { aspect-ratio: 16 / 10; }
+.fts-mod-body { padding: 16px 18px 18px; }
+.fts-num { display: block; margin-bottom: 4px; font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; }
+.fts-mod-body p { margin: 0; font-size: 0.92rem; line-height: 1.6; }
+.fts-mod-end { justify-content: center; padding: 28px; background: var(--text); color: var(--bg); border-color: var(--text); }
+.fts-mod-end p { margin: 0; font-size: 1.3rem; line-height: 1.45; font-weight: 500; }
+.fts-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.fts-cols p { margin: 0; line-height: 1.7; }
+.project ul.fts-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 24px; }
+.project-section .fts-gallery li { margin: 0; }
+.fts-gallery img { aspect-ratio: 4 / 3; }
+.fts-gallery .lb-wide { grid-column: span 2; }
+.fts-gallery .lb-wide img { aspect-ratio: 11 / 4; }
+.project-section ul.fts-impact { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+.project-section .fts-impact li { margin: 0; padding: 18px; border: 1px solid var(--line); border-radius: 12px; }
+.fts-impact p { margin: 0; font-size: 0.92rem; line-height: 1.6; color: var(--muted); }
+.fts-close { margin: 24px 0 0; font-size: 1.05rem; line-height: 1.7; }
+@media (max-width: 760px) {
+  .project ul.fts-hero { height: 340px; }
+  .fts-facts, .project-section ul.fts-impact, .fts-cols, .fts-split, .project ul.fts-mods { grid-template-columns: 1fr; }
+  .fts-facts div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+  .project ul.fts-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
