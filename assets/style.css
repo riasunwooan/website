@@ -1720,3 +1720,8 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 .art-news .news-img { flex: 0 0 220px; width: 220px; height: auto; aspect-ratio: auto; object-fit: cover; }
 .art-news .news-body { justify-content: center; padding: 16px 20px; }
 @media (max-width: 520px) { .art-news .news-img { flex-basis: 120px; width: 120px; } }
+/* Research: compact highlights box near the top */
+.hl-box { margin-top: 22px; padding: 12px 16px; border: 1px solid var(--line); border-left: 3px solid #ffc102; border-radius: 8px; background: var(--bg); }
+.hl-box h2 { margin: 0 0 6px; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.hl-box ul { margin: 0; padding-left: 1.1em; }
+.hl-box li { font-size: 0.86rem; line-height: 1.5; margin: 2px 0; }
