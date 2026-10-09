@@ -1708,3 +1708,9 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 .wtiles .tile-desc { font-size: 0.86rem; }
 @media (max-width: 760px) { .wtiles .wtile:only-child { flex-direction: row; } .wtiles .wtile:only-child .wt-img { flex-basis: 110px; aspect-ratio: auto; border-right: 1px solid var(--line); border-bottom: 0; } }
 @media (max-width: 760px) { .wtiles .wtile { flex: none; } .wtiles .wt-img { flex-basis: 96px; width: 96px; } }
+/* Art strips: show whole images, no cropping */
+.lb-grid.strip li { flex: 0 0 auto; width: auto; max-width: 340px; }
+.lb-grid.strip img { aspect-ratio: auto; height: 240px; width: auto; max-width: 340px; object-fit: contain; background: var(--bg); }
+.lb-grid.strip p { max-width: 240px; }
+.strip-btn { top: 120px; }
+@media (max-width: 600px) { .lb-grid.strip li { flex-basis: auto; } .lb-grid.strip img { height: 200px; } }
