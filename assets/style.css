@@ -1592,3 +1592,9 @@ body.art-body { --bg: #08090b; --text: #f2f2f2; --muted: #a3a3a3; --line: #2a2a2
 }
 .uv-buy-links .uv-btn { margin: 0; width: auto; flex: 0 0 auto; padding-left: 22px; padding-right: 22px; }
 .uv-cap { margin: 6px 0 0 !important; font-size: 0.8rem; color: var(--muted); }
+.uv-news-cards { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); } .uv-news-cards .news-title { font-size: 1.02rem; }
+.project ul.uv-news-cards { padding-left: 0; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.uv-news-cards .news-body { padding: 12px 14px; }
+.uv-news-cards .news-title { font-size: 0.95rem; }
+.uv-news-cards .news-src { font-size: 0.66rem; }
+@media (max-width: 760px) { .project ul.uv-news-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
