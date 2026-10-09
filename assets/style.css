@@ -1550,3 +1550,8 @@ body.art-body { --bg: #08090b; --text: #f2f2f2; --muted: #a3a3a3; --line: #2a2a2
 .wp-item.wp-flash .wp-card { animation: wp-flash 1.2s ease-in-out 2; }
 @keyframes wp-flash { 50% { box-shadow: 0 0 0 4px var(--c), 0 10px 30px rgba(0,0,0,0.15); } }
 .pub-quote { margin-top: -4px; }
+.news-group { margin: 22px 0 12px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.news-card { padding: 0; overflow: hidden; flex-direction: row; gap: 0; }
+.news-img { flex: 0 0 110px; width: 110px; object-fit: cover; background: var(--line); }
+.news-body { display: flex; flex-direction: column; gap: 6px; padding: 14px 16px; }
+.news-src time { font-weight: 600; }
