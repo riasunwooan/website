@@ -1847,3 +1847,6 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 .project ul.st-renders { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .st-renders img { aspect-ratio: 1 / 1; background: #000; }
 @media (max-width: 760px) { .project ul.st-renders { grid-template-columns: 1fr; } }
+.work-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 18px; }
+@media (max-width: 760px) { .work-row { grid-template-columns: 1fr; } }
+.work-row .art-group { display: flex; flex-direction: column; } .work-row .tiles.wtiles { flex: 1; }
