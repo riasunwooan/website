@@ -1826,8 +1826,8 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 .lb-grid.strip.uw-strip img { height: 320px; max-width: 200px; }
 .lb-grid.strip.uw-strip p { max-width: 180px; }
 .uw-insta { max-width: 540px; margin-top: 8px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #fff; }
-.uw-insta iframe { display: block; width: 100%; height: 720px; border: 0; }
-@media (max-width: 600px) { .lb-grid.strip.uw-strip img { height: 260px; } .uw-insta iframe { height: 600px; } }
+.uw-insta iframe { display: block; width: 100%; height: 1000px; border: 0; }
+@media (max-width: 600px) { .lb-grid.strip.uw-strip img { height: 260px; } .uw-insta iframe { height: 760px; } }
 .art-sec-head.uw-head { display: block; margin-bottom: 8px; }
 .uw-head p { margin: 4px 0 0; font-size: 0.9rem; color: var(--muted); }
 .uw-insta-row { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 24px; align-items: start; }
