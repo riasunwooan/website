@@ -1811,3 +1811,10 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 }
 .did-grid.fist-why { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (max-width: 600px) { .did-grid.fist-why { grid-template-columns: 1fr; } }
+.fist-side { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 28px; align-items: start; }
+.fist-side > p { margin: 0; line-height: 1.7; }
+.fist-side .project-intro:first-child { margin-top: 24px; }
+.project ul.fist-side-img { grid-template-columns: 1fr; margin: 24px 0 0; }
+.project-section .fist-side .fist-side-img { margin-top: 0; }
+.fist-side-img img { aspect-ratio: auto; }
+@media (max-width: 700px) { .fist-side { grid-template-columns: 1fr; } .fist-side-img { max-width: 260px; } }
