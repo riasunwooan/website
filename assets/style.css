@@ -1781,3 +1781,33 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
   .project ul.fts-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 .about-quote.quote-1line { font-size: 1.12rem; }
+/* Work: FIST page */
+.about-quote.fist-quote { margin: 20px 0 0; font-size: 1.15rem; }
+.project ul.fist-flyers { grid-template-columns: repeat(2, minmax(0, 260px)); gap: 14px; margin-top: 24px; }
+.fist-flyers img { aspect-ratio: 3 / 4; object-fit: cover; object-position: top; }
+.project-section ol.fist-flow { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px; padding: 0; list-style: none; counter-reset: flow; }
+.project-section .fist-flow li { margin: 0; padding: 6px 14px 6px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: 0.88rem; font-weight: 500; counter-increment: flow; }
+.fist-flow li::before { content: counter(flow); display: inline-grid; place-items: center; width: 20px; height: 20px; margin-right: 8px; border-radius: 50%; background: var(--text); color: var(--bg); font-size: 0.72rem; font-weight: 600; }
+.fist-two { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; }
+.fist-two h3, .fist-sub { margin: 0 0 10px; font-size: 1rem; font-weight: 600; }
+.fist-sub { margin-top: 26px; }
+.project-section ul.fist-qs { margin: 0; padding-left: 18px; }
+.project-section .fist-qs li { margin-bottom: 8px; line-height: 1.5; }
+.project-section ol.fist-sessions { margin: 0; padding: 0; list-style: none; border-left: 2px solid var(--line); }
+.project-section .fist-sessions li { position: relative; display: flex; gap: 14px; margin: 0; padding: 7px 0 7px 18px; }
+.fist-sessions li::before { content: ""; position: absolute; left: -6px; top: 14px; width: 10px; height: 10px; border-radius: 50%; background: var(--text); }
+.fist-date { flex: 0 0 52px; font-size: 0.85rem; font-weight: 600; color: var(--muted); }
+.fist-note { margin: 14px 0 0; font-size: 0.9rem; color: var(--muted); }
+.project ul.fist-ws { grid-template-columns: repeat(3, minmax(0, 200px)); gap: 12px; margin-top: 18px; }
+.fist-ws img { aspect-ratio: 1 / 1.414; object-fit: cover; object-position: top; background: #fff; }
+.project ul.fist-prize { grid-template-columns: minmax(0, 340px); margin-top: 18px; }
+.fist-prize img { aspect-ratio: 4 / 3; }
+.fist-prize p { margin: 6px 2px 0; font-size: 0.82rem; color: var(--muted); }
+.project ul.fist-gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 760px) {
+  .fist-two { grid-template-columns: 1fr; }
+  .project ul.fist-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project ul.fist-ws { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.did-grid.fist-why { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 600px) { .did-grid.fist-why { grid-template-columns: 1fr; } }
