@@ -1,6 +1,6 @@
 // Lightbox for .lb-grid links: click to enlarge, arrows / swipe / Esc.
 (function () {
-  var all = Array.prototype.slice.call(document.querySelectorAll('.lb-grid a'));
+  var all = Array.prototype.slice.call(document.querySelectorAll('.lb-grid a, a[data-lb]'));
   if (!all.length) return;
   // A .lb-grid with data-lb-group pages only through its own photos.
   function groupOf(a) { return a.closest('[data-lb-group]'); }
@@ -16,7 +16,7 @@
   var img = box.querySelector('img'), cap = box.querySelector('figcaption');
   function show(k) {
     i = (k + links.length) % links.length;
-    img.src = links[i].href; img.alt = links[i].querySelector('img').alt;
+    img.src = links[i].href; var im = links[i].querySelector('img'); img.alt = im ? im.alt : '';
     cap.textContent = links[i].dataset.caption + '  ·  ' + (i + 1) + ' / ' + links.length;
   }
   function close() { box.hidden = true; document.body.style.overflow = ''; links[i].focus(); }
