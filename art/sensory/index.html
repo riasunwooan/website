@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sensory Translations — Art — Ria Sunwoo An</title>
+  <meta name="description" content="Sensory Translations turns heart rate and breath, measured on a phone, into a moving generative image.">
+  <link rel="canonical" href="https://riasunwooan.com/art/sensory/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css?v=113">
+</head>
+<body>
+  <nav>
+    <a class="logo" href="/">Ria Sunwoo An</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/research/">Research</a></li>
+      <li><a href="/work/">Work</a></li>
+      <li><a aria-current="page" href="/art/">Art</a></li>
+      <li><a href="/writing/">Writing</a></li>
+      <li><a href="/publications/">Publications</a></li>
+      <li><a href="/cv/">CV</a></li>
+    </ul>
+  </nav>
+
+<main class="page">
+    <article class="container project fts st">
+      <a class="back-link" href="/art/">← All art</a>
+      <h1 class="page-title project-title">Sensory Translations</h1>
+      <p class="fts-lede">Your body produces data all the time. Heart rate, breath, the small rhythms that never stop. Medicine reads these numbers to find what is wrong. This project reads them for something else.</p>
+      <ul class="fts-chips"><li>Generative Art</li><li>Biodata</li><li>p5.js</li><li>Creative Technology</li></ul>
+
+      <ul class="lb-grid fts-hero">
+        <li class="fts-hero-main"><a href="/assets/img/art/personal/st-visual.jpg" data-caption="Breath and heartbeat, rendered as threads of light"><img src="/assets/img/art/personal/st-visual-sm.jpg" alt="Breath and heartbeat, rendered as threads of light" loading="lazy"></a></li>
+        <li><a href="/assets/img/art/personal/st-phone.jpg" data-caption="Tapping a heartbeat into the phone"><img src="/assets/img/art/personal/st-phone-sm.jpg" alt="Tapping a heartbeat into the phone" loading="lazy"></a></li>
+        <li><a href="/assets/img/art/personal/st-screen.jpg" data-caption="The visualizer running on the computer, with its live readout"><img src="/assets/img/art/personal/st-screen-sm.jpg" alt="The visualizer running on the computer, with its live readout" loading="lazy"></a></li>
+      </ul>
+
+      <p class="project-intro">Sensory Translations turns those signals into visuals. You open an HTML file on your phone, and the phone measures your heart rate through the tapping motion and your breath through the microphone. That data feeds into a Processing sketch running on a computer, and the abstract numbers become a moving image. Something you usually cannot see becomes something you can sit with.</p>
+
+      <section class="project-section">
+        <h2 class="fts-h"><span>01</span>Why</h2>
+        <div class="fts-cols">
+          <p>Your body never stops sending signals. Your heart beats, your breath rises and falls, and those rhythms shift every second with what you feel. Hospitals read this data too, but for one purpose. The numbers get sorted into normal or abnormal, treatment or no treatment, and once that question is answered, nobody asks what else the data could say. A heart rate that climbs when you get nervous, a breath that slows when you calm down. That is information about a person. I started this project by asking what would happen if I treated that data as material for making something, and stopped treating it as evidence for a diagnosis.</p>
+          <p>Some people cannot put what they feel into words. A person with dementia may lose the words they once had. A child with autism may feel everything and have no way to say it so others understand. A soldier with PTSD may carry something no sentence can hold. Their bodies keep sending signals. I chose these groups because language fails them first, and the people around them often wait for words that never come. Sensory Translations gives them another way to be heard. They tap their pulse and breathe, and the screen shows what is happening inside them. They have nothing to explain.</p>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2 class="fts-h"><span>02</span>Bio data</h2>
+        <ul class="lb-grid fts-mods">
+          <li class="fts-mod"><a href="/assets/img/art/personal/st-heart.jpg" data-caption="Tapping along with a heartbeat"><img src="/assets/img/art/personal/st-heart-sm.jpg" alt="Tapping along with a heartbeat" loading="lazy"></a>
+            <div class="fts-mod-body"><span class="fts-num">Data 01</span><h3>Heart Rate</h3><p>I custom-coded an HTML file that runs on your phone. You tap the screen in time with your own heartbeat, and the file records your heart rate based on how fast you tap. The tapping speed translates into beats per minute, which feed directly into the visual.</p></div></li>
+          <li class="fts-mod"><a href="/assets/img/art/personal/st-breath.jpg" data-caption="Breathing near the phone’s microphone"><img src="/assets/img/art/personal/st-breath-sm.jpg" alt="Breathing near the phone’s microphone" loading="lazy"></a>
+            <div class="fts-mod-body"><span class="fts-num">Data 02</span><h3>Breath</h3><p>The phone microphone reads your breathing. Breathe near the mic, and it picks up the rise and fall of each inhale and exhale. The rhythm of your breath shapes how the visual moves and shifts in real time.</p></div></li>
+        </ul>
+      </section>
+
+      <section class="project-section">
+        <h2 class="fts-h"><span>03</span>Inside the code: visualizer</h2>
+        <ul class="lb-grid fts-mods st-code">
+          <li class="fts-mod"><a href="/assets/img/art/personal/st-code-receive.jpg" data-caption="Code: Receiving the Data"><img src="/assets/img/art/personal/st-code-receive-sm.jpg" alt="Code: Receiving the Data" loading="lazy"></a>
+            <div class="fts-mod-body"><span class="fts-num">01</span><h3>Receiving the Data</h3><p>The sketch runs a WebSocket server that listens on a local port. Your phone connects to it and sends your heart rate and breath as small messages. I wrote a parser that pulls the two numbers out of each message. If the phone goes quiet for three seconds, the sketch notices and switches over on its own.</p></div></li>
+          <li class="fts-mod"><a href="/assets/img/art/personal/st-code-fallback.jpg" data-caption="Code: The Simulation Fallback"><img src="/assets/img/art/personal/st-code-fallback-sm.jpg" alt="Code: The Simulation Fallback" loading="lazy"></a>
+            <div class="fts-mod-body"><span class="fts-num">02</span><h3>The Simulation Fallback</h3><p>When no phone is connected, the piece generates its own heart rate and breath using noise and sine waves. This keeps the visual alive during setup, testing, or exhibition downtime, and the simulated body still rises and falls like a real one.</p></div></li>
+          <li class="fts-mod"><a href="/assets/img/art/personal/st-code-smooth.jpg" data-caption="Code: Smoothing the Signals"><img src="/assets/img/art/personal/st-code-smooth-sm.jpg" alt="Code: Smoothing the Signals" loading="lazy"></a>
+            <div class="fts-mod-body"><span class="fts-num">03</span><h3>Smoothing the Signals</h3><p>Raw data jumps around. Instead of letting the image jerk with every reading, I ease each new value toward the incoming number a little at a time. The heart rate and breath shift smoothly, so the motion stays calm even when the data is noisy.</p></div></li>
+          <li class="fts-mod"><a href="/assets/img/art/personal/st-code-hud.jpg" data-caption="Code: HUD"><img src="/assets/img/art/personal/st-code-hud-sm.jpg" alt="Code: HUD" loading="lazy"></a>
+            <div class="fts-mod-body"><span class="fts-num">04</span><h3>HUD</h3><p>A small readout sits in the corner. It shows the current heart rate, the breath moving between inhale and exhale, whether the data is live or simulated, and a row of dots marking each color the piece has moved through. A marker flashes on every beat.</p></div></li>
+          <li class="fts-mod"><a href="/assets/img/art/personal/st-code-flow.jpg" data-caption="Code: Mode A: Flow Field"><img src="/assets/img/art/personal/st-code-flow-sm.jpg" alt="Code: Mode A: Flow Field" loading="lazy"></a>
+            <div class="fts-mod-body"><span class="fts-num">05</span><h3>Mode A: Flow Field</h3><p>The first mode holds 1,200 particles. Each one reads a noise field to find its direction, then drifts along it and leaves a faint mark behind. Your breath controls how hard the particles push, and your heart rate sets how fast the field shifts. When a particle dies or leaves the screen, it respawns near the center. The marks build up into tangled threads of color.</p></div></li>
+          <li class="fts-mod"><a href="/assets/img/art/personal/st-code-radial.jpg" data-caption="Code: Mode B: Radial Pulse"><img src="/assets/img/art/personal/st-code-radial-sm.jpg" alt="Code: Mode B: Radial Pulse" loading="lazy"></a>
+            <div class="fts-mod-body"><span class="fts-num">06</span><h3>Mode B: Radial Pulse</h3><p>The second mode waits for each heartbeat, then spawns a burst of particles from the center of the screen. A faster heart rate spawns more particles, and breath sets how far they travel. Each particle curves slightly as it flies, so the burst blooms instead of shooting straight out. The particles fade as they go, leaving a pulse that beats in time with your heart.</p></div></li>
+        </ul>
+      </section>
+
+      <section class="project-section">
+        <h2 class="fts-h"><span>04</span>Visualizer renders</h2>
+        <ul class="lb-grid fts-mods st-renders">
+          <li class="fts-mod"><a href="/assets/img/art/personal/st-render-flow.jpg" data-caption="Mode A: Flow Field"><img src="/assets/img/art/personal/st-render-flow-sm.jpg" alt="Mode A: Flow Field" loading="lazy"></a>
+            <div class="fts-mod-body"><h3>Flow Field</h3><p>The first mode renders the signals as a dense field of flowing lines. Thousands of fine particles drift across the screen following a noise-driven flow field, layering into soft, tangled threads of color. Greens, blues, and yellows blend and overlap, so the whole canvas reads like smoke or currents moving through dark water. Your breath drives the motion, and the lines build up and fill the space as the data comes in.</p></div></li>
+          <li class="fts-mod"><a href="/assets/img/art/personal/st-render-pulse.jpg" data-caption="Mode B: Radial Pulse"><img src="/assets/img/art/personal/st-render-pulse-sm.jpg" alt="Mode B: Radial Pulse" loading="lazy"></a>
+            <div class="fts-mod-body"><h3>Radial Pulse</h3><p>The second mode visualizes heart rate as a burst of light at the center of the screen. Particles radiate outward from a single point, forming a bloom that pulses with each beat. A faster heart rate pushes the pulse harder and brighter, and the color shifts as the rate changes. The form expands and contracts in time with your heartbeat, so you watch the pulse instead of just reading the number.</p></div></li>
+          <li class="fts-mod"><a href="/assets/img/art/personal/st-render-both.jpg" data-caption="Both modes, from the same data"><img src="/assets/img/art/personal/st-render-both-sm.jpg" alt="Both modes, from the same data" loading="lazy"></a>
+            <div class="fts-mod-body"><h3>Both modes</h3><p>Both modes run from the same incoming data. You can switch between them, reverse the motion, change the color palette, and save any frame as a still image.</p></div></li>
+        </ul>
+      </section>
+      <div class="project-pager" role="navigation" aria-label="More art"><span></span><a class="pager-next" href="/art/pelican/"><span>Next project →</span>Pelican Pocket</a></div>
+    </article>
+  </main>
+
+
+
+  <footer>
+    <span>© 2026 Ria Sunwoo An</span>
+  </footer>
+  <script src="/assets/research.js?v=1" defer></script>
+  <script src="/assets/lightbox.js?v=4" defer></script>
+  <script src="/assets/art-page.js?v=2" defer></script>
+</body>
+</html>

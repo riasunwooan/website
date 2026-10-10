@@ -1843,3 +1843,7 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 @media (max-width: 760px) { .uw-insta-row { grid-template-columns: 1fr; } .uw-albums { grid-template-columns: 1fr 1fr; } }
 .pw-tile .tile-img img { object-fit: contain; padding: 10px; }
 .pw-tile .tile-img { display: block; }
+.st-code img { aspect-ratio: 388 / 224; object-fit: contain; object-position: top left; background: #fff; }
+.project ul.st-renders { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.st-renders img { aspect-ratio: 1 / 1; background: #000; }
+@media (max-width: 760px) { .project ul.st-renders { grid-template-columns: 1fr; } }
