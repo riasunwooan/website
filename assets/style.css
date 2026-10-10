@@ -1750,6 +1750,8 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 .fts-split { display: grid; grid-template-columns: 1.5fr 1fr; gap: 32px; align-items: start; }
 .fts-split p { margin: 0 0 20px; line-height: 1.7; }
 .project ul.fts-pair { grid-template-columns: 1fr 1fr; gap: 10px; margin: 0; }
+.fts-problem { margin-top: 8px; }
+.fts-problem p { margin: 0; line-height: 1.7; }
 .fts-quote { margin: 28px 0 0; padding: 4px 0 4px 20px; border-left: 3px solid var(--text); font-size: 1.2rem; line-height: 1.55; font-weight: 500; }
 .fts-sub { margin: -8px 0 20px; color: var(--muted); }
 .project ul.fts-mods { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin: 0; }
@@ -1759,7 +1761,7 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 .fts-mod-body { padding: 16px 18px 18px; }
 .fts-num { display: block; margin-bottom: 4px; font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; }
 .fts-mod-body p { margin: 0; font-size: 0.92rem; line-height: 1.6; }
-.fts-mod-end { justify-content: center; padding: 28px; background: var(--text); color: var(--bg); border-color: var(--text); }
+.fts-mod-end { justify-content: center; padding: 28px; background: #3f4a2e; color: #f1eee2; border-color: #3f4a2e; }
 .fts-mod-end p { margin: 0; font-size: 1.3rem; line-height: 1.45; font-weight: 500; }
 .fts-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
 .fts-cols p { margin: 0; line-height: 1.7; }
