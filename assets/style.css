@@ -1822,3 +1822,9 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 .fist-ws-row .lb-grid.strip { margin-top: 0; }
 .fist-ws-after { margin-top: 14px; }
 @media (max-width: 700px) { .fist-ws-row { grid-template-columns: 1fr; } }
+/* Art: Unwired */
+.lb-grid.strip.uw-strip img { height: 320px; max-width: 200px; }
+.lb-grid.strip.uw-strip p { max-width: 180px; }
+.uw-insta { max-width: 540px; margin-top: 8px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #fff; }
+.uw-insta iframe { display: block; width: 100%; height: 720px; border: 0; }
+@media (max-width: 600px) { .lb-grid.strip.uw-strip img { height: 260px; } .uw-insta iframe { height: 600px; } }
