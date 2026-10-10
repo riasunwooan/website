@@ -1838,6 +1838,6 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 .project ul.uw-album-grid { display: block; margin: 0; }
 .uw-album-grid li[hidden] { display: none; }
 .uw-album-grid a { position: relative; border-radius: 10px; }
-.uw-album-grid img { aspect-ratio: auto; }
+.uw-album-grid img { aspect-ratio: 4 / 3; object-fit: cover; object-position: top; }
 .uw-album-btn { position: absolute; left: 10px; bottom: 10px; padding: 6px 12px; border-radius: 999px; background: var(--text); color: var(--bg); font-size: 0.8rem; font-weight: 600; }
 @media (max-width: 760px) { .uw-insta-row { grid-template-columns: 1fr; } .uw-albums { grid-template-columns: 1fr 1fr; } }
