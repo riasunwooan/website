@@ -1828,3 +1828,16 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 .uw-insta { max-width: 540px; margin-top: 8px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #fff; }
 .uw-insta iframe { display: block; width: 100%; height: 720px; border: 0; }
 @media (max-width: 600px) { .lb-grid.strip.uw-strip img { height: 260px; } .uw-insta iframe { height: 600px; } }
+.art-sec-head.uw-head { display: block; margin-bottom: 8px; }
+.uw-head p { margin: 4px 0 0; font-size: 0.9rem; color: var(--muted); }
+.uw-insta-row { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 24px; align-items: start; }
+.uw-insta-row .uw-insta { max-width: none; }
+.uw-albums { display: grid; gap: 18px; }
+.uw-album h3 { margin: 0; font-size: 1rem; }
+.uw-album > p { margin: 2px 0 8px; font-size: 0.85rem; color: var(--muted); }
+.project ul.uw-album-grid { display: block; margin: 0; }
+.uw-album-grid li[hidden] { display: none; }
+.uw-album-grid a { position: relative; border-radius: 10px; }
+.uw-album-grid img { aspect-ratio: auto; }
+.uw-album-btn { position: absolute; left: 10px; bottom: 10px; padding: 6px 12px; border-radius: 999px; background: var(--text); color: var(--bg); font-size: 0.8rem; font-weight: 600; }
+@media (max-width: 760px) { .uw-insta-row { grid-template-columns: 1fr; } .uw-albums { grid-template-columns: 1fr 1fr; } }

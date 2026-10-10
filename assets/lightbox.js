@@ -1,7 +1,10 @@
 // Lightbox for .lb-grid links: click to enlarge, arrows / swipe / Esc.
 (function () {
-  var links = Array.prototype.slice.call(document.querySelectorAll('.lb-grid a'));
-  if (!links.length) return;
+  var all = Array.prototype.slice.call(document.querySelectorAll('.lb-grid a'));
+  if (!all.length) return;
+  // A .lb-grid with data-lb-group pages only through its own photos.
+  function groupOf(a) { return a.closest('[data-lb-group]'); }
+  var links = all;
   var i = 0, box = document.createElement('div');
   box.className = 'lb'; box.hidden = true;
   box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true');
@@ -17,8 +20,12 @@
     cap.textContent = links[i].dataset.caption + '  ·  ' + (i + 1) + ' / ' + links.length;
   }
   function close() { box.hidden = true; document.body.style.overflow = ''; links[i].focus(); }
-  links.forEach(function (a, k) {
-    a.addEventListener('click', function (e) { e.preventDefault(); show(k); box.hidden = false; document.body.style.overflow = 'hidden'; box.querySelector('.lb-x').focus(); });
+  all.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var g = groupOf(a);
+      links = all.filter(function (b) { return groupOf(b) === g; });
+      show(links.indexOf(a)); box.hidden = false; document.body.style.overflow = 'hidden'; box.querySelector('.lb-x').focus(); });
   });
   box.querySelector('.lb-x').onclick = close;
   box.querySelector('.lb-prev').onclick = function () { show(i - 1); };
