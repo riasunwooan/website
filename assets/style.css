@@ -1818,3 +1818,7 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 .project-section .fist-side .fist-side-img { margin-top: 0; }
 .fist-side-img img { aspect-ratio: auto; }
 @media (max-width: 700px) { .fist-side { grid-template-columns: 1fr; } .fist-side-img { max-width: 260px; } }
+.fist-ws-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 18px; align-items: center; }
+.fist-ws-row .lb-grid.strip { margin-top: 0; }
+.fist-ws-after { margin-top: 14px; }
+@media (max-width: 700px) { .fist-ws-row { grid-template-columns: 1fr; } }
