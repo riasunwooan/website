@@ -3,12 +3,12 @@
 .cx {
   --cx-bg: #f5f0e6;
   --cx-paper: #fbf8f1;
-  --cx-ink: #1f1c19;
-  --cx-soft: #34302b;
-  --cx-muted: #5c544b;
+  --cx-ink: #14110e;
+  --cx-soft: #24201c;
+  --cx-muted: #46403a;
   --cx-line: #dcd2c2;
   --cx-wine: #6f2b31;
-  --cx-gold: #7a5f2e;
+  --cx-gold: #634c1f;
   --cx-mat: #ebe4d6;
   --cx-serif: "Cormorant Garamond", "EB Garamond", Garamond, "Times New Roman", serif;
   --cx-sans: "Inter", system-ui, -apple-system, sans-serif;
@@ -22,19 +22,21 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .cx {
-    --cx-bg: #141210; --cx-paper: #1b1815; --cx-ink: #f2ece2; --cx-soft: #e2dacd; --cx-muted: #bfb5a8;
+    --cx-bg: #141210; --cx-paper: #1b1815; --cx-ink: #f8f3ea; --cx-soft: #ede6da; --cx-muted: #d3cabd;
     --cx-line: #352f29; --cx-wine: #d08a8e; --cx-gold: #d6b97e; --cx-mat: #211d19;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] .cx {
-  --cx-bg: #141210; --cx-paper: #1b1815; --cx-ink: #f2ece2; --cx-soft: #e2dacd; --cx-muted: #bfb5a8;
+  --cx-bg: #141210; --cx-paper: #1b1815; --cx-ink: #f8f3ea; --cx-soft: #ede6da; --cx-muted: #d3cabd;
   --cx-line: #352f29; --cx-wine: #d08a8e; --cx-gold: #d6b97e; --cx-mat: #211d19;
   color-scheme: dark;
 }
 
 @view-transition { navigation: auto; }
 
+/* Cormorant is thin at its regular weight; read it at 500. */
+.cx-prose, .cx-hero-text, .cx-lede, .cx-observation, .cx-room-desc, .cx-meta dd, .cx-work-by, .cx-ex-note, .cx-card-title, .cx-tl-title, .cx-next-title, .cx-unwritten, .cx-empty, .cx-margin p, .cx-margin blockquote, .cx-behind-hint, .cx-count, .cx-sec-note { font-weight: 500; }
 body.cx { background: var(--cx-bg); color: var(--cx-ink); transition: background-color 0.6s ease, color 0.6s ease; }
 .cx ::selection { background: color-mix(in srgb, var(--cx-wine) 22%, transparent); }
 .cx-page { padding-top: 0; }
