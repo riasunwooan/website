@@ -169,7 +169,10 @@ body.cx { background: var(--cx-bg); color: var(--cx-ink); transition: background
   gap: 18px 64px;
   padding: 88px 0 72px;
 }
-.cx-hero .cx-label { grid-column: 1 / -1; color: var(--cx-wine); }
+.cx-hero .cx-label { grid-column: 1; grid-row: 2; align-self: start; margin-top: 6px; font-size: 0.8rem; color: var(--cx-wine); }
+.cx-hero .cx-title { grid-column: 1; grid-row: 1; }
+.cx-hero { grid-template-rows: auto 1fr; }
+.cx-hero-text { grid-column: 2; grid-row: 1 / span 2; }
 .cx-title {
   margin: 0;
   font-family: var(--cx-serif);
@@ -536,6 +539,7 @@ a.cx-door-link:hover .cx-room-name { color: var(--cx-wine); }
   .cx-hero, .cx-work-head, .cx-ex-item, .cx-ex-item:nth-child(even) { grid-template-columns: minmax(0, 1fr); }
   .cx-ex-item:nth-child(even) .cx-ex-plate { order: 0; }
   .cx-hero { padding: 56px 0 48px; }
+  .cx-hero .cx-label, .cx-hero .cx-title, .cx-hero-text { grid-column: 1; grid-row: auto; }
   .cx-meta { grid-column: 1; grid-row: auto; margin-top: 24px; }
   .cx-body { grid-template-columns: minmax(0, 1fr); gap: 0; padding-top: 32px; }
   .cx-toc { position: static; margin-bottom: 40px; padding-bottom: 16px; border-bottom: 1px solid var(--cx-line); }
