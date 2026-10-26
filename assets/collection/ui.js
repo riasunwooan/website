@@ -12,30 +12,8 @@ export function syncThemeButtons() {
     b.setAttribute('aria-pressed', String(dark()));
     (b.querySelector('.cx-theme-label') || b).textContent = dark() ? 'Raise the lights' : 'Dim the lights';
   });
-  syncTorch();
 }
 
-// With the lights dimmed, the cursor becomes a flashlight: a warm circle of light follows the mouse
-// and the rest of the page falls into shadow. Only where there is a mouse; the overlay never blocks clicks.
-let torch = null;
-const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
-function syncTorch() {
-  const on = dark() && finePointer.matches && !document.getElementById('cx-admin');
-  if (on && !torch) {
-    torch = document.createElement('div');
-    torch.className = 'cx-torchlight';
-    torch.setAttribute('aria-hidden', 'true');
-    torch.style.setProperty('--x', innerWidth / 2 + 'px');
-    torch.style.setProperty('--y', innerHeight / 2 + 'px');
-    document.body.appendChild(torch);
-    let frame = 0, x = 0, y = 0;
-    addEventListener('pointermove', (e) => {
-      x = e.clientX; y = e.clientY;
-      if (!frame) frame = requestAnimationFrame(() => { frame = 0; torch.style.setProperty('--x', x + 'px'); torch.style.setProperty('--y', y + 'px'); });
-    }, { passive: true });
-  }
-  if (torch) torch.hidden = !on;
-}
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', syncThemeButtons);
 document.addEventListener('click', (e) => {
   const t = e.target.closest('[data-cx-theme]');
