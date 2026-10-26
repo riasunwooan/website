@@ -78,8 +78,8 @@ export function gate() {
     '</g>' +
     '<rect x="47" y="104" width="106" height="16" fill="#9e4a3c"/>' +
     // signboard
-    '<rect x="78" y="104" width="44" height="15" fill="#2f3f5c" stroke="#d6b26a" stroke-width="1.6"/>' +
-    '<path d="M86 111.5h6M97 108v7M95 111.5h4M104 109h8M108 109v6M104 115h8" stroke="#e7c97f" stroke-width="1.4" stroke-linecap="round"/>' +
+    '<rect x="76" y="104" width="48" height="15" fill="#2f3f5c" stroke="#d6b26a" stroke-width="1.6"/>' +
+    '<text x="100" y="115.4" text-anchor="middle" font-family="\'Noto Serif KR\', \'Nanum Myeongjo\', serif" font-size="10" font-weight="600" letter-spacing="1" fill="#e7c97f">안선우</text>' +
     // painted beams (dancheong)
     '<rect x="26" y="86" width="148" height="18" fill="#5f8f86"/>' + paint +
     '<rect x="26" y="86" width="148" height="3" fill="#3f6b64"/><rect x="26" y="101" width="148" height="3" fill="#c9704f"/>' +

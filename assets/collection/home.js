@@ -5,7 +5,7 @@ import { door, gate } from './door.js';
 import './ui.js';
 
 const host = document.getElementById('cx-home');
-const DEFAULT_SECTIONS = ['collection', 'recent', 'rooms', 'exhibitions'];
+const DEFAULT_SECTIONS = ['collection', 'rooms', 'exhibitions', 'recent'];
 const surname = (s) => (s || '').trim().split(/\s+/).pop().toLowerCase();
 
 loadPublic().then(render).catch((e) => {

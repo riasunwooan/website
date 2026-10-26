@@ -705,9 +705,9 @@
     "homepage": {
       "sections": [
         "collection",
-        "recent",
         "rooms",
-        "exhibitions"
+        "exhibitions",
+        "recent"
       ],
       "hidden": []
     }

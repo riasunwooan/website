@@ -72,13 +72,13 @@ body.cx { background: var(--cx-bg); color: var(--cx-ink); transition: background
 /* Dim the lights: a little flashlight whose beam switches on in the dark */
 .cx-lightbtn {
   position: relative; display: inline-flex; align-items: center; gap: 10px; overflow: hidden;
-  padding: 8px 14px 8px 18px; border: 1px solid var(--cx-gold); border-radius: 999px;
+  padding: 9px 15px 9px 19px; border: 1.5px solid var(--cx-ink); border-radius: 999px;
   background: var(--cx-paper); color: var(--cx-ink); cursor: pointer;
-  font: 500 0.7rem/1.4 var(--cx-sans); letter-spacing: 0.14em; text-transform: uppercase;
+  font: 700 0.74rem/1.4 var(--cx-sans); letter-spacing: 0.14em; text-transform: uppercase;
   transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
 }
 .cx-lightbtn:hover { box-shadow: 0 0 0 1px var(--cx-gold); }
-.cx-torch { position: relative; z-index: 1; width: 26px; height: 13px; color: var(--cx-soft); }
+.cx-torch { position: relative; z-index: 1; width: 28px; height: 14px; color: var(--cx-ink); }
 .cx-torch-lens { fill: #d8cfbf; transition: fill 0.4s; }
 .cx-theme-label { position: relative; z-index: 1; }
 .cx-beam {
@@ -214,9 +214,9 @@ body.cx { background: var(--cx-bg); color: var(--cx-ink); transition: background
 
 /* Curator's Choice: a button under the intro that lights the favorites and dims everything else */
 .cx-choice {
-  display: inline-flex; flex-direction: column; align-items: flex-start; gap: 2px; margin-top: 18px;
-  padding: 12px 22px 11px; border: 1px solid var(--cx-gold); background: transparent; color: var(--cx-ink);
-  font: inherit; text-align: left; cursor: pointer; transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  display: flex; flex-direction: column; align-items: center; gap: 2px; width: 100%; margin-top: 18px;
+  padding: 14px 22px 13px; border: 1px solid var(--cx-gold); background: transparent; color: var(--cx-ink);
+  font: inherit; text-align: center; cursor: pointer; transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 .cx-choice-title { font-family: var(--cx-serif); font-size: 1.35rem; font-style: italic; line-height: 1.1; }
 .cx-choice-sub { font-family: var(--cx-sans); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cx-muted); }
@@ -240,11 +240,10 @@ body.cx { background: var(--cx-bg); color: var(--cx-ink); transition: background
 
 /* Collection: grouped by visit, in even rows (--r = width / height of each image) */
 .cx-visit + .cx-visit { margin-top: 56px; }
-.cx-visit-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; margin: 0 0 20px; padding-bottom: 10px; border-bottom: 1px solid var(--cx-line); font-family: var(--cx-serif); font-weight: 400; font-size: 1.35rem; }
+.cx-visit-head { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 4px 14px; margin: 0 0 20px; padding-bottom: 10px; border-bottom: 1px solid var(--cx-line); font-family: var(--cx-serif); font-weight: 400; font-size: 1.35rem; }
 .cx-visit-head time { font-family: var(--cx-sans); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cx-muted); }
-.cx-rows { --row: 230px; display: flex; flex-wrap: wrap; gap: 32px 32px; }
-.cx-rows::after { content: ""; flex: 999 1 0; }
-.cx-row-item { flex: var(--r) 1 calc(var(--r) * var(--row)); min-width: 0; display: flex; flex-direction: column; text-decoration: none; }
+.cx-rows { --row: 230px; display: flex; flex-wrap: wrap; justify-content: center; gap: 32px 32px; }
+.cx-row-item { flex: 0 1 calc(var(--r) * var(--row)); max-width: 100%; min-width: 0; display: flex; flex-direction: column; text-decoration: none; }
 .cx-row-item .cx-plate { overflow: hidden; }
 .cx-row-item img { transition: transform 1.2s cubic-bezier(0.2, 0.6, 0.2, 1); }
 .cx-row-item:hover img, .cx-row-item:focus-visible img { transform: scale(1.025); }
