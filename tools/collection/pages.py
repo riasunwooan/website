@@ -66,8 +66,8 @@ LOADING = '<p class="cx-loading" role="status">Opening the galleries…</p>'
 page('art/collection/index.html', 'The Ria Collection — Through My Eyes — Ria Sunwoo An',
      'The Ria Collection: a personal museum and commonplace book of artworks I have loved, with their histories, my readings of them, and the worlds I keep returning to.',
      '''      <section class="cx-hero" aria-labelledby="cx-title">
-        <p class="cx-label">Through My Eyes</p>
         <h1 class="cx-title" id="cx-title">The Ria Collection</h1>
+        <p class="cx-label">Through My Eyes</p>
         <div class="cx-hero-text">
           <p>A collection of artworks I have loved, questions I have carried, and worlds I keep returning to.</p>
           <p>Part museum, part commonplace book, part conversations with the artist, but everything me.</p>
