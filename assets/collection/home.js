@@ -173,8 +173,12 @@ function quotes() {
 
 // Goal Collection: places and ideas still ahead. Set done: true to tick one off.
 const GOALS = [
-  { text: 'Volunteer with <strong>Creative Growth Art Center</strong> in Oakland, in the San Francisco Bay Area, and see one of their exhibitions in person',
-    link: { href: 'https://www.youtube.com/watch?v=-nrGiEWzKoo', label: 'Watch' } },
+  { text: 'Volunteer with art studios for artists with disabilities, and see their exhibitions in person',
+    link: { href: 'https://www.youtube.com/watch?v=-nrGiEWzKoo', label: 'Watch' },
+    places: [
+      ['Bay Area', 'Creative Growth Art Center, Oakland'],
+      ['New York', 'Pure Vision Arts; YAI Arts; LAND Gallery'],
+    ] },
   { text: 'Revisit these museums and find pieces I love', places: [
     ['New York', 'MoMA, The Met, the Guggenheim'],
     ['Boston', 'Museum of Fine Arts, Boston'],
