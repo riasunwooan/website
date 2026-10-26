@@ -1,0 +1,19 @@
+{
+  "name": "ria-collection-build",
+  "private": true,
+  "description": "Builds the vendored browser bundles for /art/collection/ (Supabase client + Tiptap editor).",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.118.0",
+    "@tiptap/core": "^3.32.0",
+    "@tiptap/extension-link": "^3.32.0",
+    "@tiptap/extension-placeholder": "^3.32.0",
+    "@tiptap/extension-superscript": "^3.32.0",
+    "@tiptap/extension-typography": "^3.32.0",
+    "@tiptap/pm": "^3.32.0",
+    "@tiptap/starter-kit": "^3.32.0",
+    "esbuild": "^0.28.2"
+  }
+}

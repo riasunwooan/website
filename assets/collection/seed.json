@@ -1,0 +1,53 @@
+{
+  "_about": "Content shown on /art/collection/ until Supabase is connected (see supabase/README.md). Once connected, import it from the dashboard's Backup tab; it arrives as a private draft.",
+  "rooms": [
+    { "id": "room-water", "slug": "on-the-water", "name": "On the Water", "description": "Boats, harbours, crossings and the light that comes off the sea.", "position": 0 }
+  ],
+  "artworks": [
+    {
+      "id": "namouna",
+      "slug": "on-the-yacht-namouna-venice",
+      "title": "On the Yacht “Namouna,” Venice",
+      "artist": "Julius LeBlanc Stewart",
+      "year_text": "1890",
+      "year_sort": 1890,
+      "medium": "Oil on canvas",
+      "dimensions": "",
+      "movement": "Academic realism",
+      "period": "Belle Époque",
+      "current_collection": "National Gallery of Art, Washington",
+      "credit": "",
+      "image_url": "/assets/img/art/collection/namouna.jpg",
+      "image_thumb": "/assets/img/art/collection/namouna-sm.jpg",
+      "image_width": 1980,
+      "image_height": 1423,
+      "image_alt": "Fashionably dressed guests gathered on the sunlit deck of a yacht, with the waterfront of Venice behind them.",
+      "observation": "",
+      "excerpt": "My first entry.",
+      "first_encounter": "",
+      "behind_canvas": "<p>Julius LeBlanc Stewart (1855–1919) was an American painter born in Philadelphia who spent most of his working life in Paris, where he became known for large, polished scenes of fashionable society.<sup class=\"cx-ref\"><a href=\"#ref-1\">1</a></sup></p><p>The <em>Namouna</em> was the steam yacht of James Gordon Bennett Jr., the publisher of the <em>New York Herald</em>. Stewart painted a party of guests aboard her in Venice in 1890.<sup class=\"cx-ref\"><a href=\"#ref-1\">1</a></sup></p>",
+      "behind_interpretation": "",
+      "looking_closer": "",
+      "what_i_see": "",
+      "conversations": "",
+      "marginalia": [],
+      "sources": [
+        { "text": "National Gallery of Art, Washington. Collection record for Julius LeBlanc Stewart, On the Yacht “Namouna,” Venice, 1890.", "url": "" }
+      ],
+      "themes": ["Water", "Light", "Leisure"],
+      "tags": ["Venice", "Yacht", "Society portrait"],
+      "related": [],
+      "rooms": ["room-water"],
+      "discovered_on": "2026-09-17",
+      "featured": true,
+      "is_sample": false,
+      "position": 0,
+      "last_contemplated_at": null,
+      "created_at": "2026-09-17T12:00:00Z",
+      "updated_at": "2026-09-17T12:00:00Z"
+    }
+  ],
+  "reflections": [],
+  "exhibitions": [],
+  "settings": { "homepage": { "sections": ["featured", "collection", "recent", "connections", "rooms", "exhibitions"], "hidden": [] } }
+}

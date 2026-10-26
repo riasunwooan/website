@@ -4,6 +4,7 @@ Static personal site. Currently contains only the Research section, shown as a v
 
 - `index.html` — Home. `research/`, `art/`, `writing/` each hold an `index.html` for that page. Each research project has its own page at `research/<project-name>/index.html`; the cards on `research/index.html` link to them.
 - `assets/style.css` — styles.
+- `art/collection/` — The Ria Collection, a personal art museum and journal. Pages are rendered in the browser by `assets/collection/*.js` from Supabase (or `assets/collection/seed.json` until it is connected). Private dashboard at `/art/collection/admin/`. Setup: [`supabase/README.md`](supabase/README.md).
 - `CNAME` — custom domain (`riasunwooan.com`) for GitHub Pages.
 
 ## Hosting on GitHub Pages
