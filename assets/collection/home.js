@@ -156,7 +156,7 @@ function rows(list) {
   }).join('') + '</div>';
 }
 
-// Words I Keep: a small selection of lines about looking and loving art.
+// Quote Collection: a small selection of lines about looking and loving art.
 const QUOTES = [
   { text: 'With understanding comes sight, and with sight comes love. And what we see through the eyes of love is never quite what we saw before.',
     original: '知則爲眞愛 愛則爲眞看 看則畜之而非徒畜也', lang: 'zh-Hant',
@@ -165,10 +165,10 @@ const QUOTES = [
 ];
 
 function quotes() {
-  return '<section class="cx-quotes" aria-labelledby="cx-quotes-h"><div class="cx-sec-head"><h2 id="cx-quotes-h">Words I Keep</h2></div>' +
-    QUOTES.map((q) => '<figure class="cx-epigraph"><blockquote><p>&ldquo;' + esc(q.text) + '&rdquo;</p>' +
+  return '<section class="cx-quotes" aria-labelledby="cx-quotes-h"><div class="cx-sec-head"><h2 id="cx-quotes-h">Quote Collection</h2></div><div class="cx-quote-cards">' +
+    QUOTES.map((q) => '<figure class="cx-epigraph"><blockquote><p>' + esc(q.text) + '</p>' +
       (q.original ? '<p class="cx-epigraph-orig" lang="' + q.lang + '">' + esc(q.original) + '</p>' : '') +
-      '</blockquote><figcaption>' + q.by + '</figcaption></figure>').join('') + '</section>';
+      '</blockquote><figcaption>' + q.by + '</figcaption></figure>').join('') + '</div></section>';
 }
 
 function recent(works, data) {
