@@ -187,6 +187,21 @@ body.cx { background: var(--cx-bg); color: var(--cx-ink); transition: background
 .cx-masonry > .cx-card { margin-bottom: 44px; }
 .cx-masonry > .cx-empty { column-span: all; }
 
+/* Favorites: a carved gilt frame (frame.svg, drawn for border-image with a 34px slice) */
+.cx-fav { position: relative; }
+.cx-fav > .cx-plate { position: relative; overflow: visible !important; }
+.cx-fav > .cx-plate::before {
+  content: ""; position: absolute; inset: -16px; z-index: 1; pointer-events: none;
+  border: 16px solid transparent; border-image: url("/assets/collection/frame.svg") 34 round;
+  filter: drop-shadow(0 6px 10px rgba(60, 40, 10, 0.3));
+}
+.cx-row-item.cx-fav:hover img { transform: none; }
+.cx-rows:has(.cx-fav) { padding-top: 16px; }
+.cx-work-plate.cx-fav > .cx-plate img { border: 40px solid transparent; border-image: url("/assets/collection/frame.svg") 34 round; filter: drop-shadow(0 12px 18px rgba(60, 40, 10, 0.3)); }
+.cx-work-plate.cx-fav > .cx-plate::before { content: none; }
+.cx-fav-label { color: var(--cx-gold); }
+@media (hover: none) { .cx-row-item.cx-fav .cx-row-cap { padding-top: 26px; } }
+
 /* Collection: grouped by visit, in even rows (--r = width / height of each image) */
 .cx-visit + .cx-visit { margin-top: 56px; }
 .cx-visit-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; margin: 0 0 20px; padding-bottom: 10px; border-bottom: 1px solid var(--cx-line); font-family: var(--cx-serif); font-weight: 400; font-size: 1.35rem; }
@@ -199,6 +214,19 @@ body.cx { background: var(--cx-bg); color: var(--cx-ink); transition: background
 .cx-row-item:hover img, .cx-row-item:focus-visible img { transform: scale(1.025); }
 .cx-row-cap { display: flex; flex-direction: column; gap: 2px; padding-top: 10px; min-width: 0; }
 .cx-row-cap .cx-card-title { font-size: 1.1rem; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+@media (hover: hover) {
+  .cx-row-item { position: relative; }
+  .cx-row-cap {
+    position: absolute; inset: auto 0 0 0; z-index: 1;
+    padding: 40px 14px 12px;
+    background: linear-gradient(to top, rgba(20, 17, 14, 0.78), rgba(20, 17, 14, 0));
+    color: #f5efe4; opacity: 0; transform: translateY(6px); transition: opacity 0.4s, transform 0.4s;
+  }
+  .cx-row-cap .cx-card-by { color: rgba(245, 239, 228, 0.82); }
+  .cx-row-item:hover .cx-row-cap, .cx-row-item:focus-visible .cx-row-cap { opacity: 1; transform: none; }
+  .cx-rows { row-gap: 28px; }
+  .cx-rows:has(.cx-fav) { row-gap: 44px; }
+}
 
 .cx-card { position: relative; display: block; break-inside: avoid; text-decoration: none; }
 .cx-card .cx-plate { overflow: hidden; }
@@ -282,7 +310,7 @@ a.cx-door-link:hover .cx-room-name { color: var(--cx-wine); }
 /* ---------- Artwork page ---------- */
 
 .cx-work { padding-top: 40px; }
-.cx-work-plate { margin: 0 auto; max-width: 1100px; padding: clamp(16px, 4vw, 56px); background: var(--cx-paper); box-shadow: 0 0 0 1px var(--cx-line); }
+.cx-work-plate { margin: 0 auto; max-width: 1100px; padding: 0; }
 .cx-work-plate .cx-plate { display: flex; justify-content: center; }
 .cx-work-plate img { width: auto; max-width: 100%; max-height: 84vh; cursor: zoom-in; }
 .cx-work-plate .cx-frame-empty { max-width: 100%; }

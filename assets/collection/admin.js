@@ -15,12 +15,11 @@ const SECTIONS = [
   ['behind_interpretation', 'II', 'Behind the Canvas: interpretation', 'Readings and claims that are interpretation rather than record (scholars’ or mine).'],
   ['looking_closer', 'III', 'Looking Closer', 'Composition, color, light, texture, technique. Use Detail for enlarged crops.'],
   ['what_i_see', 'IV', 'What I See', 'The essay. Take all the room you need.'],
-  ['conversations', 'V', 'Conversations Across Canvases', 'Books, films, music, events and ideas this piece talks to. Related works are chosen below.'],
 ];
 const MARGIN_KINDS = { observation: 'Observation', detail: 'Favorite detail', sketch: 'Sketch', quotation: 'Quotation', question: 'Unanswered question', research: 'Research note', image: 'Image' };
 const HOME_SECTIONS = { collection: 'The Collection', recent: 'Recently Contemplated', rooms: 'Rooms', exhibitions: 'Exhibitions' };
 const FIELDS = ['title', 'slug', 'artist', 'year_text', 'year_sort', 'medium', 'dimensions', 'movement', 'period', 'current_collection', 'credit',
-  'image_url', 'image_thumb', 'image_width', 'image_height', 'image_alt', 'observation', 'excerpt', 'discovered_on', 'status', 'visibility'];
+  'image_url', 'image_thumb', 'image_width', 'image_height', 'image_alt', 'observation', 'excerpt', 'discovered_on', 'status', 'visibility', 'is_favorite'];
 
 let sb, Editor, S = {};
 const slugify = (s) => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'untitled';
@@ -313,15 +312,13 @@ async function editWork(w, restore) {
       '</fieldset>' +
       '<fieldset class="ad-fieldset"><legend>Sources &amp; references</legend><p class="ad-note ad-wide">Numbered in order. Cite one in the text with the Ref button and its number.</p><div class="ad-rep ad-wide" id="ad-sources"></div>' +
         '<div class="ad-wide"><button class="ad-btn ghost" type="button" id="ad-add-src">Add source</button></div></fieldset>' +
-      '<fieldset class="ad-fieldset"><legend>VI. Marginalia</legend><div class="ad-rep ad-wide" id="ad-margins"></div>' +
+      '<fieldset class="ad-fieldset"><legend>V. Marginalia</legend><div class="ad-rep ad-wide" id="ad-margins"></div>' +
         '<div class="ad-wide"><button class="ad-btn ghost" type="button" id="ad-add-margin">Add a fragment</button></div></fieldset>' +
       '<fieldset class="ad-fieldset"><legend>Threads</legend>' +
         '<label class="cx-field ad-wide"><span>Themes (comma separated)</span><input name="themes" list="ad-themes" value="' + esc((a.themes || []).join(', ')) + '"></label>' +
         '<label class="cx-field ad-wide"><span>Tags (comma separated)</span><input name="tags" value="' + esc((a.tags || []).join(', ')) + '"></label>' +
         '<datalist id="ad-themes">' + [...new Set(S.works.flatMap((x) => x.themes || []))].map((t) => '<option value="' + esc(t) + '">').join('') + '</datalist>' +
         '<div class="ad-wide"><p class="cx-label">Rooms</p><div class="ad-checks">' + (S.rooms.length ? S.rooms.map((r) => '<label class="ad-check"><input type="checkbox" name="room" value="' + r.id + '"' + (myRooms.has(r.id) ? ' checked' : '') + '>' + esc(r.name) + '</label>').join('') : '<span class="ad-note">No rooms yet. Create them under Rooms.</span>') + '</div></div>' +
-        '<div class="ad-wide"><p class="cx-label">Related works (V. Conversations Across Canvases)</p><div class="ad-checks">' + (S.works.filter((x) => x.id !== a.id).map((x) => '<label class="ad-check"><input type="checkbox" name="related" value="' + x.id + '"' + ((a.related || []).includes(x.id) ? ' checked' : '') + '>' + esc(x.title) + '</label>').join('') || '<span class="ad-note">Other entries will appear here.</span>') + '</div>' +
-        '<p class="ad-note">Only public works are ever shown as related on public pages.</p></div>' +
       '</fieldset>' +
       '<fieldset class="ad-fieldset"><legend>Private notes</legend><p class="ad-note ad-wide">Kept in a separate, owner-only table. Never shown publicly, whatever the entry’s visibility.</p><div class="ad-wide" data-ed="private_notes"></div></fieldset>' +
       '<fieldset class="ad-fieldset"><legend>Publishing</legend>' +
@@ -331,8 +328,9 @@ async function editWork(w, restore) {
           '<p class="ad-note">Drafts are never visible to anyone but you, whatever their visibility.</p></div>' +
         '<div class="ad-wide"><p class="cx-label">Visibility</p>' + Object.entries(VIS).map(([k, [l, d]]) => '<label class="ad-check"><input type="radio" name="visibility" value="' + k + '"' + (a.visibility === k ? ' checked' : '') + '><strong>' + l + '</strong>&nbsp;· ' + d + '</label>').join('') + '</div>' +
         '<div class="ad-wide" id="ad-sharebox"></div>' +
+        '<label class="ad-check ad-wide"><input type="checkbox" name="is_favorite"' + (a.is_favorite ? ' checked' : '') + '>Mark as one of my favorites (shown in a carved gold frame wherever the entry is visible)</label>' +
       '</fieldset>' +
-      (isNew ? '' : '<fieldset class="ad-fieldset"><legend>VII. Returning to the Artwork</legend><p class="ad-note ad-wide">Each return is dated and kept; earlier ones are never overwritten. New reflections start private.</p><div class="ad-wide" id="ad-refl"></div></fieldset>') +
+      (isNew ? '' : '<fieldset class="ad-fieldset"><legend>VI. Returning to the Artwork</legend><p class="ad-note ad-wide">Each return is dated and kept; earlier ones are never overwritten. New reflections start private.</p><div class="ad-wide" id="ad-refl"></div></fieldset>') +
       '<div class="ad-sticky"><button class="ad-btn" type="submit">Save</button>' + (isNew ? '' : '<a class="ad-btn ghost" href="' + previewUrl(a) + '" target="_blank" rel="noopener">Preview</a>') +
         (!isNew && a.status === 'published' && a.visibility === 'public' ? '<a class="ad-link" href="' + workUrl(a) + '" target="_blank" rel="noopener">Public page</a>' : '') +
         '<span class="ad-status" role="status"></span></div>' +

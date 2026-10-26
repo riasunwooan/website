@@ -101,7 +101,7 @@ function visits(list) {
 function rows(list) {
   return '<div class="cx-rows">' + list.map((w) => {
     const r = ((w.image_width || 4) / (w.image_height || 3)).toFixed(3);
-    return '<a class="cx-row-item" href="' + workUrl(w) + '" style="--r:' + r + '">' + plate(w, { thumb: true }) +
+    return '<a class="cx-row-item' + (w.is_favorite ? ' cx-fav' : '') + '" href="' + workUrl(w) + '" style="--r:' + r + '">' + plate(w, { thumb: true }) +
       '<span class="cx-row-cap"><span class="cx-card-title">' + esc(w.title) + '</span><span class="cx-card-by">' + byline(w) + '</span></span></a>';
   }).join('') + '</div>';
 }

@@ -40,20 +40,16 @@ export function renderWork(host, a, ctx = {}) {
   sec(2, 'looking-closer', 'Looking Closer', !isEmptyHTML(a.looking_closer) && rich(a.looking_closer));
   sec(3, 'what-i-see', 'What I See', !isEmptyHTML(a.what_i_see) && rich(a.what_i_see, 'cx-essay'));
 
-  const related = (a.related || []).map((id) => works.find((w) => w.id === id)).filter(Boolean);
-  let conv = '';
-  if (!isEmptyHTML(a.conversations)) conv += rich(a.conversations);
-  if (linkWorks && related.length) conv += '<div class="cx-related">' + related.map((w) => card(w)).join('') + '</div>';
-  sec(4, 'conversations', 'Conversations Across Canvases', conv);
+  const related = [];
 
   const notes = (a.marginalia || []).filter((m) => m && (m.body || m.src));
-  sec(5, 'marginalia', 'Marginalia', notes.length && '<ul class="cx-margins">' + notes.map((m) =>
+  sec(4, 'marginalia', 'Marginalia', notes.length && '<ul class="cx-margins">' + notes.map((m) =>
     '<li class="cx-margin cx-margin-' + esc(m.kind || 'observation') + '"><span class="cx-label">' + esc(KINDS[m.kind] || 'Note') + '</span>' +
     (m.src ? '<figure data-cx-zoom><img src="' + esc(m.src) + '" alt="' + esc(m.body || '') + '" loading="lazy"></figure>' : '') +
     (m.body ? (m.kind === 'quotation' ? '<blockquote>' + esc(m.body) + '</blockquote>' : '<p>' + esc(m.body) + '</p>') : '') + '</li>').join('') + '</ul>');
 
   const refl = (ctx.reflections || []).slice().sort((x, y) => String(x.written_on).localeCompare(String(y.written_on)));
-  sec(6, 'returning', 'Returning to the Artwork', refl.length && '<ol class="cx-journal">' + refl.map((r) =>
+  sec(5, 'returning', 'Returning to the Artwork', refl.length && '<ol class="cx-journal">' + refl.map((r) =>
     '<li><time datetime="' + esc(r.written_on) + '">' + esc(fmtDate(r.written_on)) + '</time>' +
     (r.is_private ? '<span class="cx-private-tag">Private</span>' : '') + rich(r.body) + '</li>').join('') + '</ol>');
 
@@ -63,9 +59,9 @@ export function renderWork(host, a, ctx = {}) {
   host.innerHTML =
     '<article class="cx-work">' +
       (a.is_sample ? '<p class="cx-sample">Sample entry, written to show the layout. Not a real reflection.</p>' : '') +
-      '<figure class="cx-work-plate" data-cx-zoom>' + plate(a, { eager: true }) + (a.credit ? '<figcaption>' + esc(a.credit) + '</figcaption>' : '') + '</figure>' +
+      '<figure class="cx-work-plate' + (a.is_favorite ? ' cx-fav' : '') + '" data-cx-zoom>' + plate(a, { eager: true }) + (a.credit ? '<figcaption>' + esc(a.credit) + '</figcaption>' : '') + '</figure>' +
       '<header class="cx-work-head">' +
-        '<p class="cx-label">' + (n >= 0 ? 'No. ' + String(n + 1).padStart(2, '0') : '') +
+        '<p class="cx-label">' + (a.is_favorite ? '<span class="cx-fav-label">One of my favorites</span> <span aria-hidden="true">·</span> ' : '') + (n >= 0 ? 'No. ' + String(n + 1).padStart(2, '0') : '') +
           (a.discovered_on ? ' <span aria-hidden="true">·</span> First encountered ' + esc(fmtDate(a.discovered_on)) : '') + '</p>' +
         '<h1 class="cx-work-title">' + esc(a.title) + '</h1>' +
         '<p class="cx-work-by">' + byline(a) + '</p>' +
