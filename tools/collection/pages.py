@@ -2,7 +2,7 @@
 # (Content is rendered in the browser by the matching /assets/collection/*.js module.)
 import os
 ROOT = os.path.join(os.path.dirname(__file__), '..', '..')
-V = '1'
+V = '2'
 
 NAV = '''  <nav>
     <a class="logo" href="/">Ria Sunwoo An</a>
