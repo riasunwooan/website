@@ -440,13 +440,16 @@ a.cx-door-link:hover .cx-room-name { color: var(--cx-wine); }
 .cx-essay > p:first-child::first-letter { float: left; margin: 0.08em 0.1em 0 0; font-size: 3.6em; line-height: 0.8; color: var(--cx-wine); }
 .cx-sec-what-i-see { padding: 56px 0 72px; border-top: 1px solid var(--cx-line); border-bottom: 1px solid var(--cx-line); margin-bottom: 64px; }
 
-.cx-behind > summary { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 16px; list-style: none; cursor: pointer; }
+.cx-behind > summary { display: grid; grid-template-columns: max-content max-content; justify-content: start; align-items: center; gap: 6px 16px; list-style: none; cursor: pointer; }
 .cx-behind > summary::-webkit-details-marker { display: none; }
 .cx-behind > summary h2 { margin: 0; }
-.cx-behind > summary::after { content: "+"; grid-column: 2; grid-row: 1; font-family: var(--cx-serif); font-size: 1.8rem; line-height: 1; color: var(--cx-muted); transition: transform 0.3s; }
+.cx-behind > summary::after {
+  content: "+"; grid-column: 2; grid-row: 1; display: grid; place-items: center; width: 46px; height: 46px; border: 1.5px solid var(--cx-line); border-radius: 50%;
+  font-family: var(--cx-sans); font-size: 2.6rem; font-weight: 300; line-height: 1; padding-bottom: 4px; color: var(--cx-ink); transition: transform 0.3s, border-color 0.3s, color 0.3s;
+}
 .cx-behind[open] > summary::after { transform: rotate(45deg); }
-.cx-behind-hint { grid-column: 1; font-family: var(--cx-serif); font-style: italic; font-size: 1.05rem; color: var(--cx-muted); }
-.cx-behind > summary:hover h2, .cx-behind > summary:hover::after { color: var(--cx-wine); }
+.cx-behind-hint { grid-column: 1 / -1; font-family: var(--cx-serif); font-style: italic; font-size: 1.05rem; color: var(--cx-muted); }
+.cx-behind > summary:hover h2, .cx-behind > summary:hover::after { color: var(--cx-wine); border-color: var(--cx-wine); }
 .cx-behind[open] > summary { margin-bottom: 24px; }
 .cx-facts, .cx-interp { margin-bottom: 28px; }
 .cx-facts > .cx-label, .cx-interp > .cx-label { margin-bottom: 12px; }
