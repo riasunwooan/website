@@ -444,8 +444,8 @@ a.cx-door-link:hover .cx-room-name { color: var(--cx-wine); }
 .cx-behind > summary::-webkit-details-marker { display: none; }
 .cx-behind > summary h2 { margin: 0; }
 .cx-behind > summary::after {
-  content: "+"; grid-column: 2; grid-row: 1; display: grid; place-items: center; width: 46px; height: 46px; border: 1.5px solid var(--cx-line); border-radius: 50%;
-  font-family: var(--cx-sans); font-size: 2.6rem; font-weight: 300; line-height: 1; padding-bottom: 4px; color: var(--cx-ink); transition: transform 0.3s, border-color 0.3s, color 0.3s;
+  content: "+"; grid-column: 2; grid-row: 1; display: grid; place-items: center; box-sizing: border-box; width: 46px; height: 46px; aspect-ratio: 1; border: 1.5px solid var(--cx-line); border-radius: 50%;
+  font-family: var(--cx-sans); font-size: 2.6rem; font-weight: 300; line-height: 0; padding: 0 0 3px; color: var(--cx-ink); transition: transform 0.3s, border-color 0.3s, color 0.3s;
 }
 .cx-behind[open] > summary::after { transform: rotate(45deg); }
 .cx-behind-hint { grid-column: 1 / -1; font-family: var(--cx-serif); font-style: italic; font-size: 1.05rem; color: var(--cx-muted); }
