@@ -17,7 +17,7 @@ const SECTIONS = [
   ['what_i_see', 'IV', 'What I See', 'The essay. Take all the room you need.'],
 ];
 const MARGIN_KINDS = { thought: 'Thought (my own words)', observation: 'Observation', detail: 'Favorite detail', sketch: 'Sketch', quotation: 'Quotation (someone else’s words)', question: 'Unanswered question', research: 'Research note', image: 'Image' };
-const HOME_SECTIONS = { collection: 'The Collection', rooms: 'Rooms', exhibitions: 'Exhibitions', quotes: 'Quote Collection', recent: 'Recently Re-Contemplated' };
+const HOME_SECTIONS = { collection: 'The Collection', rooms: 'Rooms', exhibitions: 'Exhibitions', quotes: 'Quote Collection', goals: 'Goal Collection', recent: 'Recently Re-Contemplated' };
 const FIELDS = ['title', 'slug', 'artist', 'year_text', 'year_sort', 'medium', 'dimensions', 'movement', 'period', 'current_collection', 'credit',
   'image_url', 'image_thumb', 'image_width', 'image_height', 'image_alt', 'observation', 'excerpt', 'discovered_on', 'discovered_text', 'revisit_text', 'seen_at', 'status', 'visibility', 'is_favorite'];
 

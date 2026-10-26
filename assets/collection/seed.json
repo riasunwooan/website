@@ -827,6 +827,7 @@
         "rooms",
         "exhibitions",
         "quotes",
+        "goals",
         "recent"
       ],
       "hidden": []
