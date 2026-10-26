@@ -173,7 +173,7 @@ function quotes() {
 
 // Goal Collection: places and ideas still ahead. Set done: true to tick one off.
 const GOALS = [
-  { text: 'Volunteer with art studios for artists with disabilities, and see their exhibitions in person',
+  { text: 'Volunteer with art studios for artists with disabilities, and see their exhibitions in person, because I want to learn from their art. I was mesmerized by <a href="https://americanart.si.edu/artist/judith-scott-31169" target="_blank" rel="noopener">Judith Scott’s</a> work.',
     link: { href: 'https://www.youtube.com/watch?v=-nrGiEWzKoo', label: 'Watch' },
     places: [
       ['Bay Area', 'Creative Growth Art Center, Oakland'],

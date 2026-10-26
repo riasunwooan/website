@@ -335,6 +335,7 @@ body.cx { background: var(--cx-bg); color: var(--cx-ink); transition: background
 .cx-goal.is-done .cx-goal-body { color: var(--cx-muted); text-decoration: line-through; }
 .cx-goal-body { font-family: var(--cx-serif); font-weight: 500; font-size: 1.15rem; line-height: 1.45; }
 .cx-goal-body strong { font-weight: 600; }
+.cx-goal-body a:not(.cx-goal-link) { color: var(--cx-wine); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--cx-wine) 45%, transparent); text-underline-offset: 3px; }
 .cx-goal-link { margin-left: 4px; font-family: var(--cx-sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cx-wine); }
 .cx-goal-places { margin: 8px 0 0; }
 .cx-goal-places div { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 10px; padding: 3px 0; }
