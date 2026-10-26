@@ -185,6 +185,7 @@ const GOALS = [
     ['Venice', 'Gallerie dell’Accademia; the Peggy Guggenheim Collection'],
     ['Vatican City', 'The Sistine Chapel'],
   ] },
+  { text: 'Create <strong>response art or writing on the spot</strong>, sitting in front of a piece' },
   { text: 'Visit Barcelona for Gaudí’s <strong>Sagrada Família</strong>' },
   { text: 'Explore more <strong>Korean traditional artwork</strong>' },
   { text: 'Understand why people love <strong>Rothko</strong>' },
