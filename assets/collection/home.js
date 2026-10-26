@@ -171,7 +171,7 @@ function quotes() {
       '</blockquote><figcaption>' + q.by + '</figcaption></figure>').join('') + '</div></section>';
 }
 
-// Goal Collection: places and ideas still ahead. Set done: true to tick one off.
+// Goal Collection: places and ideas still ahead. Set done: true to tick one off; right: true puts a goal in the second column.
 const GOALS = [
   { text: 'Volunteer with art studios for artists with disabilities, and see their exhibitions in person, because I want to learn from their art. I was mesmerized by <a href="https://americanart.si.edu/artist/judith-scott-31169" target="_blank" rel="noopener">Judith Scott’s</a> work.',
     link: { href: 'https://www.youtube.com/watch?v=-nrGiEWzKoo', label: 'Watch' },
@@ -189,20 +189,28 @@ const GOALS = [
     ['Venice', 'Gallerie dell’Accademia; the Peggy Guggenheim Collection'],
     ['Vatican City', 'The Sistine Chapel'],
   ] },
-  { text: 'Create <strong>response art or writing on the spot</strong>, sitting in front of a piece' },
-  { text: 'Visit Barcelona for Gaudí’s <strong>Sagrada Família</strong>' },
-  { text: 'Explore more <strong>Korean traditional artwork</strong>' },
-  { text: 'Understand why people love <strong>Rothko</strong>' },
+  { text: 'Create <strong>response art or writing on the spot</strong>, sitting in front of a piece', right: true },
+  { text: 'Visit Barcelona for Gaudí’s <strong>Sagrada Família</strong>', right: true },
+  { text: 'Explore more <strong>Korean traditional artwork</strong>', right: true },
+  { text: 'Understand why people love <strong>Rothko</strong>', right: true },
+  { text: 'Visit', right: true, places: [
+    ['Hudson Valley', 'Olana, Frederic Church’s house; the Thomas Cole National Historic Site'],
+    ['Washington, D.C.', 'The Phillips Collection’s Rothko Room; Smithsonian American Art Museum'],
+    ['Houston', 'The Rothko Chapel'],
+    ['Seoul', 'National Museum of Korea; Leeum Museum of Art'],
+    ['Paris', 'Musée de l’Orangerie; Musée d’Orsay'],
+    ['Madrid', 'Museo del Prado'],
+  ] },
 ];
 
 function goals() {
   return '<section class="cx-goals" aria-labelledby="cx-goals-h"><div class="cx-sec-head"><h2 id="cx-goals-h">Goal Collection</h2>' +
-    '<p class="cx-sec-note">Where I want to look next.</p></div><ul class="cx-goal-list">' +
-    GOALS.map((g) => '<li class="cx-goal' + (g.done ? ' is-done' : '') + '"><span class="cx-goal-box" aria-hidden="true"></span>' +
+    '<p class="cx-sec-note">Where I want to look next.</p></div><div class="cx-goal-cols">' +
+    [GOALS.filter((g) => !g.right), GOALS.filter((g) => g.right)].map((col) => '<ul class="cx-goal-list">' + col.map((g) => '<li class="cx-goal' + (g.done ? ' is-done' : '') + '"><span class="cx-goal-box" aria-hidden="true"></span>' +
       '<span class="cx-goal-body"><span class="cx-visually-hidden">' + (g.done ? 'Done: ' : 'To do: ') + '</span>' + g.text +
       (g.link ? ' <a class="cx-goal-link" href="' + g.link.href + '" target="_blank" rel="noopener">' + g.link.label + ' ↗</a>' : '') +
       (g.places ? '<dl class="cx-goal-places">' + g.places.map(([city, list]) => '<div><dt>' + city + '</dt><dd>' + list + '</dd></div>').join('') + '</dl>' : '') +
-      '</span></li>').join('') + '</ul></section>';
+      '</span></li>').join('') + '</ul>').join('') + '</div></section>';
 }
 
 function recent(works, data) {
