@@ -310,6 +310,13 @@ body.cx { background: var(--cx-bg); color: var(--cx-ink); transition: background
 .cx-quotes { padding: 24px 0 56px; }
 .cx-epigraph { container-type: inline-size; margin: 0; padding: 28px 0 32px; text-align: center; }
 .cx-epigraph + .cx-epigraph { border-top: 1px solid var(--cx-line); }
+/* Quote Collection: each quote its own card */
+.cx-quote-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; align-items: stretch; }
+.cx-quote-cards .cx-epigraph { display: flex; flex-direction: column; justify-content: center; padding: 36px 32px; border: 1px solid var(--cx-line); background: var(--cx-paper); }
+.cx-quote-cards .cx-epigraph + .cx-epigraph { border-top: 1px solid var(--cx-line); }
+.cx-quote-cards .cx-epigraph blockquote p:first-child { white-space: normal; font-size: 1.3rem; text-wrap: balance; }
+.cx-quote-cards .cx-epigraph blockquote p:first-child::before { content: "\201C"; display: block; margin-bottom: 4px; font-size: 3rem; line-height: 0.6; font-style: normal; color: var(--cx-wine); }
+.cx-quote-cards .cx-epigraph figcaption { text-wrap: balance; }
 .cx-epigraph blockquote { max-width: none; margin: 0 auto; }
 .cx-epigraph blockquote p { margin: 0; font-family: var(--cx-serif); font-style: italic; font-weight: 500; font-size: min(1.25rem, 1.95cqi); line-height: 1.5; white-space: nowrap; color: var(--cx-ink); }
 .cx-epigraph .cx-epigraph-orig { margin-top: 16px; font-family: "Noto Serif KR", "Nanum Myeongjo", serif; font-style: normal; font-size: 0.8rem; letter-spacing: 0.16em; word-break: keep-all; color: var(--cx-muted); }
