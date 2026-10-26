@@ -83,24 +83,7 @@ function wireCollection(works) {
   }
   form.addEventListener('input', apply);
   apply();
-  wireChoice();
   if (location.hash === '#collection') host.querySelector('#collection').scrollIntoView();
-}
-
-// Curator's Choice: light the favorites, dim the rest.
-function wireChoice() {
-  const btn = document.querySelector('[data-cx-choice]');
-  if (!btn) return;
-  const set = (on) => {
-    document.body.classList.toggle('cx-spotlight', on);
-    btn.setAttribute('aria-pressed', String(on));
-  };
-  btn.addEventListener('click', () => {
-    const on = !document.body.classList.contains('cx-spotlight');
-    set(on);
-    if (on) document.getElementById('collection').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-  });
-  if (new URLSearchParams(location.search).get('choice')) set(true);
 }
 
 // Works seen on the same day at the same museum, most recent visit first; undated works go last.
