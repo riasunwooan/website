@@ -121,7 +121,7 @@ function rooms(works, data) {
   const list = data.rooms || [];
   if (!list.length) return '';
   return '<section class="cx-rooms" id="rooms" aria-labelledby="cx-rooms-h"><div class="cx-sec-head"><h2 id="cx-rooms-h">Rooms</h2>' +
-    '<p class="cx-sec-note">Six doors, six ways a work can stay with me.</p></div><ul class="cx-doors">' +
+    '<p class="cx-sec-note">Five doors, five ways a work can stay with me.</p></div><ul class="cx-doors">' +
     list.map((r) => {
       const ws = works.filter((w) => (w.rooms || []).includes(r.id));
       const inner = door() + '<span class="cx-room-name">' + esc(r.name) + '</span>' +

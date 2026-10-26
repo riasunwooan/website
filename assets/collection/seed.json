@@ -5,43 +5,36 @@
       "id": "room-wonder",
       "slug": "i-wonder",
       "name": "I Wonder",
-      "description": "Things that make me curious",
+      "description": "Pieces that leave me with questions",
       "position": 0
     },
     {
       "id": "room-dream",
       "slug": "i-dream",
       "name": "I Dream",
-      "description": "Things I imagine or wish existed",
+      "description": "Pieces that bring my daydreams to life",
       "position": 1
     },
     {
       "id": "room-remember",
       "slug": "i-remember",
       "name": "I Remember",
-      "description": "Things that remind me of something",
+      "description": "Pieces that take me back in time",
       "position": 2
     },
     {
       "id": "room-feel",
       "slug": "i-feel",
       "name": "I Feel",
-      "description": "Things that move me",
+      "description": "Pieces that tug at my heartstrings",
       "position": 3
-    },
-    {
-      "id": "room-question",
-      "slug": "i-question",
-      "name": "I Question",
-      "description": "Things that challenge how I think",
-      "position": 4
     },
     {
       "id": "room-see",
       "slug": "i-see",
       "name": "I See",
-      "description": "Things that make me see differently",
-      "position": 5
+      "description": "Pieces that change the way I see the world",
+      "position": 4
     }
   ],
   "artworks": [
