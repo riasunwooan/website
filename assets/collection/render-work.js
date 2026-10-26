@@ -62,7 +62,8 @@ export function renderWork(host, a, ctx = {}) {
       '<figure class="cx-work-plate' + (a.is_favorite ? ' cx-fav' : '') + '" data-cx-zoom>' + plate(a, { eager: true }) + (a.credit ? '<figcaption>' + esc(a.credit) + '</figcaption>' : '') + '</figure>' +
       '<header class="cx-work-head">' +
         '<p class="cx-label">' + (a.is_favorite ? '<span class="cx-fav-label">Curator’s Choice</span> <span aria-hidden="true">·</span> ' : '') + (n >= 0 ? 'No. ' + String(n + 1).padStart(2, '0') : '') +
-          (a.discovered_on ? ' <span aria-hidden="true">·</span> First encountered ' + esc(a.discovered_text || fmtDate(a.discovered_on)) : '') + '</p>' +
+          (a.discovered_on ? ' <span aria-hidden="true">·</span> First encountered ' + esc(a.discovered_text || fmtDate(a.discovered_on)) : '') +
+          (a.revisit_text ? ' <span aria-hidden="true">·</span> Returned ' + esc(a.revisit_text) : '') + '</p>' +
         '<h1 class="cx-work-title">' + esc(a.title) + '</h1>' +
         '<p class="cx-work-by">' + byline(a) + '</p>' +
         (meta.length ? '<dl class="cx-meta">' + meta.map((m) => '<div><dt>' + m[0] + '</dt><dd>' + esc(m[1]) + '</dd></div>').join('') + '</dl>' : '') +

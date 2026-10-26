@@ -105,7 +105,7 @@ function visits(list) {
   list.forEach((w) => {
     const date = w.discovered_on || '', place = w.seen_at || w.current_collection || '';
     const v = out.find((x) => x.date === date && x.place === place);
-    if (v) v.works.push(w); else out.push({ date, place, text: w.discovered_text || '', works: [w] });
+    if (v) v.works.push(w); else out.push({ date, place, text: w.discovered_text || '', again: w.revisit_text || '', works: [w] });
   });
   return out.sort((x, y) => (y.date || '0').localeCompare(x.date || '0'));
 }
@@ -115,7 +115,11 @@ function visitDates(v, reflections) {
   const ids = v.works.map((w) => w.id);
   const days = [...new Set([v.date, ...reflections.filter((r) => ids.includes(r.artwork_id)).map((r) => String(r.written_on).slice(0, 10))])].sort();
   // An approximate first visit ("March 2026") is written as it was given.
-  if (v.text && days.length === 1) return v.text;
+  if (v.text && days.length === 1) {
+    if (!v.again) return v.text;
+    const y = v.text.slice(-4);
+    return (v.again.endsWith(y) ? v.text.replace(/\s*\d{4}$/, '') : v.text) + ' & ' + v.again;
+  }
   const years = new Set(days.map((d) => d.slice(0, 4)));
   if (years.size > 1) return days.map((d) => fmtDate(d)).join(' & ');
   return days.map((d) => fmtDate(d, { month: 'long', day: 'numeric' })).join(' & ') + ', ' + days[0].slice(0, 4);
