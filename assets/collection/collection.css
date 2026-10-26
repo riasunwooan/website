@@ -467,8 +467,8 @@ a.cx-door-link:hover .cx-room-name { color: var(--cx-wine); }
 
 .cx-prose { font-family: var(--cx-serif); font-size: 1.28rem; line-height: 1.62; color: var(--cx-ink); hanging-punctuation: first; }
 .cx-prose p { margin: 0 0 1.05em; }
-.cx-prose h2 { margin: 1.6em 0 0.5em; font-size: 1.6rem; }
-.cx-prose h3 { margin: 1.4em 0 0.4em; font-family: var(--cx-sans); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cx-muted); }
+.cx-prose h2 { margin: 1.6em 0 0.5em; font-size: 1.6rem; font-weight: 700; }
+.cx-prose h3 { margin: 1.4em 0 0.4em; font-family: var(--cx-sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cx-soft); }
 .cx-prose blockquote { margin: 1.6em 0; padding: 0 0 0 1.2em; border-left: 1px solid var(--cx-wine); font-style: italic; color: var(--cx-soft); }
 .cx-prose hr { width: 60px; margin: 2.4em auto; border: 0; border-top: 1px solid var(--cx-gold); }
 .cx-prose a { color: var(--cx-wine); }
@@ -487,8 +487,6 @@ a.cx-door-link:hover .cx-room-name { color: var(--cx-wine); }
 .cx-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; margin: 2em 0; align-items: start; }
 .cx-gallery figure { margin: 0; }
 
-.cx-essay { font-size: 1.4rem; line-height: 1.72; }
-.cx-essay > p:first-child::first-letter { float: left; margin: 0.08em 0.1em 0 0; font-size: 3.6em; line-height: 0.8; color: var(--cx-wine); }
 .cx-sec-what-i-see { padding: 56px 0 72px; border-top: 1px solid var(--cx-line); border-bottom: 1px solid var(--cx-line); margin-bottom: 64px; }
 
 .cx-behind > summary { display: grid; grid-template-columns: max-content max-content; justify-content: start; align-items: center; gap: 6px 16px; list-style: none; cursor: pointer; }
@@ -577,7 +575,6 @@ a.cx-door-link:hover .cx-room-name { color: var(--cx-wine); }
   .cx-bar-links { order: 3; width: 100%; }
   .cx-hero-text { font-size: 1.18rem; }
   .cx-prose { font-size: 1.18rem; }
-  .cx-essay { font-size: 1.24rem; }
   .cx-doors { gap: 36px 20px; }
   .cx-doors > li { flex-basis: calc((100% - 20px) / 2); }
   .cx-room-head { grid-template-columns: 96px minmax(0, 1fr); gap: 20px; }
