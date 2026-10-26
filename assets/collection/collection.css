@@ -307,7 +307,9 @@ body.cx { background: var(--cx-bg); color: var(--cx-ink); transition: background
 .cx-fav-label { color: var(--cx-gold); }
 
 /* The epigraph above the collection */
-.cx-epigraph { container-type: inline-size; margin: 0; padding: 48px 0 52px; border-top: 1px solid var(--cx-ink); text-align: center; }
+.cx-quotes { padding: 24px 0 56px; }
+.cx-epigraph { container-type: inline-size; margin: 0; padding: 28px 0 32px; text-align: center; }
+.cx-epigraph + .cx-epigraph { border-top: 1px solid var(--cx-line); }
 .cx-epigraph blockquote { max-width: none; margin: 0 auto; }
 .cx-epigraph blockquote p { margin: 0; font-family: var(--cx-serif); font-style: italic; font-weight: 500; font-size: min(1.25rem, 1.95cqi); line-height: 1.5; white-space: nowrap; color: var(--cx-ink); }
 .cx-epigraph .cx-epigraph-orig { margin-top: 16px; font-family: "Noto Serif KR", "Nanum Myeongjo", serif; font-style: normal; font-size: 0.8rem; letter-spacing: 0.16em; word-break: keep-all; color: var(--cx-muted); }
