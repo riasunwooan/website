@@ -716,7 +716,7 @@ function backupView() {
   const main = shell('backup', '<h2 class="ad-h2">Backup</h2>' +
     '<div class="ad-card"><p class="cx-label">Export</p><p class="ad-note">Downloads everything, private notes included, as one JSON file. Keep it somewhere private. Images stay in Supabase Storage; their addresses are in the file.</p><div><button class="ad-btn" type="button" id="ad-export">Export everything</button></div></div>' +
     '<div class="ad-card"><p class="cx-label">Restore</p><p class="ad-note">Brings back an export. Entries with the same id are overwritten; nothing else is removed.</p><label class="cx-field"><span>Export file</span><input type="file" accept="application/json,.json" id="ad-import"></label></div>' +
-    '<div class="ad-card"><p class="cx-label">Your first entry</p><p class="ad-note">Adds <em>On the Yacht “Namouna,” Venice</em> and the room “On the Water” from the starter file. It arrives as a private draft: publish it as Public when it’s ready.</p><div><button class="ad-btn ghost" type="button" id="ad-seed">Add starter entry</button></div></div>' +
+    '<div class="ad-card"><p class="cx-label">Your first entries</p><p class="ad-note">Adds the works from the starter file (<em>On the Yacht “Namouna,” Venice</em> and the others already on the site) with their images and the room “On the Water”. Each arrives as a private draft: publish it as Public when it’s ready. Works already in your collection are skipped.</p><div><button class="ad-btn ghost" type="button" id="ad-seed">Add starter entries</button></div></div>' +
     '<p class="ad-msg" role="status"></p>');
   const out = main.querySelector('.ad-msg');
   main.querySelector('#ad-export').onclick = async () => {
@@ -759,7 +759,7 @@ function backupView() {
         n++;
       }
       await refresh();
-      out.textContent = n ? 'Added as a private draft. Find it under Artworks.' : 'The starter entry is already in your collection.';
+      out.textContent = n ? 'Added ' + n + (n === 1 ? ' entry' : ' entries') + ' as private drafts. Find them under Artworks.' : 'The starter entries are already in your collection.';
     } catch (e) { fail(e, out); }
   };
 }

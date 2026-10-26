@@ -6,7 +6,9 @@ const host = document.getElementById('cx-timeline');
 loadPublic().then((data) => {
   const byId = Object.fromEntries(data.artworks.map((a) => [a.id, a]));
   const events = [];
-  data.artworks.forEach((a) => events.push({ date: a.discovered_on || String(a.created_at).slice(0, 10), a, kind: 'First encountered' }));
+  data.artworks.forEach((a) => events.push(a.discovered_on
+    ? { date: a.discovered_on, a, kind: 'First encountered' }
+    : { date: String(a.created_at).slice(0, 10), a, kind: 'Added to the collection' }));
   data.reflections.forEach((r) => byId[r.artwork_id] && events.push({ date: r.written_on, a: byId[r.artwork_id], kind: 'Returned to' }));
   events.sort((x, y) => String(y.date).localeCompare(String(x.date)));
   const head = '<header class="cx-page-head"><p class="cx-label">Archive</p><h1 class="cx-title cx-title-sm">Timeline</h1>' +

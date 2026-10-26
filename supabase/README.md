@@ -50,11 +50,12 @@ The anon key is designed to be public: it only allows what the database rules al
 (reading the `public_*` views). **Never** put the `service_role` key, or your database
 password, in the website.
 
-## 6. Bring in your first entry
+## 6. Bring in your first entries
 
 Open `https://riasunwooan.com/art/collection/admin/`, sign in, go to **Backup → Add starter
-entry**. *On the Yacht "Namouna," Venice* arrives as a **private draft**. Write in it, then
-set it to **Published** and **Public** when you want it on the public collection.
+entries**. The works already on the site (*On the Yacht "Namouna," Venice* and the others in
+`assets/collection/seed.json`) arrive as **private drafts**. Write in them, then set each to
+**Published** and **Public** when you want it on the public collection.
 
 Note: once Supabase is connected, the public collection reads only from the database, so
 it stays empty until you publish something there.
