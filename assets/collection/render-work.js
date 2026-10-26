@@ -2,7 +2,7 @@
 import { esc, sanitize, isEmptyHTML, fmtDate, plate, byline, workUrl, roomUrl, roman } from './data.js';
 import './ui.js';
 
-const KINDS = { observation: 'Observation', detail: 'Favorite detail', sketch: 'Sketch', quotation: 'Quotation', question: 'Unanswered question', research: 'Research note', image: 'Image' };
+const KINDS = { thought: 'Thought', observation: 'Observation', detail: 'Favorite detail', sketch: 'Sketch', quotation: 'Quotation', question: 'Unanswered question', research: 'Research note', image: 'Image' };
 
 export const orderWorks = (list) => list.slice().sort((a, b) => (a.position || 0) - (b.position || 0) || String(a.created_at).localeCompare(String(b.created_at)));
 
