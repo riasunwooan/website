@@ -308,8 +308,8 @@ body.cx { background: var(--cx-bg); color: var(--cx-ink); transition: background
 
 /* The epigraph above the collection */
 .cx-epigraph { margin: 0; padding: 48px 0 52px; border-top: 1px solid var(--cx-ink); text-align: center; }
-.cx-epigraph blockquote { max-width: 52em; margin: 0 auto; }
-.cx-epigraph blockquote p { margin: 0; font-family: var(--cx-serif); font-style: italic; font-weight: 500; font-size: clamp(1.05rem, 1.6vw, 1.2rem); line-height: 1.45; text-wrap: balance; color: var(--cx-ink); }
+.cx-epigraph blockquote { max-width: none; margin: 0 auto; }
+.cx-epigraph blockquote p { margin: 0; font-family: var(--cx-serif); font-style: italic; font-weight: 500; font-size: clamp(0.92rem, 1.3vw, 1.02rem); line-height: 1.5; text-wrap: balance; color: var(--cx-ink); }
 .cx-epigraph .cx-epigraph-orig { margin-top: 16px; font-family: "Noto Serif KR", "Nanum Myeongjo", serif; font-style: normal; font-size: 1rem; letter-spacing: 0.18em; word-break: keep-all; color: var(--cx-muted); }
 .cx-epigraph figcaption { margin-top: 14px; font-family: var(--cx-sans); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cx-muted); }
 .cx-epigraph figcaption::before { content: "\2014  "; }
