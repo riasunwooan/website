@@ -5,7 +5,7 @@ import { door, gate } from './door.js';
 import './ui.js';
 
 const host = document.getElementById('cx-home');
-const DEFAULT_SECTIONS = ['collection', 'rooms', 'exhibitions', 'quotes', 'recent'];
+const DEFAULT_SECTIONS = ['collection', 'rooms', 'exhibitions', 'quotes', 'goals', 'recent'];
 const surname = (s) => (s || '').trim().split(/\s+/).pop().toLowerCase();
 
 loadPublic().then(render).catch((e) => {
@@ -23,7 +23,7 @@ function render(data) {
     host.innerHTML = '<p class="cx-empty">The collection is quiet for now. The first works are still being hung.</p>';
     return;
   }
-  const builders = { collection, quotes, recent, rooms, exhibitions };
+  const builders = { collection, quotes, goals, recent, rooms, exhibitions };
   host.innerHTML = order.map((s) => (builders[s] ? builders[s](works, data) : '')).join('');
   wireCollection(works, data.reflections || []);
 }
@@ -169,6 +169,35 @@ function quotes() {
     QUOTES.map((q) => '<figure class="cx-epigraph"><blockquote><p>' + esc(q.text) + '</p>' +
       (q.original ? '<p class="cx-epigraph-orig" lang="' + q.lang + '">' + esc(q.original) + '</p>' : '') +
       '</blockquote><figcaption>' + q.by + '</figcaption></figure>').join('') + '</div></section>';
+}
+
+// Goal Collection: places and ideas still ahead. Set done: true to tick one off.
+const GOALS = [
+  { text: 'Volunteer with <strong>Creative Growth Art Center</strong> in Oakland, in the San Francisco Bay Area, and see one of their exhibitions in person',
+    link: { href: 'https://www.youtube.com/watch?v=-nrGiEWzKoo', label: 'Watch' } },
+  { text: 'Revisit the museums I love', places: [
+    ['New York', 'MoMA, The Met, the Guggenheim'],
+    ['Boston', 'Museum of Fine Arts, Boston'],
+    ['Los Angeles', 'The Getty Center, LACMA'],
+  ] },
+  { text: 'Revisit Italy', places: [
+    ['Milan', 'Pinacoteca di Brera; Leonardo’s <em>Last Supper</em> at Santa Maria delle Grazie'],
+    ['Venice', 'Gallerie dell’Accademia; the Peggy Guggenheim Collection'],
+    ['Vatican City', 'The Sistine Chapel'],
+  ] },
+  { text: 'Visit Barcelona for Gaudí’s <strong>Sagrada Família</strong>' },
+  { text: 'Explore more <strong>Korean traditional artwork</strong>' },
+  { text: 'Understand why people love <strong>Rothko</strong>' },
+];
+
+function goals() {
+  return '<section class="cx-goals" aria-labelledby="cx-goals-h"><div class="cx-sec-head"><h2 id="cx-goals-h">Goal Collection</h2>' +
+    '<p class="cx-sec-note">Where I want to look next.</p></div><ul class="cx-goal-list">' +
+    GOALS.map((g) => '<li class="cx-goal' + (g.done ? ' is-done' : '') + '"><span class="cx-goal-box" aria-hidden="true"></span>' +
+      '<span class="cx-goal-body"><span class="cx-visually-hidden">' + (g.done ? 'Done: ' : 'To do: ') + '</span>' + g.text +
+      (g.link ? ' <a class="cx-goal-link" href="' + g.link.href + '" target="_blank" rel="noopener">' + g.link.label + ' ↗</a>' : '') +
+      (g.places ? '<dl class="cx-goal-places">' + g.places.map(([city, list]) => '<div><dt>' + city + '</dt><dd>' + list + '</dd></div>').join('') + '</dl>' : '') +
+      '</span></li>').join('') + '</ul></section>';
 }
 
 function recent(works, data) {
