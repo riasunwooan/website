@@ -266,7 +266,7 @@ body.cx { background: var(--cx-bg); color: var(--cx-ink); transition: background
 /* Curator's Choice: a simple button under the intro that lights the favorites and dims the rest */
 .cx-choice {
   display: flex; align-items: center; justify-content: center; gap: 16px; width: 100%; margin-top: 18px;
-  padding: 14px 20px; border: 1px solid var(--cx-line); background: transparent; color: var(--cx-ink);
+  padding: 14px 20px; border: 2px solid var(--cx-muted); background: transparent; color: var(--cx-ink);
   font: inherit; text-align: center; cursor: pointer; transition: border-color 0.3s, background-color 0.4s, color 0.4s;
 }
 .cx-choice:hover { border-color: var(--cx-wine); }
