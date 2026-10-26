@@ -19,7 +19,7 @@ const SECTIONS = [
 const MARGIN_KINDS = { observation: 'Observation', detail: 'Favorite detail', sketch: 'Sketch', quotation: 'Quotation', question: 'Unanswered question', research: 'Research note', image: 'Image' };
 const HOME_SECTIONS = { collection: 'The Collection', rooms: 'Rooms', exhibitions: 'Exhibitions', recent: 'Recently Re-Contemplated' };
 const FIELDS = ['title', 'slug', 'artist', 'year_text', 'year_sort', 'medium', 'dimensions', 'movement', 'period', 'current_collection', 'credit',
-  'image_url', 'image_thumb', 'image_width', 'image_height', 'image_alt', 'observation', 'excerpt', 'discovered_on', 'status', 'visibility', 'is_favorite'];
+  'image_url', 'image_thumb', 'image_width', 'image_height', 'image_alt', 'observation', 'excerpt', 'discovered_on', 'discovered_text', 'seen_at', 'status', 'visibility', 'is_favorite'];
 
 let sb, Editor, S = {};
 const slugify = (s) => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'untitled';
@@ -292,7 +292,8 @@ async function editWork(w, restore) {
       '<fieldset class="ad-fieldset"><legend>The work</legend>' +
         field('title', 'Title', { wide: true, attrs: ' required' }) + field('artist', 'Artist') + field('year_text', 'Date, as written (e.g. c. 1665)') +
         field('year_sort', 'Year, for sorting', { type: 'number' }) + field('medium', 'Medium') + field('dimensions', 'Dimensions') + field('movement', 'Movement') +
-        field('period', 'Historical period') + field('current_collection', 'Museum or collection') + field('discovered_on', 'First encountered', { type: 'date' }) +
+        field('period', 'Historical period') + field('current_collection', 'Museum or collection') + field('seen_at', 'Where I saw it, if not that collection (fair, exhibition…)') +
+        field('discovered_on', 'First encountered', { type: 'date' }) + field('discovered_text', 'If the date is approximate, how to write it (e.g. March 2026)') +
         field('slug', 'Web address', { attrs: ' pattern="[a-z0-9]+(-[a-z0-9]+)*"' }) +
       '</fieldset>' +
       '<fieldset class="ad-fieldset"><legend>Image</legend>' +

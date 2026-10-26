@@ -63,7 +63,9 @@ create table if not exists public.artworks (
   featured boolean not null default false,
   archived boolean not null default false,
   is_sample boolean not null default false,
-  is_favorite boolean not null default false,  -- crowned with a gold frame on public pages
+  is_favorite boolean not null default false,  -- Curator's Choice
+  seen_at text not null default '',            -- where Ria saw it, when not its home collection
+  discovered_text text not null default '',    -- an approximate first-encounter date, as written
   position integer not null default 0,
   last_contemplated_at timestamptz,
   created_at timestamptz not null default now(),
@@ -73,6 +75,8 @@ create table if not exists public.artworks (
 alter table public.artworks add column if not exists image_thumb text not null default '';
 alter table public.artworks add column if not exists behind_interpretation text not null default '';
 alter table public.artworks add column if not exists is_favorite boolean not null default false;
+alter table public.artworks add column if not exists seen_at text not null default '';
+alter table public.artworks add column if not exists discovered_text text not null default '';
 
 -- Private journal content lives in its own table so it can never ride along with a public row.
 create table if not exists public.artwork_private (
@@ -183,7 +187,7 @@ create or replace view public.public_artworks with (security_barrier) as
 select a.id, a.slug, a.title, a.artist, a.year_text, a.year_sort, a.medium, a.dimensions, a.movement,
        a.period, a.current_collection, a.credit, a.image_url, a.image_thumb, a.image_width, a.image_height, a.image_alt,
        a.observation, a.excerpt, a.first_encounter, a.behind_canvas, a.behind_interpretation, a.looking_closer, a.what_i_see,
-       a.conversations, a.marginalia, a.sources, a.themes, a.tags, a.discovered_on, a.featured,
+       a.conversations, a.marginalia, a.sources, a.themes, a.tags, a.discovered_on, a.discovered_text, a.seen_at, a.featured,
        a.is_sample, a.is_favorite, a.position, a.last_contemplated_at, a.created_at, a.updated_at,
        array(select r from unnest(a.related) r
              where exists (select 1 from public.artworks b where b.id = r and public.is_public_work(b))) as related,
@@ -220,7 +224,7 @@ language sql stable security definer set search_path = public as $$
     select a.id, a.slug, a.title, a.artist, a.year_text, a.medium, a.dimensions, a.movement, a.period,
            a.current_collection, a.credit, a.image_url, a.image_thumb, a.image_width, a.image_height, a.image_alt,
            a.observation, a.first_encounter, a.behind_canvas, a.behind_interpretation, a.looking_closer, a.what_i_see,
-           a.conversations, a.marginalia, a.sources, a.themes, a.tags, a.discovered_on, a.is_sample, a.is_favorite,
+           a.conversations, a.marginalia, a.sources, a.themes, a.tags, a.discovered_on, a.discovered_text, a.seen_at, a.is_sample, a.is_favorite,
            coalesce((select jsonb_agg(jsonb_build_object('written_on', r.written_on, 'body', r.body) order by r.written_on)
                      from public.reflections r where r.artwork_id = a.id and not r.is_private), '[]') as reflections
     from public.artworks a

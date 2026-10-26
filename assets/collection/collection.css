@@ -478,6 +478,8 @@ a.cx-door-link:hover .cx-room-name { color: var(--cx-wine); }
 .cx-prose figure { margin: 2em 0; }
 .cx-prose figure img { display: block; max-width: 100%; height: auto; cursor: zoom-in; }
 .cx-prose figcaption { margin-top: 10px; font-family: var(--cx-sans); font-size: 0.74rem; line-height: 1.5; color: var(--cx-muted); }
+.cx-sec-what-i-see .cx-fig-inline img { max-width: 420px; margin: 0 auto; }
+.cx-sec-what-i-see .cx-fig-inline figcaption { text-align: center; }
 .cx-fig-detail { padding: 20px; background: var(--cx-paper); box-shadow: 0 0 0 1px var(--cx-line); }
 .cx-fig-detail img { width: 100%; }
 .cx-fig-detail figcaption::before { content: "Detail \2014  "; letter-spacing: 0.1em; text-transform: uppercase; }
