@@ -34,7 +34,7 @@ export function renderWork(host, a, ctx = {}) {
 
   let behind = '';
   if (!isEmptyHTML(a.behind_canvas)) behind += '<div class="cx-facts"><p class="cx-label">Documented</p>' + rich(a.behind_canvas) + '</div>';
-  if (!isEmptyHTML(a.behind_interpretation)) behind += '<div class="cx-interp"><p class="cx-label">Interpretation</p>' + rich(a.behind_interpretation) + '</div>';
+  if (!isEmptyHTML(a.behind_interpretation)) behind += '<div class="cx-interp"><p class="cx-label">Other readings</p>' + rich(a.behind_interpretation) + '</div>';
   sec(1, 'behind-the-canvas', 'Behind the Canvas', behind);
 
   sec(2, 'looking-closer', 'Looking Closer', !isEmptyHTML(a.looking_closer) && rich(a.looking_closer));
@@ -77,8 +77,13 @@ export function renderWork(host, a, ctx = {}) {
         (secs.length > 1 ? '<nav class="cx-toc" aria-label="Sections"><ol>' + secs.map((s) =>
           '<li><a href="#' + s.id + '"><span>' + roman(s.i) + '</span>' + s.title + '</a></li>').join('') + '</ol></nav>' : '') +
         '<div class="cx-sections">' +
-          secs.map((s) => '<section class="cx-sec cx-sec-' + s.id + '" id="' + s.id + '" aria-labelledby="h-' + s.id + '">' +
-            '<h2 id="h-' + s.id + '"><span class="cx-num">' + roman(s.i) + '.</span> ' + s.title + '</h2>' + s.body + '</section>').join('') +
+          secs.map((s) => s.id === 'behind-the-canvas'
+            // The history is there for the curious, folded away so the page reads as Ria's first.
+            ? '<section class="cx-sec cx-sec-' + s.id + '" id="' + s.id + '"><details class="cx-behind"><summary>' +
+              '<h2 id="h-' + s.id + '"><span class="cx-num">' + roman(s.i) + '.</span> ' + s.title + '</h2>' +
+              '<span class="cx-behind-hint">The history, and what others have seen</span></summary>' + s.body + '</details></section>'
+            : '<section class="cx-sec cx-sec-' + s.id + '" id="' + s.id + '" aria-labelledby="h-' + s.id + '">' +
+              '<h2 id="h-' + s.id + '"><span class="cx-num">' + roman(s.i) + '.</span> ' + s.title + '</h2>' + s.body + '</section>').join('') +
           (unwritten ? '<p class="cx-unwritten">The rest of this entry is still being written.</p>' : '') +
           (ctx.privateNotes && !isEmptyHTML(ctx.privateNotes) ? '<section class="cx-sec cx-private"><h2>Private notes</h2><p class="cx-label">Visible only to you</p>' + rich(ctx.privateNotes) + '</section>' : '') +
           (sources.length ? '<section class="cx-sources" aria-label="Sources and references"><h2 class="cx-label">Sources &amp; References</h2><ol>' + sources.map((s, i) =>
@@ -87,6 +92,12 @@ export function renderWork(host, a, ctx = {}) {
       '</div>' +
       (linkWorks ? footer(a, works, n, related) : '') +
     '</article>';
+
+  // Following a link to the history (the contents list, or a footnote number) opens it.
+  const history = host.querySelector('.cx-behind');
+  const openBehind = () => { if (history && /^#(behind-the-canvas|ref-)/.test(location.hash)) history.open = true; };
+  addEventListener('hashchange', openBehind);
+  openBehind();
 
   // Images inside the writing open enlarged on click.
   host.querySelectorAll('.cx-prose figure img, .cx-prose .cx-gallery img').forEach((im) => im.closest('figure').setAttribute('data-cx-zoom', ''));
