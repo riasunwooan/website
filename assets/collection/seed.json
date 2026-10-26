@@ -480,15 +480,15 @@
     {
       "year_sort": 1946,
       "medium": "Oil on canvas",
-      "dimensions": "",
+      "dimensions": "22 × 17 3/4 in.",
       "movement": "American still life",
       "period": "Mid-20th century",
-      "current_collection": "",
+      "current_collection": "Yale University Art Gallery",
       "credit": "",
       "observation": "If time is stuck.",
       "excerpt": "Time has stopped. Time, sound, everything.",
       "first_encounter": "<p>Time has stopped. It feels like everything is just… stuck. Time, sound, everything.</p>",
-      "behind_canvas": "<p>Walter Tandy Murch (1907–1967) was born in Toronto and moved to New York as a young man, where he studied with the painter Arshile Gorky.<sup class=\"cx-ref\"><a href=\"#ref-1\">1</a></sup></p><p>He became known for quiet still lifes of ordinary mechanical objects, clocks, light bulbs, machine parts, painted in a soft, hazy light that makes them look both precise and slightly unreal.<sup class=\"cx-ref\"><a href=\"#ref-1\">1</a></sup></p>",
+      "behind_canvas": "<p>Walter Tandy Murch (1907–1967) was born in Toronto and moved to New York as a young man, where he studied with the painter Arshile Gorky.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p><p>He became known for quiet still lifes of ordinary mechanical objects, clocks, light bulbs, machine parts, painted in a soft, hazy light that makes them look both precise and slightly unreal.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p>",
       "behind_interpretation": "",
       "looking_closer": "<p>The metronome is floating. It’s so dark.</p><p>It doesn’t quite sit on the ledge. There is a thin band of shadow under its base, as if it has lifted a few millimeters into the air. The pendulum is frozen off to one side instead of resting upright, caught in the middle of a beat that never finishes.</p><p>Almost all of the light in the painting is on the metronome itself: a warm glow on its front face and a bright orange strip in the slot behind the pendulum, like a light left on inside. Around it, the background isn’t flat black but a soft, mottled brown that seems to breathe, so the darkness has depth, like you could reach into it.</p><p>The small things are what make it strange: a pale rock perched on the metronome’s body with a thin string hanging down from it, and two more rocks on the ledge below. They don’t belong with a metronome, and the painting never explains them.</p>",
       "what_i_see": "<p>It feels so stuck and stifling, but it’s so magical and weird, like I’ll get absorbed into that darkness and get sucked up into it as well.</p>",
@@ -501,6 +501,10 @@
         }
       ],
       "sources": [
+        {
+          "text": "Yale University Art Gallery, New Haven. Collection record for Walter Tandy Murch, Metronome, 1946.",
+          "url": "https://artgallery.yale.edu/collections/objects/323084"
+        },
         {
           "text": "Archives of American Art, Smithsonian Institution. Walter Tandy Murch papers.",
           "url": ""
