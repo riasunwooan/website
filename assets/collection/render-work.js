@@ -81,7 +81,7 @@ export function renderWork(host, a, ctx = {}) {
             // The history is there for the curious, folded away so the page reads as Ria's first.
             ? '<section class="cx-sec cx-sec-' + s.id + '" id="' + s.id + '"><details class="cx-behind"><summary>' +
               '<h2 id="h-' + s.id + '"><span class="cx-num">' + roman(s.i) + '.</span> ' + s.title + '</h2>' +
-              '<span class="cx-behind-hint">The history, and what others have seen</span></summary>' + s.body + '</details></section>'
+              '<span class="cx-behind-hint">The history and background</span></summary>' + s.body + '</details></section>'
             : '<section class="cx-sec cx-sec-' + s.id + '" id="' + s.id + '" aria-labelledby="h-' + s.id + '">' +
               '<h2 id="h-' + s.id + '"><span class="cx-num">' + roman(s.i) + '.</span> ' + s.title + '</h2>' + s.body + '</section>').join('') +
           (unwritten ? '<p class="cx-unwritten">The rest of this entry is still being written.</p>' : '') +
@@ -90,7 +90,7 @@ export function renderWork(host, a, ctx = {}) {
             '<li id="ref-' + (i + 1) + '">' + esc(s.text) + (s.url ? ' <a href="' + esc(s.url) + '" rel="noopener" target="_blank">Link</a>' : '') + '</li>').join('') + '</ol></section>' : '') +
         '</div>' +
       '</div>' +
-      (linkWorks ? footer(a, works, n, related) : '') +
+      (linkWorks ? footer(a, works, n) : '') +
     '</article>';
 
   // Following a link to the history (the contents list, or a footnote number) opens it.
@@ -104,12 +104,14 @@ export function renderWork(host, a, ctx = {}) {
   setReading(readingPreferred());
 }
 
-function footer(a, works, n, related) {
+function footer(a, works, n) {
+  const prev = works.length > 1 ? works[(n - 1 + works.length) % works.length] : null;
   const next = works.length > 1 ? works[(n + 1) % works.length] : null;
-  const more = works.filter((w) => w.id !== a.id && !related.includes(w)).slice(0, 4);
+  const step = (w, label, cls) => '<a class="cx-next ' + cls + '" href="' + workUrl(w) + '"><span class="cx-label">' + label + '</span>' +
+    '<span class="cx-next-title">' + esc(w.title) + '</span><span class="cx-card-by">' + byline(w) + '</span></a>';
   return '<footer class="cx-work-foot">' +
-    (more.length ? '<div class="cx-foot-more"><p class="cx-label">Elsewhere in the collection</p><div class="cx-related">' + more.map((w) => card(w)).join('') + '</div></div>' : '') +
-    (next && next.id !== a.id ? '<a class="cx-next" href="' + workUrl(next) + '"><span class="cx-label">Next entry</span><span class="cx-next-title">' + esc(next.title) + '</span><span class="cx-card-by">' + byline(next) + '</span></a>' : '') +
+    (prev && prev.id !== a.id ? step(prev, 'Previous entry', 'cx-prev') : '<span></span>') +
+    (next && next.id !== a.id && next !== prev ? step(next, 'Next entry', 'cx-nextentry') : (next && next.id !== a.id ? '<span></span>' : '')) +
     '<a class="cx-back" href="/art/collection/">Return to the collection</a>' +
   '</footer>';
 }
