@@ -1,6 +1,6 @@
 // Renders an artwork's long-form page. Used by the public page, the private-link page and owner previews.
 import { esc, sanitize, isEmptyHTML, fmtDate, plate, byline, workUrl, roomUrl, roman } from './data.js';
-import { setReading, readingPreferred } from './ui.js';
+import './ui.js';
 
 const KINDS = { observation: 'Observation', detail: 'Favorite detail', sketch: 'Sketch', quotation: 'Quotation', question: 'Unanswered question', research: 'Research note', image: 'Image' };
 
@@ -70,8 +70,7 @@ export function renderWork(host, a, ctx = {}) {
         ((a.themes || []).length || rooms.length ? '<p class="cx-threads">' +
           rooms.map((r) => linkWorks ? '<a href="' + roomUrl(r) + '">' + esc(r.name) + '</a>' : '<span>' + esc(r.name) + '</span>').join('') +
           (a.themes || []).map((t) => linkWorks ? '<a href="/art/collection/?theme=' + encodeURIComponent(t) + '#collection">' + esc(t) + '</a>' : '<span>' + esc(t) + '</span>').join('') + '</p>' : '') +
-        '<div class="cx-tools"><button type="button" class="cx-textbtn" data-cx-reading aria-pressed="false">Reading mode</button>' +
-          (ctx.toolsExtra || '') + '</div>' +
+        (ctx.toolsExtra ? '<div class="cx-tools">' + ctx.toolsExtra + '</div>' : '') +
       '</header>' +
       '<div class="cx-body">' +
         (secs.length > 1 ? '<nav class="cx-toc" aria-label="Sections"><ol>' + secs.map((s) =>
@@ -101,7 +100,6 @@ export function renderWork(host, a, ctx = {}) {
 
   // Images inside the writing open enlarged on click.
   host.querySelectorAll('.cx-prose figure img, .cx-prose .cx-gallery img').forEach((im) => im.closest('figure').setAttribute('data-cx-zoom', ''));
-  setReading(readingPreferred());
 }
 
 function footer(a, works, n) {

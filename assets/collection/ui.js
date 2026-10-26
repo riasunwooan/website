@@ -1,4 +1,4 @@
-// Small shared interactions for the collection: dim-the-lights theme, reading mode, zooming a plate.
+// Small shared interactions for the collection: dim-the-lights theme, Curator's Choice, zooming a plate.
 const store = {
   get: (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } },
   set: (k, v) => { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) { /* private mode */ } },
@@ -26,8 +26,6 @@ document.addEventListener('click', (e) => {
   if (c) toggleChoice();
   // While the spotlight is on, a click anywhere else turns the lights back on (a lit favorite still opens).
   else if (document.body.classList.contains('cx-spotlight') && !e.target.closest('.cx-fav')) setChoice(false);
-  const r = e.target.closest('[data-cx-reading]');
-  if (r) setReading(!document.body.classList.contains('cx-reading'));
   const z = e.target.closest('[data-cx-zoom] img');
   if (z) zoom(z);
 });
@@ -79,15 +77,6 @@ if (!document.getElementById('cx-admin')) {
   }
 }
 
-export function setReading(on) {
-  document.body.classList.toggle('cx-reading', on);
-  store.set('cx-reading', on ? '1' : null);
-  document.querySelectorAll('[data-cx-reading]').forEach((b) => {
-    b.setAttribute('aria-pressed', String(on));
-    b.textContent = on ? 'Leave reading mode' : 'Reading mode';
-  });
-}
-export const readingPreferred = () => store.get('cx-reading') === '1';
 
 let dlg;
 function zoom(img) {

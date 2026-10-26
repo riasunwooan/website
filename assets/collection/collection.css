@@ -128,7 +128,6 @@ body.cx { background: var(--cx-bg); color: var(--cx-ink); transition: background
 .cx-fab-light[aria-pressed="true"] .cx-torch-lens { fill: #fff6dc; filter: drop-shadow(0 0 4px #fff2c8); }
 .cx-fab-intro .cx-fab-beam { animation: cx-sweep 2.6s ease 0.8s 1; }
 @keyframes cx-sweep { 0% { opacity: 0; } 25% { opacity: 0.85; } 45% { opacity: 0.25; } 70% { opacity: 0.8; } 100% { opacity: 0; } }
-.cx-reading .cx-fab-choice { display: none; }
 
 /* One-time invitation under the Dim the lights button */
 .cx-bar { position: relative; }
@@ -526,14 +525,6 @@ a.cx-door-link:hover .cx-room-name { color: var(--cx-wine); }
 .cx-nextentry .cx-next-title::after { content: " \2192"; color: var(--cx-wine); }
 .cx-prev .cx-next-title::before { content: "\2190  "; color: var(--cx-wine); }
 .cx-back { grid-column: 1 / -1; justify-self: center; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cx-muted); }
-
-/* Reading mode: the writing alone. */
-.cx-reading nav:not(.cx-toc), .cx-reading .cx-bar, .cx-reading > footer, .cx-reading .cx-toc, .cx-reading .cx-work-plate,
-.cx-reading .cx-meta, .cx-reading .cx-threads, .cx-reading .cx-work-foot { display: none; }
-.cx-reading .cx-work-head { grid-template-columns: 1fr; max-width: 720px; margin: 0 auto; padding-top: 24px; }
-.cx-reading .cx-body { grid-template-columns: 1fr; }
-.cx-reading .cx-sections { margin: 0 auto; }
-.cx-reading .cx-tools { position: sticky; top: 0; z-index: 2; padding: 10px 0; background: var(--cx-bg); }
 
 /* Zoomed plate */
 .cx-zoom { width: 100vw; height: 100vh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgba(12, 10, 8, 0.94); }
