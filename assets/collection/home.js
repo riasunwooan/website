@@ -42,22 +42,23 @@ function collection(works) {
       options(works, 'themes', 'Theme') + options(works, 'movement', 'Movement') + options(works, 'period', 'Period') +
       '<label class="cx-field"><span>Sort</span><select data-f="sort">' +
         '<option value="curated">Curated order</option><option value="added">Recently added</option>' +
-        '<option value="artist">Artist</option><option value="year">Year created</option><option value="size">Size</option></select></label>' +
+        '<option value="artist">Artist</option><option value="year">Year created</option></select></label>' +
+      '<label class="cx-field"><span>View</span><select data-f="view"><option value="visit">By visit</option><option value="all">All works</option></select></label>' +
     '</form>' +
-    '<p class="cx-wall-note">Hung to scale: each work is shown at its real size relative to the others.</p>' +
-    '<div class="cx-wall"></div>' +
+    '<div class="cx-gallery-view"></div>' +
   '</section>';
 }
 
 function wireCollection(works) {
   const form = host.querySelector('.cx-controls');
   if (!form) return;
-  const grid = host.querySelector('.cx-wall'), count = host.querySelector('.cx-count');
+  const grid = host.querySelector('.cx-gallery-view'), count = host.querySelector('.cx-count');
   const f = (k) => form.querySelector('[data-f="' + k + '"]');
   const params = new URLSearchParams(location.search);
   if (params.get('q')) f('q').value = params.get('q');
   if (params.get('theme')) f('themes').value = params.get('theme');
   if (params.get('sort')) f('sort').value = params.get('sort');
+  if (params.get('view')) f('view').value = params.get('view');
 
   function apply() {
     const q = f('q').value.trim().toLowerCase();
@@ -68,55 +69,41 @@ function wireCollection(works) {
     if (sort === 'added') list = list.slice().sort((a, b) => String(b.created_at).localeCompare(String(a.created_at)));
     if (sort === 'artist') list = list.slice().sort((a, b) => surname(a.artist).localeCompare(surname(b.artist)) || a.title.localeCompare(b.title));
     if (sort === 'year') list = list.slice().sort((a, b) => (a.year_sort ?? 1e9) - (b.year_sort ?? 1e9));
-    if (sort === 'size') list = list.slice().sort((a, b) => area(b) - area(a));
-    grid.innerHTML = list.length ? list.map(tile).join('') :
-      '<p class="cx-empty">Nothing in the collection matches that yet.</p>';
+    grid.innerHTML = !list.length ? '<p class="cx-empty">Nothing in the collection matches that yet.</p>' :
+      f('view').value === 'all' ? rows(list) : visits(list).map((v) =>
+        '<section class="cx-visit"><h3 class="cx-visit-head"><span>' + esc(v.place || 'Elsewhere') + '</span>' +
+        (v.date ? '<time datetime="' + esc(v.date) + '">' + esc(fmtDate(v.date)) + '</time>' : '<time>Date not recorded</time>') + '</h3>' + rows(v.works) + '</section>').join('');
     count.textContent = list.length + (list.length === 1 ? ' work' : ' works');
     const p = new URLSearchParams();
     if (q) p.set('q', f('q').value.trim());
     if (theme) p.set('theme', theme);
     if (sort !== 'curated') p.set('sort', sort);
+    if (f('view').value !== 'visit') p.set('view', f('view').value);
     history.replaceState(null, '', location.pathname + (p.toString() ? '?' + p : '') + location.hash);
   }
-  // One scale for the whole wall, so sizes stay comparable when filtering: the largest work fills
-  // the width or about two thirds of the screen height, whichever is smaller.
-  const maxW = Math.max(...works.map((w) => scaled(w).w)), maxH = Math.max(...works.map((w) => scaled(w).h));
-  const fit = () => grid.style.setProperty('--s', Math.min(grid.clientWidth / maxW, (innerHeight * 0.66) / maxH).toFixed(3));
-  addEventListener('resize', fit);
   form.addEventListener('input', apply);
-  fit();
   apply();
   if (location.hash === '#collection') host.querySelector('#collection').scrollIntoView();
 }
 
-// Physical size from the dimensions text, height × width ("78 5/8 × 120 5/8 in." or "91.8 × 121.9 cm"), in inches.
-function physical(w) {
-  const num = (t) => t.trim().split(/\s+/).reduce((sum, part) => {
-    const f = part.split('/');
-    return sum + (f.length === 2 ? Number(f[0]) / Number(f[1]) : Number(part));
-  }, 0);
-  const m = /([\d.]+(?:\s+\d+\/\d+)?)\s*[×x]\s*([\d.]+(?:\s+\d+\/\d+)?)\s*(in|cm)/i.exec(w.dimensions || '');
-  if (!m) return null;
-  const k = m[3].toLowerCase() === 'cm' ? 1 / 2.54 : 1;
-  return { h: num(m[1]) * k, w: num(m[2]) * k };
+// Works seen on the same day at the same museum, most recent visit first; undated works go last.
+function visits(list) {
+  const out = [];
+  list.forEach((w) => {
+    const date = w.discovered_on || '', place = w.current_collection || '';
+    const v = out.find((x) => x.date === date && x.place === place);
+    if (v) v.works.push(w); else out.push({ date, place, works: [w] });
+  });
+  return out.sort((x, y) => (y.date || '0').localeCompare(x.date || '0'));
 }
 
-// Display footprint in inches. The image's own proportions are kept; its area matches the work's real area,
-// which for a straight photo of a painting is simply its real width (gallery photos with walls around them still read true).
-// Works with no recorded size hang at a nominal 24 inches tall.
-function scaled(w) {
-  const r = (w.image_width || 4) / (w.image_height || 3), p = physical(w);
-  const width = p ? Math.sqrt(p.w * p.h * r) : 24 * r;
-  return { w: width, h: width / r, known: Boolean(p) };
-}
-const area = (w) => { const p = physical(w); return p ? p.w * p.h : 0; };
-
-function tile(w) {
-  const z = scaled(w);
-  return '<a class="cx-tile" href="' + workUrl(w) + '" style="--w:' + z.w.toFixed(1) + '">' +
-    '<span class="cx-tile-img">' + plate(w, { thumb: true }) + '</span>' +
-    '<span class="cx-tile-cap"><span class="cx-card-title">' + esc(w.title) + '</span><span class="cx-card-by">' + byline(w) + '</span>' +
-    '<span class="cx-tile-size">' + (z.known ? esc(w.dimensions) : 'Size not recorded') + '</span></span></a>';
+// Even rows: every work in a row shares one height and keeps its own proportions.
+function rows(list) {
+  return '<div class="cx-rows">' + list.map((w) => {
+    const r = ((w.image_width || 4) / (w.image_height || 3)).toFixed(3);
+    return '<a class="cx-row-item" href="' + workUrl(w) + '" style="--r:' + r + '">' + plate(w, { thumb: true }) +
+      '<span class="cx-row-cap"><span class="cx-card-title">' + esc(w.title) + '</span><span class="cx-card-by">' + byline(w) + '</span></span></a>';
+  }).join('') + '</div>';
 }
 
 function recent(works, data) {
