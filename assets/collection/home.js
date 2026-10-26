@@ -175,7 +175,7 @@ function quotes() {
 const GOALS = [
   { text: 'Volunteer with <strong>Creative Growth Art Center</strong> in Oakland, in the San Francisco Bay Area, and see one of their exhibitions in person',
     link: { href: 'https://www.youtube.com/watch?v=-nrGiEWzKoo', label: 'Watch' } },
-  { text: 'Revisit the museums I love', places: [
+  { text: 'Revisit these museums and find pieces I love', places: [
     ['New York', 'MoMA, The Met, the Guggenheim'],
     ['Boston', 'Museum of Fine Arts, Boston'],
     ['Los Angeles', 'The Getty Center, LACMA'],
