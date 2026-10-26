@@ -2,11 +2,46 @@
   "_about": "Content shown on /art/collection/ until Supabase is connected (see supabase/README.md). Once connected, import it from the dashboard's Backup tab; entries arrive as private drafts.",
   "rooms": [
     {
-      "id": "room-water",
-      "slug": "on-the-water",
-      "name": "On the Water",
-      "description": "Boats, harbours, crossings and the light that comes off the sea.",
+      "id": "room-wonder",
+      "slug": "i-wonder",
+      "name": "I Wonder",
+      "description": "Things that make me curious",
       "position": 0
+    },
+    {
+      "id": "room-dream",
+      "slug": "i-dream",
+      "name": "I Dream",
+      "description": "Things I imagine or wish existed",
+      "position": 1
+    },
+    {
+      "id": "room-remember",
+      "slug": "i-remember",
+      "name": "I Remember",
+      "description": "Things that remind me of something",
+      "position": 2
+    },
+    {
+      "id": "room-feel",
+      "slug": "i-feel",
+      "name": "I Feel",
+      "description": "Things that move me",
+      "position": 3
+    },
+    {
+      "id": "room-question",
+      "slug": "i-question",
+      "name": "I Question",
+      "description": "Things that challenge how I think",
+      "position": 4
+    },
+    {
+      "id": "room-see",
+      "slug": "i-see",
+      "name": "I See",
+      "description": "Things that make me see differently",
+      "position": 5
     }
   ],
   "artworks": [
@@ -53,9 +88,7 @@
         "Society portrait"
       ],
       "related": [],
-      "rooms": [
-        "room-water"
-      ],
+      "rooms": [],
       "discovered_on": "2026-09-17",
       "featured": true,
       "is_sample": false,
@@ -116,7 +149,9 @@
         "Landscape"
       ],
       "related": [],
-      "rooms": [],
+      "rooms": [
+        "room-wonder"
+      ],
       "discovered_on": "2026-09-17",
       "featured": false,
       "is_sample": false,
@@ -207,9 +242,7 @@
         "Lighthouse"
       ],
       "related": [],
-      "rooms": [
-        "room-water"
-      ],
+      "rooms": [],
       "discovered_on": "2026-10-25",
       "featured": false,
       "is_sample": false,
@@ -283,7 +316,6 @@
         "featured",
         "collection",
         "recent",
-        "connections",
         "rooms",
         "exhibitions"
       ],

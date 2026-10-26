@@ -72,7 +72,6 @@ page('art/collection/index.html', 'The Ria Collection — Art that Moved Me — 
           <p>Part museum, part commonplace book, part conversations with the artist, but everything me.</p>
           <p class="cx-hero-note">I&rsquo;m starting this after falling in love with contemplating about art, in hopes that I will continue to fall in love.</p>
         </div>
-        <p class="cx-epigraph">Every artwork is a doorway into another world, and every interpretation is a conversation between the artwork and its viewer.</p>
       </section>
       <div id="cx-home">
         %s
