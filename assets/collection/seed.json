@@ -60,8 +60,8 @@
       "credit": "",
       "image_url": "/assets/img/art/collection/namouna.jpg",
       "image_thumb": "/assets/img/art/collection/namouna-sm.jpg",
-      "image_width": 530,
-      "image_height": 377,
+      "image_width": 1500,
+      "image_height": 1067,
       "image_alt": "Guests relaxing on the shaded deck of a yacht: a woman in a white skirt leans on the cabin, men in summer suits sit and read, and a dog rests at their feet, with the sea beyond.",
       "observation": "Boat is rocking, gazes are also rocking.",
       "excerpt": "Behind the serenity of a yacht deck in Venice, Stewart’s painting balances tranquility with tension, revealing an intricate web of interpersonal relationships.",
@@ -306,6 +306,64 @@
       "image_height": 2000,
       "image_alt": "Two visitors stand before a vast, rippling wall hanging of gold, red and black metal pieces in a gallery.",
       "position": 4
+    },
+    {
+      "year_sort": 1863,
+      "medium": "Oil on canvas",
+      "dimensions": "",
+      "movement": "Hudson River School",
+      "period": "Romanticism",
+      "current_collection": "Wadsworth Atheneum Museum of Art, Hartford",
+      "credit": "",
+      "observation": "can the ocean cry?",
+      "excerpt": "A sunlit coast on Mount Desert Island, and a huge sense of loss and sorrow beneath the brightness.",
+      "first_encounter": "<p>I thought the water droplets would splash onto me, and I could hear the harsh yet calming sound of wave crashing on the rocks. Even though the sun is up in the sky and the painting is pretty bright, I felt a huge sense of loss and sorrow in this.</p>",
+      "behind_canvas": "<p>Frederic Edwin Church (1826–1900) was born in Hartford, Connecticut. In 1844 he became the pupil of Thomas Cole, the founder of the Hudson River School, and went on to be one of the best-known American painters of his day, famous for vast, minutely detailed landscapes.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p><p>Church first travelled to Mount Desert Island, on the coast of Maine, in 1850 and returned several times, drawn by its granite cliffs and heavy surf. He painted this view of the island’s shore in 1863.<sup class=\"cx-ref\"><a href=\"#ref-1\">1</a></sup></p>",
+      "behind_interpretation": "<p>The painting was made in the middle of the American Civil War. Writers on Church have read the stormy skies and turbulent seas of his work from these years against the national crisis; whether or not he meant it, the bright sun over a violent, breaking sea holds both calm and upheaval at once.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p>",
+      "looking_closer": "",
+      "what_i_see": "<blockquote><p>can the ocean cry?<br>its tears glitter in sorrow, churning,<br>mourning what has sunk deep<br>sunk &amp; drunk &amp; chewed thoroughly<br>its tears shine and splatter, spitting<br>up what it could not digest<br>its hands reach and grab and yet<br>even the smallest are simply slipping, too<br>easy to escape<br>&amp; drowning, smothered by its palms<br>it’s wailing at its destruction, gurgling<br>in fear—or perhaps woe, who knows—of what<br>it sees<br>can the ocean cry?</p></blockquote>",
+      "conversations": "",
+      "marginalia": [],
+      "sources": [
+        {
+          "text": "Wadsworth Atheneum Museum of Art, Hartford. Collection record for Frederic Edwin Church, Coast Scene, Mount Desert, 1863.",
+          "url": ""
+        },
+        {
+          "text": "Franklin Kelly, Frederic Edwin Church and the National Landscape. Washington, D.C.: Smithsonian Institution Press, 1988.",
+          "url": ""
+        }
+      ],
+      "themes": [
+        "Water",
+        "Light"
+      ],
+      "tags": [
+        "Maine",
+        "Seascape"
+      ],
+      "related": [
+        "etna",
+        "camden"
+      ],
+      "rooms": [],
+      "discovered_on": "2026-09-17",
+      "featured": false,
+      "is_sample": false,
+      "last_contemplated_at": null,
+      "created_at": "2026-10-26T12:00:00Z",
+      "updated_at": "2026-10-26T12:00:00Z",
+      "id": "church",
+      "slug": "coast-scene-mount-desert",
+      "title": "Coast Scene, Mount Desert",
+      "artist": "Frederic Edwin Church",
+      "year_text": "1863",
+      "image_url": "/assets/img/art/collection/coast-scene-mount-desert.jpg",
+      "image_thumb": "/assets/img/art/collection/coast-scene-mount-desert-sm.jpg",
+      "image_width": 1500,
+      "image_height": 1120,
+      "image_alt": "Waves crash white against dark rocks on a rugged coast, under a hazy sun burning through pink and violet clouds.",
+      "position": 5
     }
   ],
   "reflections": [],
