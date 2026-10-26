@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /art/collection/admin/
+Disallow: /art/collection/share/

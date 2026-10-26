@@ -7,3 +7,5 @@ README.md
 CNAME
 node_modules
 .wrangler
+tools
+supabase

@@ -1,0 +1,293 @@
+{
+  "_about": "Content shown on /art/collection/ until Supabase is connected (see supabase/README.md). Once connected, import it from the dashboard's Backup tab; entries arrive as private drafts.",
+  "rooms": [
+    {
+      "id": "room-water",
+      "slug": "on-the-water",
+      "name": "On the Water",
+      "description": "Boats, harbours, crossings and the light that comes off the sea.",
+      "position": 0
+    }
+  ],
+  "artworks": [
+    {
+      "id": "namouna",
+      "slug": "on-the-yacht-namouna-venice",
+      "title": "On the Yacht “Namouna,” Venice",
+      "artist": "Julius LeBlanc Stewart",
+      "year_text": "1890",
+      "year_sort": 1890,
+      "medium": "Oil on canvas",
+      "dimensions": "",
+      "movement": "Academic realism",
+      "period": "Belle Époque",
+      "current_collection": "Wadsworth Atheneum Museum of Art, Hartford",
+      "credit": "",
+      "image_url": "/assets/img/art/collection/namouna.jpg",
+      "image_thumb": "/assets/img/art/collection/namouna-sm.jpg",
+      "image_width": 530,
+      "image_height": 377,
+      "image_alt": "Guests relaxing on the shaded deck of a yacht: a woman in a white skirt leans on the cabin, men in summer suits sit and read, and a dog rests at their feet, with the sea beyond.",
+      "observation": "Boat is rocking, gazes are also rocking.",
+      "excerpt": "Boat is rocking, gazes are also rocking.",
+      "first_encounter": "<p>This was the first visit to Wadsworth as a class in CL English Seminar: Writing About Art. The huge piece had so much going on inside that I was immediately intrigued.</p>",
+      "behind_canvas": "<p>Julius LeBlanc Stewart (1855–1919) was an American painter born in Philadelphia who spent most of his working life in Paris, where he became known for large, polished scenes of fashionable society.<sup class=\"cx-ref\"><a href=\"#ref-1\">1</a></sup></p><p>The <em>Namouna</em> was the steam yacht of James Gordon Bennett Jr., the publisher of the <em>New York Herald</em>. Stewart painted a party of guests aboard her in Venice in 1890.<sup class=\"cx-ref\"><a href=\"#ref-1\">1</a></sup></p>",
+      "behind_interpretation": "",
+      "looking_closer": "<p><a href=\"https://docs.google.com/document/d/1cGDdNbaBdFF3RFsCYtBvbWOE05hcSvFiBBN4SokaXf0/view\">Read my full analysis</a></p>",
+      "what_i_see": "<p>Human desire and interpersonal relationships.</p>",
+      "conversations": "",
+      "marginalia": [],
+      "sources": [
+        {
+          "text": "Wadsworth Atheneum Museum of Art, Hartford. Collection record for Julius LeBlanc Stewart, On the Yacht “Namouna,” Venice, 1890.",
+          "url": ""
+        }
+      ],
+      "themes": [
+        "Water",
+        "Leisure"
+      ],
+      "tags": [
+        "Venice",
+        "Yacht",
+        "Society portrait"
+      ],
+      "related": [],
+      "rooms": [
+        "room-water"
+      ],
+      "discovered_on": "2026-09-17",
+      "featured": true,
+      "is_sample": false,
+      "position": 0,
+      "last_contemplated_at": null,
+      "created_at": "2026-09-17T12:00:00Z",
+      "updated_at": "2026-09-17T12:00:00Z"
+    },
+    {
+      "year_sort": 1843,
+      "medium": "Oil on canvas",
+      "dimensions": "",
+      "movement": "Hudson River School",
+      "period": "Romanticism",
+      "current_collection": "Wadsworth Atheneum Museum of Art, Hartford",
+      "credit": "",
+      "observation": "",
+      "excerpt": "This painting, caught in between destruction and revolution, was an invitation to imagine.",
+      "first_encounter": "<p>I was captivated by this during our first visit to Wadsworth, but ditched it for a more… “dynamic” painting, because I instinctively knew I was going to have thoughts wandering off this painting. But this was, without doubt, the painting that was able to hold me in a trance. Growing up as an only child, building worlds were a daily hobby—whether through books, movies, series, or art, I was constantly living out my imagination. This painting, caught in between destruction and revolution, was an invitation to imagine.</p><p>I had so many questions: What caused those pillars to fall? What grandness stood before? Who is ruling this ruin now? That thick pillar looks great to hop on top of and perhaps, a leader of a revolution, to speak in a charismatic, booming voice. What is the tiny city just beyond? Are they related to this destroyed structure? Does the volcano have a story?</p><p>Just the sheer volume of questions and stories that rush to me is what keeps me glued here.</p>",
+      "behind_canvas": "<p>Thomas Cole (1801–1848) was born in Lancashire, England, and emigrated with his family to the United States in 1818. He is regarded as the founder of the Hudson River School, the first American movement of landscape painting.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p><p>Cole travelled in Europe several times. On his last trip, in 1842, he visited Sicily and sketched Mount Etna from Taormina, on the island’s eastern coast. Back in his studio he worked those sketches up into paintings like this one, dated 1843.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p><p>The ruins in the foreground are the ancient theatre of Taormina, built by the Greeks and later rebuilt by the Romans. Beyond them rises Etna, the highest active volcano in Europe, with the coastline of the Ionian Sea curving away to the left.<sup class=\"cx-ref\"><a href=\"#ref-1\">1</a></sup></p><p>Ruined civilizations were a lifelong subject for Cole. His five-painting series <em>The Course of Empire</em> (1833–36) follows a single imagined landscape from wilderness through a great empire to its destruction and abandoned ruins.<sup class=\"cx-ref\"><a href=\"#ref-3\">3</a></sup></p>",
+      "behind_interpretation": "<p>Writers on Cole often read his Italian ruins alongside <em>The Course of Empire</em>: crumbling stone that speaks of how short-lived human power is, set against a mountain that was there long before it and will outlast it.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup> The smoke rising from Etna’s summit can be read the same way: the land itself is still alive and still changing, while the empire that built the theatre is gone.</p>",
+      "looking_closer": "",
+      "what_i_see": "<p>I saw this as both destruction and revolution: a land that remembers history, wrongfully taken away, and maybe, this time, rightfully fixed. After all, history is a story. Humans are volatile and unreliable. But land is a different story. Land remembers.</p>",
+      "conversations": "<p>Makes me think of <em>Fourth Wing</em>. Stones don’t burn in Aretia, but what if it was destroyed?</p>",
+      "marginalia": [
+        {
+          "kind": "question",
+          "body": "Why am I so attracted to this painting?",
+          "src": ""
+        },
+        {
+          "kind": "observation",
+          "body": "It has become my computer wallpaper and I am simply in love with it.",
+          "src": ""
+        }
+      ],
+      "sources": [
+        {
+          "text": "Wadsworth Atheneum Museum of Art, Hartford. Collection record for Thomas Cole, Mount Etna from Taormina, 1843.",
+          "url": ""
+        },
+        {
+          "text": "Ellwood C. Parry III, The Art of Thomas Cole: Ambition and Imagination. Newark: University of Delaware Press, 1988.",
+          "url": ""
+        },
+        {
+          "text": "New-York Historical Society. Thomas Cole, The Course of Empire (five paintings), 1833–36.",
+          "url": ""
+        }
+      ],
+      "themes": [
+        "Mountains",
+        "Ruins",
+        "Light"
+      ],
+      "tags": [
+        "Sicily",
+        "Landscape"
+      ],
+      "related": [],
+      "rooms": [],
+      "discovered_on": "2026-09-17",
+      "featured": false,
+      "is_sample": false,
+      "last_contemplated_at": null,
+      "created_at": "2026-10-26T12:00:00Z",
+      "updated_at": "2026-10-26T12:00:00Z",
+      "id": "etna",
+      "slug": "mount-etna-from-taormina",
+      "title": "Mount Etna from Taormina",
+      "artist": "Thomas Cole",
+      "year_text": "1843",
+      "image_url": "/assets/img/art/collection/mount-etna-from-taormina.jpg",
+      "image_thumb": "/assets/img/art/collection/mount-etna-from-taormina-sm.jpg",
+      "image_width": 2000,
+      "image_height": 1297,
+      "image_alt": "The ruins of an ancient theatre in the foreground, with a smoking, snow-capped Mount Etna rising over a wide valley and coastline at dawn.",
+      "position": 1
+    },
+    {
+      "year_sort": null,
+      "medium": "Oil on canvas",
+      "dimensions": "",
+      "movement": "Impressionism",
+      "period": "",
+      "current_collection": "",
+      "credit": "",
+      "observation": "",
+      "excerpt": "",
+      "first_encounter": "",
+      "behind_canvas": "",
+      "behind_interpretation": "",
+      "looking_closer": "",
+      "what_i_see": "",
+      "conversations": "",
+      "marginalia": [],
+      "sources": [],
+      "themes": [
+        "Mountains",
+        "Landscape"
+      ],
+      "tags": [
+        "Provence"
+      ],
+      "related": [],
+      "rooms": [],
+      "discovered_on": "2026-10-25",
+      "featured": false,
+      "is_sample": false,
+      "last_contemplated_at": null,
+      "created_at": "2026-10-26T12:00:00Z",
+      "updated_at": "2026-10-26T12:00:00Z",
+      "id": "sainte-victoire",
+      "slug": "la-montagne-sainte-victoire",
+      "title": "La Montagne Sainte-Victoire",
+      "artist": "Pierre-Auguste Renoir",
+      "image_url": "/assets/img/art/collection/la-montagne-sainte-victoire.jpg",
+      "image_thumb": "/assets/img/art/collection/la-montagne-sainte-victoire-sm.jpg",
+      "image_width": 1200,
+      "image_height": 834,
+      "image_alt": "Mont Sainte-Victoire in violet and pink beyond rows of blue-green trees and a field of golden grass, in quick, feathery brushstrokes.",
+      "position": 2
+    },
+    {
+      "year_sort": 1851,
+      "medium": "Oil on canvas",
+      "dimensions": "",
+      "movement": "Luminism",
+      "period": "",
+      "current_collection": "",
+      "credit": "",
+      "observation": "",
+      "excerpt": "",
+      "first_encounter": "",
+      "behind_canvas": "",
+      "behind_interpretation": "",
+      "looking_closer": "",
+      "what_i_see": "",
+      "conversations": "",
+      "marginalia": [],
+      "sources": [],
+      "themes": [
+        "Water",
+        "Light"
+      ],
+      "tags": [
+        "Maine",
+        "Seascape",
+        "Lighthouse"
+      ],
+      "related": [],
+      "rooms": [
+        "room-water"
+      ],
+      "discovered_on": "2026-10-25",
+      "featured": false,
+      "is_sample": false,
+      "last_contemplated_at": null,
+      "created_at": "2026-10-26T12:00:00Z",
+      "updated_at": "2026-10-26T12:00:00Z",
+      "id": "camden",
+      "slug": "lighthouse-at-camden-maine",
+      "title": "Lighthouse at Camden, Maine",
+      "artist": "Fitz Henry Lane",
+      "year_text": "1851",
+      "image_url": "/assets/img/art/collection/lighthouse-at-camden-maine.jpg",
+      "image_thumb": "/assets/img/art/collection/lighthouse-at-camden-maine-sm.jpg",
+      "image_width": 900,
+      "image_height": 599,
+      "image_alt": "A sailing ship at rest on still water at dusk, a man rowing a small boat beside it, and a white lighthouse on a dark rocky point under a glowing sky.",
+      "position": 3
+    },
+    {
+      "year_sort": null,
+      "medium": "",
+      "dimensions": "",
+      "movement": "Contemporary art",
+      "period": "",
+      "current_collection": "Yale University Art Gallery",
+      "credit": "",
+      "observation": "",
+      "excerpt": "",
+      "first_encounter": "",
+      "behind_canvas": "",
+      "behind_interpretation": "",
+      "looking_closer": "",
+      "what_i_see": "",
+      "conversations": "",
+      "marginalia": [],
+      "sources": [],
+      "themes": [
+        "Material",
+        "Gold"
+      ],
+      "tags": [
+        "Ghana",
+        "Sculpture",
+        "Textile"
+      ],
+      "related": [],
+      "rooms": [],
+      "discovered_on": "2026-10-25",
+      "featured": false,
+      "is_sample": false,
+      "last_contemplated_at": null,
+      "created_at": "2026-10-26T12:00:00Z",
+      "updated_at": "2026-10-26T12:00:00Z",
+      "id": "anatsui",
+      "slug": "society-womans-cloth-gold",
+      "title": "Society Woman’s Cloth (Gold)",
+      "artist": "El Anatsui",
+      "image_url": "/assets/img/art/collection/society-womans-cloth-gold.jpg",
+      "image_thumb": "/assets/img/art/collection/society-womans-cloth-gold-sm.jpg",
+      "image_width": 1500,
+      "image_height": 2000,
+      "image_alt": "Two visitors stand before a vast, rippling wall hanging of gold, red and black metal pieces in a gallery.",
+      "position": 4
+    }
+  ],
+  "reflections": [],
+  "exhibitions": [],
+  "settings": {
+    "homepage": {
+      "sections": [
+        "featured",
+        "collection",
+        "recent",
+        "connections",
+        "rooms",
+        "exhibitions"
+      ],
+      "hidden": []
+    }
+  }
+}
