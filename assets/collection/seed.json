@@ -178,16 +178,31 @@
       "period": "",
       "current_collection": "Yale University Art Gallery",
       "credit": "",
-      "observation": "",
-      "excerpt": "",
-      "first_encounter": "",
-      "behind_canvas": "",
-      "behind_interpretation": "",
-      "looking_closer": "",
+      "observation": "It feels like fall.",
+      "excerpt": "Harsh, vivid strokes ripple across a golden field under Mont Sainte-Victoire. It feels like fall.",
+      "first_encounter": "<p>The harsh and vivid lines create ripples across the golden, lush field. Even the sky feels like it’s rippling. It feels like fall.</p>",
+      "behind_canvas": "<p>Pierre-Auguste Renoir (1841–1919) was one of the founding painters of French Impressionism, alongside Claude Monet, with whom he painted side by side in the late 1860s.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p><p>Mont Sainte-Victoire rises east of Aix-en-Provence in southern France. It is best known through Paul Cézanne, who painted it dozens of times. In the late 1880s Renoir stayed near Aix and worked alongside Cézanne, and he painted the mountain during those visits.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p><p>By then Renoir had grown dissatisfied with Impressionism’s soft, dissolving touch. In the mid-1880s he turned to firmer drawing and sharper, drier color, a phase sometimes called his <em>manière aigre</em>, or “sour manner.”<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p>",
+      "behind_interpretation": "<p>The parallel, slanting strokes are often linked to Cézanne’s influence: Cézanne built his pictures from blocks of directional strokes, and here Renoir seems to borrow that structure while keeping his own heat of color. It may be part of why the painting looks like Monet at first glance and then feels much harsher.</p>",
+      "looking_closer": "<p>At first it seemed similar to Monet, but I realized the line strokes and colors were much harsher.</p><p>Nothing here is blended. The sky is built from long diagonal strokes that all slant the same way, down and to the right, so the blue reads less like air and more like something falling or blowing through the picture. The field below is laid in with shorter, flatter strokes of yellow and ochre, dragged sideways, which is why it seems to move in waves rather than lie still.</p><p>The trees are made differently again: small, curved dabs stacked into rounded masses. The olive trees in the middle are a cool blue-green, set between hot orange and red on one side and a deep, heavy green on the other. Renoir puts warm and cool colors right next to each other instead of mixing them, and that friction is what makes the colors feel loud.</p><p>The mountain itself is pale lavender and rose, the softest thing in the painting. It sits far back, quiet, while everything in front of it vibrates.</p>",
       "what_i_see": "",
       "conversations": "",
-      "marginalia": [],
-      "sources": [],
+      "marginalia": [
+        {
+          "kind": "detail",
+          "body": "The trees are like in progression??? From summer to fall.",
+          "src": ""
+        }
+      ],
+      "sources": [
+        {
+          "text": "Yale University Art Gallery, New Haven. Collection record for Pierre-Auguste Renoir, La Montagne Sainte-Victoire.",
+          "url": ""
+        },
+        {
+          "text": "John House and Anne Distel, Renoir. London: Arts Council of Great Britain, 1985.",
+          "url": ""
+        }
+      ],
       "themes": [
         "Mountains",
         "Landscape"
@@ -222,16 +237,35 @@
       "period": "",
       "current_collection": "Yale University Art Gallery",
       "credit": "",
-      "observation": "",
-      "excerpt": "",
-      "first_encounter": "",
-      "behind_canvas": "",
+      "observation": "Brand new day.",
+      "excerpt": "Hope and sadness coexist. Is it sunrise or sunset?",
+      "first_encounter": "<p>Hope and sadness coexist. Is it sunrise or sunset? To me, it feels like sunrise, and the boat is heading out into the bigger world.</p>",
+      "behind_canvas": "<p>Fitz Henry Lane (1804–1865) was born in Gloucester, Massachusetts. A childhood illness left him unable to walk without crutches. He trained as a lithographer in Boston before turning to marine painting.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p><p>For more than a century he was known as “Fitz Hugh Lane,” a mistake that was corrected through research by the Cape Ann Museum in Gloucester in the 2000s.<sup class=\"cx-ref\"><a href=\"#ref-3\">3</a></sup></p><p>In the 1850s Lane made repeated trips along the coast of Maine, sketching harbors such as Camden on Penobscot Bay, and painted this scene in 1851.<sup class=\"cx-ref\"><a href=\"#ref-1\">1</a></sup> His calm, precisely lit harbor views were later grouped by twentieth-century historians under the name “Luminism.”<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p>",
       "behind_interpretation": "",
-      "looking_closer": "",
+      "looking_closer": "<p>The light comes from one low point near the center of the horizon, behind the hills. Right at the waterline the sky is a hot peach that cools upward into pale green and then a deep blue-gray at the top of the canvas. The clouds are lit from below, pink only on their undersides, which means the sun is still under the horizon, not above it.</p><p>The water is almost completely still. It holds a soft copy of the sky and the ship, with only a few faint ripples where the small rowboat on the left breaks the surface. There are no visible brushstrokes anywhere; the paint is smoothed until the surface feels like glass.</p><p>Everything solid is dark. The ship, the rocks and the headland are near-silhouettes against the glow, and the lighthouse is the only pale, upright form on the right. The ship’s sails hang half-loose, not yet full of wind, so it sits in the moment just before moving.</p><p>The sky takes up more than half the painting, and the ship and the lighthouse face each other across an open stretch of water in the middle. That gap is where the light is brightest.</p>",
       "what_i_see": "",
-      "conversations": "",
-      "marginalia": [],
-      "sources": [],
+      "conversations": "<p>Reminds me of <em>Spider-Man: Brand New Day</em>, because it’s like a new day, a new beginning, despite all the sorrows of the past.</p>",
+      "marginalia": [
+        {
+          "kind": "question",
+          "body": "Do some people see this as sunset? Am I seeing it as sunrise because of my psychological state?",
+          "src": ""
+        }
+      ],
+      "sources": [
+        {
+          "text": "Yale University Art Gallery, New Haven. Collection record for Fitz Henry Lane, Lighthouse at Camden, Maine, 1851.",
+          "url": ""
+        },
+        {
+          "text": "John Wilmerding, Fitz Hugh Lane. New York: Praeger, 1971.",
+          "url": ""
+        },
+        {
+          "text": "Cape Ann Museum, Gloucester, Massachusetts. Research on the name of Fitz Henry Lane.",
+          "url": ""
+        }
+      ],
       "themes": [
         "Water",
         "Light"
@@ -270,15 +304,24 @@
       "current_collection": "Yale University Art Gallery",
       "credit": "",
       "observation": "",
-      "excerpt": "",
-      "first_encounter": "",
-      "behind_canvas": "",
-      "behind_interpretation": "",
-      "looking_closer": "",
+      "excerpt": "It’s HUGE. And yet so intricate. It feels like there are human bodies wrapped inside.",
+      "first_encounter": "<p>Ok, it’s HUGE. And yet so intricate. It feels like there are human bodies wrapped inside.</p>",
+      "behind_canvas": "<p>El Anatsui (born 1944) is a Ghanaian sculptor who has lived and worked in Nsukka, Nigeria, for most of his career, teaching for decades at the University of Nigeria.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p><p>Since the late 1990s he has been best known for monumental wall hangings like this one, made from thousands of flattened aluminum bottle caps and liquor-bottle wrappers, joined together with copper wire. Because the metal “cloth” is flexible, it is folded and shaped differently each time it is hung.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p><p>In 2015 he received the Golden Lion for Lifetime Achievement at the Venice Biennale.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p>",
+      "behind_interpretation": "<p>The hangings are often read through cloth: Anatsui has connected them to kente and other West African textiles, and to the history of liquor as a trade good between Europe, Africa and the Americas. The bottle caps carry that history inside something that looks, from across the room, like a precious gold fabric.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p>",
+      "looking_closer": "<p>Up close the surface breaks apart into thousands of small units: gold discs packed tightly together across the middle, and around the edges, rows of narrow rectangular strips in red, yellow, black and cream, lined up like stitches or woven bands. The border reads almost like a frame, or like the edge of a textile, while the gold field inside it swells and spills over.</p><p>It isn’t flat. The whole thing has been gathered, pushed and folded so that it bulges out from the wall in ridges and hollows. Light catches on the high points and drops into shadow in the folds, so the gold is never one color: it shifts from bright yellow to bronze to almost brown depending on where it bends.</p><p>The bottom edge doesn’t end in a straight line. It frays into loose, uneven tabs, the way fabric does when it isn’t hemmed. Standing in front of it with someone beside you, the scale becomes physical: the people are smaller than a single fold.</p>",
       "what_i_see": "",
       "conversations": "",
       "marginalia": [],
-      "sources": [],
+      "sources": [
+        {
+          "text": "Yale University Art Gallery, New Haven. Collection record for El Anatsui, Society Woman’s Cloth (Gold).",
+          "url": ""
+        },
+        {
+          "text": "Susan Mullin Vogel, El Anatsui: Art and Life. Munich: Prestel, 2012.",
+          "url": ""
+        }
+      ],
       "themes": [
         "Material",
         "Gold"
