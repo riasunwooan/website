@@ -10,7 +10,7 @@ const dark = () => root.dataset.theme ? root.dataset.theme === 'dark' : matchMed
 export function syncThemeButtons() {
   document.querySelectorAll('[data-cx-theme]').forEach((b) => {
     b.setAttribute('aria-pressed', String(dark()));
-    b.textContent = dark() ? 'Raise the lights' : 'Dim the lights';
+    (b.querySelector('.cx-theme-label') || b).textContent = dark() ? 'Raise the lights' : 'Dim the lights';
   });
 }
 document.addEventListener('click', (e) => {

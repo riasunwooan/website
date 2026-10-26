@@ -61,7 +61,7 @@ export function renderWork(host, a, ctx = {}) {
       (a.is_sample ? '<p class="cx-sample">Sample entry, written to show the layout. Not a real reflection.</p>' : '') +
       '<figure class="cx-work-plate' + (a.is_favorite ? ' cx-fav' : '') + '" data-cx-zoom>' + plate(a, { eager: true }) + (a.credit ? '<figcaption>' + esc(a.credit) + '</figcaption>' : '') + '</figure>' +
       '<header class="cx-work-head">' +
-        '<p class="cx-label">' + (a.is_favorite ? '<span class="cx-fav-label">One of my favorites</span> <span aria-hidden="true">·</span> ' : '') + (n >= 0 ? 'No. ' + String(n + 1).padStart(2, '0') : '') +
+        '<p class="cx-label">' + (a.is_favorite ? '<span class="cx-fav-label">Curator’s Choice</span> <span aria-hidden="true">·</span> ' : '') + (n >= 0 ? 'No. ' + String(n + 1).padStart(2, '0') : '') +
           (a.discovered_on ? ' <span aria-hidden="true">·</span> First encountered ' + esc(fmtDate(a.discovered_on)) : '') + '</p>' +
         '<h1 class="cx-work-title">' + esc(a.title) + '</h1>' +
         '<p class="cx-work-by">' + byline(a) + '</p>' +
