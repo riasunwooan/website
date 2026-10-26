@@ -5,7 +5,7 @@ import { door, gate } from './door.js';
 import './ui.js';
 
 const host = document.getElementById('cx-home');
-const DEFAULT_SECTIONS = ['collection', 'rooms', 'exhibitions', 'recent'];
+const DEFAULT_SECTIONS = ['collection', 'rooms', 'exhibitions', 'quotes', 'recent'];
 const surname = (s) => (s || '').trim().split(/\s+/).pop().toLowerCase();
 
 loadPublic().then(render).catch((e) => {
@@ -23,7 +23,7 @@ function render(data) {
     host.innerHTML = '<p class="cx-empty">The collection is quiet for now. The first works are still being hung.</p>';
     return;
   }
-  const builders = { collection, recent, rooms, exhibitions };
+  const builders = { collection, quotes, recent, rooms, exhibitions };
   host.innerHTML = order.map((s) => (builders[s] ? builders[s](works, data) : '')).join('');
   wireCollection(works, data.reflections || []);
 }
@@ -154,6 +154,21 @@ function rows(list) {
     return '<a class="cx-row-item' + (w.is_favorite ? ' cx-fav' : '') + '" href="' + workUrl(w) + '" style="--r:' + r + '">' + plate(w, { thumb: true }) +
       '<span class="cx-row-cap"><span class="cx-card-title">' + esc(w.title) + '</span><span class="cx-card-by">' + byline(w) + '</span></span></a>';
   }).join('') + '</div>';
+}
+
+// Words I Keep: a small selection of lines about looking and loving art.
+const QUOTES = [
+  { text: 'With understanding comes sight, and with sight comes love. And what we see through the eyes of love is never quite what we saw before.',
+    original: '知則爲眞愛 愛則爲眞看 看則畜之而非徒畜也', lang: 'zh-Hant',
+    by: 'Yu Han-jun, written for Kim Gwang-guk’s painting album <cite>Seongnong Hwawon</cite> (<span lang="ko">석농화원</span>)' },
+  { text: 'Art is a way to find what we truly love.', by: 'Brian Eno, <cite>What Art Does: An Unfinished Theory</cite>' },
+];
+
+function quotes() {
+  return '<section class="cx-quotes" aria-labelledby="cx-quotes-h"><div class="cx-sec-head"><h2 id="cx-quotes-h">Words I Keep</h2></div>' +
+    QUOTES.map((q) => '<figure class="cx-epigraph"><blockquote><p>&ldquo;' + esc(q.text) + '&rdquo;</p>' +
+      (q.original ? '<p class="cx-epigraph-orig" lang="' + q.lang + '">' + esc(q.original) + '</p>' : '') +
+      '</blockquote><figcaption>' + q.by + '</figcaption></figure>').join('') + '</section>';
 }
 
 function recent(works, data) {
