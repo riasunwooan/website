@@ -24,6 +24,8 @@ document.addEventListener('click', (e) => {
   }
   const c = e.target.closest('[data-cx-choice]');
   if (c) toggleChoice();
+  // While the spotlight is on, a click anywhere else turns the lights back on (a lit favorite still opens).
+  else if (document.body.classList.contains('cx-spotlight') && !e.target.closest('.cx-fav')) setChoice(false);
   const r = e.target.closest('[data-cx-reading]');
   if (r) setReading(!document.body.classList.contains('cx-reading'));
   const z = e.target.closest('[data-cx-zoom] img');
