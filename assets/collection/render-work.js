@@ -81,7 +81,7 @@ export function renderWork(host, a, ctx = {}) {
             // The history is there for the curious, folded away so the page reads as Ria's first.
             ? '<section class="cx-sec cx-sec-' + s.id + '" id="' + s.id + '"><details class="cx-behind"><summary>' +
               '<h2 id="h-' + s.id + '"><span class="cx-num">' + roman(s.i) + '.</span> ' + s.title + '</h2>' +
-              '<span class="cx-behind-hint">The history, and what others have seen</span></summary>' + s.body + '</details></section>'
+              '<span class="cx-behind-hint">The history and background</span></summary>' + s.body + '</details></section>'
             : '<section class="cx-sec cx-sec-' + s.id + '" id="' + s.id + '" aria-labelledby="h-' + s.id + '">' +
               '<h2 id="h-' + s.id + '"><span class="cx-num">' + roman(s.i) + '.</span> ' + s.title + '</h2>' + s.body + '</section>').join('') +
           (unwritten ? '<p class="cx-unwritten">The rest of this entry is still being written.</p>' : '') +
