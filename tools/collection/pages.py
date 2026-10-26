@@ -44,7 +44,7 @@ def page(path, title, desc, body, script, canonical=None, noindex=False, bar=Tru
         '  <link rel="preconnect" href="https://fonts.googleapis.com">',
         '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
         '  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">',
-        '  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600&text=%EC%95%88%EC%84%A0%EC%9A%B0%EB%B3%B5&display=swap" rel="stylesheet">',
+        '  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600&text=%EC%95%88%EC%84%A0%EC%9A%B0%EB%B3%B5%E7%9F%A5%E5%89%87%E7%88%B2%E7%9C%9E%E6%84%9B%E7%9C%8B%E7%95%9C%E4%B9%8B%E8%80%8C%E9%9D%9E%E5%BE%92%E4%B9%9F%EC%84%9D%EB%86%8D%ED%99%94%EC%9B%90&display=swap" rel="stylesheet">',
         '  <link rel="stylesheet" href="/assets/style.css?v=116">',
         '  <link rel="stylesheet" href="/assets/collection/collection.css?v=%s">' % V,
         '</head>', '<body class="cx">', NAV, '',
@@ -77,6 +77,13 @@ page('art/collection/index.html', 'The Ria Collection — Through My Eyes — Ri
           <button type="button" class="cx-choice" data-cx-choice aria-pressed="false"><svg class="cx-pouch" viewBox="0 0 60 64" aria-hidden="true"><defs><clipPath id="cx-pouch-hem"><path d="M15.5 44 L30 49 L44.5 44 L50 55 Q30 64 10 55 Z"/></clipPath></defs><g stroke="#3a2416" stroke-width="1.4" stroke-linejoin="round"><path d="M18 23 L4.5 42 Q6 58.5 30 60.5 Q54 58.5 55.5 42 L42 23 Z" fill="#a8383a"/><path d="M18.5 23 L15.5 44 L30 49 L44.5 44 L41.5 23 Z" fill="#f6d9cb"/><g clip-path="url(#cx-pouch-hem)" stroke="none"><rect x="8" y="40" width="11" height="26" fill="#f0d79a"/><rect x="19" y="40" width="10" height="26" fill="#a46ab5"/><rect x="29" y="40" width="10" height="26" fill="#d9566b"/><rect x="39" y="40" width="13" height="26" fill="#4f9ac2"/></g><path d="M15.5 44 L30 49 L44.5 44 L50 55 Q30 64 10 55 Z" fill="none"/><path d="M18 6 H42 L41.5 22 H18.5 Z" fill="#f6d9cb"/><path d="M18 6 L10 8.5 L18.5 22 Z M42 6 L50 8.5 L41.5 22 Z" fill="#a8383a"/><rect x="15" y="20.5" width="30" height="3.2" fill="#a8383a"/><rect x="27.2" y="19" width="5.6" height="6" rx="1" fill="#a8383a"/><path d="M32 24 L37 30 M33 23 L39 27.5" stroke-width="2.4" stroke-linecap="round"/><circle cx="30" cy="34.5" r="7.2" fill="#e7a33a"/></g><text x="30" y="38" text-anchor="middle" font-family="'Noto Serif KR', 'Nanum Myeongjo', serif" font-size="9" font-weight="600" fill="#6b2416">복</text></svg><span class="cx-choice-text"><span class="cx-choice-title">Curator’s Choice</span><span class="cx-choice-sub">Pieces I love, simply because</span></span></button>
         </div>
       </section>
+      <figure class="cx-epigraph">
+        <blockquote>
+          <p>&ldquo;With understanding comes sight, and with sight comes love. And what we see through the eyes of love is never quite what we saw before.&rdquo;</p>
+          <p class="cx-epigraph-orig" lang="zh-Hant">知則爲眞愛 愛則爲眞看 看則畜之而非徒畜也</p>
+        </blockquote>
+        <figcaption>Yu Han-jun, written for Kim Gwang-guk&rsquo;s painting album <cite>Seongnong Hwawon</cite> (<span lang="ko">석농화원</span>)</figcaption>
+      </figure>
       <div id="cx-home">
         %s
       </div>''' % LOADING, 'home.js', canonical='/art/collection/')
