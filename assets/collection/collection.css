@@ -181,7 +181,10 @@ body.cx { background: var(--cx-bg); color: var(--cx-ink); transition: background
   letter-spacing: -0.015em;
 }
 .cx-title-sm { font-size: clamp(2.6rem, 6vw, 4.6rem); }
-.cx-hero-text { align-self: end; font-family: var(--cx-serif); font-size: 1.32rem; line-height: 1.5; color: var(--cx-soft); }
+.cx-hero-text { align-self: end; font-family: var(--cx-serif); font-size: 1.18rem; line-height: 1.5; color: var(--cx-soft); }
+/* The opening sentence always fits on one line: it scales down only as far as its column needs. */
+.cx-hero-text { container-type: inline-size; }
+.cx-hero-text > p:first-child { font-size: min(1.18rem, 4.75cqi); white-space: nowrap; }
 .cx-hero-text p { margin: 0 0 0.7em; }
 .cx-hero-note { font-style: italic; color: var(--cx-muted); }
 .cx-flash-link { color: var(--cx-wine); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--cx-wine) 45%, transparent); text-underline-offset: 4px; }
