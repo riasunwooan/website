@@ -112,7 +112,7 @@ function recent(works, data) {
   (data.reflections || []).forEach((r) => { if (!last[r.artwork_id] || r.written_on > last[r.artwork_id]) last[r.artwork_id] = r.written_on; });
   const list = works.filter((w) => last[w.id]).sort((a, b) => String(last[b.id]).localeCompare(String(last[a.id]))).slice(0, 6);
   if (!list.length) return '';
-  return '<section class="cx-strip-sec" aria-labelledby="cx-rec-h"><div class="cx-sec-head"><h2 id="cx-rec-h">Recently Contemplated</h2>' +
+  return '<section class="cx-strip-sec" aria-labelledby="cx-rec-h"><div class="cx-sec-head"><h2 id="cx-rec-h">Recently Re-Contemplated</h2>' +
     '<p class="cx-sec-note">Works I have returned to.</p></div><div class="cx-related">' +
     list.map((w) => card(w, { note: 'Returned ' + fmtDate(last[w.id], { month: 'short', day: 'numeric', year: 'numeric' }) })).join('') + '</div></section>';
 }
