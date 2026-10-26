@@ -33,7 +33,6 @@ function featured(works) {
   return '<section class="cx-featured" aria-labelledby="cx-feat-h">' +
     '<a class="cx-featured-plate" href="' + workUrl(a) + '" tabindex="-1" aria-hidden="true">' + plate(a, { eager: true }) + '</a>' +
     '<div class="cx-featured-text">' +
-      '<p class="cx-label">On view</p>' +
       '<h2 class="cx-featured-title" id="cx-feat-h"><a href="' + workUrl(a) + '">' + esc(a.title) + '</a></h2>' +
       '<p class="cx-work-by">' + byline(a) + '</p>' +
       (a.excerpt ? '<p class="cx-featured-excerpt">' + esc(a.excerpt) + '</p>' : '') +
