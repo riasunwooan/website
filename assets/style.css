@@ -1881,14 +1881,15 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 .ria-collection-btn {
   display: inline-flex;
   flex-direction: column;
-  gap: 2px;
-  padding: 12px 22px 11px;
+  gap: 4px;
+  min-width: 340px;
+  padding: 18px 44px 17px;
   border: 1px solid var(--text);
   text-decoration: none;
   transition: background-color 0.25s, color 0.25s;
 }
 .ria-collection-btn:hover, .ria-collection-btn:focus-visible { background: var(--text); color: var(--bg); }
-.rcb-kicker { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.7; }
-.rcb-title { font-family: "Cormorant Garamond", Garamond, "Times New Roman", serif; font-size: 1.35rem; font-style: italic; font-weight: 500; line-height: 1.15; }
+.rcb-kicker { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.7; }
+.rcb-title { font-family: "Cormorant Garamond", Garamond, "Times New Roman", serif; font-size: 1.85rem; font-style: italic; font-weight: 500; line-height: 1.1; }
 .rcb-title::after { content: " \2192"; font-style: normal; }
-@media (max-width: 600px) { .ria-collection-btn { width: 100%; } }
+@media (max-width: 600px) { .ria-collection-btn { width: 100%; min-width: 0; padding: 16px 24px; } }

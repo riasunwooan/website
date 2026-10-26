@@ -186,6 +186,18 @@ body.cx { background: var(--cx-bg); color: var(--cx-ink); transition: background
 .cx-masonry { columns: 3 300px; column-gap: 40px; }
 .cx-masonry > .cx-card { margin-bottom: 44px; }
 .cx-masonry > .cx-empty { column-span: all; }
+
+/* The collection wall: every work at its real size relative to the others (--s = px per inch) */
+.cx-wall-note { margin: -16px 0 28px; font-family: var(--cx-serif); font-style: italic; font-size: 1rem; color: var(--cx-muted); }
+.cx-wall { --s: 2; display: flex; flex-wrap: wrap; align-items: flex-end; gap: 48px 36px; }
+.cx-wall > .cx-empty { width: 100%; }
+.cx-tile { display: flex; flex-direction: column; align-items: center; width: max(calc(var(--w) * var(--s) * 1px), 128px); text-decoration: none; }
+.cx-tile-img { display: block; width: calc(var(--w) * var(--s) * 1px); max-width: 100%; box-shadow: 0 8px 18px rgba(40, 24, 10, 0.16); transition: transform 0.6s cubic-bezier(0.2, 0.6, 0.2, 1), box-shadow 0.6s; }
+.cx-tile:hover .cx-tile-img, .cx-tile:focus-visible .cx-tile-img { transform: translateY(-4px); box-shadow: 0 14px 26px rgba(40, 24, 10, 0.22); }
+.cx-tile-img .cx-frame-empty { font-size: 0.8rem; padding: 6px; }
+.cx-tile-cap { display: flex; flex-direction: column; gap: 2px; width: 100%; padding-top: 12px; text-align: center; }
+.cx-tile .cx-card-title { font-size: 1.05rem; }
+.cx-tile-size { margin-top: 3px; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cx-muted); }
 .cx-card { position: relative; display: block; break-inside: avoid; text-decoration: none; }
 .cx-card .cx-plate { overflow: hidden; }
 .cx-card img { transition: transform 1.2s cubic-bezier(0.2, 0.6, 0.2, 1), filter 0.6s; }
@@ -408,6 +420,8 @@ a.cx-door-link:hover .cx-room-name { color: var(--cx-wine); }
   .cx-tl a { grid-template-columns: 80px 1fr; }
   .cx-work-plate { padding: 12px; }
   .cx-masonry { columns: 2 150px; column-gap: 18px; }
+  .cx-wall { gap: 36px 16px; justify-content: center; }
+  .cx-tile { width: max(calc(var(--w) * var(--s) * 1px), 104px); }
   .cx-masonry > .cx-card { margin-bottom: 28px; }
   .cx-related { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 }

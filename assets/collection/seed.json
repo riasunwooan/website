@@ -111,7 +111,7 @@
     {
       "year_sort": 1843,
       "medium": "Oil on canvas",
-      "dimensions": "",
+      "dimensions": "78 5/8 × 120 5/8 in.",
       "movement": "Hudson River School",
       "period": "Romanticism",
       "current_collection": "Wadsworth Atheneum Museum of Art, Hartford",
@@ -182,9 +182,9 @@
       "position": 1
     },
     {
-      "year_sort": null,
+      "year_sort": 1888,
       "medium": "Oil on canvas",
-      "dimensions": "",
+      "dimensions": "20 7/8 × 25 1/4 in.",
       "movement": "Impressionism",
       "period": "",
       "current_collection": "Yale University Art Gallery",
@@ -238,12 +238,13 @@
       "image_width": 1200,
       "image_height": 834,
       "image_alt": "Mont Sainte-Victoire in violet and pink beyond rows of blue-green trees and a field of golden grass, in quick, feathery brushstrokes.",
-      "position": 2
+      "position": 2,
+      "year_text": "c. 1888–89"
     },
     {
       "year_sort": 1851,
       "medium": "Oil on canvas",
-      "dimensions": "",
+      "dimensions": "23 × 34 in.",
       "movement": "Luminism",
       "period": "",
       "current_collection": "Yale University Art Gallery",
@@ -307,9 +308,9 @@
       "position": 3
     },
     {
-      "year_sort": null,
-      "medium": "",
-      "dimensions": "",
+      "year_sort": 2006,
+      "medium": "Aluminum bottle caps and copper wire",
+      "dimensions": "156 × 262 in.",
       "movement": "Contemporary art",
       "period": "",
       "current_collection": "Yale University Art Gallery",
@@ -359,12 +360,13 @@
       "image_width": 1500,
       "image_height": 2000,
       "image_alt": "Two visitors stand before a vast, rippling wall hanging of gold, red and black metal pieces in a gallery.",
-      "position": 4
+      "position": 4,
+      "year_text": "2006"
     },
     {
       "year_sort": 1863,
       "medium": "Oil on canvas",
-      "dimensions": "",
+      "dimensions": "36 1/8 × 48 in.",
       "movement": "Hudson River School",
       "period": "Romanticism",
       "current_collection": "Wadsworth Atheneum Museum of Art, Hartford",
@@ -422,7 +424,7 @@
     {
       "year_sort": 1913,
       "medium": "Oil on canvas",
-      "dimensions": "",
+      "dimensions": "77 × 84 3/4 in.",
       "movement": "Futurism",
       "period": "Early modernism",
       "current_collection": "Yale University Art Gallery",
@@ -478,15 +480,15 @@
     {
       "year_sort": 1946,
       "medium": "Oil on canvas",
-      "dimensions": "",
+      "dimensions": "22 × 17 3/4 in.",
       "movement": "American still life",
       "period": "Mid-20th century",
-      "current_collection": "",
+      "current_collection": "Yale University Art Gallery",
       "credit": "",
       "observation": "If time is stuck.",
       "excerpt": "Time has stopped. Time, sound, everything.",
       "first_encounter": "<p>Time has stopped. It feels like everything is just… stuck. Time, sound, everything.</p>",
-      "behind_canvas": "<p>Walter Tandy Murch (1907–1967) was born in Toronto and moved to New York as a young man, where he studied with the painter Arshile Gorky.<sup class=\"cx-ref\"><a href=\"#ref-1\">1</a></sup></p><p>He became known for quiet still lifes of ordinary mechanical objects, clocks, light bulbs, machine parts, painted in a soft, hazy light that makes them look both precise and slightly unreal.<sup class=\"cx-ref\"><a href=\"#ref-1\">1</a></sup></p>",
+      "behind_canvas": "<p>Walter Tandy Murch (1907–1967) was born in Toronto and moved to New York as a young man, where he studied with the painter Arshile Gorky.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p><p>He became known for quiet still lifes of ordinary mechanical objects, clocks, light bulbs, machine parts, painted in a soft, hazy light that makes them look both precise and slightly unreal.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p>",
       "behind_interpretation": "",
       "looking_closer": "<p>The metronome is floating. It’s so dark.</p><p>It doesn’t quite sit on the ledge. There is a thin band of shadow under its base, as if it has lifted a few millimeters into the air. The pendulum is frozen off to one side instead of resting upright, caught in the middle of a beat that never finishes.</p><p>Almost all of the light in the painting is on the metronome itself: a warm glow on its front face and a bright orange strip in the slot behind the pendulum, like a light left on inside. Around it, the background isn’t flat black but a soft, mottled brown that seems to breathe, so the darkness has depth, like you could reach into it.</p><p>The small things are what make it strange: a pale rock perched on the metronome’s body with a thin string hanging down from it, and two more rocks on the ledge below. They don’t belong with a metronome, and the painting never explains them.</p>",
       "what_i_see": "<p>It feels so stuck and stifling, but it’s so magical and weird, like I’ll get absorbed into that darkness and get sucked up into it as well.</p>",
@@ -499,6 +501,10 @@
         }
       ],
       "sources": [
+        {
+          "text": "Yale University Art Gallery, New Haven. Collection record for Walter Tandy Murch, Metronome, 1946.",
+          "url": "https://artgallery.yale.edu/collections/objects/323084"
+        },
         {
           "text": "Archives of American Art, Smithsonian Institution. Walter Tandy Murch papers.",
           "url": ""
@@ -532,9 +538,9 @@
       "position": 7
     },
     {
-      "year_sort": null,
-      "medium": "",
-      "dimensions": "",
+      "year_sort": 1982,
+      "medium": "Xeroxed paper, oil stick, and acrylic on two hinged canvases",
+      "dimensions": "60 × 120 in.",
       "movement": "Neo-Expressionism",
       "period": "1980s",
       "current_collection": "Yale University Art Gallery",
@@ -556,7 +562,7 @@
       ],
       "sources": [
         {
-          "text": "Yale University Art Gallery, New Haven. Collection record for Jean-Michel Basquiat.",
+          "text": "Yale University Art Gallery, New Haven. Collection record for Jean-Michel Basquiat, Diagram of the Ankle, 1982.",
           "url": "https://artgallery.yale.edu/collections/objects/84111"
         },
         {
@@ -584,7 +590,7 @@
       "slug": "diagram-of-the-ankle",
       "title": "Diagram of the Ankle",
       "artist": "Jean-Michel Basquiat",
-      "year_text": "",
+      "year_text": "1982",
       "image_url": "/assets/img/art/collection/diagram-of-the-ankle.jpg",
       "image_thumb": "/assets/img/art/collection/diagram-of-the-ankle-sm.jpg",
       "image_width": 515,

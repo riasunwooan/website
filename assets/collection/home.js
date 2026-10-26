@@ -42,16 +42,17 @@ function collection(works) {
       options(works, 'themes', 'Theme') + options(works, 'movement', 'Movement') + options(works, 'period', 'Period') +
       '<label class="cx-field"><span>Sort</span><select data-f="sort">' +
         '<option value="curated">Curated order</option><option value="added">Recently added</option>' +
-        '<option value="artist">Artist</option><option value="year">Year created</option></select></label>' +
+        '<option value="artist">Artist</option><option value="year">Year created</option><option value="size">Size</option></select></label>' +
     '</form>' +
-    '<div class="cx-masonry"></div>' +
+    '<p class="cx-wall-note">Hung to scale: each work is shown at its real size relative to the others.</p>' +
+    '<div class="cx-wall"></div>' +
   '</section>';
 }
 
 function wireCollection(works) {
   const form = host.querySelector('.cx-controls');
   if (!form) return;
-  const grid = host.querySelector('.cx-masonry'), count = host.querySelector('.cx-count');
+  const grid = host.querySelector('.cx-wall'), count = host.querySelector('.cx-count');
   const f = (k) => form.querySelector('[data-f="' + k + '"]');
   const params = new URLSearchParams(location.search);
   if (params.get('q')) f('q').value = params.get('q');
@@ -67,7 +68,8 @@ function wireCollection(works) {
     if (sort === 'added') list = list.slice().sort((a, b) => String(b.created_at).localeCompare(String(a.created_at)));
     if (sort === 'artist') list = list.slice().sort((a, b) => surname(a.artist).localeCompare(surname(b.artist)) || a.title.localeCompare(b.title));
     if (sort === 'year') list = list.slice().sort((a, b) => (a.year_sort ?? 1e9) - (b.year_sort ?? 1e9));
-    grid.innerHTML = list.length ? list.map((w) => card(w, { size: 'm' })).join('') :
+    if (sort === 'size') list = list.slice().sort((a, b) => area(b) - area(a));
+    grid.innerHTML = list.length ? list.map(tile).join('') :
       '<p class="cx-empty">Nothing in the collection matches that yet.</p>';
     count.textContent = list.length + (list.length === 1 ? ' work' : ' works');
     const p = new URLSearchParams();
@@ -76,9 +78,45 @@ function wireCollection(works) {
     if (sort !== 'curated') p.set('sort', sort);
     history.replaceState(null, '', location.pathname + (p.toString() ? '?' + p : '') + location.hash);
   }
+  // One scale for the whole wall, so sizes stay comparable when filtering: the largest work fills
+  // the width or about two thirds of the screen height, whichever is smaller.
+  const maxW = Math.max(...works.map((w) => scaled(w).w)), maxH = Math.max(...works.map((w) => scaled(w).h));
+  const fit = () => grid.style.setProperty('--s', Math.min(grid.clientWidth / maxW, (innerHeight * 0.66) / maxH).toFixed(3));
+  addEventListener('resize', fit);
   form.addEventListener('input', apply);
+  fit();
   apply();
   if (location.hash === '#collection') host.querySelector('#collection').scrollIntoView();
+}
+
+// Physical size from the dimensions text, height × width ("78 5/8 × 120 5/8 in." or "91.8 × 121.9 cm"), in inches.
+function physical(w) {
+  const num = (t) => t.trim().split(/\s+/).reduce((sum, part) => {
+    const f = part.split('/');
+    return sum + (f.length === 2 ? Number(f[0]) / Number(f[1]) : Number(part));
+  }, 0);
+  const m = /([\d.]+(?:\s+\d+\/\d+)?)\s*[×x]\s*([\d.]+(?:\s+\d+\/\d+)?)\s*(in|cm)/i.exec(w.dimensions || '');
+  if (!m) return null;
+  const k = m[3].toLowerCase() === 'cm' ? 1 / 2.54 : 1;
+  return { h: num(m[1]) * k, w: num(m[2]) * k };
+}
+
+// Display footprint in inches. The image's own proportions are kept; its area matches the work's real area,
+// which for a straight photo of a painting is simply its real width (gallery photos with walls around them still read true).
+// Works with no recorded size hang at a nominal 24 inches tall.
+function scaled(w) {
+  const r = (w.image_width || 4) / (w.image_height || 3), p = physical(w);
+  const width = p ? Math.sqrt(p.w * p.h * r) : 24 * r;
+  return { w: width, h: width / r, known: Boolean(p) };
+}
+const area = (w) => { const p = physical(w); return p ? p.w * p.h : 0; };
+
+function tile(w) {
+  const z = scaled(w);
+  return '<a class="cx-tile" href="' + workUrl(w) + '" style="--w:' + z.w.toFixed(1) + '">' +
+    '<span class="cx-tile-img">' + plate(w, { thumb: true }) + '</span>' +
+    '<span class="cx-tile-cap"><span class="cx-card-title">' + esc(w.title) + '</span><span class="cx-card-by">' + byline(w) + '</span>' +
+    '<span class="cx-tile-size">' + (z.known ? esc(w.dimensions) : 'Size not recorded') + '</span></span></a>';
 }
 
 function recent(works, data) {
