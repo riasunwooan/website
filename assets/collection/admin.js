@@ -18,9 +18,9 @@ const SECTIONS = [
   ['conversations', 'V', 'Conversations Across Canvases', 'Books, films, music, events and ideas this piece talks to. Related works are chosen below.'],
 ];
 const MARGIN_KINDS = { observation: 'Observation', detail: 'Favorite detail', sketch: 'Sketch', quotation: 'Quotation', question: 'Unanswered question', research: 'Research note', image: 'Image' };
-const HOME_SECTIONS = { featured: 'Featured artwork', collection: 'The Collection', recent: 'Recently Contemplated', rooms: 'Rooms', exhibitions: 'Exhibitions' };
+const HOME_SECTIONS = { collection: 'The Collection', recent: 'Recently Contemplated', rooms: 'Rooms', exhibitions: 'Exhibitions' };
 const FIELDS = ['title', 'slug', 'artist', 'year_text', 'year_sort', 'medium', 'dimensions', 'movement', 'period', 'current_collection', 'credit',
-  'image_url', 'image_thumb', 'image_width', 'image_height', 'image_alt', 'observation', 'excerpt', 'discovered_on', 'status', 'visibility', 'featured'];
+  'image_url', 'image_thumb', 'image_width', 'image_height', 'image_alt', 'observation', 'excerpt', 'discovered_on', 'status', 'visibility'];
 
 let sb, Editor, S = {};
 const slugify = (s) => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'untitled';
@@ -147,11 +147,11 @@ function worksView() {
     ul.innerHTML = list.length ? list.map((w, i) => '<li class="ad-item" data-id="' + w.id + '">' + plate(w, { thumb: true }) +
       '<div><a class="ad-item-title" href="#edit/' + w.id + '">' + esc(w.title) + '</a><div class="ad-item-sub">' + esc([w.artist, w.year_text].filter(Boolean).join(', ')) + '</div>' +
       '<div class="ad-badges"><span class="ad-badge">' + (w.status === 'published' ? 'Published' : 'Draft') + '</span><span class="ad-badge ' + w.visibility + '">' + VIS[w.visibility][0] + '</span>' +
-      (w.featured ? '<span class="ad-badge public">Featured</span>' : '') + (w.archived ? '<span class="ad-badge">Archived</span>' : '') +
+      (w.archived ? '<span class="ad-badge">Archived</span>' : '') +
       (S.favorites.has(w.id) ? '<span class="ad-badge unlisted">Bookmarked</span>' : '') + (w.is_sample ? '<span class="ad-badge">Sample</span>' : '') + '</div></div>' +
       '<div class="ad-actions">' + (reorder ? '<span class="ad-order"><button type="button" data-a="up" aria-label="Move up"' + (i ? '' : ' disabled') + '>↑</button><button type="button" data-a="down" aria-label="Move down"' + (i < list.length - 1 ? '' : ' disabled') + '>↓</button></span>' : '') +
       '<button type="button" data-a="edit">Edit</button><button type="button" data-a="preview">Preview</button><button type="button" data-a="fav">' + (S.favorites.has(w.id) ? 'Unbookmark' : 'Bookmark') + '</button>' +
-      '<button type="button" data-a="feature">' + (w.featured ? 'Unfeature' : 'Feature') + '</button><button type="button" data-a="dup">Duplicate</button>' +
+      '<button type="button" data-a="dup">Duplicate</button>' +
       '<button type="button" data-a="archive">' + (w.archived ? 'Unarchive' : 'Archive') + '</button><button type="button" data-a="delete">Delete</button></div></li>').join('')
       : '<li class="cx-empty">' + (S.works.length ? 'Nothing matches.' : 'No entries yet. Start with “New entry”, or bring in your first work from Backup.') + '</li>';
     S.visible = list;
@@ -168,7 +168,6 @@ function worksView() {
           if (S.favorites.has(w.id)) must(await sb.from('favorites').delete().eq('artwork_id', w.id));
           else must(await sb.from('favorites').insert({ artwork_id: w.id }));
           break;
-        case 'feature': await setFeatured(w.featured ? null : w.id); break;
         case 'dup': await duplicate(w); break;
         case 'archive': must(await sb.from('artworks').update({ archived: !w.archived }).eq('id', w.id)); break;
         case 'delete':
@@ -184,11 +183,6 @@ function worksView() {
 }
 
 const previewUrl = (w) => '/art/collection/work/?id=' + w.id + '&preview=1';
-
-async function setFeatured(id) {
-  must(await sb.from('artworks').update({ featured: false }).eq('featured', true));
-  if (id) must(await sb.from('artworks').update({ featured: true }).eq('id', id));
-}
 
 // Swap an item with its neighbour in `list` and renumber positions 0..n.
 async function move(list, item, dir, table) {
@@ -312,7 +306,7 @@ async function editWork(w, restore) {
       '</fieldset>' +
       '<fieldset class="ad-fieldset"><legend>In brief</legend>' +
         field('observation', 'A short personal observation (under the title)', { wide: true, area: true }) +
-        field('excerpt', 'Excerpt shown when featured on the homepage', { wide: true, area: true }) +
+        field('excerpt', 'Short description for search engines and link previews', { wide: true, area: true }) +
       '</fieldset>' +
       '<fieldset class="ad-fieldset"><legend>The essay</legend>' +
         SECTIONS.map(([k, n, t, hint]) => '<div class="ad-sec ad-wide"><div class="ad-sec-title"><span>' + n + '.</span> ' + t + '</div><p class="ad-note">' + hint + '</p><div data-ed="' + k + '"' + (k === 'what_i_see' ? ' class="ed-tall"' : '') + '></div></div>').join('') +
@@ -337,7 +331,6 @@ async function editWork(w, restore) {
           '<p class="ad-note">Drafts are never visible to anyone but you, whatever their visibility.</p></div>' +
         '<div class="ad-wide"><p class="cx-label">Visibility</p>' + Object.entries(VIS).map(([k, [l, d]]) => '<label class="ad-check"><input type="radio" name="visibility" value="' + k + '"' + (a.visibility === k ? ' checked' : '') + '><strong>' + l + '</strong>&nbsp;· ' + d + '</label>').join('') + '</div>' +
         '<div class="ad-wide" id="ad-sharebox"></div>' +
-        '<label class="ad-check ad-wide"><input type="checkbox" name="featured"' + (a.featured ? ' checked' : '') + '>Feature on the homepage (replaces the current featured work)</label>' +
       '</fieldset>' +
       (isNew ? '' : '<fieldset class="ad-fieldset"><legend>VII. Returning to the Artwork</legend><p class="ad-note ad-wide">Each return is dated and kept; earlier ones are never overwritten. New reflections start private.</p><div class="ad-wide" id="ad-refl"></div></fieldset>') +
       '<div class="ad-sticky"><button class="ad-btn" type="submit">Save</button>' + (isNew ? '' : '<a class="ad-btn ghost" href="' + previewUrl(a) + '" target="_blank" rel="noopener">Preview</a>') +
@@ -376,7 +369,6 @@ async function editWork(w, restore) {
     FIELDS.forEach((k) => { if (f.elements[k]) row[k] = f.elements[k].type === 'checkbox' ? f.elements[k].checked : v(k).trim(); });
     row.status = f.querySelector('[name=status]:checked').value;
     row.visibility = f.querySelector('[name=visibility]:checked').value;
-    row.featured = f.elements.featured.checked;
     row.year_sort = row.year_sort === '' ? null : Number(row.year_sort);
     row.image_width = Number(row.image_width) || null;
     row.image_height = Number(row.image_height) || null;
@@ -470,7 +462,6 @@ async function editWork(w, restore) {
         !confirm('Make “' + row.title + '” unlisted?\n\nIt stays out of the collection and search engines, but anyone who has its private link can read it.')) return;
     status.textContent = quiet ? 'Saving draft…' : 'Saving…';
     try {
-      if (row.featured && !live.featured) must(await sb.from('artworks').update({ featured: false }).eq('featured', true));
       let saved;
       if (isNew) { row.position = S.works.length; saved = must(await sb.from('artworks').insert(row).select().single()); }
       else saved = must(await sb.from('artworks').update(row).eq('id', a.id).select().single());
@@ -678,12 +669,8 @@ function homeView() {
   let order = (S.home.sections || Object.keys(HOME_SECTIONS)).filter((k) => HOME_SECTIONS[k]);
   Object.keys(HOME_SECTIONS).forEach((k) => { if (!order.includes(k)) order.push(k); });
   const hidden = new Set(S.home.hidden || []);
-  const live = S.works.filter((w) => !w.archived);
   const main = shell('homepage', '<h2 class="ad-h2">Homepage</h2>' +
-    '<label class="cx-field" style="max-width:420px"><span>Featured artwork</span><select id="ad-feat"><option value="">The first work in curated order</option>' +
-      live.map((w) => '<option value="' + w.id + '"' + (w.featured ? ' selected' : '') + '>' + esc(w.title) + (w.visibility === 'public' && w.status === 'published' ? '' : ' (not public)') + '</option>').join('') + '</select></label>' +
-    '<p class="ad-note">Only a public, published work can be featured on the public homepage.</p>' +
-    '<p class="cx-label" style="margin-top:28px">Sections, in order</p><ul class="ad-list" id="ad-secs"></ul>' +
+    '<p class="cx-label">Sections, in order</p><ul class="ad-list" id="ad-secs"></ul>' +
     '<div class="ad-sticky"><button class="ad-btn" type="button" id="ad-home-save">Save homepage</button><span class="ad-status" role="status"></span></div>');
   const ul = main.querySelector('#ad-secs');
   const draw = () => {
@@ -701,7 +688,6 @@ function homeView() {
     const status = main.querySelector('.ad-status');
     try {
       must(await sb.from('settings').upsert({ key: 'homepage', value: { sections: order, hidden: [...hidden] } }));
-      await setFeatured(main.querySelector('#ad-feat').value || null);
       await refresh(); status.textContent = 'Saved.';
     } catch (err) { fail(err, status); }
   };

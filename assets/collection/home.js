@@ -1,11 +1,11 @@
-// The museum entrance: featured work, the searchable collection, and the quieter sections below it.
+// The museum entrance: the searchable collection and the quieter sections below it.
 import { loadPublic, esc, plate, byline, workUrl, roomUrl, exhibitionUrl, fmtDate, sanitize } from './data.js';
 import { card, orderWorks } from './render-work.js';
 import { door } from './door.js';
 import './ui.js';
 
 const host = document.getElementById('cx-home');
-const DEFAULT_SECTIONS = ['featured', 'collection', 'recent', 'rooms', 'exhibitions'];
+const DEFAULT_SECTIONS = ['collection', 'recent', 'rooms', 'exhibitions'];
 const surname = (s) => (s || '').trim().split(/\s+/).pop().toLowerCase();
 
 loadPublic().then(render).catch((e) => {
@@ -23,21 +23,9 @@ function render(data) {
     host.innerHTML = '<p class="cx-empty">The collection is quiet for now. The first works are still being hung.</p>';
     return;
   }
-  const builders = { featured, collection, recent, rooms, exhibitions };
+  const builders = { collection, recent, rooms, exhibitions };
   host.innerHTML = order.map((s) => (builders[s] ? builders[s](works, data) : '')).join('');
   wireCollection(works);
-}
-
-function featured(works) {
-  const a = works.find((w) => w.featured) || works[0];
-  return '<section class="cx-featured" aria-labelledby="cx-feat-h">' +
-    '<a class="cx-featured-plate" href="' + workUrl(a) + '" tabindex="-1" aria-hidden="true">' + plate(a, { eager: true }) + '</a>' +
-    '<div class="cx-featured-text">' +
-      '<h2 class="cx-featured-title" id="cx-feat-h"><a href="' + workUrl(a) + '">' + esc(a.title) + '</a></h2>' +
-      '<p class="cx-work-by">' + byline(a) + '</p>' +
-      (a.excerpt ? '<p class="cx-featured-excerpt">' + esc(a.excerpt) + '</p>' : '') +
-      '<a class="cx-enter" href="' + workUrl(a) + '">Enter the Story</a>' +
-    '</div></section>';
 }
 
 function options(works, key, label) {
