@@ -190,10 +190,10 @@ const GOALS = [
     ['Vatican City', 'The Sistine Chapel'],
   ] },
   { text: 'Create <strong>response art or writing on the spot</strong>, sitting in front of a piece', right: true },
-  { text: 'Visit Barcelona for Gaudí’s <strong>Sagrada Família</strong>', right: true },
   { text: 'Explore more <strong>Korean traditional artwork</strong>', right: true },
   { text: 'Understand why people love <strong>Rothko</strong>', right: true },
   { text: 'Visit', right: true, places: [
+    ['Barcelona', 'Gaudí’s Sagrada Família'],
     ['Hudson Valley', 'Olana, Frederic Church’s house; the Thomas Cole National Historic Site'],
     ['Washington, D.C.', 'The Phillips Collection’s Rothko Room; Smithsonian American Art Museum'],
     ['Houston', 'The Rothko Chapel'],
