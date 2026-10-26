@@ -306,6 +306,26 @@ body.cx { background: var(--cx-bg); color: var(--cx-ink); transition: background
 .cx-choice-door .cx-room-name { color: var(--cx-wine); }
 .cx-fav-label { color: var(--cx-gold); }
 
+/* View: by year created — a simple timeline */
+.cx-years { position: relative; margin: 0; padding: 0 0 0 34px; list-style: none; }
+.cx-years::before { content: ""; position: absolute; left: 8px; top: 8px; bottom: 8px; width: 2px; background: var(--cx-line); }
+.cx-year { position: relative; display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 20px; align-items: start; padding: 0 0 40px; }
+.cx-year-stop { position: relative; padding-top: 2px; }
+.cx-year-stop::before { content: ""; position: absolute; left: -32px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--cx-bg); border: 2px solid var(--cx-wine); }
+.cx-year-label { font-family: var(--cx-serif); font-size: 1.6rem; line-height: 1; color: var(--cx-wine); }
+.cx-year .cx-rows { --row: 190px; justify-content: flex-start; flex-direction: column; }
+.cx-year .cx-row-item { flex: none; flex-direction: row; align-items: center; gap: 24px; width: auto; max-width: 100%; }
+.cx-year .cx-row-item .cx-plate { flex: none; width: calc(var(--r) * var(--row)); max-width: 60%; }
+.cx-year .cx-row-item .cx-row-cap { position: static; padding: 0; background: none; color: var(--cx-ink); opacity: 1; transform: none; }
+.cx-year .cx-row-item .cx-card-by { color: var(--cx-muted); }
+.cx-year .cx-row-cap .cx-card-title { font-size: 1.3rem; -webkit-line-clamp: 3; }
+
+/* View: by artist — sections side by side */
+.cx-artists { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 48px 56px; }
+.cx-artist { flex: 0 1 auto; max-width: 100%; }
+.cx-artist-name { margin: 0 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--cx-line); font-family: var(--cx-serif); font-weight: 500; font-size: 1.3rem; }
+.cx-artist .cx-rows { --row: 200px; justify-content: flex-start; }
+
 /* Collection: grouped by visit, in even rows (--r = width / height of each image) */
 .cx-visit + .cx-visit { margin-top: 56px; }
 .cx-visit-head { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 4px 14px; margin: 0 0 20px; padding-bottom: 10px; border-bottom: 1px solid var(--cx-line); font-family: var(--cx-serif); font-weight: 400; font-size: 1.35rem; }
@@ -564,6 +584,10 @@ a.cx-door-link:hover .cx-room-name { color: var(--cx-wine); }
   .cx-work-plate { padding: 12px; }
   .cx-masonry { columns: 2 150px; column-gap: 18px; }
   .cx-rows { --row: 130px; gap: 24px 14px; }
+  .cx-year { grid-template-columns: 1fr; gap: 10px; }
+  .cx-year .cx-rows, .cx-artist .cx-rows { --row: 120px; }
+  .cx-year .cx-row-item { gap: 14px; }
+  .cx-year .cx-row-cap .cx-card-title { font-size: 1.05rem; }
   .cx-masonry > .cx-card { margin-bottom: 28px; }
   .cx-related { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
   .cx-work-foot { gap: 14px; }

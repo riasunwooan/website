@@ -40,10 +40,9 @@ function collection(works) {
     '<form class="cx-controls" role="search" onsubmit="return false">' +
       '<label class="cx-field cx-search"><span>Search</span><input type="search" data-f="q" placeholder="Title or artist" autocomplete="off"></label>' +
       options(works, 'themes', 'Theme') + options(works, 'movement', 'Movement') + options(works, 'period', 'Period') +
-      '<label class="cx-field"><span>Sort</span><select data-f="sort">' +
-        '<option value="curated">Curated order</option><option value="added">Recently added</option>' +
-        '<option value="artist">Artist</option><option value="year">Year created</option></select></label>' +
-      '<label class="cx-field"><span>View</span><select data-f="view"><option value="visit">By visit</option><option value="all">All works</option></select></label>' +
+      '<label class="cx-field"><span>View</span><select data-f="view">' +
+        '<option value="visit">By visit</option><option value="year">By year created</option><option value="artist">By artist</option>' +
+        '<option value="timeline">By Ria’s Timeline</option><option value="all">All works (A–Z)</option></select></label>' +
     '</form>' +
     '<div class="cx-gallery-view"></div>' +
   '</section>';
@@ -57,28 +56,28 @@ function wireCollection(works, reflections) {
   const params = new URLSearchParams(location.search);
   if (params.get('q')) f('q').value = params.get('q');
   if (params.get('theme')) f('themes').value = params.get('theme');
-  if (params.get('sort')) f('sort').value = params.get('sort');
-  if (params.get('view')) f('view').value = params.get('view');
+  if (['visit', 'year', 'artist', 'all'].includes(params.get('view'))) f('view').value = params.get('view');
 
   function apply() {
     const q = f('q').value.trim().toLowerCase();
-    const theme = f('themes').value, mv = f('movement').value, pd = f('period').value, sort = f('sort').value;
+    const theme = f('themes').value, mv = f('movement').value, pd = f('period').value, view = f('view').value;
+    // Ria's Timeline is its own page.
+    if (view === 'timeline') { location.href = BASE + 'timeline/'; return; }
     let list = works.filter((w) =>
       (!q || (w.title + ' ' + w.artist).toLowerCase().includes(q)) &&
       (!theme || (w.themes || []).includes(theme)) && (!mv || w.movement === mv) && (!pd || w.period === pd));
-    if (sort === 'added') list = list.slice().sort((a, b) => String(b.created_at).localeCompare(String(a.created_at)));
-    if (sort === 'artist') list = list.slice().sort((a, b) => surname(a.artist).localeCompare(surname(b.artist)) || a.title.localeCompare(b.title));
-    if (sort === 'year') list = list.slice().sort((a, b) => (a.year_sort ?? 1e9) - (b.year_sort ?? 1e9));
     grid.innerHTML = !list.length ? '<p class="cx-empty">Nothing in the collection matches that yet.</p>' :
-      f('view').value === 'all' ? rows(list) : visits(list).map((v) =>
+      view === 'all' ? rows(list.slice().sort((a, b) => titleKey(a).localeCompare(titleKey(b)))) :
+      view === 'year' ? byYear(list) :
+      view === 'artist' ? byArtist(list) :
+      visits(list).map((v) =>
         '<section class="cx-visit"><h3 class="cx-visit-head"><span>' + esc(v.place || 'Elsewhere') + '</span>' +
         (v.date ? '<time datetime="' + esc(v.date) + '">' + esc(visitDates(v, reflections)) + '</time>' : '<time>Date not recorded</time>') + '</h3>' + rows(v.works) + '</section>').join('');
     count.textContent = list.length + (list.length === 1 ? ' work' : ' works');
     const p = new URLSearchParams();
     if (q) p.set('q', f('q').value.trim());
     if (theme) p.set('theme', theme);
-    if (sort !== 'curated') p.set('sort', sort);
-    if (f('view').value !== 'visit') p.set('view', f('view').value);
+    if (view !== 'visit') p.set('view', view);
     history.replaceState(null, '', location.pathname + (p.toString() ? '?' + p : '') + location.hash);
   }
   form.addEventListener('input', apply);
@@ -118,6 +117,28 @@ function visitDates(v, reflections) {
   const years = new Set(days.map((d) => d.slice(0, 4)));
   if (years.size > 1) return days.map((d) => fmtDate(d)).join(' & ');
   return days.map((d) => fmtDate(d, { month: 'long', day: 'numeric' })).join(' & ') + ', ' + days[0].slice(0, 4);
+}
+
+// A to Z by title, ignoring opening quotation marks and articles.
+const titleKey = (w) => w.title.replace(/^[“"'‘]+/, '').replace(/^(the|a|an)\s+/i, '').toLowerCase();
+
+// A simple timeline by year created: one stop per year, oldest first.
+function byYear(list) {
+  const years = {};
+  list.forEach((w) => { const y = w.year_sort ?? ''; (years[y] = years[y] || []).push(w); });
+  const keys = Object.keys(years).sort((a, b) => (a === '' ? 1e9 : +a) - (b === '' ? 1e9 : +b));
+  return '<ol class="cx-years">' + keys.map((y) => {
+    const ws = years[y], label = y === '' ? 'Undated' : (ws.length === 1 && ws[0].year_text ? ws[0].year_text : y);
+    return '<li class="cx-year"><span class="cx-year-stop"><span class="cx-year-label">' + esc(label) + '</span></span>' + rows(ws) + '</li>';
+  }).join('') + '</ol>';
+}
+
+// One section per artist, laid side by side, ordered by surname.
+function byArtist(list) {
+  const by = {};
+  list.forEach((w) => (by[w.artist || 'Unknown artist'] = by[w.artist || 'Unknown artist'] || []).push(w));
+  return '<div class="cx-artists">' + Object.keys(by).sort((a, b) => surname(a).localeCompare(surname(b))).map((name) =>
+    '<section class="cx-artist"><h3 class="cx-artist-name">' + esc(name) + '</h3>' + rows(by[name]) + '</section>').join('') + '</div>';
 }
 
 // Even rows: every work in a row shares one height and keeps its own proportions.
