@@ -92,14 +92,17 @@
         "Society portrait"
       ],
       "related": [],
-      "rooms": [],
+      "rooms": [
+        "room-see"
+      ],
       "discovered_on": "2026-09-17",
       "featured": true,
       "is_sample": false,
       "position": 0,
       "last_contemplated_at": null,
       "created_at": "2026-09-17T12:00:00Z",
-      "updated_at": "2026-09-17T12:00:00Z"
+      "updated_at": "2026-09-17T12:00:00Z",
+      "is_favorite": false
     },
     {
       "year_sort": 1843,
@@ -109,15 +112,20 @@
       "period": "Romanticism",
       "current_collection": "Wadsworth Atheneum Museum of Art, Hartford",
       "credit": "",
-      "observation": "",
+      "observation": "The volcano is still breathing. The theatre stopped long ago.",
       "excerpt": "This painting, caught in between destruction and revolution, was an invitation to imagine.",
       "first_encounter": "<p>I was captivated by this during our first visit to Wadsworth, but ditched it for a more… “dynamic” painting, because I instinctively knew I was going to have thoughts wandering off this painting. But this was, without doubt, the painting that was able to hold me in a trance. Growing up as an only child, building worlds were a daily hobby—whether through books, movies, series, or art, I was constantly living out my imagination. This painting, caught in between destruction and revolution, was an invitation to imagine.</p><p>I had so many questions: What caused those pillars to fall? What grandness stood before? Who is ruling this ruin now? That thick pillar looks great to hop on top of and perhaps, a leader of a revolution, to speak in a charismatic, booming voice. What is the tiny city just beyond? Are they related to this destroyed structure? Does the volcano have a story?</p><p>Just the sheer volume of questions and stories that rush to me is what keeps me glued here.</p>",
       "behind_canvas": "<p>Thomas Cole (1801–1848) was born in Lancashire, England, and emigrated with his family to the United States in 1818. He is regarded as the founder of the Hudson River School, the first American movement of landscape painting.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p><p>Cole travelled in Europe several times. On his last trip, in 1842, he visited Sicily and sketched Mount Etna from Taormina, on the island’s eastern coast. Back in his studio he worked those sketches up into paintings like this one, dated 1843.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p><p>The ruins in the foreground are the ancient theatre of Taormina, built by the Greeks and later rebuilt by the Romans. Beyond them rises Etna, the highest active volcano in Europe, with the coastline of the Ionian Sea curving away to the left.<sup class=\"cx-ref\"><a href=\"#ref-1\">1</a></sup></p><p>Ruined civilizations were a lifelong subject for Cole. His five-painting series <em>The Course of Empire</em> (1833–36) follows a single imagined landscape from wilderness through a great empire to its destruction and abandoned ruins.<sup class=\"cx-ref\"><a href=\"#ref-3\">3</a></sup></p>",
       "behind_interpretation": "<p>Writers on Cole often read his Italian ruins alongside <em>The Course of Empire</em>: crumbling stone that speaks of how short-lived human power is, set against a mountain that was there long before it and will outlast it.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup> The smoke rising from Etna’s summit can be read the same way: the land itself is still alive and still changing, while the empire that built the theatre is gone.</p>",
       "looking_closer": "",
-      "what_i_see": "<p>I saw this as both destruction and revolution: a land that remembers history, wrongfully taken away, and maybe, this time, rightfully fixed. After all, history is a story. Humans are volatile and unreliable. But land is a different story. Land remembers.</p>",
-      "conversations": "<p>Makes me think of <em>Fourth Wing</em>. Stones don’t burn in Aretia, but what if it was destroyed?</p>",
+      "what_i_see": "<p>I saw this as both destruction and revolution: a land that remembers history, wrongfully taken away, and maybe, this time, rightfully fixed. After all, history is a story. Humans are volatile and unreliable. But land is a different story. Land remembers.</p><p><em>This painting also became a story of my own: <a href=\"/writing/#the-mountain-never-forgets\">The Mountain Never Forgets</a>, written for an “art as a trigger” assignment in CL Writing About Art.</em></p>",
+      "conversations": "",
       "marginalia": [
+        {
+          "kind": "observation",
+          "body": "Makes me think of Fourth Wing. Stones don’t burn in Aretia, but what if it was destroyed?",
+          "src": ""
+        },
         {
           "kind": "question",
           "body": "Why am I so attracted to this painting?",
@@ -154,7 +162,9 @@
       ],
       "related": [],
       "rooms": [
-        "room-wonder"
+        "room-dream",
+        "room-wonder",
+        "room-feel"
       ],
       "discovered_on": "2026-09-17",
       "featured": false,
@@ -172,7 +182,8 @@
       "image_width": 2000,
       "image_height": 1297,
       "image_alt": "The ruins of an ancient theatre in the foreground, with a smoking, snow-capped Mount Etna rising over a wide valley and coastline at dawn.",
-      "position": 1
+      "position": 1,
+      "is_favorite": true
     },
     {
       "year_sort": 1888,
@@ -215,7 +226,9 @@
         "Provence"
       ],
       "related": [],
-      "rooms": [],
+      "rooms": [
+        "room-dream"
+      ],
       "discovered_on": "2026-10-25",
       "featured": false,
       "is_sample": false,
@@ -232,7 +245,8 @@
       "image_height": 834,
       "image_alt": "Mont Sainte-Victoire in violet and pink beyond rows of blue-green trees and a field of golden grass, in quick, feathery brushstrokes.",
       "position": 2,
-      "year_text": "c. 1888–89"
+      "year_text": "c. 1888–89",
+      "is_favorite": false
     },
     {
       "year_sort": 1851,
@@ -249,8 +263,13 @@
       "behind_interpretation": "",
       "looking_closer": "<p>The light comes from one low point near the center of the horizon, behind the hills. Right at the waterline the sky is a hot peach that cools upward into pale green and then a deep blue-gray at the top of the canvas. The clouds are lit from below, pink only on their undersides, which means the sun is still under the horizon, not above it.</p><p>The water is almost completely still. It holds a soft copy of the sky and the ship, with only a few faint ripples where the small rowboat on the left breaks the surface. There are no visible brushstrokes anywhere; the paint is smoothed until the surface feels like glass.</p><p>Everything solid is dark. The ship, the rocks and the headland are near-silhouettes against the glow, and the lighthouse is the only pale, upright form on the right. The ship’s sails hang half-loose, not yet full of wind, so it sits in the moment just before moving.</p><p>The sky takes up more than half the painting, and the ship and the lighthouse face each other across an open stretch of water in the middle. That gap is where the light is brightest.</p>",
       "what_i_see": "",
-      "conversations": "<p>Reminds me of <em>Spider-Man: Brand New Day</em>, because it’s like a new day, a new beginning, despite all the sorrows of the past.</p>",
+      "conversations": "",
       "marginalia": [
+        {
+          "kind": "observation",
+          "body": "Reminds me of Spider-Man: Brand New Day. It’s like a new day, a new beginning, despite all the sorrows of the past.",
+          "src": ""
+        },
         {
           "kind": "question",
           "body": "Do some people see this as sunset? Am I seeing it as sunrise because of my psychological state?",
@@ -281,7 +300,9 @@
         "Lighthouse"
       ],
       "related": [],
-      "rooms": [],
+      "rooms": [
+        "room-feel"
+      ],
       "discovered_on": "2026-10-25",
       "featured": false,
       "is_sample": false,
@@ -298,7 +319,8 @@
       "image_width": 900,
       "image_height": 599,
       "image_alt": "A sailing ship at rest on still water at dusk, a man rowing a small boat beside it, and a white lighthouse on a dark rocky point under a glowing sky.",
-      "position": 3
+      "position": 3,
+      "is_favorite": false
     },
     {
       "year_sort": 2006,
@@ -308,7 +330,7 @@
       "period": "",
       "current_collection": "Yale University Art Gallery",
       "credit": "",
-      "observation": "",
+      "observation": "From across the room it’s cloth. Up close, it’s thousands of bottle caps holding hands.",
       "excerpt": "It’s HUGE. And yet so intricate. It feels like there are human bodies wrapped inside.",
       "first_encounter": "<p>Ok, it’s HUGE. And yet so intricate. It feels like there are human bodies wrapped inside.</p>",
       "behind_canvas": "<p>El Anatsui (born 1944) is a Ghanaian sculptor who has lived and worked in Nsukka, Nigeria, for most of his career, teaching for decades at the University of Nigeria.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p><p>Since the late 1990s he has been best known for monumental wall hangings like this one, made from thousands of flattened aluminum bottle caps and liquor-bottle wrappers, joined together with copper wire. Because the metal “cloth” is flexible, it is folded and shaped differently each time it is hung.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p><p>In 2015 he received the Golden Lion for Lifetime Achievement at the Venice Biennale.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p>",
@@ -316,7 +338,28 @@
       "looking_closer": "<p>Up close the surface breaks apart into thousands of small units: gold discs packed tightly together across the middle, and around the edges, rows of narrow rectangular strips in red, yellow, black and cream, lined up like stitches or woven bands. The border reads almost like a frame, or like the edge of a textile, while the gold field inside it swells and spills over.</p><p>It isn’t flat. The whole thing has been gathered, pushed and folded so that it bulges out from the wall in ridges and hollows. Light catches on the high points and drops into shadow in the folds, so the gold is never one color: it shifts from bright yellow to bronze to almost brown depending on where it bends.</p><p>The bottom edge doesn’t end in a straight line. It frays into loose, uneven tabs, the way fabric does when it isn’t hemmed. Standing in front of it with someone beside you, the scale becomes physical: the people are smaller than a single fold.</p>",
       "what_i_see": "",
       "conversations": "",
-      "marginalia": [],
+      "marginalia": [
+        {
+          "kind": "question",
+          "body": "How many bottle caps does it take to make something this big? And who drank from all those bottles?",
+          "src": ""
+        },
+        {
+          "kind": "question",
+          "body": "It folds differently every time it’s hung. So which version is the real one?",
+          "src": ""
+        },
+        {
+          "kind": "question",
+          "body": "If it’s a cloth, what is it wrapping?",
+          "src": ""
+        },
+        {
+          "kind": "question",
+          "body": "Who is the society woman, and could she even lift this much gold?",
+          "src": ""
+        }
+      ],
       "sources": [
         {
           "text": "Yale University Art Gallery, New Haven. Collection record for El Anatsui, Society Woman’s Cloth (Gold).",
@@ -337,7 +380,9 @@
         "Textile"
       ],
       "related": [],
-      "rooms": [],
+      "rooms": [
+        "room-wonder"
+      ],
       "discovered_on": "2026-10-25",
       "featured": false,
       "is_sample": false,
@@ -354,7 +399,8 @@
       "image_height": 2000,
       "image_alt": "Two visitors stand before a vast, rippling wall hanging of gold, red and black metal pieces in a gallery.",
       "position": 4,
-      "year_text": "2006"
+      "year_text": "2006",
+      "is_favorite": false
     },
     {
       "year_sort": 1863,
@@ -372,7 +418,13 @@
       "looking_closer": "",
       "what_i_see": "<blockquote><p>can the ocean cry?<br>its tears glitter in sorrow, churning,<br>mourning what has sunk deep<br>sunk &amp; drunk &amp; chewed thoroughly<br>its tears shine and splatter, spitting<br>up what it could not digest<br>its hands reach and grab and yet<br>even the smallest are simply slipping, too<br>easy to escape<br>&amp; drowning, smothered by its palms<br>it’s wailing at its destruction, gurgling<br>in fear—or perhaps woe, who knows—of what<br>it sees<br>can the ocean cry?</p></blockquote>",
       "conversations": "",
-      "marginalia": [],
+      "marginalia": [
+        {
+          "kind": "observation",
+          "body": "Two tiny gulls fly straight into the spray, the only things in the painting that aren’t afraid of it.",
+          "src": ""
+        }
+      ],
       "sources": [
         {
           "text": "Wadsworth Atheneum Museum of Art, Hartford. Collection record for Frederic Edwin Church, Coast Scene, Mount Desert, 1863.",
@@ -395,7 +447,10 @@
         "etna",
         "camden"
       ],
-      "rooms": [],
+      "rooms": [
+        "room-feel",
+        "room-wonder"
+      ],
       "discovered_on": "2026-09-17",
       "featured": false,
       "is_sample": false,
@@ -412,7 +467,8 @@
       "image_width": 1500,
       "image_height": 1120,
       "image_alt": "Waves crash white against dark rocks on a rugged coast, under a hazy sun burning through pink and violet clouds.",
-      "position": 5
+      "position": 5,
+      "is_favorite": false
     },
     {
       "year_sort": 1913,
@@ -430,7 +486,13 @@
       "looking_closer": "<p>I see the details of the amusement park?</p><p>Nothing is whole. The canvas is shattered into hundreds of small, hard-edged pieces, triangles, crescents, zigzags, wedges, so that you never see a ride or a person, only the feeling of them going past too fast. Long beams of white cut diagonally across from the upper left like searchlights, and everything else seems to spin outward from a tall, glowing tower in the center.</p><p>The colors are almost all at full strength: emerald, cobalt, scarlet, orange, white, laid side by side with very little shadow between them. Where a shadow should be, there is just another color. Even the darkest areas at the bottom are a deep red and green rather than black.</p><p>Look long enough and fragments of things surface and then disappear again: strings of tiny lights, curling shapes like ribbons or roller-coaster track, and pieces of painted letters, as if from signs glimpsed in the crowd.</p>",
       "what_i_see": "<h2>I can still hear her.</h2><p>“That one!” The bright voice is filled with such determination. Turning her back from the saccharine clouds of pink and sky-blue cotton candy, her eyes are glued to the glaring red sign that has five chilli peppers drawn on it, a clear warning to back off. She’s eyed it for a while, and pulls her dad’s meaty hands as she sprints for the flashy food truck.</p><p>Wiggling impatiently, she does a little happy dance as her dad pays, and doesn’t forget to chirp earnestly on tiptoes, “Extra hot sauce, please!”</p><p>The cashier raises his eyebrows, bending over to see the girl clearly, and points to the drawing.</p><p>She merely scoffs at the sign, though, and opens her jaw wide, biting into the hot sausage with extra hot sauce that her dad now holds. Her tiny fangs are accentuated by her missing front teeth, and she resembles a baby lion who thinks she is the biggest in her den. His nose crinkles as his lips waver in response to his daughter’s surprisingly gigantic bite, chuckling as he skillfully cups her chin, wiping off the sauce dribbling off her pink lips before it can stain her shirt.</p><p>“Good bite,” he says, smacking his own lips satisfactorily. Apple doesn’t fall far from the tree, does it? Like father, like daughter, the mother thinks, handing her husband another paper napkin. She’s shaking her head in feigned exasperation, but her folded, smiling eyes tell the truth, taking a smaller, slightly more civilized bite as her husband lifts the huge sausage to her mouth. After all that, he takes a bite himself. It is ingrained in his instinct to hand anything good to his daughter and wife, his favorite spicy snack not being an exception.</p><p>He barely has any time to gobble down the last bit before jogging after his daughter, who has pranced off into the playground, already playing captain, leading the other giggly kids around the pirate ship structure.</p><p>It’s been a sweetly exhausting day, …</p><p><em>To be continued.</em></p>",
       "conversations": "",
-      "marginalia": [],
+      "marginalia": [
+        {
+          "kind": "question",
+          "body": "Everything spins except the glowing tower in the middle. Is that the one thing memory holds still?",
+          "src": ""
+        }
+      ],
       "sources": [
         {
           "text": "Yale University Art Gallery, New Haven. Collection record for Joseph Stella, Battle of Lights, Coney Island, Mardi Gras, 1913–14.",
@@ -451,7 +513,11 @@
         "New York"
       ],
       "related": [],
-      "rooms": [],
+      "rooms": [
+        "room-dream",
+        "room-remember",
+        "room-feel"
+      ],
       "discovered_on": "2026-10-25",
       "featured": false,
       "is_sample": false,
@@ -468,7 +534,8 @@
       "image_width": 583,
       "image_height": 526,
       "image_alt": "An explosion of fractured color: shards, arcs and starbursts of red, green, blue and white swirl around a glowing central tower.",
-      "position": 6
+      "position": 6,
+      "is_favorite": true
     },
     {
       "year_sort": 1946,
@@ -511,7 +578,10 @@
         "Still life"
       ],
       "related": [],
-      "rooms": [],
+      "rooms": [
+        "room-wonder",
+        "room-feel"
+      ],
       "discovered_on": "2026-10-25",
       "featured": false,
       "is_sample": false,
@@ -528,7 +598,8 @@
       "image_width": 375,
       "image_height": 461,
       "image_alt": "A wooden metronome, its pendulum stopped at an angle, seems to hover above a dark ledge with small rocks, against deep brown-black darkness.",
-      "position": 7
+      "position": 7,
+      "is_favorite": false
     },
     {
       "year_sort": 1982,
@@ -538,18 +609,43 @@
       "period": "1980s",
       "current_collection": "Yale University Art Gallery",
       "credit": "",
-      "observation": "Brand new day.",
+      "observation": "A body taken apart and labeled, like a textbook that started shouting.",
       "excerpt": "Finally, a real Basquiat. Human anatomy, turned into art.",
       "first_encounter": "<p>What is this? Finally, a real Basquiat, after the Wadsworth fooled me with something in a similar style. Ragebait, honestly.</p>",
       "behind_canvas": "<p>Jean-Michel Basquiat (1960–1988) was born in Brooklyn, New York, to a Haitian father and a Puerto Rican mother. In the late 1970s he first became known for the cryptic graffiti he wrote around Lower Manhattan under the tag SAMO, before becoming one of the most celebrated painters of the 1980s. He died in 1988, at 27.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p><p>When he was seven he was hit by a car and spent weeks in the hospital. His mother gave him a copy of <em>Gray’s Anatomy</em>, the classic medical textbook, and its diagrams of bones, organs and muscles became a lasting source for his art.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p><p>Words run through nearly all of his paintings. He often crossed words out, and said that doing so made people want to read them more.<sup class=\"cx-ref\"><a href=\"#ref-2\">2</a></sup></p>",
       "behind_interpretation": "<p>The anatomical labels can be read as a way of taking the body apart and naming it piece by piece, a cold, clinical language set against raw, hand-drawn marks. The result is half science diagram, half wall scrawl, which may be exactly why it feels both biological and ancient at once.</p>",
       "looking_closer": "<p>Human anatomy, reminds me of biology. It’s really interesting how he depicted the body parts.</p><p>It is two panels hung side by side that behave like opposites. The left one is cream, crowded with small handwriting, numbers and rows of outlined feet or shoe soles, like a page torn from a notebook or a medical chart. The right one is mostly black, like a blackboard, and the marks on it are bigger, louder and hungrier: a head full of teeth, the word JAW, and a teal block where a dog-like face shouts WOOFS!</p><p>Words act as labels, the way they would in a textbook diagram, except they don’t always land where they should. LARINYX, a misspelled larynx, is written across a black, crowned head. THE ANKLE appears twice inside a red box, as if repeating it might make it true. Some words are crossed out but still perfectly readable.</p><p>The lines are fast and unpolished, drawn in oil stick and paint with no attempt to hide corrections. Red, blue and white arrows point in different directions, so your eye keeps jumping from label to label without ever finding the whole body.</p>",
       "what_i_see": "",
-      "conversations": "<p>Something about it feels Egyptian. Or older still, like cave art.</p>",
+      "conversations": "",
       "marginalia": [
         {
           "kind": "observation",
+          "body": "Something about it feels Egyptian. Or older still, like cave art.",
+          "src": ""
+        },
+        {
+          "kind": "observation",
           "body": "Turning the crude into art.",
+          "src": ""
+        },
+        {
+          "kind": "question",
+          "body": "Why the ankle, of all the body parts?",
+          "src": ""
+        },
+        {
+          "kind": "question",
+          "body": "Is LARINYX misspelled on purpose?",
+          "src": ""
+        },
+        {
+          "kind": "question",
+          "body": "Who is barking WOOFS!, and at whom?",
+          "src": ""
+        },
+        {
+          "kind": "question",
+          "body": "If he crossed words out so we’d read them more, what is he hoping we notice?",
           "src": ""
         }
       ],
@@ -572,7 +668,10 @@
         "Text"
       ],
       "related": [],
-      "rooms": [],
+      "rooms": [
+        "room-see",
+        "room-wonder"
+      ],
       "discovered_on": "2026-10-25",
       "featured": false,
       "is_sample": false,
@@ -589,7 +688,8 @@
       "image_width": 470,
       "image_height": 237,
       "image_alt": "Two hinged canvases side by side, cream on the left and black on the right, covered in scrawled words, arrows, crowned heads and anatomical labels like LARINYX and THE ANKLE.",
-      "position": 8
+      "position": 8,
+      "is_favorite": false
     }
   ],
   "reflections": [],
