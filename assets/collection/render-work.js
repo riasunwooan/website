@@ -41,16 +41,9 @@ export function renderWork(host, a, ctx = {}) {
   sec(3, 'what-i-see', 'What I See', !isEmptyHTML(a.what_i_see) && rich(a.what_i_see, 'cx-essay'));
 
   const related = (a.related || []).map((id) => works.find((w) => w.id === id)).filter(Boolean);
-  const kin = works.filter((w) => w.id !== a.id && !related.includes(w) && (w.themes || []).some((t) => (a.themes || []).includes(t)));
   let conv = '';
   if (!isEmptyHTML(a.conversations)) conv += rich(a.conversations);
   if (linkWorks && related.length) conv += '<div class="cx-related">' + related.map((w) => card(w)).join('') + '</div>';
-  if (linkWorks && kin.length) {
-    conv += '<p class="cx-label cx-kin-label">Sharing a thread</p><div class="cx-related">' + kin.slice(0, 6).map((w) => {
-      const shared = (w.themes || []).filter((t) => (a.themes || []).includes(t));
-      return card(w, { note: shared.join(' · ') });
-    }).join('') + '</div>';
-  }
   sec(4, 'conversations', 'Conversations Across Canvases', conv);
 
   const notes = (a.marginalia || []).filter((m) => m && (m.body || m.src));
@@ -96,7 +89,7 @@ export function renderWork(host, a, ctx = {}) {
             '<li id="ref-' + (i + 1) + '">' + esc(s.text) + (s.url ? ' <a href="' + esc(s.url) + '" rel="noopener" target="_blank">Link</a>' : '') + '</li>').join('') + '</ol></section>' : '') +
         '</div>' +
       '</div>' +
-      (linkWorks ? footer(a, works, n, related, kin) : '') +
+      (linkWorks ? footer(a, works, n, related) : '') +
     '</article>';
 
   // Images inside the writing open enlarged on click.
@@ -104,9 +97,9 @@ export function renderWork(host, a, ctx = {}) {
   setReading(readingPreferred());
 }
 
-function footer(a, works, n, related, kin) {
+function footer(a, works, n, related) {
   const next = works.length > 1 ? works[(n + 1) % works.length] : null;
-  const more = works.filter((w) => w.id !== a.id && !related.includes(w) && !kin.includes(w)).slice(0, 4);
+  const more = works.filter((w) => w.id !== a.id && !related.includes(w)).slice(0, 4);
   return '<footer class="cx-work-foot">' +
     (more.length ? '<div class="cx-foot-more"><p class="cx-label">Elsewhere in the collection</p><div class="cx-related">' + more.map((w) => card(w)).join('') + '</div></div>' : '') +
     (next && next.id !== a.id ? '<a class="cx-next" href="' + workUrl(next) + '"><span class="cx-label">Next entry</span><span class="cx-next-title">' + esc(next.title) + '</span><span class="cx-card-by">' + byline(next) + '</span></a>' : '') +

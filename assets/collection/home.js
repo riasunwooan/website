@@ -1,10 +1,11 @@
 // The museum entrance: featured work, the searchable collection, and the quieter sections below it.
 import { loadPublic, esc, plate, byline, workUrl, roomUrl, exhibitionUrl, fmtDate, sanitize } from './data.js';
 import { card, orderWorks } from './render-work.js';
+import { door } from './door.js';
 import './ui.js';
 
 const host = document.getElementById('cx-home');
-const DEFAULT_SECTIONS = ['featured', 'collection', 'recent', 'connections', 'rooms', 'exhibitions'];
+const DEFAULT_SECTIONS = ['featured', 'collection', 'recent', 'rooms', 'exhibitions'];
 const surname = (s) => (s || '').trim().split(/\s+/).pop().toLowerCase();
 
 loadPublic().then(render).catch((e) => {
@@ -22,7 +23,7 @@ function render(data) {
     host.innerHTML = '<p class="cx-empty">The collection is quiet for now. The first works are still being hung.</p>';
     return;
   }
-  const builders = { featured, collection, recent, connections, rooms, exhibitions };
+  const builders = { featured, collection, recent, rooms, exhibitions };
   host.innerHTML = order.map((s) => (builders[s] ? builders[s](works, data) : '')).join('');
   wireCollection(works);
 }
@@ -104,25 +105,18 @@ function recent(works, data) {
     list.map((w) => card(w, { note: 'Returned ' + fmtDate(last[w.id], { month: 'short', day: 'numeric', year: 'numeric' }) })).join('') + '</div></section>';
 }
 
-function connections(works) {
-  const by = {};
-  works.forEach((w) => (w.themes || []).forEach((t) => (by[t] = by[t] || []).push(w)));
-  const threads = Object.keys(by).filter((t) => by[t].length > 1).sort((a, b) => by[b].length - by[a].length).slice(0, 6);
-  if (!threads.length) return '';
-  return '<section class="cx-connections" aria-labelledby="cx-con-h"><div class="cx-sec-head"><h2 id="cx-con-h">Connections</h2>' +
-    '<p class="cx-sec-note">Threads that run between the works.</p></div><ul>' +
-    threads.map((t) => '<li><a class="cx-thread-name" href="?theme=' + encodeURIComponent(t) + '#collection">' + esc(t) + '</a><span class="cx-thread-works">' +
-      by[t].slice(0, 6).map((w) => '<a href="' + workUrl(w) + '" title="' + esc(w.title) + '">' + plate(w, { thumb: true }) + '</a>').join('') + '</span></li>').join('') +
-    '</ul></section>';
-}
-
 function rooms(works, data) {
-  const list = (data.rooms || []).map((r) => ({ r, ws: works.filter((w) => (w.rooms || []).includes(r.id)) })).filter((x) => x.ws.length);
+  const list = data.rooms || [];
   if (!list.length) return '';
-  return '<section class="cx-rooms" id="rooms" aria-labelledby="cx-rooms-h"><div class="cx-sec-head"><h2 id="cx-rooms-h">Rooms</h2></div><ul>' +
-    list.map(({ r, ws }) => '<li><a href="' + roomUrl(r) + '">' + plate(ws[0], { thumb: true }) +
-      '<span class="cx-room-name">' + esc(r.name) + '</span><span class="cx-card-by">' + ws.length + (ws.length === 1 ? ' work' : ' works') + '</span>' +
-      (r.description ? '<span class="cx-room-desc">' + esc(r.description) + '</span>' : '') + '</a></li>').join('') +
+  return '<section class="cx-rooms" id="rooms" aria-labelledby="cx-rooms-h"><div class="cx-sec-head"><h2 id="cx-rooms-h">Rooms</h2>' +
+    '<p class="cx-sec-note">Six doors, six ways a work can stay with me.</p></div><ul class="cx-doors">' +
+    list.map((r) => {
+      const ws = works.filter((w) => (w.rooms || []).includes(r.id));
+      const inner = door() + '<span class="cx-room-name">' + esc(r.name) + '</span>' +
+        (r.description ? '<span class="cx-room-desc">' + esc(r.description) + '</span>' : '') +
+        '<span class="cx-card-by">' + (ws.length ? ws.length + (ws.length === 1 ? ' work' : ' works') : 'Not yet open') + '</span>';
+      return '<li>' + (ws.length ? '<a class="cx-door-link" href="' + roomUrl(r) + '">' + inner + '</a>' : '<div class="cx-door-link is-closed">' + inner + '</div>') + '</li>';
+    }).join('') +
     '</ul></section>';
 }
 

@@ -18,7 +18,7 @@ const SECTIONS = [
   ['conversations', 'V', 'Conversations Across Canvases', 'Books, films, music, events and ideas this piece talks to. Related works are chosen below.'],
 ];
 const MARGIN_KINDS = { observation: 'Observation', detail: 'Favorite detail', sketch: 'Sketch', quotation: 'Quotation', question: 'Unanswered question', research: 'Research note', image: 'Image' };
-const HOME_SECTIONS = { featured: 'Featured artwork', collection: 'The Collection', recent: 'Recently Contemplated', connections: 'Connections', rooms: 'Rooms', exhibitions: 'Exhibitions' };
+const HOME_SECTIONS = { featured: 'Featured artwork', collection: 'The Collection', recent: 'Recently Contemplated', rooms: 'Rooms', exhibitions: 'Exhibitions' };
 const FIELDS = ['title', 'slug', 'artist', 'year_text', 'year_sort', 'medium', 'dimensions', 'movement', 'period', 'current_collection', 'credit',
   'image_url', 'image_thumb', 'image_width', 'image_height', 'image_alt', 'observation', 'excerpt', 'discovered_on', 'status', 'visibility', 'featured'];
 
@@ -716,7 +716,7 @@ function backupView() {
   const main = shell('backup', '<h2 class="ad-h2">Backup</h2>' +
     '<div class="ad-card"><p class="cx-label">Export</p><p class="ad-note">Downloads everything, private notes included, as one JSON file. Keep it somewhere private. Images stay in Supabase Storage; their addresses are in the file.</p><div><button class="ad-btn" type="button" id="ad-export">Export everything</button></div></div>' +
     '<div class="ad-card"><p class="cx-label">Restore</p><p class="ad-note">Brings back an export. Entries with the same id are overwritten; nothing else is removed.</p><label class="cx-field"><span>Export file</span><input type="file" accept="application/json,.json" id="ad-import"></label></div>' +
-    '<div class="ad-card"><p class="cx-label">Your first entries</p><p class="ad-note">Adds the works from the starter file (<em>On the Yacht “Namouna,” Venice</em> and the others already on the site) with their images and the room “On the Water”. Each arrives as a private draft: publish it as Public when it’s ready. Works already in your collection are skipped.</p><div><button class="ad-btn ghost" type="button" id="ad-seed">Add starter entries</button></div></div>' +
+    '<div class="ad-card"><p class="cx-label">Your first entries</p><p class="ad-note">Adds the works from the starter file (<em>On the Yacht “Namouna,” Venice</em> and the others already on the site) with their images, and the six rooms (I Wonder, I Dream, I Remember, I Feel, I Question, I See). Works arrive as private drafts and rooms as private: make each Public when it’s ready. Anything already in your collection is skipped.</p><div><button class="ad-btn ghost" type="button" id="ad-seed">Add starter entries</button></div></div>' +
     '<p class="ad-msg" role="status"></p>');
   const out = main.querySelector('.ad-msg');
   main.querySelector('#ad-export').onclick = async () => {
@@ -743,9 +743,10 @@ function backupView() {
     try {
       const seed = await (await fetch('/assets/collection/seed.json', { cache: 'no-cache' })).json();
       const ids = {};
+      let added = 0;
       for (const r of seed.rooms) {
         const have = S.rooms.find((x) => x.slug === r.slug);
-        ids[r.id] = have ? have.id : must(await sb.from('rooms').insert({ name: r.name, slug: r.slug, description: r.description, position: S.rooms.length }).select().single()).id;
+        ids[r.id] = have ? have.id : must(await sb.from('rooms').insert({ name: r.name, slug: r.slug, description: r.description, position: S.rooms.length + added++ }).select().single()).id;
       }
       let n = 0;
       for (const w of seed.artworks) {
