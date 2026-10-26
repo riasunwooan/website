@@ -423,6 +423,9 @@ a.cx-door-link:hover .cx-room-name { color: var(--cx-wine); }
 .cx-journal li { position: relative; padding-bottom: 32px; }
 .cx-journal li::before { content: ""; position: absolute; left: -31px; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: var(--cx-bg); box-shadow: 0 0 0 1px var(--cx-gold); }
 .cx-journal time { display: block; margin-bottom: 8px; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cx-gold); }
+.cx-journal figure { margin: 6px 0 16px; }
+.cx-journal figure img { display: block; width: 100%; max-width: 320px; height: auto; cursor: zoom-in; }
+.cx-journal figcaption { margin-top: 8px; font-family: var(--cx-sans); font-size: 0.72rem; color: var(--cx-muted); }
 .cx-private-tag { display: inline-block; margin: -4px 0 8px; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cx-wine); }
 
 .cx-unwritten { margin: 0 0 56px; font-family: var(--cx-serif); font-style: italic; font-size: 1.2rem; color: var(--cx-muted); }
