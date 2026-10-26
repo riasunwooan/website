@@ -313,7 +313,6 @@
   "settings": {
     "homepage": {
       "sections": [
-        "featured",
         "collection",
         "recent",
         "rooms",
