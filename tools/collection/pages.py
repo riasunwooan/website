@@ -62,10 +62,10 @@ def page(path, title, desc, body, script, canonical=None, noindex=False, bar=Tru
 
 LOADING = '<p class="cx-loading" role="status">Opening the galleries…</p>'
 
-page('art/collection/index.html', 'The Ria Collection — Art that Moved Me — Ria Sunwoo An',
+page('art/collection/index.html', 'The Ria Collection — Through My Eyes — Ria Sunwoo An',
      'The Ria Collection: a personal museum and commonplace book of artworks I have loved, with their histories, my readings of them, and the worlds I keep returning to.',
      '''      <section class="cx-hero" aria-labelledby="cx-title">
-        <p class="cx-label">Art that Moved Me</p>
+        <p class="cx-label">Through My Eyes</p>
         <h1 class="cx-title" id="cx-title">The Ria Collection</h1>
         <div class="cx-hero-text">
           <p>A collection of artworks I have loved, questions I have carried, and worlds I keep returning to.</p>
