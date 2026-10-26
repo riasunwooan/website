@@ -130,16 +130,18 @@ body.cx { background: var(--cx-bg); color: var(--cx-ink); transition: background
 @keyframes cx-sweep { 0% { opacity: 0; } 25% { opacity: 0.85; } 45% { opacity: 0.25; } 70% { opacity: 0.8; } 100% { opacity: 0; } }
 .cx-reading .cx-fab-choice { display: none; }
 
-/* One-time invitation beside the flashlight */
-.cx-fab-hint {
-  position: absolute; z-index: 3; right: 70px; top: 50%; padding: 9px 15px; border-radius: 999px; white-space: nowrap; pointer-events: none;
-  background: #1b1815; color: #fbefd2; border: 1px solid #c9a96b; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  font: italic 500 1.05rem/1.2 var(--cx-serif); opacity: 0; transform: translate(10px, -50%); transition: opacity 0.5s, transform 0.5s;
+/* One-time invitation under the Dim the lights button */
+.cx-bar { position: relative; }
+.cx-bar-hint {
+  position: absolute; z-index: 60; right: 0; top: calc(100% + 18px); display: flex; flex-direction: column; gap: 6px; max-width: min(92vw, 420px);
+  padding: 22px 28px; border: 1px solid #c9a96b; background: #1b1815; color: #fbefd2; box-shadow: 0 18px 40px rgba(20, 12, 4, 0.35);
+  opacity: 0; transform: translateY(-10px); transition: opacity 0.5s, transform 0.5s; pointer-events: none;
 }
-.cx-fab-hint::after { content: ""; position: absolute; right: -6px; top: 50%; width: 10px; height: 10px; background: inherit; border: inherit; border-width: 0 1px 1px 0; transform: translateY(-50%) rotate(-45deg); }
-.cx-fab-hint.is-shown { opacity: 1; transform: translate(0, -50%); }
-.cx-fab:hover .cx-fab-hint, .cx-fab-light[aria-pressed="true"] .cx-fab-hint { opacity: 0; }
-@media (max-width: 600px) { .cx-fab-hint { right: 60px; font-size: 0.95rem; } }
+.cx-bar-hint::before { content: ""; position: absolute; top: -9px; right: 64px; width: 16px; height: 16px; background: inherit; border: inherit; border-width: 1px 0 0 1px; transform: rotate(45deg); }
+.cx-bar-hint.is-shown { opacity: 1; transform: none; }
+.cx-bar-hint-big { font-family: var(--cx-serif); font-style: italic; font-weight: 500; font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.05; }
+.cx-bar-hint-small { font-family: var(--cx-sans); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #d9c9a6; }
+@media (max-width: 600px) { .cx-bar-hint { left: 0; right: 0; max-width: none; } .cx-bar-hint::before { right: 90px; } }
 @media (max-width: 600px) { .cx-dock { right: 14px; bottom: 14px; gap: 10px; } .cx-fab { width: 50px; height: 50px; } .cx-pouch-fab { width: 34px; } .cx-fab-label { display: none; } }
 @media (prefers-reduced-motion: reduce) { .cx-fab-intro .cx-fab-beam { animation: none; } }
 
