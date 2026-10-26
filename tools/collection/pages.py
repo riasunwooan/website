@@ -24,7 +24,7 @@ BAR = '''      <header class="cx-bar">
           <li><a href="/art/collection/#rooms">Rooms</a></li>
           <li><a href="/art/collection/timeline/">Timeline</a></li>
         </ul>
-        <button type="button" class="cx-textbtn" data-cx-theme aria-pressed="false">Dim the lights</button>
+        <button type="button" class="cx-lightbtn" data-cx-theme aria-pressed="false"><span class="cx-beam" aria-hidden="true"></span><span class="cx-theme-label">Dim the lights</span><svg class="cx-torch" viewBox="0 0 28 14" aria-hidden="true"><rect x="10" y="4" width="17" height="6" rx="1.5" fill="currentColor"/><path d="M10 2.5 L4 1 L4 13 L10 11.5 Z" fill="currentColor"/><rect x="2" y="1.5" width="2" height="11" rx="1" class="cx-torch-lens"/></svg></button>
       </header>'''
 
 def page(path, title, desc, body, script, canonical=None, noindex=False, bar=True):
@@ -71,6 +71,7 @@ page('art/collection/index.html', 'The Ria Collection — Through My Eyes — Ri
           <p>A collection of artworks I have loved, questions I have carried, and worlds I keep returning to.</p>
           <p>Part museum, part commonplace book, part conversations with the artist, but everything me.</p>
           <p class="cx-hero-note">I&rsquo;m starting this after falling in love with contemplating about art, in hopes that I will continue to fall in love.</p>
+          <button type="button" class="cx-choice" data-cx-choice aria-pressed="false"><span class="cx-choice-title">Curator’s Choice</span><span class="cx-choice-sub">Pieces I love, simply because</span></button>
         </div>
       </section>
       <div id="cx-home">

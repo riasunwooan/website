@@ -328,7 +328,7 @@ async function editWork(w, restore) {
           '<p class="ad-note">Drafts are never visible to anyone but you, whatever their visibility.</p></div>' +
         '<div class="ad-wide"><p class="cx-label">Visibility</p>' + Object.entries(VIS).map(([k, [l, d]]) => '<label class="ad-check"><input type="radio" name="visibility" value="' + k + '"' + (a.visibility === k ? ' checked' : '') + '><strong>' + l + '</strong>&nbsp;· ' + d + '</label>').join('') + '</div>' +
         '<div class="ad-wide" id="ad-sharebox"></div>' +
-        '<label class="ad-check ad-wide"><input type="checkbox" name="is_favorite"' + (a.is_favorite ? ' checked' : '') + '>Mark as one of my favorites (shown in a carved gold frame wherever the entry is visible)</label>' +
+        '<label class="ad-check ad-wide"><input type="checkbox" name="is_favorite"' + (a.is_favorite ? ' checked' : '') + '>Curator’s Choice: one of my favorites (lit up by the Curator’s Choice button and listed behind its door)</label>' +
       '</fieldset>' +
       (isNew ? '' : '<fieldset class="ad-fieldset"><legend>VI. Returning to the Artwork</legend><p class="ad-note ad-wide">Each return is dated and kept; earlier ones are never overwritten. New reflections start private.</p><div class="ad-wide" id="ad-refl"></div></fieldset>') +
       '<div class="ad-sticky"><button class="ad-btn" type="submit">Save</button>' + (isNew ? '' : '<a class="ad-btn ghost" href="' + previewUrl(a) + '" target="_blank" rel="noopener">Preview</a>') +

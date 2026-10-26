@@ -1,7 +1,7 @@
 // The museum entrance: the searchable collection and the quieter sections below it.
-import { loadPublic, esc, plate, byline, workUrl, roomUrl, exhibitionUrl, fmtDate, sanitize } from './data.js';
+import { loadPublic, BASE, esc, plate, byline, workUrl, roomUrl, exhibitionUrl, fmtDate, sanitize } from './data.js';
 import { card, orderWorks } from './render-work.js';
-import { door } from './door.js';
+import { door, gate } from './door.js';
 import './ui.js';
 
 const host = document.getElementById('cx-home');
@@ -83,7 +83,24 @@ function wireCollection(works) {
   }
   form.addEventListener('input', apply);
   apply();
+  wireChoice();
   if (location.hash === '#collection') host.querySelector('#collection').scrollIntoView();
+}
+
+// Curator's Choice: light the favorites, dim the rest.
+function wireChoice() {
+  const btn = document.querySelector('[data-cx-choice]');
+  if (!btn) return;
+  const set = (on) => {
+    document.body.classList.toggle('cx-spotlight', on);
+    btn.setAttribute('aria-pressed', String(on));
+  };
+  btn.addEventListener('click', () => {
+    const on = !document.body.classList.contains('cx-spotlight');
+    set(on);
+    if (on) document.getElementById('collection').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
+  if (new URLSearchParams(location.search).get('choice')) set(true);
 }
 
 // Works seen on the same day at the same museum, most recent visit first; undated works go last.
@@ -121,15 +138,24 @@ function rooms(works, data) {
   const list = data.rooms || [];
   if (!list.length) return '';
   return '<section class="cx-rooms" id="rooms" aria-labelledby="cx-rooms-h"><div class="cx-sec-head"><h2 id="cx-rooms-h">Rooms</h2>' +
-    '<p class="cx-sec-note">Five doors, five ways a work can stay with me.</p></div><ul class="cx-doors">' +
+    '<p class="cx-sec-note">Six doors, six ways a work can stay with me.</p></div><ul class="cx-doors">' +
     list.map((r) => {
       const ws = works.filter((w) => (w.rooms || []).includes(r.id));
       const inner = door() + '<span class="cx-room-name">' + esc(r.name) + '</span>' +
         (r.description ? '<span class="cx-room-desc">' + esc(r.description) + '</span>' : '') +
         '<span class="cx-card-by">' + (ws.length ? ws.length + (ws.length === 1 ? ' work' : ' works') : 'Not yet open') + '</span>';
       return '<li>' + (ws.length ? '<a class="cx-door-link" href="' + roomUrl(r) + '">' + inner + '</a>' : '<div class="cx-door-link is-closed">' + inner + '</div>') + '</li>';
-    }).join('') +
+    }).join('') + choiceDoor(works) +
     '</ul></section>';
+}
+
+// The Curator's Choice gate: the works Ria loves, simply because.
+function choiceDoor(works) {
+  const n = works.filter((w) => w.is_favorite).length;
+  if (!n) return '';
+  return '<li><a class="cx-door-link cx-choice-door" href="' + BASE + 'room/?r=curators-choice">' + gate() +
+    '<span class="cx-room-name">Curator’s Choice</span><span class="cx-room-desc">Pieces I love, simply because</span>' +
+    '<span class="cx-card-by">' + n + (n === 1 ? ' work' : ' works') + '</span></a></li>';
 }
 
 function exhibitions(works, data) {
