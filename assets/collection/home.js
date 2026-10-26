@@ -25,7 +25,7 @@ function render(data) {
   }
   const builders = { collection, recent, rooms, exhibitions };
   host.innerHTML = order.map((s) => (builders[s] ? builders[s](works, data) : '')).join('');
-  wireCollection(works);
+  wireCollection(works, data.reflections || []);
 }
 
 function options(works, key, label) {
@@ -49,7 +49,7 @@ function collection(works) {
   '</section>';
 }
 
-function wireCollection(works) {
+function wireCollection(works, reflections) {
   const form = host.querySelector('.cx-controls');
   if (!form) return;
   const grid = host.querySelector('.cx-gallery-view'), count = host.querySelector('.cx-count');
@@ -72,7 +72,7 @@ function wireCollection(works) {
     grid.innerHTML = !list.length ? '<p class="cx-empty">Nothing in the collection matches that yet.</p>' :
       f('view').value === 'all' ? rows(list) : visits(list).map((v) =>
         '<section class="cx-visit"><h3 class="cx-visit-head"><span>' + esc(v.place || 'Elsewhere') + '</span>' +
-        (v.date ? '<time datetime="' + esc(v.date) + '">' + esc(fmtDate(v.date)) + '</time>' : '<time>Date not recorded</time>') + '</h3>' + rows(v.works) + '</section>').join('');
+        (v.date ? '<time datetime="' + esc(v.date) + '">' + esc(visitDates(v, reflections)) + '</time>' : '<time>Date not recorded</time>') + '</h3>' + rows(v.works) + '</section>').join('');
     count.textContent = list.length + (list.length === 1 ? ' work' : ' works');
     const p = new URLSearchParams();
     if (q) p.set('q', f('q').value.trim());
@@ -95,6 +95,15 @@ function visits(list) {
     if (v) v.works.push(w); else out.push({ date, place, works: [w] });
   });
   return out.sort((x, y) => (y.date || '0').localeCompare(x.date || '0'));
+}
+
+// The visit's date, plus any later day Ria came back to one of its works: "September 17 & October 9, 2026".
+function visitDates(v, reflections) {
+  const ids = v.works.map((w) => w.id);
+  const days = [...new Set([v.date, ...reflections.filter((r) => ids.includes(r.artwork_id)).map((r) => String(r.written_on).slice(0, 10))])].sort();
+  const years = new Set(days.map((d) => d.slice(0, 4)));
+  if (years.size > 1) return days.map((d) => fmtDate(d)).join(' & ');
+  return days.map((d) => fmtDate(d, { month: 'long', day: 'numeric' })).join(' & ') + ', ' + days[0].slice(0, 4);
 }
 
 // Even rows: every work in a row shares one height and keeps its own proportions.
