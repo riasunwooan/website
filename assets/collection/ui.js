@@ -62,16 +62,19 @@ if (!document.getElementById('cx-admin')) {
     store.set('cx-fab-seen', '1');
     dock.querySelector('.cx-fab-light').classList.add('cx-fab-intro');
   }
-  // A one-time invitation beside the flashlight, so people find it.
-  if (!store.get('cx-hint-seen') && !dark()) {
-    store.set('cx-hint-seen', '1');
-    const hint = document.createElement('span');
-    hint.className = 'cx-fab-hint';
+  // A one-time invitation under the Dim the lights button in the top bar, so people find it.
+  const bar = document.querySelector('.cx-bar'), top = bar && bar.querySelector('.cx-lightbtn');
+  if (top && !store.get('cx-hint-top-seen') && !dark()) {
+    store.set('cx-hint-top-seen', '1');
+    const hint = document.createElement('div');
+    hint.className = 'cx-bar-hint';
     hint.setAttribute('role', 'status');
-    hint.textContent = 'Try dimming the lights';
-    dock.querySelector('.cx-fab-light').appendChild(hint);
-    setTimeout(() => hint.classList.add('is-shown'), 1200);
-    setTimeout(() => { hint.classList.remove('is-shown'); setTimeout(() => hint.remove(), 600); }, 7200);
+    hint.innerHTML = '<span class="cx-bar-hint-big">Try dimming the lights</span><span class="cx-bar-hint-small">The galleries look different in the dark.</span>';
+    bar.appendChild(hint);
+    const hide = () => { hint.classList.remove('is-shown'); setTimeout(() => hint.remove(), 600); removeEventListener('pointerdown', hide); };
+    setTimeout(() => hint.classList.add('is-shown'), 900);
+    setTimeout(hide, 9000);
+    addEventListener('pointerdown', hide);
   }
 }
 
