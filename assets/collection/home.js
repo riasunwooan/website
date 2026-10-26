@@ -83,6 +83,20 @@ function wireCollection(works, reflections) {
   }
   form.addEventListener('input', apply);
   apply();
+
+  // "one piece" in the intro: glide down to that work in the gallery and let it flash once.
+  document.querySelectorAll('[data-cx-flash]').forEach((link) => link.addEventListener('click', (e) => {
+    const find = () => grid.querySelector('a.cx-row-item[href$="s=' + link.dataset.cxFlash + '"]');
+    if (!find()) { form.reset(); apply(); }
+    const item = find();
+    if (!item) return;
+    e.preventDefault();
+    const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    item.scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'center' });
+    item.classList.remove('cx-flash');
+    setTimeout(() => { void item.offsetWidth; item.classList.add('cx-flash'); }, calm ? 0 : 700);
+    item.addEventListener('animationend', () => item.classList.remove('cx-flash'), { once: true });
+  }));
   if (location.hash === '#collection') host.querySelector('#collection').scrollIntoView();
 }
 
