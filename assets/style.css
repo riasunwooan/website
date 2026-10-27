@@ -340,10 +340,11 @@ footer {
 
 .hero-text { margin-bottom: 32px; }
 
-.hero-text p { margin: 0 0 12px; font-size: 1.1rem; }
+.hero-text p { margin: 0 0 10px; font-size: 0.98rem; line-height: 1.55; text-wrap: pretty; }
 
 .hero-hello {
-  font-size: 2.25rem !important;
+  margin-bottom: 14px !important;
+  font-size: 1.9rem !important;
   font-weight: 600;
   line-height: 1.2;
 }
@@ -436,7 +437,7 @@ footer {
   .nav-links { gap: 14px; }
   .nav-links a { font-size: 0.9rem; }
   .logo { font-size: 1rem; }
-  .hero-hello { font-size: 1.8rem !important; }
+  .hero-hello { font-size: 1.6rem !important; }
   .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 0; }
   .hero-image img { max-width: 240px; }
 }
