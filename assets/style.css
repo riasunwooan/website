@@ -367,6 +367,21 @@ footer {
 .home-links .arrow { color: var(--muted); transition: transform 0.15s; }
 .home-links a:hover .arrow { color: var(--text); transform: translateX(4px); }
 
+/* Home: 2x2 buttons to the main sections */
+.home-buttons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.home-btn {
+  display: flex; align-items: center; gap: 12px; padding: 16px 18px;
+  border: 1.5px solid var(--text); border-radius: 14px;
+  font-weight: 600; font-size: 1.05rem; text-decoration: none;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+.home-btn:hover, .home-btn:focus-visible { background: var(--text); color: var(--bg); transform: translateY(-2px); }
+.hb-icon { flex: none; width: 24px; height: 24px; }
+.hb-label { flex: 1; }
+.hb-arrow { opacity: 0.55; transition: transform 0.2s, opacity 0.2s; }
+.home-btn:hover .hb-arrow, .home-btn:focus-visible .hb-arrow { opacity: 1; transform: translateX(3px); }
+@media (max-width: 380px) { .home-btn { padding: 14px; gap: 10px; font-size: 1rem; } }
+
 /* ---------- Art ---------- */
 
 .gallery {
