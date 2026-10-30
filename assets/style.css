@@ -1119,13 +1119,15 @@ nav.nb-jump {
 
 .wp-intro { margin-bottom: 28px; line-height: 1.7; }
 .wp-intro p { margin: 0 0 10px; }
-.wp-intro-row { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 32px; align-items: center; margin-bottom: 28px; }
+.wp-intro-row { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 32px; align-items: stretch; margin-bottom: 28px; }
 .wp-intro-row .wp-intro { margin-bottom: 0; }
+.wp-intro-row .wp-intro p:last-child { margin-bottom: 0; }
 .wp-ig {
-  display: grid; grid-template-columns: auto 1fr; column-gap: 10px; row-gap: 6px; align-items: center;
+  display: grid; grid-template-columns: auto 1fr; column-gap: 10px; row-gap: 6px; align-items: center; align-content: center;
   padding: 16px 18px; border: 1.5px solid var(--text); border-radius: 14px;
   color: var(--text); text-decoration: none; transition: background .2s, color .2s;
 }
+.wp-intro-row .wp-ig { margin: 5px 0; }
 .wp-ig:hover, .wp-ig:focus-visible { background: var(--text); color: var(--bg); }
 .wp-ig-icon { width: 22px; height: 22px; }
 .wp-ig-handle { font-weight: 600; }
