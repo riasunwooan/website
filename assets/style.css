@@ -1119,6 +1119,20 @@ nav.nb-jump {
 
 .wp-intro { margin-bottom: 28px; line-height: 1.7; }
 .wp-intro p { margin: 0 0 10px; }
+.wp-intro-row { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 32px; align-items: center; margin-bottom: 28px; }
+.wp-intro-row .wp-intro { margin-bottom: 0; }
+.wp-ig {
+  display: grid; grid-template-columns: auto 1fr; column-gap: 10px; row-gap: 6px; align-items: center;
+  padding: 16px 18px; border: 1.5px solid var(--text); border-radius: 14px;
+  color: var(--text); text-decoration: none; transition: background .2s, color .2s;
+}
+.wp-ig:hover, .wp-ig:focus-visible { background: var(--text); color: var(--bg); }
+.wp-ig-icon { width: 22px; height: 22px; }
+.wp-ig-handle { font-weight: 600; }
+.wp-ig-desc, .wp-ig-cta { grid-column: 1 / -1; }
+.wp-ig-desc { font-size: .88rem; line-height: 1.45; opacity: .8; }
+.wp-ig-cta { font-size: .82rem; font-weight: 500; }
+@media (max-width: 760px) { .wp-intro-row { grid-template-columns: 1fr; gap: 18px; } }
 
 .wp-filters { display: flex; flex-wrap: wrap; gap: 8px; }
 .wp-chip {
