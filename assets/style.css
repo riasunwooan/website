@@ -1566,6 +1566,8 @@ body.art-body { --bg: #08090b; --text: #f2f2f2; --muted: #a3a3a3; --line: #2a2a2
 .bkp-links { display: flex; flex-wrap: wrap; gap: 10px; }
 .bkp-btn { padding: 6px 14px; border: 1px solid var(--text); border-radius: 999px; text-decoration: none; font-size: 0.88rem; }
 .bkp-btn:hover { background: var(--text); color: var(--bg); }
+.bkp-links-center { justify-content: center; }
+.bkp-btn-wide { width: min(100%, 420px); padding: 10px 24px; text-align: center; font-size: 0.95rem; font-weight: 500; }
 .bkp-flip { margin-top: 18px; border-radius: 10px; overflow: hidden; background: var(--line); }
 .bkp-flip iframe { display: block; width: 100%; height: min(70vh, 620px); border: 0; }
 @media (max-width: 600px) { .bk { width: 104px; height: 146px; } .shelf-row { gap: 18px 12px; padding: 0 8px; } .c-loom .bk-title { font-size: 1.6rem; } .c-jesti .bk-title { font-size: 1.4rem; } .bkp-flip iframe { height: 60vh; } }
