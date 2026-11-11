@@ -1968,3 +1968,4 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 .fb:fullscreen .fb-book { width: min(100%, calc(84vh * 1.294)); }
 .fb-single:fullscreen .fb-book { width: min(100%, calc(84vh * .647)); }
 .fb-hint { text-align: center; color: var(--muted); font-size: .85rem; margin: 8px 0 0; }
+.uw-why { margin: 12px auto 0; }
