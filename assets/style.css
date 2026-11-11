@@ -1968,4 +1968,8 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 .fb:fullscreen .fb-book { width: min(100%, calc(84vh * 1.294)); }
 .fb-single:fullscreen .fb-book { width: min(100%, calc(84vh * .647)); }
 .fb-hint { text-align: center; color: var(--muted); font-size: .85rem; margin: 8px 0 0; }
-.uw-why { margin: 12px auto 0; }
+.uw-top { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; align-items: start; }
+.uw-top-main > .project-section:first-child { margin-top: 40px; }
+.uw-why .art-embed { max-width: none; }
+.uw-why iframe.instagram-media { padding: 0 !important; }
+@media (max-width: 860px) { .uw-top { grid-template-columns: minmax(0, 1fr); gap: 0; } .uw-why .art-embed { max-width: 360px; } }
