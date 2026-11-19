@@ -1973,3 +1973,4 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 .uw-why .art-embed { max-width: none; }
 .uw-why iframe.instagram-media { padding: 0 !important; }
 @media (max-width: 860px) { .uw-top { grid-template-columns: minmax(0, 1fr); gap: 0; } .uw-why .art-embed { max-width: 360px; } }
+.wp-ig-end { display: flex; justify-content: center; margin-top: 48px; } .wp-ig-end .wp-ig { width: 100%; max-width: 300px; }
