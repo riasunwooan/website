@@ -1974,3 +1974,67 @@ a.tile:hover { transform: translateY(-3px); border-color: var(--muted); box-shad
 .uw-why iframe.instagram-media { padding: 0 !important; }
 @media (max-width: 860px) { .uw-top { grid-template-columns: minmax(0, 1fr); gap: 0; } .uw-why .art-embed { max-width: 360px; } }
 .wp-ig-end { display: flex; justify-content: center; margin-top: 48px; } .wp-ig-end .wp-ig { width: 100%; max-width: 300px; }
+
+/* ---------- How Art Does: choose-your-own-adventure dialog ---------- */
+.cy-open { padding: 0; background: none; border-top: 0; border-left: 0; border-right: 0; font: inherit; cursor: pointer; }
+.wp-more.cy-begin { margin-top: 4px; }
+.cy-lock, .cy-lock body { overflow: hidden; }
+.cy {
+  --c: #e8a800;
+  width: min(720px, calc(100vw - 32px)); max-height: calc(100vh - 48px); overflow: auto;
+  padding: 0; border: 1px solid var(--line); border-top: 6px solid var(--c); border-radius: 14px;
+  background: var(--bg); color: var(--text); box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+.cy[open] { animation: bk-pop 0.3s cubic-bezier(.2,.9,.25,1.2); }
+.cy::backdrop { background: rgba(0,0,0,0.6); }
+.cy-head { position: sticky; top: 0; z-index: 1; display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; padding: 18px 28px 12px; background: var(--bg); border-bottom: 1px solid var(--line); }
+.cy-kicker { margin: 0; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+.cy-title { margin: 2px 0 0; font-size: 1.15rem; line-height: 1.3; }
+.cy-x { flex: none; border: 0; background: none; color: var(--text); font-size: 1.8rem; line-height: 1; cursor: pointer; padding: 0 2px; }
+.cy-trail { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 12px 28px 0; }
+.cy-trail li { padding: 2px 10px; border-radius: 999px; border: 1px solid var(--c); font-size: 0.75rem; font-weight: 600; }
+.cy-trail li + li::before { content: "→"; margin: 0 8px 0 -2px; color: var(--muted); font-weight: 400; }
+.cy-trail li.cy-loop { background: var(--c); color: #1a1a1a; }
+.cy-stage { padding: 20px 28px 28px; }
+.cy-page { animation: cy-in 0.35s ease; }
+@keyframes cy-in { from { opacity: 0; transform: translateY(8px); } }
+.cy-page p { margin: 0 0 14px; line-height: 1.75; }
+.cy-num { margin: 0 0 4px !important; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--c); }
+.cy-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--c); }
+.cy-meta { font-size: 0.82rem; color: var(--muted); }
+.cy-question { margin: 0 0 6px; font-size: 1.6rem; line-height: 1.25; font-weight: 600; }
+.cy-sub { color: var(--muted); font-style: italic; }
+.cy-hook { font-size: 1.05rem; font-style: italic; padding-left: 12px; border-left: 3px solid var(--c); }
+.cy-choices { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
+.cy-choices-3 { grid-template-columns: repeat(3, 1fr); }
+.cy-choices button {
+  position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
+  padding: 18px 18px 16px; border: 2px solid var(--line); border-radius: 12px; background: var(--bg); color: var(--text);
+  font: inherit; font-size: 1.1rem; font-weight: 600; text-align: left; cursor: pointer; transition: border-color .15s, transform .15s, box-shadow .15s;
+}
+.cy-choices button b { font-size: 0.75rem; color: var(--c); letter-spacing: 0.06em; }
+.cy-choices button small { font-size: 0.78rem; font-weight: 500; color: var(--muted); }
+.cy-choices button:hover, .cy-choices button:focus-visible { border-color: var(--c); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); outline: none; }
+.cy-read { position: absolute; top: 10px; right: 12px; font-size: 0.68rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.cy-read::before { content: "✓ "; }
+.cy-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.cy-btn { padding: 10px 18px; border: 2px solid var(--c); border-radius: 999px; background: var(--c); color: #1a1a1a; font: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer; }
+.cy-btn.cy-ghost { background: none; color: var(--text); }
+.cy-btn:hover { filter: brightness(1.05); }
+.cy-art { display: flex; gap: 14px; align-items: center; margin: 18px 0 0; padding: 10px; border: 1px solid var(--line); border-radius: 10px; color: inherit; text-decoration: none; font-size: 0.85rem; line-height: 1.45; }
+.cy-art:hover { border-color: var(--c); }
+.cy-art img { flex: none; width: 96px; height: 64px; object-fit: cover; border-radius: 6px; }
+.cy-end { font-size: 1.1rem; }
+.cy-quote { margin: 8px 0 0; padding: 14px 18px; border-left: 4px solid var(--c); font-size: 1.15rem; font-style: italic; line-height: 1.6; background: rgba(232,168,0,0.08); border-radius: 0 8px 8px 0; }
+.cy-essay .cy-page > section { margin-bottom: 26px; }
+.cy-essay .cy-question { font-size: 1.3rem; }
+.cy-essay .cy-num { margin-top: 30px !important; }
+.cy-essay .cy-num-a { margin-top: 22px !important; }
+.cy-opts { font-weight: 600; color: var(--muted); white-space: pre-wrap; }
+@media (max-width: 600px) {
+  .cy { width: calc(100vw - 16px); max-height: calc(100vh - 16px); }
+  .cy-head { padding: 14px 16px 10px; } .cy-trail { padding: 10px 16px 0; } .cy-stage { padding: 16px 16px 24px; }
+  .cy-question { font-size: 1.3rem; }
+  .cy-choices-3 { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .cy[open], .cy-page { animation: none; } .cy-choices button { transition: none; } }

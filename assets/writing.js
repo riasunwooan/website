@@ -38,7 +38,7 @@
   // "More" on long blurbs
   items.forEach(function (it) {
     var b = it.querySelector('.wp-blurb'), btn = it.querySelector('.wp-more');
-    if (!btn) return;
+    if (!btn || btn.dataset.cy) return;
     if (b.scrollHeight > b.clientHeight + 4) {
       btn.hidden = false;
       btn.textContent = 'Read more ↓';
